@@ -25,7 +25,9 @@ window.onload = function(){
     var output_systemReset = "System will reset.";
     var output_ok = "Ok";
     var welcome = "Hello, what can I help you with today?";
-
+    
+    //Events Voice Responses
+    var eventWelcome = "Here's what's happening this month."
 
     // annyang Locator functions
     var roomLocator;
@@ -38,6 +40,7 @@ window.onload = function(){
 //    $(".intro-block").hide();
     $(".menu-block").hide();
     $(".result-block").hide();
+    $(".events-block").hide(); //hide events block
     $("#systemMic").hide();
     $("#subtitle").hide();
    
@@ -184,9 +187,14 @@ window.onload = function(){
             
         };
         
-        // Calendar View Functions //
+        // Calendar View Function //
         
-        //calendarView = function()
+        calendarView = function(hello) {
+            alert("here");
+            responsiveVoice.speak(eventWelcome);
+            $(".menu-block").hide();
+            $(".events-block").show();
+        }
         
         var randomFunction = function(randomWord){
             if(systemAsked) {
@@ -225,7 +233,8 @@ window.onload = function(){
             'I am looking for professor *fac_name' : facultyLocator,
             'professor *fac_name' : facultyLocator,
             
-            //'What events are comming up' : calendarView,
+            //Event View
+            'What events are coming up' : calendarView,
             
             '*randomWord' : randomFunction
         };
