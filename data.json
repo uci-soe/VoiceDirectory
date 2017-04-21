@@ -1,0 +1,31 @@
+{
+    "faculty" : {
+        "Guilfoyle" : {
+            "roomName" : "2080"
+        },
+        "Chris" : {
+            "roomName" : "2002"
+        }
+    },
+    
+    "rooms" : {
+        "2080" : {
+            "roomName" : "Room 2080",
+            "roomType" : "Faculty Office",
+            "mapImage" : "images/maps/",
+            "roomImage" : "images/rooms/room1.jpg",
+            "voiceResponse_room" : "Room 2080 is behind you.",
+            
+            "facultyName" : "Guilfoyle",
+            "facultyEmail" : "dd@uci.edu",
+            "facultyNumber" : "(123) 810-2019",
+            "officeHours" : {
+                "Mondays" : ["12:00pm - 3:00pm"],
+                "Tuesdays" : ["9:00am - 11:00pm"],
+                "Wednesday" : ["9:00am - 11:00pm"]
+            },
+            "facultyImage" : "images/rooms/room1.jpg",
+            "voiceResponse_faculty" : "Guilfoyle is behind you."
+        }
+    }
+}

@@ -1,0 +1,283 @@
+body
+{
+    font-family: lato;
+}
+
+.button-round
+{
+    width: 350px;
+    height: 350px;
+
+    border-radius: 300px;
+    background-color: red;
+
+    display: block;
+    margin:auto;
+    text-align: center;
+
+    margin-top: 250px;
+
+    position: absolute;
+    left: 0;
+    right: 0;   
+}
+
+#screen-home
+{
+    width: 1920px;
+    background-color: #d9d9d9;
+    height: 1000px;
+}
+
+
+.clear
+{
+    clear: both;
+}
+
+.time
+{
+    float: right;
+    color: WHITE;
+    
+    font-size: 1.5em;
+    
+    padding: .7% 0;
+}
+
+.top-block
+{
+    width: 100%;
+    height: auto;
+    
+    background-color: #2C3746;
+    
+    padding: 2.25% 4% 2.25% 3%;
+}
+
+.top-block img
+{
+    width: 450px;
+
+}
+
+.prompt-block
+{
+    width: 100%;
+    background-color: white;
+    
+    padding: 3%;
+    margin-bottom: 3.5%;
+    
+}
+.prompt-block h2
+{
+    text-align: center;
+    font-size: 2.5em;
+    
+    font-weight: 300;
+    
+    letter-spacing: 1px;
+}
+
+.mid-block{
+    height: 701px;
+    width: 100%;
+    background-color: #D9D9D9;
+    padding: 3.5% 0 5% 0;
+}
+
+.left-bubble .bubble, .right-bubble .bubble
+{
+    width: 85%;
+    margin-top: 30%;
+}
+.left-bubble .bubble
+{
+    position: absolute;
+    LEFT: 55%;
+}
+.right-bubble .bubble
+{
+    position: absolute;
+    right: 55%;
+}
+.center-bubble .bubble
+{
+    width: 70%;
+    margin: 3% 15% 0 9.5%;
+}
+.bottom-block .mic
+{
+    width: 10%;
+    
+    display: block;
+    margin: auto;
+
+    position: relative;
+    bottom: 100px;
+
+}
+
+.bottom-block
+{
+    width: 100%;
+    background-color: #2C3746;
+    
+/*    padding: 5% 0 2% 0;*/
+    height: 180px;
+    
+}
+
+.bottom-block h4
+{
+    color: white;
+    text-align: center;
+    position: relative;
+    bottom: 80px;
+    z-index: 2;
+    
+    letter-spacing: .75px;
+    font-weight: 200;
+}
+
+img
+{
+    width: 100%;
+}
+
+
+/* FRONT PAGE */
+
+.bg-speechbubble
+{
+    background-image: url(images/speechbubble.png);
+    background-size: cover;
+    background-position: center;
+   
+    width: 1100PX;
+    height: 580px;
+
+    display: block;
+/*    padding: 14%;*/
+
+    margin: 0% AUTO 3% AUTO;
+    padding-top: 6.5%
+
+}
+
+.icon-help
+{
+    width: 40px;
+    margin: auto;
+    display: block;
+    
+    margin-bottom: 40px;
+}
+
+#screen-home .title
+{
+    font-size: 4.75em;
+    letter-spacing: 5px;
+    
+    text-align: center;
+    margin: 0;
+    
+    font-weight: 600;
+}
+#screen-home .title2
+{
+    letter-spacing: 4px;
+    margin: 0;
+    opacity: .7;
+    
+    text-align: center;
+}
+
+#screen-home .button-start
+{
+    width: 25%;
+    padding: .65%;
+    
+    background-color: #2C3746;
+    
+    border-radius: 60px;
+    
+    margin: 40px 37.5% 0 37.5%;
+}
+
+#screen-home .button-start h4
+{
+    color: white;
+    text-align: center;
+    
+    font-size: 1.75em;
+    letter-spacing: 4px;
+}
+
+
+
+.no-padding-top
+{
+    padding-top: 0;
+}
+.no-padding
+{
+    padding: 0;
+}
+
+.spacer-xs
+{
+    height: 15px;
+}
+
+/*  RESULT BLOCK  */
+
+.result-block #info-section
+{
+    padding: 1.5%;
+    height: 701px;
+    
+    font-size: 1.5em;
+}
+
+.result-block .label
+{
+    color: black;
+    margin: 0;
+    padding: 0;
+    font-weight: 900;
+    font-size: 1em;
+}
+
+.result-block .result-title
+{
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.result-block .result-text 
+{
+    font-size: 1em;
+}
+
+.result-block #info-section
+{
+    background-color: white;
+}
+
+.result-block .room-img
+{
+    
+    background-position: center;
+    background-size: cover;
+    
+    width: 100%;
+    height: 250px;
+    
+    margin:5% 0 5% 0;
+}
+
+
+
+
