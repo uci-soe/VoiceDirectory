@@ -187,6 +187,34 @@ window.onload = function(){
             
         };
         
+        // Adding two word faculty search
+        facultyLocator2 = function(fac_first_name,fac_last_name) { 
+            var full_name = fac_first_name.concat(" ");
+            full_name = full_name.concat(fac_last_name);
+            
+            //alert(full_name);
+            
+            
+            if(!(full_name in data.faculty)) {
+                alert(fac_name);
+                responsiveVoice.speak(output_repeat); 
+                systemPause(output_repeat, output_repeat.split(' ').length);
+            }
+            else {
+               
+                displayResult(data, full_name);
+                resultShown = true; 
+                               
+                var num = data.faculty[full_name].roomName;
+//                responsiveVoice.speak(data.rooms[num].voiceResponse_faculty);
+                systemPause((data.rooms[num].voiceResponse_faculty), (data.rooms[num].voiceResponse_faculty).split(' ').length);
+            }
+            timeLeft = grantTime;
+            
+        };
+        
+        
+        
         // Calendar View Function //
         
         calendarView = function(hello) {
@@ -232,6 +260,9 @@ window.onload = function(){
 
             'I am looking for professor *fac_name' : facultyLocator,
             'professor *fac_name' : facultyLocator,
+            
+            //Adding multiple name request
+            'professor *fac_first_name *fac_last_name' : facultyLocator2,
             
             //Event View
             'What events are coming up' : calendarView,
