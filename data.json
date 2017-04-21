@@ -18,7 +18,7 @@
         "Young" : {
             "roomName" : "2000"
         },
-        "Guarina" : {
+        "Guarino" : {
             "roomName" : "2001"
         },
         "Lao" : {
@@ -30,14 +30,23 @@
         "Brouillette" : {
             "roomName" : "2032"
         },
+        "Abedi" : {
+            "roomName" : "2034"
+        },
+        "Rosales-Rueda" : {
+            "roomName" : "2036"
+        },
         "Collins" : {
             "roomName" : "2038"
         },
-        "Pierce" : {
+        /*"Pierce" : {              //Not in directory?
             "roomName" : "2038"
-        },
+        },*/
         "Lowe" : {
             "roomName" : "2040"
+        },
+        "Kang" : {                  //First of 3 kangs
+            "roomName" : "2042"
         },
         "Clark" : {
             "roomName" : "2044"
@@ -48,8 +57,14 @@
         "Farkas" : {
             "roomName" : "2046"
         },
+        "Vandell" : {
+            "roomName" : "2050"
+        },
         "Jenkins" : {
             "roomName" : "2052"
+        },
+        "Duncan" : {
+            "roomName" : "2053"
         },
         "Xu" : {
             "roomName" : "2054"
@@ -59,6 +74,9 @@
         },
         "Penner" : {
             "roomName" : "2062"
+        },
+        "Iloh" : {
+            "roomName" : "2064"
         },
         "Kang" : {
             "roomName" : "2064"
@@ -72,15 +90,18 @@
         "Eccles" : {
             "roomName" : "2068"
         },
+        "Bailey" : {
+            "roomName" : "2072"
+        },
         "Lopez-Sandoval" : {
             "roomName" : "2074"
         },
         "Henry" : {
             "roomName" : "2076"
         },
-        "Hyde" : {
+        /*"Hyde" : {                Not in data list?
             "roomName" : "2076"
-        },
+        },*/
         "Singh" : {
             "roomName" : "2076"
         },
@@ -91,9 +112,12 @@
             "roomName" : "2080"
         },
         "Toma-Berge" : {
-            "roomName" : "2080"
+            "roomName" : "2082"
         },
         "Stone" : {
+            "roomName" : "2084"
+        },
+        "Lao" : {
             "roomName" : "2084"
         },
         "Johnston" : {
@@ -103,8 +127,8 @@
             "roomName" : "2094"
         },
         "Panish" : {
-            "roomName" : "2096"
-        },
+            "roomName" : "2096"         // From this point and above. Information
+        },                              // is consistent with data file.
         "Choi" : {
             "roomName" : "3100"
         },
@@ -121,9 +145,6 @@
             "roomName" : "3200"
         },
         "Lawrence" : {
-            "roomName" : "3200"
-        },
-        "Vandell" : {
             "roomName" : "3200"
         },
         "Tift" : {
@@ -218,7 +239,13 @@
         },
         "Dicke" : {
             "roomName" : "3462"
-        }
+        },
+        // General Rooms //
+        "Student Affairs" : {
+            "roomName" : "2000"
+        },
+        
+        
     },
     
     "rooms" : {
