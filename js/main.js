@@ -184,6 +184,10 @@ window.onload = function(){
             
         };
         
+        // Calendar View Functions //
+        
+        //calendarView = function()
+        
         var randomFunction = function(randomWord){
             if(systemAsked) {
                 if(randomWord == "yes")
@@ -220,6 +224,8 @@ window.onload = function(){
 
             'I am looking for professor *fac_name' : facultyLocator,
             'professor *fac_name' : facultyLocator,
+            
+            //'What events are comming up' : calendarView,
             
             '*randomWord' : randomFunction
         };
