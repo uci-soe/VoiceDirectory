@@ -39,13 +39,10 @@
         "Collins" : {
             "roomName" : "2038"
         },
-        /*"Pierce" : {              //Not in directory?
-            "roomName" : "2038"
-        },*/
         "Lowe" : {
             "roomName" : "2040"
         },
-        "Kang" : {                  //First of 3 kangs
+        "Kang" : {                  
             "roomName" : "2042"
         },
         "Clark" : {
@@ -99,9 +96,6 @@
         "Henry" : {
             "roomName" : "2076"
         },
-        /*"Hyde" : {                Not in data list?
-            "roomName" : "2076"
-        },*/
         "Singh" : {
             "roomName" : "2076"
         },
@@ -127,8 +121,8 @@
             "roomName" : "2094"
         },
         "Panish" : {
-            "roomName" : "2096"         // From this point and above. Information
-        },                              // is consistent with data file.
+            "roomName" : "2096"        
+        },                              
         "Choi" : {
             "roomName" : "3100"
         },
@@ -240,11 +234,9 @@
         "Dicke" : {
             "roomName" : "3462"
         },
-        // General Rooms //
         "Student Affairs" : {
             "roomName" : "2000"
-        },
-        
+        }     
         
     },
     
