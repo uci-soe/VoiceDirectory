@@ -278,6 +278,10 @@ img
     margin:5% 0 5% 0;
 }
 
-
-
+/* Events Block Styling */
+.events-block #calendar
+{
+    margin-top: -3%;
+    margin-left: 4.5%;
+}
 
