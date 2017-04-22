@@ -1,6 +1,6 @@
 window.onload = function(){
             
-    var timeLeft = 35; // System countdown after initiation
+    var timeLeft = 3500; // System countdown after initiation
     var timeToAsk = 30; // System will ask if user wants more time after this amount of seconds
     var timeToAsk2 = 15 // Second time asking
     var timeToEnd = 1; // System will reset the system with this amount of seconds left
@@ -196,7 +196,7 @@ window.onload = function(){
             
             
             if(!(full_name in data.faculty)) {
-                alert(fac_name);
+                //alert(fac_name);
                 responsiveVoice.speak(output_repeat); 
                 systemPause(output_repeat, output_repeat.split(' ').length);
             }
@@ -218,13 +218,14 @@ window.onload = function(){
         // Calendar View Function //
         
         calendarView = function(hello) {
-            alert("here");
+            //alert("here");
             responsiveVoice.speak(eventWelcome);
             $(".menu-block").hide();
             $(".events-block").show();
         }
         
         var randomFunction = function(randomWord){
+            //alert(randomWord);
             if(systemAsked) {
                 if(randomWord == "yes")
                     yes = true;
@@ -245,9 +246,7 @@ window.onload = function(){
                 }
                 
             }
-            
-            
-            
+   
         }
         
     
@@ -266,8 +265,9 @@ window.onload = function(){
             
             //Event View
             'What events are coming up' : calendarView,
-            
-            '*randomWord' : randomFunction
+            'I want to know upcoming events' : calendarView,
+            // randomWord can only be yes or no now to avoid it being called very        time.
+            ':randomWord' : {'regexp' : /^(yes|no)$/, 'callback' : randomFunction}
         };
         annyang.addCommands(commands);
         annyang.start({continuous: false}); 
