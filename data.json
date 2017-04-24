@@ -1,33 +1,263 @@
 {
     "faculty" : {
-        "denenberg" : {
-            "facultyName" : "Denenberg",
-            "officeHours" : {
-                "Mondays" : ["12:00pm - 3:00pm"],
-                "Tuesdays" : ["9:00am - 11:00pm"]
-            },
-            "voiceResponse" : "Professor Denenberg is not here",
-            "mapImage" : "s",
-            "facultyImage" : "S"
-        }
+        "Guilfoyle" : {
+            "roomName" : "2080"
+        },
+        "Chris Sandoval" : {
+            "roomName" : "2080"
+        },
+        "Earley" : {
+            "roomName" : "2000"
+        },
+        "Lim" : {
+            "roomName" : "2000"
+        },
+        "McDougall" : {
+            "roomName" : "2000"
+        },
+        "Young" : {
+            "roomName" : "2000"
+        },
+        "Guarino" : {
+            "roomName" : "2001"
+        },
+        "Lao" : {
+            "roomName" : "2012"
+        },
+        "Bailey" : {
+            "roomName" : "2027"
+        },
+        "Brouillette" : {
+            "roomName" : "2032"
+        },
+        "Abedi" : {
+            "roomName" : "2034"
+        },
+        "Rosales-Rueda" : {
+            "roomName" : "2036"
+        },
+        "Collins" : {
+            "roomName" : "2038"
+        },
+        "Lowe" : {
+            "roomName" : "2040"
+        },
+        "Kang" : {                  
+            "roomName" : "2042"
+        },
+        "Clark" : {
+            "roomName" : "2044"
+        },
+        "Kang" : {
+            "roomName" : "2044"
+        },
+        "Farkas" : {
+            "roomName" : "2046"
+        },
+        "Vandell" : {
+            "roomName" : "2050"
+        },
+        "Jenkins" : {
+            "roomName" : "2052"
+        },
+        "Duncan" : {
+            "roomName" : "2053"
+        },
+        "Xu" : {
+            "roomName" : "2054"
+        },
+        "Baker" : {
+            "roomName" : "2060"
+        },
+        "Penner" : {
+            "roomName" : "2062"
+        },
+        "Iloh" : {
+            "roomName" : "2064"
+        },
+        "Kang" : {
+            "roomName" : "2064"
+        },
+        "Duncan" : {
+            "roomName" : "2066"
+        },
+        "Petre" : {
+            "roomName" : "2066"
+        },
+        "Eccles" : {
+            "roomName" : "2068"
+        },
+        "Bailey" : {
+            "roomName" : "2072"
+        },
+        "Lopez-Sandoval" : {
+            "roomName" : "2074"
+        },
+        "Henry" : {
+            "roomName" : "2076"
+        },
+        "Singh" : {
+            "roomName" : "2076"
+        },
+        "Vaughn" : {
+            "roomName" : "2078"
+        },
+        "Guilfoyle" : {
+            "roomName" : "2080"
+        },
+        "Toma-Berge" : {
+            "roomName" : "2082"
+        },
+        "Stone" : {
+            "roomName" : "2084"
+        },
+        "Lao" : {
+            "roomName" : "2084"
+        },
+        "Johnston" : {
+            "roomName" : "2092"
+        },
+        "Simpkins" : {
+            "roomName" : "2094"
+        },
+        "Panish" : {
+            "roomName" : "2096"        
+        },                              
+        "Choi" : {
+            "roomName" : "3100"
+        },
+        "Gov" : {
+            "roomName" : "3100"
+        },
+        "Yu" : {
+            "roomName" : "3100"
+        },
+        "Conley" : {
+            "roomName" : "3200"
+        },
+        "Duncan" : {
+            "roomName" : "3200"
+        },
+        "Lawrence" : {
+            "roomName" : "3200"
+        },
+        "Tift" : {
+            "roomName" : "3200"
+        },
+        "Day" : {
+            "roomName" : "3200"
+        },
+        "Stone" : {
+            "roomName" : "3200"
+        },
+        "Wright" : {
+            "roomName" : "3200"
+        },
+        "Tolbert" : {
+            "roomName" : "3215"
+        },
+        "Hahm" : {
+            "roomName" : "3219"
+        },
+        "Chansy" : {
+            "roomName" : "3221"
+        },
+        "Shimizu" : {
+            "roomName" : "3221"
+        },
+        "Khuu" : {
+            "roomName" : "3222"
+        },
+        "Warschauer" : {
+            "roomName" : "3225"
+        },
+        "Rodriguez" : {
+            "roomName" : "3226"
+        },
+        "Kataoka" : {
+            "roomName" : "3227"
+        },
+        "Ho" : {
+            "roomName" : "3228"
+        },
+        "Garcia" : {
+            "roomName" : "3229"
+        },
+        "Tomoguchi-Perez" : {
+            "roomName" : "3230"
+        },
+        "Arum" : {
+            "roomName" : "3231"
+        },
+        "de Carvalho" : {
+            "roomName" : "3232"
+        },
+        "Stameson" : {
+            "roomName" : "3233"
+        },
+        "Wong" : {
+            "roomName" : "3233"
+        },
+        "Christensen" : {
+            "roomName" : "3234"
+        },
+        "Diaz Lara" : {
+            "roomName" : "3359"
+        },
+        "Zhou" : {
+            "roomName" : "3362"
+        },
+        "Nili" : {
+            "roomName" : "3376"
+        },
+        "Baron" : {
+            "roomName" : "3400"
+        },
+        "Jaeggi" : {
+            "roomName" : "3452"
+        },
+        "Connor" : {
+            "roomName" : "3453"
+        },
+        "Reich" : {
+            "roomName" : "3454"
+        },
+        "van Es" : {
+            "roomName" : "3455"
+        },
+        "Santagata" : {
+            "roomName" : "3457"
+        },
+        "Sandholtz" : {
+            "roomName" : "3458"
+        },
+        "Dicke" : {
+            "roomName" : "3462"
+        },
+        "Student Affairs" : {
+            "roomName" : "2000"
+        }     
+        
     },
     
     "rooms" : {
-        
-        "2001" : {
-            "roomName" : "Lecture Hall",
-            "voiceResponse" : "Room 2001 is behind you.",
-            "mapImage" : "s",
-            "roomImage" : ""
-        },
-        
-        "2002" : {
-            "roomName" : "Lecture Hall",
-            "voiceResponse" : "Room 2002 is where ever you want it to be.",
-            "mapImage" : "s",
-            "roomImage" : ""
+        "2080" : {
+            "roomName" : "Room 2080",
+            "roomType" : "Faculty Office",
+            "mapImage" : "images/maps/",
+            "roomImage" : "images/rooms/room1.jpg",
+            "voiceResponse_room" : "Room 2080 is behind you.",
+            
+            "facultyName" : "Guilfoyle",
+            "facultyEmail" : "dd@uci.edu",
+            "facultyNumber" : "(123) 810-2019",
+            "officeHours" : {
+                "Mondays" : ["12:00pm - 3:00pm"],
+                "Tuesdays" : ["9:00am - 11:00pm"],
+                "Wednesday" : ["9:00am - 11:00pm"]
+            },
+            "facultyImage" : "images/rooms/room1.jpg",
+            "voiceResponse_faculty" : "Guilfoyle is behind you."
         }
-        
     }
-    
 }

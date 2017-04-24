@@ -1,6 +1,6 @@
 window.onload = function(){
             
-    var timeLeft = 45; // System countdown after initiation
+    var timeLeft = 3500; // System countdown after initiation
     var timeToAsk = 30; // System will ask if user wants more time after this amount of seconds
     var timeToAsk2 = 15 // Second time asking
     var timeToEnd = 1; // System will reset the system with this amount of seconds left
@@ -15,13 +15,19 @@ window.onload = function(){
     var systemAsked = false; // Check if system has asked user for more time
     var yes = false;
     var no = false;
+    
+    var resultShown = false;
 
     // System's General Voice Responses
+    var output_speak = "Please speak your request!";
     var output_repeat = "Could you repeat that, please?";
     var output_moreTime = "Do you need more time?";
     var output_systemReset = "System will reset.";
     var output_ok = "Ok";
-
+    var welcome = "Hello, what can I help you with today?";
+    
+    //Events Voice Responses
+    var eventWelcome = "Here's what's happening this month."
 
     // annyang Locator functions
     var roomLocator;
@@ -29,34 +35,80 @@ window.onload = function(){
 
     var commands = {};
     
-    
     //*********************************************************************************************************   FUNCTION DECLARATIONS
 
-    $('#screen-menu').hide();
-    
+//    $(".intro-block").hide();
+    $(".menu-block").hide();
+    $(".result-block").hide();
+    $(".events-block").hide(); //hide events block
+    $("#systemMic").hide();
+    $("#subtitle").hide();
+   
     function endSystem() {
         responsiveVoice.speak(output_systemReset); 
         window.location.reload();
     }
     
-    function systemPause(wordCount) {
+    function systemPause(word, wordCount) {
 
-        $('#listening').html("Not Listening");
+        $('#subtitle').html(word);
         annyang.pause();
 
         setTimeout(function(){ 
             annyang.resume() 
-            $('#listening').html("Listening");
+            $('#subtitle').html("I'm Listening...");
             }, wordCount*650);
     }
-    function isLocatorActive() {
-        return roomLocator_active || facultyLocator_active;
+    
+    function displayResult(data, inputType){
+        
+        $(".menu-block").hide();
+        $(".result-block").show();
+        
+        if(isNaN(inputType)) {
+            var num = data.faculty[inputType].roomName;
+            responsiveVoice.speak(data.rooms[num].voiceResponse_faculty);
+        }
+        else {
+            var num = inputType;
+            responsiveVoice.speak(data.rooms[num].voiceResponse_room);
+        }
+                
+        $(".room-name").html(data.rooms[num].roomName);
+        $(".room-type").html(data.rooms[num].roomType);
+        $(".room-img").css('background-image', 'url(/css/' + data.rooms[num].roomImage + ')');
+            
+        $(".faculty-name").html(data.rooms[num].facultyName);
+        $(".faculty-email").html(data.rooms[num].facultyEmail);
+        $(".faculty-number").html(data.rooms[num].facultyNumber);
+//        $("#faculty-hours").html();
+       
+        var officeHours = data.rooms[num].officeHours;
+        
+        var myStr = "";
+        
+        for (var day in officeHours){
+            
+            myStr = myStr + day + "<br/>";
+            if(officeHours[day].length > 1){
+                for(var i = 0 ; i < officeHours[day].length ; i++)
+                    myStr = myStr + officeHours[day][i] + "<br/>";
+            }
+            else
+                myStr = myStr + officeHours[day] + "<br/>";
+            myStr = myStr + "<div class=\"spacer-xs\"></div>";
+            
+        }
+        $(".faculty-hours").html(myStr);
+        
+        
+                
     }
-
+    
     function moretime() {
         if(yes) {
             timeLeft = grantTime;
-            systemPause(output_ok.split(' ').length);
+            systemPause(output_ok, output_ok.split(' ').length);
 
             responsiveVoice.speak(output_ok);
             systemAsked = false;
@@ -71,12 +123,16 @@ window.onload = function(){
 
             timeLeft--; $('#timeLeft').html(timeLeft);
             if(timeLeft == timeToAsk || timeLeft == timeToAsk2) {
-                if(!isLocatorActive()) {
+                
+                if(timeLeft == timeToAsk2 && !resultShown) {
+                    endSystem();
+                }
+                
+                if(resultShown) {
                     responsiveVoice.speak(output_moreTime);
-                    systemPause(output_moreTime.split(' ').length);
+                    systemPause(output_moreTime, output_moreTime.split(' ').length);
                     systemAsked = true; 
                 }
-
                 systemTimer();
             }   
             else if(timeLeft == timeToEnd)
@@ -93,70 +149,129 @@ window.onload = function(){
     function startSystem(data) {              
         systemTimer();
 
+        responsiveVoice.speak(welcome);
+
         roomLocator = function(room_num) {  
             if(!(room_num in data.rooms)){
                 responsiveVoice.speak(output_repeat);
-                systemPause(output_repeat.split(' ').length);
+                systemPause(output_repeat, output_repeat.split(' ').length);
             }                        
             else {
-                roomLocator_active = true;
-                responsiveVoice.speak(data.rooms[room_num].voiceResponse); 
+
+                displayResult(data, room_num);
+                resultShown = true; 
+//                responsiveVoice.speak(data.rooms[room_num].voiceResponse_room); 
+                systemPause((data.rooms[room_num].voiceResponse_room), (data.rooms[room_num].voiceResponse_room).split(' ').length);
+                
             }
             timeLeft = grantTime;
-            systemPause((data.rooms[room_num].voiceResponse).split(' ').length);
+            
         };
 
         facultyLocator = function(fac_name) {  
             if(!(fac_name in data.faculty)) {
+                alert(fac_name);
                 responsiveVoice.speak(output_repeat); 
-                systemPause(output_repeat.split(' ').length);
+                systemPause(output_repeat, output_repeat.split(' ').length);
             }
             else {
-                facultyLocator_active = true;
-                responsiveVoice.speak(data.faculty[fac_name].voiceResponse);
+               
+                displayResult(data, fac_name);
+                resultShown = true; 
+                               
+                var num = data.faculty[fac_name].roomName;
+//                responsiveVoice.speak(data.rooms[num].voiceResponse_faculty);
+                systemPause((data.rooms[num].voiceResponse_faculty), (data.rooms[num].voiceResponse_faculty).split(' ').length);
             }
             timeLeft = grantTime;
-            systemPause((data.faculty[fac_name].voiceResponse).split(' ').length);
-
+            
         };
-
-        var yesFunc = function() {
-            if(systemAsked) {
-                yes = true;
-                moretime();
+        
+        // Adding two word faculty search
+        facultyLocator2 = function(fac_first_name,fac_last_name) { 
+            var full_name = fac_first_name.concat(" ");
+            full_name = full_name.concat(fac_last_name);
+            
+            //alert(full_name);
+            
+            
+            if(!(full_name in data.faculty)) {
+                //alert(fac_name);
+                responsiveVoice.speak(output_repeat); 
+                systemPause(output_repeat, output_repeat.split(' ').length);
             }
             else {
-                responsiveVoice.speak(output_repeat);
-                timeLeft = grantTime;
-                systemPause(output_repeat.split(' ').length);
+               
+                displayResult(data, full_name);
+                resultShown = true; 
+                               
+                var num = data.faculty[full_name].roomName;
+//                responsiveVoice.speak(data.rooms[num].voiceResponse_faculty);
+                systemPause((data.rooms[num].voiceResponse_faculty), (data.rooms[num].voiceResponse_faculty).split(' ').length);
             }
+            timeLeft = grantTime;
+            
         };
-        var noFunc = function() {
+        
+        
+        
+        // Calendar View Function //
+        
+        calendarView = function(hello) {
+            //alert("here");
+            responsiveVoice.speak(eventWelcome);
+            $(".menu-block").hide();
+            $(".events-block").show();
+        }
+        
+        var randomFunction = function(randomWord){
+            //alert(randomWord);
             if(systemAsked) {
-                no = true;
+                if(randomWord == "yes")
+                    yes = true;
+                else if(randomWord == "no")
+                    no = true;
                 moretime();
             }
-            else{
-                responsiveVoice.speak(output_repeat);
-                timeLeft = grantTime;
-                systemPause(output_repeat.split(' ').length);
+            
+            if(resultShown){
+                if(randomWord == "go back"){
+                    $(".menu-block").show();
+                    $(".result-block").hide();
+                    resultShown = false;
+
+                    timeLeft = grantTime;
+
+                    responsiveVoice.speak(welcome);
+                }
+                
             }
-        };
+   
+        }
+        
+    
 
         commands = {
-            'where is room *room_num' : roomLocator,
+            'I am looking for room *room_num' : roomLocator,
+            'I\'m looking for room *room_num' : roomLocator,
+            'Where is room *room_num' : roomLocator,
             'room *room_num' : roomLocator,
 
-            'where is professor *fac_name' : facultyLocator,
+            'I am looking for professor *fac_name' : facultyLocator,
             'professor *fac_name' : facultyLocator,
-
-            'yes' : yesFunc,
-            'no' : noFunc,
-            'reset' : endSystem
+            
+            //Adding multiple name request
+            'professor *fac_first_name *fac_last_name' : facultyLocator2,
+            
+            //Event View
+            'What events are coming up' : calendarView,
+            'I want to know upcoming events' : calendarView,
+            // randomWord can only be yes or no now to avoid it being called very        time.
+            ':randomWord' : {'regexp' : /^(yes|no)$/, 'callback' : randomFunction}
         };
         annyang.addCommands(commands);
         annyang.start({continuous: false}); 
-        $('#listening').html("Listening");
+        $('#subtitle').html("I'm Listening...");
 
     }
     
@@ -164,9 +279,23 @@ window.onload = function(){
 
     $('#startButton').click(function(){
 
-        $('#startButton').fadeOut();
-        $('#screen-home').hide();
-        $('#screen-menu').fadeIn();
+        $(".intro-block").hide();
+        $(".menu-block").show();
+        $("#systemMic").show();
+        $("#subtitle").show();
+        
+        //ANIMATION   ******************************
+        
+        //bubble animation
+        $(".left-bubble .bubble").addClass("slideInLeft");
+        $(".right-bubble .bubble").addClass("slideInRight");
+        $(".center-bubble .bubble").addClass("slideInDown");
+
+        //prompt animation
+        $(".prompt-block h2").addClass("fadeInUp");
+        
+        
+        //END - ANIMATION   ******************************
 
         if (annyang) {
 
@@ -189,6 +318,22 @@ window.onload = function(){
         endSystem();
     });
     
+    $("#systemMic").click(function(){
+        
+        $(".left-bubble .bubble").removeClass("slideInLeft");
+        $(".right-bubble .bubble").removeClass("slideInRight");
+        $(".center-bubble .bubble").removeClass("slideInDown");
+        
+        $(".bubble").addClass("tada");
+        
+        setTimeout(function(){ 
+            $(".bubble").removeClass("tada");
+        }, 1000);
+        
+        responsiveVoice.speak(output_speak);
+        systemPause(output_speak, output_speak.split(' ').length);
+        
+    });
 
-
+    
 }

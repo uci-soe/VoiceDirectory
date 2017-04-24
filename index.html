@@ -22,79 +22,122 @@
     
     <!--  Animation.css  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-        
-    <script src="js/function_declarations.js"></script>
+    
+    <link rel="stylesheet" href="css/main.css">        
     <script src="js/main.js"></script>
-
     
 </head>
   
-    
-    <style>
-        .button-round
-        {
-            width: 350px;
-            height: 350px;
-            
-            border-radius: 300px;
-            background-color: red;
-            
-            display: block;
-            margin:auto;
-            text-align: center;
-            
-            margin-top: 250px;
-            
-            position: absolute;
-            left: 0;
-            right: 0;   
-        }
-        
-        #screen-home
-        {
-            background-color: lightblue;
-            width: 100%;
-            height: 1000px;
-        }
-    </style>
-    
     <body>
-        
-        <div id="startButton" class="button-round">
-        </div>
+
         
         <div id="screen-home">
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4">
-                <h2>This is the home screen.</h2>
-                <br/>
-                
+            <div class="top-block">
+                <img src="css/images/soe_banner2.png"/>
+                <p class="time">12:305pm</p>
+            
             </div>
-            <div class="col-sm-4"></div>
-        
-        </div>
+            
+            <div class="intro-block">
+                <div class="mid-block">
+                    <div class="bg-speechbubble">
                 
-        <div id="screen-menu">
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4">
-                <h2>This is the menu screen.</h2>
-                <div id="endButton" class="button-round">
+                        <img class="icon-help" src="css/images/helpbutton.png"/>
+
+                        <h2 class="title2">VOICE-ACTIVATED</h2>
+                        <h1 class="title">DIRECTORY SYSTEM</h1>
+
+                        <button id="startButton" class="button-start">
+                            <h4>START</h4>
+                        </button>
+                        
+                    </div>
+                
                 </div>
             </div>
-            <div class="col-sm-4">
-                <br/>
-                <br/>
-                <br/>
+            
+            <div class="menu-block">
+<!--                <div id="timeLeft"></div>-->
                 
-                <div id="timeLeft">45</div>
-                <br/>
-                Listening?<br/>
-                <div id="listening"></div>
+                <div class="mid-block no-padding-top">
+                    
+                    <div class="prompt-block">
+                        <h2 class="animated">Hello, what can I help you with today?</h2>
+
+                    </div>
+                    <div class="clear"></div>
+                    <div class="col-sm-4 left-bubble">
+                        <img class="bubble animated" src="css/images/shades/left.png">
+                    </div>
+                    <div class="col-sm-4 center-bubble">
+                        <img class="bubble animated" src="css/images/shades/center.png">
+                    </div>
+                    <div class="col-sm-4 right-bubble">
+                        <img class="bubble animated" src="css/images/shades/right.png">
+                    </div>
+                    
+                    <div class="clear"></div>
+                </div>
+                
+                <div class="clear"></div>
+                
+            </div>
+            
+            <div class="clear"></div>
+
+            <div class="result-block">
+                <div class="mid-block no-padding-top">
+                    <div id="map-section" class="col-sm-8">
+                        
+                    </div>
+                    
+                    <div id="info-section" class="col-sm-4">
+                        <div class="room-name result-title"></div>
+                        <div class="room-type"></div>
+                        <div class="room-img"></div>
+                        
+                        <div class="col-sm-6 no-padding">
+                            <div class="label">Professor Name</div>
+                            <div class="result-text faculty-name"></div>
+                            <div class="spacer-xs"></div>
+
+                            <div class="label">Email</div>
+                            <div class="result-text faculty-email"></div>
+                            <div class="spacer-xs"></div>
+                            
+                            <div class="label">Phone Number</div>
+                            <div class="result-text faculty-number"></div>
+
+                        
+                        </div>
+                        <div class="col-sm-6 no-padding">
+                            <div class="label">Office Hours</div>
+                            <div class="faculty-hours"></div>
+                        </div>
+                    </div>
+                
+                </div>
+                
+            </div>
+            
+            <!-- Events Block -->
+            <div class="mid-block events-block">
+                <div id="calendar" class="col-sm-12 no-padding">
+                    <iframe src="https://calendar.google.com/calendar/embed?title=School%20of%20Education%20Events&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=639&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%23125A12&amp;src=tp813fc8tfi3uoeb2k1kr8ivn8%40group.calendar.google.com&amp;color=%238D6F47&amp;ctz=America%2FLos_Angeles" style="border-width:5" width="1761" height="675" frameborder="0" scrolling="no"></iframe>
+                </div>    
             </div>
             
             
+            <div class="bottom-block">
+                
+                <img id="systemMic" class="mic animated infinite pulse" src="css/images/microphone.png"/>
+                <h4 id="subtitle">I'm Listening...</h4>
+                
+            </div>
             
         </div>
+                
+        
         
       gdagdagd
     </body>
