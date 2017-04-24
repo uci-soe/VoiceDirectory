@@ -255,6 +255,7 @@ window.onload = function(){
             'room *room_num' : roomLocator,
 
             'I am looking for professor *fac_name' : facultyLocator,
+            'I am looking for professor *fac_first_name :fac_last_name' : facultyLocator,
             'professor *fac_name' : facultyLocator,
             
             //Adding multiple name request
