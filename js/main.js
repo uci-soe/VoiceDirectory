@@ -52,10 +52,10 @@ window.onload = function(){
     function systemPause(word, wordCount) {
 
         $('#subtitle').html(word);
-        annyang.pause();
+//        annyang.pause();
 
         setTimeout(function(){ 
-            annyang.resume() 
+//            annyang.resume() 
             $('#subtitle').html("I'm Listening...");
             }, wordCount*650);
     }
@@ -77,11 +77,12 @@ window.onload = function(){
         $(".room-name").html(data.rooms[num].roomName);
         $(".room-type").html(data.rooms[num].roomType);
         $(".room-img").css('background-image', 'url(/css/' + data.rooms[num].roomImage + ')');
+        $(".room-map").attr("src", data.rooms[num].mapImage);
             
         $(".faculty-name").html(data.rooms[num].facultyName);
         $(".faculty-email").html(data.rooms[num].facultyEmail);
         $(".faculty-number").html(data.rooms[num].facultyNumber);
-//        $("#faculty-hours").html();
+
        
         var officeHours = data.rooms[num].officeHours;
         
@@ -99,10 +100,7 @@ window.onload = function(){
             myStr = myStr + "<div class=\"spacer-xs\"></div>";
             
         }
-        $(".faculty-hours").html(myStr);
-        
-        
-                
+        $(".faculty-hours").html(myStr);  
     }
     
     function moretime() {
@@ -234,8 +232,8 @@ window.onload = function(){
                 moretime();
             }
             
-            if(resultShown){
-                if(randomWord == "go back"){
+            if(randomWord =="back"){
+                if(resultShown){
                     $(".menu-block").show();
                     $(".result-block").hide();
                     resultShown = false;
@@ -253,11 +251,11 @@ window.onload = function(){
 
         commands = {
             'I am looking for room *room_num' : roomLocator,
-            'I\'m looking for room *room_num' : roomLocator,
             'Where is room *room_num' : roomLocator,
             'room *room_num' : roomLocator,
 
             'I am looking for professor *fac_name' : facultyLocator,
+            'I am looking for professor *fac_first_name :fac_last_name' : facultyLocator,
             'professor *fac_name' : facultyLocator,
             
             //Adding multiple name request
