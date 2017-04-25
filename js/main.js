@@ -82,7 +82,7 @@ window.onload = function(){
         $(".faculty-name").html(data.rooms[num].facultyName);
         $(".faculty-email").html(data.rooms[num].facultyEmail);
         $(".faculty-number").html(data.rooms[num].facultyNumber);
-
+        $(".faculty-img").attr("src", data.rooms[num].facultyImage);
        
         var officeHours = data.rooms[num].officeHours;
         
@@ -146,7 +146,7 @@ window.onload = function(){
 
     function startSystem(data) {              
         systemTimer();
-
+displayResult(data, 2080);
         responsiveVoice.speak(welcome);
 
         roomLocator = function(room_num) {  
@@ -156,7 +156,7 @@ window.onload = function(){
             }                        
             else {
 
-                displayResult(data, room_num);
+//                displayResult(data, room_num);
                 resultShown = true; 
 //                responsiveVoice.speak(data.rooms[room_num].voiceResponse_room); 
                 systemPause((data.rooms[room_num].voiceResponse_room), (data.rooms[room_num].voiceResponse_room).split(' ').length);
@@ -168,7 +168,7 @@ window.onload = function(){
 
         facultyLocator = function(fac_name) {  
             if(!(fac_name in data.faculty)) {
-                alert(fac_name);
+//                alert(fac_name);
                 responsiveVoice.speak(output_repeat); 
                 systemPause(output_repeat, output_repeat.split(' ').length);
             }

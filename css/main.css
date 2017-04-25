@@ -225,6 +225,14 @@ img
 {
     padding: 0;
 }
+.no-padding-left
+{
+    padding-left: 0;
+}
+.no-padding-right
+{
+    padding-right: 0;
+}
 
 .spacer-xs
 {
@@ -278,10 +286,29 @@ img
     margin:5% 0 5% 0;
 }
 
+#map-section
+{
+    padding: 2%;
+    margin: 1% 0;
+}
+
+.room-map
+{
+    width: 90%;  
+    margin: 0 5% 0 5%;
+}
+
 /* Events Block Styling */
 .events-block #calendar
 {
     margin-top: -3%;
     margin-left: 4.5%;
 }
+
+
+
+
+
+
+/*  LOADER CSS  */
 
