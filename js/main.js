@@ -166,7 +166,7 @@ window.onload = function(){
             
         };
 
-        facultyLocator = function(fac_name) {  
+       /* facultyLocator = function(fac_name) {  
             if(!(fac_name in data.faculty)) {
                 alert(fac_name);
                 responsiveVoice.speak(output_repeat); 
@@ -184,6 +184,52 @@ window.onload = function(){
             timeLeft = grantTime;
             
         };
+        */
+        
+        
+        // Testing full name faculty locator
+        
+        facultyLocator = function(facName) {  
+            alert(facName);
+            var tempFacName = facName.split(" ");
+            alert(tempFacName[0]);
+            
+            
+            if(tempFacName[1] == null)
+                {
+                    alert("got it");
+                }
+            
+            
+            
+            
+            
+            
+            
+            /*
+            if(!(fac_name in data.faculty)) {
+                alert(fac_name);
+                responsiveVoice.speak(output_repeat); 
+                systemPause(output_repeat, output_repeat.split(' ').length);
+            }
+            else {
+               
+                displayResult(data, fac_name);
+                resultShown = true; 
+                               
+                var num = data.faculty[fac_name].roomName;
+//                responsiveVoice.speak(data.rooms[num].voiceResponse_faculty);
+                systemPause((data.rooms[num].voiceResponse_faculty), (data.rooms[num].voiceResponse_faculty).split(' ').length);
+            }
+            timeLeft = grantTime;
+            */
+        };
+        
+        
+        
+        
+        
+        
         
         // Adding two word faculty search
         facultyLocator2 = function(fac_first_name,fac_last_name) { 
@@ -250,16 +296,29 @@ window.onload = function(){
     
 
         commands = {
+            
+            // * = capture everything after 
+            // : = capture only one word
+            
             'I am looking for room *room_num' : roomLocator,
             'Where is room *room_num' : roomLocator,
             'room *room_num' : roomLocator,
 
-            'I am looking for professor *fac_name' : facultyLocator,
-            'I am looking for professor *fac_first_name :fac_last_name' : facultyLocator,
-            'professor *fac_name' : facultyLocator,
+           
+            //Adding multiple name request
+            
+            // 'I am looking for professor *fac_name' : facultyLocator,
+           // 'I am looking for professor *fac_first_name :fac_last_name' : facultyLocator,
+            //'professor *fac_first_name (*fac_last_name)' : facultyLocator,
+            
+            // This command takes first and last name but saves it one variable
+           'professor *name': facultyLocator,
+            
+            // This command takes first name and optional last name but saves in two variables.
+            //'professor :nameOne (*NameTwo)': facultyLocator,
             
             //Adding multiple name request
-            'professor *fac_first_name *fac_last_name' : facultyLocator2,
+            //'professor *fac_first_name :fac_last_name' : facultyLocator2,
             
             //Event View
             'What events are coming up' : calendarView,
@@ -268,7 +327,12 @@ window.onload = function(){
             ':randomWord' : {'regexp' : /^(yes|no)$/, 'callback' : randomFunction}
         };
         annyang.addCommands(commands);
+        annyang.setLanguage("en-US");
         annyang.start({continuous: false}); 
+        
+        // Turned on console debugger
+        annyang.debug([newState=true]);
+        
         $('#subtitle').html("I'm Listening...");
 
     }
