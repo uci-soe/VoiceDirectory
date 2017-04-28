@@ -3,8 +3,11 @@
         "Guilfoyle" : {
             "roomName" : "2080"
         },
-        "Chris Sandoval" : {
-            "roomName" : "2080"
+        "Sandoval" : {
+            "roomName" : "2080",
+            "fullName" : "Chris Sandoval",
+            "firstName" : "Chris",
+            "lastName" : "Sandoval"
         },
         "Earley" : {
             "roomName" : "2000"
@@ -34,7 +37,8 @@
             "roomName" : "2034"
         },
         "Rosales-Rueda" : {
-            "roomName" : "2036"
+            "roomName" : "2036",
+            
         },
         "Collins" : {
             "roomName" : "2038"
@@ -244,7 +248,7 @@
         "2080" : {
             "roomName" : "Room 2080",
             "roomType" : "Faculty Office",
-            "mapImage" : "images/maps/",
+            "mapImage" : "css/images/maps/main.png",
             "roomImage" : "images/rooms/room1.jpg",
             "voiceResponse_room" : "Room 2080 is behind you.",
             
@@ -256,7 +260,7 @@
                 "Tuesdays" : ["9:00am - 11:00pm"],
                 "Wednesday" : ["9:00am - 11:00pm"]
             },
-            "facultyImage" : "images/rooms/room1.jpg",
+            "facultyImage" : "css/images/faculty/rwblack.jpg",
             "voiceResponse_faculty" : "Guilfoyle is behind you."
         }
     }
