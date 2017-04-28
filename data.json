@@ -244,7 +244,7 @@
         "2080" : {
             "roomName" : "Room 2080",
             "roomType" : "Faculty Office",
-            "mapImage" : "images/maps/",
+            "mapImage" : "css/images/maps/main.png",
             "roomImage" : "images/rooms/room1.jpg",
             "voiceResponse_room" : "Room 2080 is behind you.",
             
@@ -256,7 +256,7 @@
                 "Tuesdays" : ["9:00am - 11:00pm"],
                 "Wednesday" : ["9:00am - 11:00pm"]
             },
-            "facultyImage" : "images/rooms/room1.jpg",
+            "facultyImage" : "css/images/faculty/rwblack.jpg",
             "voiceResponse_faculty" : "Guilfoyle is behind you."
         }
     }

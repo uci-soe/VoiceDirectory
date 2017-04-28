@@ -1,6 +1,6 @@
 window.onload = function(){
             
-    var timeLeft = 3500; // System countdown after initiation
+    var timeLeft = 45; // System countdown after initiation
     var timeToAsk = 30; // System will ask if user wants more time after this amount of seconds
     var timeToAsk2 = 15 // Second time asking
     var timeToEnd = 1; // System will reset the system with this amount of seconds left
@@ -24,6 +24,7 @@ window.onload = function(){
     var output_moreTime = "Do you need more time?";
     var output_systemReset = "System will reset.";
     var output_ok = "Ok";
+    var output_pleasewait = "Please Wait...";
     var welcome = "Hello, what can I help you with today?";
     
     //Events Voice Responses
@@ -35,6 +36,7 @@ window.onload = function(){
 
     var commands = {};
     
+    universalTime();
     //*********************************************************************************************************   FUNCTION DECLARATIONS
 
 //    $(".intro-block").hide();
@@ -49,6 +51,15 @@ window.onload = function(){
         window.location.reload();
     }
     
+    function universalTime() {
+        var time = new Date();
+
+        time = time.toLocaleString('en-US', { hour: 'numeric',minute:'numeric', hour12: true });
+
+        document.getElementById("time").innerHTML = time;
+
+    }
+    
     function systemPause(word, wordCount) {
 
         $('#subtitle').html(word);
@@ -56,11 +67,29 @@ window.onload = function(){
 
         setTimeout(function(){ 
 //            annyang.resume() 
+
             $('#subtitle').html("I'm Listening...");
-            }, wordCount*650);
+            $('#systemMic').attr("src", "/css/images/microphone.png");
+            
+            }, wordCount*600);
+    }
+    
+    function delay(word, wordCount) {
+        
+        $('#subtitle').html(word);
+        $('#systemMic').attr("src", "/css/images/mic-disabled2.png");
+
+        setTimeout(function(){ 
+            $('#subtitle').html("I'm Listening...");
+            $('#systemMic').attr("src", "/css/images/microphone.png");
+            
+            }, wordCount + 2900);
+        
     }
     
     function displayResult(data, inputType){
+        
+        
         
         $(".menu-block").hide();
         $(".result-block").show();
@@ -68,12 +97,18 @@ window.onload = function(){
         if(isNaN(inputType)) {
             var num = data.faculty[inputType].roomName;
             responsiveVoice.speak(data.rooms[num].voiceResponse_faculty);
+            
+            delay(data.rooms[num].voiceResponse_faculty, data.rooms[num].voiceResponse_faculty.split(' ').length);
         }
         else {
             var num = inputType;
             responsiveVoice.speak(data.rooms[num].voiceResponse_room);
+            
+            delay(data.rooms[num].voiceResponse_room, data.rooms[num].voiceResponse_room.split(' ').length);
         }
-                
+             
+        
+        
         $(".room-name").html(data.rooms[num].roomName);
         $(".room-type").html(data.rooms[num].roomType);
         $(".room-img").css('background-image', 'url(/css/' + data.rooms[num].roomImage + ')');
@@ -82,7 +117,7 @@ window.onload = function(){
         $(".faculty-name").html(data.rooms[num].facultyName);
         $(".faculty-email").html(data.rooms[num].facultyEmail);
         $(".faculty-number").html(data.rooms[num].facultyNumber);
-
+        $(".faculty-img").attr("src", data.rooms[num].facultyImage);
        
         var officeHours = data.rooms[num].officeHours;
         
@@ -129,6 +164,7 @@ window.onload = function(){
                 if(resultShown) {
                     responsiveVoice.speak(output_moreTime);
                     systemPause(output_moreTime, output_moreTime.split(' ').length);
+                    delay(output_moreTime, output_moreTime.split(' ').length);
                     systemAsked = true; 
                 }
                 systemTimer();
@@ -146,13 +182,18 @@ window.onload = function(){
 
     function startSystem(data) {              
         systemTimer();
-
+        
+        delay(output_pleasewait, welcome.split(' ').length);
         responsiveVoice.speak(welcome);
 
+        //displayResult(data, 2080);
+        
         roomLocator = function(room_num) {  
             if(!(room_num in data.rooms)){
                 responsiveVoice.speak(output_repeat);
                 systemPause(output_repeat, output_repeat.split(' ').length);
+                
+                delay(output_repeat, output_repeat.split(' ').length);
             }                        
             else {
 
@@ -168,9 +209,11 @@ window.onload = function(){
 
        /* facultyLocator = function(fac_name) {  
             if(!(fac_name in data.faculty)) {
-                alert(fac_name);
+//                alert(fac_name);
                 responsiveVoice.speak(output_repeat); 
                 systemPause(output_repeat, output_repeat.split(' ').length);
+                
+                delay(output_repeat, output_repeat.split(' ').length);
             }
             else {
                
@@ -330,10 +373,10 @@ window.onload = function(){
         annyang.setLanguage("en-US");
         annyang.start({continuous: false}); 
         
-        // Turned on console debugger
+        
         annyang.debug([newState=true]);
         
-        $('#subtitle').html("I'm Listening...");
+        //$('#subtitle').html("I'm Listening...");
 
     }
     
@@ -394,6 +437,8 @@ window.onload = function(){
         
         responsiveVoice.speak(output_speak);
         systemPause(output_speak, output_speak.split(' ').length);
+        delay(output_speak, output_speak.split(' ').length);
+
         
     });
 
