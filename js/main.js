@@ -372,18 +372,7 @@ window.onload = function(){
         annyang.addCommands(commands);
         annyang.setLanguage("en-US");
         annyang.start({continuous: false}); 
-<<<<<<< HEAD
-<<<<<<< HEAD
-//        $('#subtitle').html("I'm Listening...");
-=======
-=======
->>>>>>> master
-        
-        // Turned on console debugger
-        annyang.debug([newState=true]);
-        
-        $('#subtitle').html("I'm Listening...");
->>>>>>> master
+
 
     }
     
