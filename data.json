@@ -3,8 +3,11 @@
         "Guilfoyle" : {
             "roomName" : "2080"
         },
-        "Chris Sandoval" : {
-            "roomName" : "2080"
+        "Sandoval" : {
+            "roomName" : "2080",
+            "fullName" : "Chris Sandoval",
+            "firstName" : "Chris",
+            "lastName" : "Sandoval"
         },
         "Earley" : {
             "roomName" : "2000"
@@ -34,7 +37,8 @@
             "roomName" : "2034"
         },
         "Rosales-Rueda" : {
-            "roomName" : "2036"
+            "roomName" : "2036",
+            
         },
         "Collins" : {
             "roomName" : "2038"
