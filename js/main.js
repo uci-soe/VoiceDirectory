@@ -372,7 +372,11 @@ window.onload = function(){
         annyang.addCommands(commands);
         annyang.setLanguage("en-US");
         annyang.start({continuous: false}); 
-
+        
+        
+        annyang.debug([newState=true]);
+        
+        //$('#subtitle').html("I'm Listening...");
 
     }
     
