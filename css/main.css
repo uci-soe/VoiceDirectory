@@ -35,7 +35,7 @@ body
     clear: both;
 }
 
-.time
+#time
 {
     float: right;
     color: WHITE;
@@ -105,17 +105,17 @@ body
 .center-bubble .bubble
 {
     width: 70%;
-    margin: 3% 15% 0 9.5%;
+    margin: 5% 15% 0 9.5%;
 }
 .bottom-block .mic
 {
-    width: 10%;
+    width: 8.5%;
     
     display: block;
     margin: auto;
 
     position: relative;
-    bottom: 100px;
+    bottom: 90px;
 
 }
 
@@ -134,8 +134,9 @@ body
     color: white;
     text-align: center;
     position: relative;
-    bottom: 80px;
+    bottom: 70px;
     z-index: 2;
+    font-size: 1.8em;
     
     letter-spacing: .75px;
     font-weight: 200;
