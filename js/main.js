@@ -36,6 +36,16 @@ window.onload = function(){
 
     var commands = {};
     
+    
+    //Creating voice synthesis utterance object.
+    if('speechSynthesis' in window)
+    {
+        var message = new SpeechSynthesisUtterance();
+        message.text = " ";
+        message.lang = 'en-US';
+        message.rate = 0.9;
+    }
+    
     universalTime();
     //*********************************************************************************************************   FUNCTION DECLARATIONS
 
@@ -47,7 +57,12 @@ window.onload = function(){
     $("#subtitle").hide();
    
     function endSystem() {
-        responsiveVoice.speak(output_systemReset); 
+
+        //responsiveVoice.speak(output_systemReset); 
+        
+        message.text = output_systemReset;
+        window.speechSynthesis.speak(message);
+        
         window.location.reload();
     }
     
@@ -96,13 +111,21 @@ window.onload = function(){
         
         if(isNaN(inputType)) {
             var num = data.faculty[inputType].roomName;
-            responsiveVoice.speak(data.rooms[num].voiceResponse_faculty);
+            
+            //responsiveVoice.speak(data.rooms[num].voiceResponse_faculty);
+            
+            message.text = data.rooms[num].voiceResponse_faculty;
+            window.speechSynthesis.speak(message);
             
             delay(data.rooms[num].voiceResponse_faculty, data.rooms[num].voiceResponse_faculty.split(' ').length);
         }
         else {
             var num = inputType;
-            responsiveVoice.speak(data.rooms[num].voiceResponse_room);
+            
+            //responsiveVoice.speak(data.rooms[num].voiceResponse_room);
+            
+            message.text = data.rooms[num].voiceResponse_room;
+            window.speechSynthesis.speak(message);
             
             delay(data.rooms[num].voiceResponse_room, data.rooms[num].voiceResponse_room.split(' ').length);
         }
@@ -143,7 +166,13 @@ window.onload = function(){
             timeLeft = grantTime;
             systemPause(output_ok, output_ok.split(' ').length);
 
-            responsiveVoice.speak(output_ok);
+           
+            //responsiveVoice.speak(output_ok);
+            
+            message.text = output_ok;
+            window.speechSynthesis.speak(message);
+            
+            
             systemAsked = false;
             yes = false;
         }
@@ -162,7 +191,13 @@ window.onload = function(){
                 }
                 
                 if(resultShown) {
-                    responsiveVoice.speak(output_moreTime);
+                    
+                    //responsiveVoice.speak(output_moreTime);
+                    
+                    message.text = output_moreTime;
+                    window.speechSynthesis.speak(message);
+                    
+                    
                     systemPause(output_moreTime, output_moreTime.split(' ').length);
                     delay(output_moreTime, output_moreTime.split(' ').length);
                     systemAsked = true; 
@@ -184,13 +219,24 @@ window.onload = function(){
         systemTimer();
         
         delay(output_pleasewait, welcome.split(' ').length);
-        responsiveVoice.speak(welcome);
+        
+        //responsiveVoice.speak(welcome);
 
+        message.text = welcome;
+        window.speechSynthesis.speak(message);
+        
+        
         //displayResult(data, 2080);
         
         roomLocator = function(room_num) {  
             if(!(room_num in data.rooms)){
-                responsiveVoice.speak(output_repeat);
+                
+                
+                //responsiveVoice.speak(output_repeat);
+                
+                message.text = output_repeat;
+                window.speechSynthesis.speak(message);
+                
                 systemPause(output_repeat, output_repeat.split(' ').length);
                 
                 delay(output_repeat, output_repeat.split(' ').length);
@@ -306,7 +352,12 @@ window.onload = function(){
         
         calendarView = function(hello) {
             //alert("here");
-            responsiveVoice.speak(eventWelcome);
+            
+            //responsiveVoice.speak(eventWelcome);
+            
+            message.text = eventWelcome;
+            window.speechSynthesis.speak(message);
+            
             $(".menu-block").hide();
             $(".events-block").show();
         }
@@ -329,7 +380,10 @@ window.onload = function(){
 
                     timeLeft = grantTime;
 
-                    responsiveVoice.speak(welcome);
+                    //responsiveVoice.speak(welcome);
+                    
+                    message.text = welcome;
+                    window.speechSynthesis.speak(message);
                 }
                 
             }
@@ -435,7 +489,13 @@ window.onload = function(){
             $(".bubble").removeClass("tada");
         }, 1000);
         
-        responsiveVoice.speak(output_speak);
+       
+        
+        //responsiveVoice.speak(output_speak);
+        
+        message.text = output_speak;
+        window.speechSynthesis.speak(message);
+        
         systemPause(output_speak, output_speak.split(' ').length);
         delay(output_speak, output_speak.split(' ').length);
 
