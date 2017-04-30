@@ -20,7 +20,7 @@ window.onload = function(){
 
     // System's General Voice Responses
     var output_speak = "Please speak your request!";
-    var output_repeat = "Could you repeat that, please?";
+    var output_repeat = "Could you repeat that please?";
     var output_moreTime = "Do you need more time?";
     var output_systemReset = "System will reset.";
     var output_ok = "Ok";
@@ -228,6 +228,7 @@ window.onload = function(){
         
         //displayResult(data, 2080);
         
+        
         roomLocator = function(room_num) {  
             if(!(room_num in data.rooms)){
                 
@@ -278,16 +279,71 @@ window.onload = function(){
         
         // Testing full name faculty locator
         
-        facultyLocator = function(facName) {  
-            alert(facName);
-            var tempFacName = facName.split(" ");
-            alert(tempFacName[0]);
+        
+        /*
+        Search last name
+            when they search last name we search through keys
+            if match save in temp array 
+
+
+            if duplicates add to array 
+
+            then ask user which one?
+
+            if no duplicates present results	
+
+            if no match at all return ask again
+        */
+        
+        facultyLocator = function(fac_name) {  
+            //alert(fac_name);
+            var splitFacName = fac_name.split(" ");
+            //alert(splitFacName[0]);
             
+            var firstName = splitFacName[0];
+            var lastName = splitFacName[1];
             
-            if(tempFacName[1] == null)
+            //If they only provided one name (i.e. Professor Denenberg)
+            if(lastName == null)
                 {
-                    alert("got it");
+                    if(!(fac_name in data.faculty))
+                        {
+                            message.text = output_repeat;
+                            window.speechSynthesis.speak(message);
+                            systemPause(output_repeat, output_repeat.split(' ').length);  
+                        }
+                    else
+                        {   
+                            displayResult(data, fac_name);
+                            resultShown = true;
+                            
+                            var num = data.faculty[fac_name].roomName;
+//                          responsiveVoice.speak(data.rooms[num].voiceResponse_faculty);
+                            systemPause((data.rooms[num].voiceResponse_faculty), (data.rooms[num].voiceResponse_faculty).split(' ').length);
+                        }
                 }
+            // If they provide first and last name.
+            else
+                {
+                    
+                    if(!(lastName in data.faculty))
+                        {
+                            message.text = output_repeat;
+                            window.speechSynthesis.speak(message);
+                            systemPause(output_repeat, output_repeat.split(' ').length);  
+                        }
+                    else
+                        {
+                            displayResult(data, lastName);
+                            resultShown = true;
+                            
+                            var num = data.faculty[lastName].roomName;
+//                          responsiveVoice.speak(data.rooms[num].voiceResponse_faculty);
+                            systemPause((data.rooms[num].voiceResponse_faculty), (data.rooms[num].voiceResponse_faculty).split(' ').length);
+                        }
+                }
+            
+            timeLeft = grantTime;
             
             
             
@@ -410,13 +466,9 @@ window.onload = function(){
             
             // This command takes first and last name but saves it one variable
            'professor *name': facultyLocator,
-            
-            // This command takes first name and optional last name but saves in two variables.
-            //'professor :nameOne (*NameTwo)': facultyLocator,
-            
-            //Adding multiple name request
-            //'professor *fac_first_name :fac_last_name' : facultyLocator2,
-            
+           // 'I am looking for (dr.) *name':facultyLocator,
+            'I am looking for (professor) *name':facultyLocator,
+            'Im looking for (professor) *name':facultyLocator,          
             //Event View
             'What events are coming up' : calendarView,
             'I want to know upcoming events' : calendarView,
