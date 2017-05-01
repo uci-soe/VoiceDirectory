@@ -98,7 +98,7 @@ window.onload = function(){
             $('#subtitle').html("I'm Listening...");
             $('#systemMic').attr("src", "/css/images/microphone.png");
             
-            }, wordCount + 2900);
+            }, wordCount + 3000);
         
     }
     
