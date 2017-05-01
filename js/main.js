@@ -314,6 +314,26 @@ window.onload = function(){
                         }
                     else
                         {   
+                            var possibleFaculty = [];
+                            var count = 0;
+                            
+                            for(key in data.faculty)
+                                {
+                                    alert(key);
+                                    if (key == fac_name)
+                                        {
+                                            possibleFaculty.push(key);
+                                            alert("Possible Faculty: " + possibleFaculty.length);
+                                        }
+                                    count++;
+                                }
+                            
+                           /* if(possibleFaculty.length > 1)
+                                {
+                                    // Ask user which one they meant.
+                                }
+                            */
+                            
                             displayResult(data, fac_name);
                             resultShown = true;
                             
@@ -375,7 +395,7 @@ window.onload = function(){
         
         
         
-        
+        /*
         // Adding two word faculty search
         facultyLocator2 = function(fac_first_name,fac_last_name) { 
             var full_name = fac_first_name.concat(" ");
@@ -402,7 +422,7 @@ window.onload = function(){
             
         };
         
-        
+        */
         
         // Calendar View Function //
         
