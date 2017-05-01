@@ -35,7 +35,7 @@ body
     clear: both;
 }
 
-.time
+#time
 {
     float: right;
     color: WHITE;
@@ -105,17 +105,17 @@ body
 .center-bubble .bubble
 {
     width: 70%;
-    margin: 3% 15% 0 9.5%;
+    margin: 5% 15% 0 9.5%;
 }
 .bottom-block .mic
 {
-    width: 10%;
+    width: 8.5%;
     
     display: block;
     margin: auto;
 
     position: relative;
-    bottom: 100px;
+    bottom: 90px;
 
 }
 
@@ -134,8 +134,9 @@ body
     color: white;
     text-align: center;
     position: relative;
-    bottom: 80px;
+    bottom: 70px;
     z-index: 2;
+    font-size: 1.8em;
     
     letter-spacing: .75px;
     font-weight: 200;
@@ -225,6 +226,14 @@ img
 {
     padding: 0;
 }
+.no-padding-left
+{
+    padding-left: 0;
+}
+.no-padding-right
+{
+    padding-right: 0;
+}
 
 .spacer-xs
 {
@@ -235,10 +244,10 @@ img
 
 .result-block #info-section
 {
-    padding: 1.5%;
+    padding: 2.5%;
     height: 701px;
     
-    font-size: 1.5em;
+    font-size: 1.35em;
 }
 
 .result-block .label
@@ -275,7 +284,19 @@ img
     width: 100%;
     height: 250px;
     
-    margin:5% 0 5% 0;
+    margin:5% 0 7.5% 0;
+}
+
+#map-section
+{
+    padding: 2%;
+    margin: 1% 0;
+}
+
+.room-map
+{
+    width: 90%;  
+    margin: 0 5% 0 5%;
 }
 
 /* Events Block Styling */
@@ -284,4 +305,11 @@ img
     margin-top: -3%;
     margin-left: 4.5%;
 }
+
+
+
+
+
+
+/*  LOADER CSS  */
 
