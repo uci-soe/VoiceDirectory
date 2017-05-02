@@ -10,7 +10,7 @@ window.onload = function(){
     var facultyLocator_active = false;
 
     var timer;
-    var systemTimer_interval = 1000;
+    var systemTimer_interval = 1200;
 
     var systemAsked = false; // Check if system has asked user for more time
     var yes = false;
@@ -234,7 +234,7 @@ window.onload = function(){
         window.speechSynthesis.speak(message);
         
         
-        displayResult(data, 2080);
+//        displayResult(data, 2080);
         
         
         roomLocator = function(room_num) {  
@@ -252,7 +252,7 @@ window.onload = function(){
             }                        
             else {
 
-//                displayResult(data, room_num);
+                displayResult(data, room_num);
                 resultShown = true; 
 //                responsiveVoice.speak(data.rooms[room_num].voiceResponse_room); 
                 systemPause((data.rooms[room_num].voiceResponse_room), (data.rooms[room_num].voiceResponse_room).split(' ').length);
@@ -441,6 +441,12 @@ window.onload = function(){
             
             message.text = eventWelcome;
             window.speechSynthesis.speak(message);
+            
+            systemPause(eventWelcome, eventWelcome.split(' ').length);
+            delay(eventWelcome, eventWelcome.split(' ').length);
+            resultShown = true; 
+            
+            timeLeft = grantTime;
             
             $(".menu-block").hide();
             $(".events-block").show();
