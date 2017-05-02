@@ -307,9 +307,11 @@ img
 }
 
 
-
-
-
-
-/*  LOADER CSS  */
-
+.blue-block
+{
+    background-color: #2C3746;
+    
+    width: 100%;
+    height: 300px;
+    
+}
