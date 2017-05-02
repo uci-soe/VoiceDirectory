@@ -50,6 +50,8 @@ window.onload = function(){
     //*********************************************************************************************************   FUNCTION DECLARATIONS
 
 //    $(".intro-block").hide();
+    
+    $(".blue-block").hide();
     $(".menu-block").hide();
     $(".result-block").hide();
     $(".events-block").hide(); //hide events block
@@ -84,7 +86,7 @@ window.onload = function(){
 //            annyang.resume() 
 
             $('#subtitle').html("I'm Listening...");
-            $('#systemMic').attr("src", "/css/images/microphone.png");
+            $('#systemMic').attr("src", "css/images/microphone.png");
             
             }, wordCount*600);
     }
@@ -92,11 +94,11 @@ window.onload = function(){
     function delay(word, wordCount) {
         
         $('#subtitle').html(word);
-        $('#systemMic').attr("src", "/css/images/mic-disabled2.png");
+        $('#systemMic').attr("src", "css/images/mic-disabled2.png");
 
         setTimeout(function(){ 
             $('#subtitle').html("I'm Listening...");
-            $('#systemMic').attr("src", "/css/images/microphone.png");
+            $('#systemMic').attr("src", "css/images/microphone.png");
             
             }, wordCount + 3000);
         
@@ -134,7 +136,7 @@ window.onload = function(){
         
         $(".room-name").html(data.rooms[num].roomName);
         $(".room-type").html(data.rooms[num].roomType);
-        $(".room-img").css('background-image', 'url(/css/' + data.rooms[num].roomImage + ')');
+        $(".room-img").css('background-image', 'url(css/' + data.rooms[num].roomImage + ')');
         $(".room-map").attr("src", data.rooms[num].mapImage);
             
         $(".faculty-name").html(data.rooms[num].facultyName);
