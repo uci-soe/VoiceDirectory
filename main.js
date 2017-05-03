@@ -132,8 +132,6 @@ window.onload = function(){
             delay(data.rooms[num].voiceResponse_room, data.rooms[num].voiceResponse_room.split(' ').length);
         }
              
-        
-        
         $(".room-name").html(data.rooms[num].roomName);
         $(".room-type").html(data.rooms[num].roomType);
         $(".room-img").css('background-image', 'url(css/' + data.rooms[num].roomImage + ')');
@@ -143,6 +141,14 @@ window.onload = function(){
         $(".faculty-email").html(data.rooms[num].facultyEmail);
         $(".faculty-number").html(data.rooms[num].facultyNumber);
         $(".faculty-img").attr("src", data.rooms[num].facultyImage);
+        
+        
+        var roomType = data.rooms[num].roomType;
+        
+        if(roomType == "Faculty Office")
+            $('.room-img').css('height', '0px');
+        else
+            $('.fac-info').css('display', 'none');
        
         var officeHours = data.rooms[num].officeHours;
         
@@ -228,7 +234,7 @@ window.onload = function(){
         window.speechSynthesis.speak(message);
         
         
-        //displayResult(data, 2080);
+        displayResult(data, 2080);
         
         
         roomLocator = function(room_num) {  
@@ -246,7 +252,7 @@ window.onload = function(){
             }                        
             else {
 
-                displayResult(data, room_num);
+//                displayResult(data, room_num);
                 resultShown = true; 
 //                responsiveVoice.speak(data.rooms[room_num].voiceResponse_room); 
                 systemPause((data.rooms[room_num].voiceResponse_room), (data.rooms[room_num].voiceResponse_room).split(' ').length);
