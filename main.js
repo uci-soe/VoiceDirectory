@@ -233,8 +233,8 @@ window.onload = function(){
         message.text = welcome;
         window.speechSynthesis.speak(message);
         
-        
-        displayResult(data, 2080);
+        //To test results page
+        //displayResult(data, 2080);
         
         
         roomLocator = function(room_num) {  
@@ -311,23 +311,51 @@ window.onload = function(){
             var firstName = splitFacName[0];
             var lastName = splitFacName[1];
             
+            var matchFound = false;
+            var possibleFaculty = [];
+            
             //If they only provided one name (i.e. Professor Denenberg)
             if(lastName == null)
                 {
+                    for(key in data.faculty)
+                        {
+                            
+                            var keyCheck = key.split(" ");
+                           // console.log("Key: " + key + " | faculty Input: " + fac_name + " | Key Comparrison: " + keyCheck[1]);
+                            
+                            if(fac_name == keyCheck[1])
+                            {
+                                matchFound = true;
+                                possibleFaculty.push(key);
+                                //alert("Possible Faculty: " + possibleFaculty.length);
+                                
+                            }
+                        }
+                    alert(possibleFaculty.length);
+                    if(matchFound == false)
+                    {
+                        message.text = output_repeat;
+                        window.speechSynthesis.speak(message);
+                        systemPause(output_repeat, output_repeat.split(' ').length);  
+                    }
+                    
+                    /*
                     if(!(fac_name in data.faculty))
                         {
                             message.text = output_repeat;
                             window.speechSynthesis.speak(message);
                             systemPause(output_repeat, output_repeat.split(' ').length);  
                         }
+                    */
+                    
                     else
                         {   
-                            var possibleFaculty = [];
+                            /*var possibleFaculty = [];
                             var count = 0;
                             
                             for(key in data.faculty)
                                 {
-                                    alert(key);
+                                    //alert(key);
                                     if (key == fac_name)
                                         {
                                             possibleFaculty.push(key);
@@ -335,26 +363,32 @@ window.onload = function(){
                                         }
                                     count++;
                                 }
-                            
-                           /* if(possibleFaculty.length > 1)
+                            */
+                           if(possibleFaculty.length > 1)
                                 {
                                     // Ask user which one they meant.
+                                    alert("ASK USER WHICH ONE");
                                 }
-                            */
+                            else
+                                {
+                                    displayResult(data, possibleFaculty[0]);
+                                    resultShown = true;
                             
-                            displayResult(data, fac_name);
-                            resultShown = true;
+                                    var num = data.faculty[fac_name].roomName;
+//                                  responsiveVoice.speak(data.rooms[num].voiceResponse_faculty);
+                                    systemPause((data.rooms[num].voiceResponse_faculty), (data.rooms[num].voiceResponse_faculty).split(' ').length);
+                                
+                                }
                             
-                            var num = data.faculty[fac_name].roomName;
-//                          responsiveVoice.speak(data.rooms[num].voiceResponse_faculty);
-                            systemPause((data.rooms[num].voiceResponse_faculty), (data.rooms[num].voiceResponse_faculty).split(' ').length);
+                            
+                            
                         }
                 }
             // If they provide first and last name.
             else
                 {
-                    
-                    if(!(lastName in data.faculty))
+
+                    if(!(fac_name in data.faculty))
                         {
                             message.text = output_repeat;
                             window.speechSynthesis.speak(message);
@@ -362,10 +396,10 @@ window.onload = function(){
                         }
                     else
                         {
-                            displayResult(data, lastName);
+                            displayResult(data, fac_name);
                             resultShown = true;
                             
-                            var num = data.faculty[lastName].roomName;
+                            var num = data.faculty[fac_name].roomName;
 //                          responsiveVoice.speak(data.rooms[num].voiceResponse_faculty);
                             systemPause((data.rooms[num].voiceResponse_faculty), (data.rooms[num].voiceResponse_faculty).split(' ').length);
                         }

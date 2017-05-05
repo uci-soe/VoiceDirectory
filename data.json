@@ -3,9 +3,15 @@
         "Guilfoyle" : {
             "roomName" : "2080"
         },
-        "Sandoval" : {
+        "Chris Sandoval" : {
             "roomName" : "2080",
             "fullName" : "Chris Sandoval",
+            "firstName" : "Chris",
+            "lastName" : "Sandoval"
+        },
+        "Chris2 Sandoval" : {
+            "roomName" : "2080",
+            "fullName" : "Chris Sandoval2",
             "firstName" : "Chris",
             "lastName" : "Sandoval"
         },
