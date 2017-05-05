@@ -28,7 +28,7 @@ window.onload = function(){
     var welcome = "Hello, what can I help you with today?";
     
     //Events Voice Responses
-    var eventWelcome = "Here's what's happening this month."
+    var eventWelcome = "Here's what's happening this week."
 
     // annyang Locator functions
     var roomLocator;
