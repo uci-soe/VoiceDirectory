@@ -43,7 +43,7 @@ window.onload = function(){
         var message = new SpeechSynthesisUtterance();
         message.text = " ";
         message.lang = 'en-US';
-        message.rate = 0.9;
+        message.rate = 1;
     }
     
     universalTime();
@@ -57,7 +57,46 @@ window.onload = function(){
     $(".events-block").hide(); //hide events block
     $("#systemMic").hide();
     $("#subtitle").hide();
+    
+    $(".modal-bg").hide();
    
+    /*
+        Data
+        - Name of Faculty
+        - Picture of Faculty
+        
+        Number of Duplicates
+            
+    */
+    function resultOptions(data,duplicatesArray) {
+        
+        alert(duplicatesArray.length);
+        var htmlString = "<ul>";
+        
+        var num;
+        var count;
+        
+        var newClass = "";
+            
+        for(var i = 0; i < duplicatesArray.length ; i++){
+            
+            count = i;
+            var stringCount = count.toString();
+                        
+            newClass = "faculty-shot-" + stringCount;
+            
+            var myStr = "";
+            myStr = myStr + "<div class=\"faculty-shot " + newClass + "\"></div>";
+            $("#dynamic-facultyImg").append(myStr);
+                        
+            num = data.faculty[duplicatesArray[i]].roomName;
+            $("."+newClass).css('background-image', 'url('+ data.rooms[num].facultyImage + ')');
+            
+        }
+        
+    }
+    
+    
     function endSystem() {
 
         //responsiveVoice.speak(output_systemReset); 
@@ -104,15 +143,17 @@ window.onload = function(){
         
     }
     
-    function displayResult(data, inputType){
+    
+    function displayResult(data, input){
         
         
         
         $(".menu-block").hide();
         $(".result-block").show();
         
-        if(isNaN(inputType)) {
-            var num = data.faculty[inputType].roomName;
+
+        if(isNaN(input)) {
+            var num = data.faculty[input].roomName;
             
             //responsiveVoice.speak(data.rooms[num].voiceResponse_faculty);
             
@@ -122,7 +163,7 @@ window.onload = function(){
             delay(data.rooms[num].voiceResponse_faculty, data.rooms[num].voiceResponse_faculty.split(' ').length);
         }
         else {
-            var num = inputType;
+            var num = input;
             
             //responsiveVoice.speak(data.rooms[num].voiceResponse_room);
             
@@ -232,9 +273,6 @@ window.onload = function(){
 
         message.text = welcome;
         window.speechSynthesis.speak(message);
-        
-
-        
         
         roomLocator = function(room_num) {  
             if(!(room_num in data.rooms)){
@@ -363,10 +401,12 @@ window.onload = function(){
                                     count++;
                                 }
                             */
-                           if(possibleFaculty.length > 1)
+                           if(possibleFaculty.length > 1) // ooo
                                 {
                                     // Ask user which one they meant.
                                     alert("ASK USER WHICH ONE");
+                                    resultOptions(data, possibleFaculty);
+                                    
                                 }
                             else
                                 {
@@ -561,6 +601,8 @@ window.onload = function(){
         $(".menu-block").show();
         $("#systemMic").show();
         $("#subtitle").show();
+        
+        $(".modal-bg").show();
         
         //ANIMATION   ******************************
         
