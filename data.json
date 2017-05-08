@@ -15,215 +15,110 @@
             "firstName" : "Chris",
             "lastName" : "Sandoval"
         },
-        "Denise Earley" : {
-            "roomName" : "2000",
-            "fullName" : "Denise Earley",
-            "firstName" : "Denise",
-            "lastName" : "Earley"
+        "Earley" : {
+            "roomName" : "2000"
         },
-        "David Lim" : {
-            "roomName" : "2000",
-            "fullName" : "David Lim",
-            "firstName" : "David",
-            "lastName" : "Lim"
+        "Lim" : {
+            "roomName" : "2000"
         },
-        "Sarah McDougall" : {
-            "roomName" : "2000",
-            "fullName" : "Sarah McDougall",
-            "firstName" : "Sarah",
-            "lastName" : "McDougall"
+        "McDougall" : {
+            "roomName" : "2000"
         },
-        "Whitney Young" : {
-            "roomName" : "2000",
-            "fullName" : "Whitney Young",
-            "firstName" : "Whitney",
-            "lastName" : "Young"
+        "Young" : {
+            "roomName" : "2000"
         },
-        "Jody Guarino" : {
-            "roomName" : "2001",
-            "fullName" : "Jody Guarino",
-            "firstName" : "Jody",
-            "lastName" : "Guarino"
+        "Guarino" : {
+            "roomName" : "2001"
         },
-        "Jenel Lao" : {
-            "roomName" : "2012",
-            "fullName" : "Jenel Lao",
-            "firstName" : "Jenel",
-            "lastName" : "Lao"
+        "Lao" : {
+            "roomName" : "2012"
         },
-        "Drew Bailey" : {
-            "roomName" : "2027",
-            "fullName" : "Drew Bailey",
-            "firstName" : "Drew",
-            "lastName" : "Bailey"
+        "Bailey" : {
+            "roomName" : "2027"
         },
-        "Liane Brouillette" : {
-            "roomName" : "2032",
-            "fullName" : "Liane Brouillette",
-            "firstName" : "Liane",
-            "lastName" : "Brouillette"
+        "Brouillette" : {
+            "roomName" : "2032"
         },
-        "Jamal Abedi" : {
-            "roomName" : "2034",
-            "fullName" : "Jamal Abedi",
-            "firstName" : "Jamal",
-            "lastName" : "Abedi"
+        "Abedi" : {
+            "roomName" : "2034"
         },
-        "Maria Rosales-Rueda" : {
-            "roomName" : "2036",
-            "fullName" : "Maria Rosales-Rueda",
-            "firstName" : "Maria",
-            "lastName" : "Rosales-Rueda"
+        "Rosales-Rueda" : {
+            "roomName" : "2036"
         },
-        "Penelope Collins" : {
-            "roomName" : "2038",
-            "fullName" : "Penelope Collins",
-            "firstName" : "Penelope",
-            "lastName" : "Collins"
+        "Collins" : {
+            "roomName" : "2038"
         },
-        "Rhett Lowe" : {
-            "roomName" : "2040",
-            "fullName" : "Rhett Lowe",
-            "firstName" : "Rhett",
-            "lastName" : "Lowe"
+        "Lowe" : {
+            "roomName" : "2040"
         },
-        "Hyuk Kang" : {                  
-            "roomName" : "2042",
-            "fullName" : "Hyuk Kang",
-            "firstName" : "Hyuk",
-            "lastName" : "Kang"
+        "Kang" : {                  
+            "roomName" : "2042"
         },
-        "Spenser Clark" : {
-            "roomName" : "2044",
-            "fullName" : "Spenser Clark",
-            "firstName" : "Spenser",
-            "lastName" : "Clark"
+        "Clark" : {
+            "roomName" : "2044"
         },
-        "Hyuk Kang" : {
-            "roomName" : "2044",
-            "fullName" : "Hyuk Kang",
-            "firstName" : "Hyuk",
-            "lastName" : "Kang"
+        "Kang" : {
+            "roomName" : "2044"
         },
-        "George Farkas" : {
-            "roomName" : "2046",
-            "fullName" : "George Farkas",
-            "firstName" : "George",
-            "lastName" : "Farkas"
+        "Farkas" : {
+            "roomName" : "2046"
         },
-        "Deborah Vandell" : {
-            "roomName" : "2050",
-            "fullName" : "Deborah Vandell",
-            "firstName" : "Deborah",
-            "lastName" : "Vandell"
+        "Vandell" : {
+            "roomName" : "2050"
         },
-        "Jade Jenkins" : {
-            "roomName" : "2052",
-            "fullName" : "Jade Jenkins",
-            "firstName" : "Jade",
-            "lastName" : "Jenkins"
+        "Jenkins" : {
+            "roomName" : "2052"
         },
-        "Greg Duncan" : {
-            "roomName" : "2053",
-            "fullName" : "Greg Duncan",
-            "firstName" : "Greg",
-            "lastName" : "Duncan"
+        "Duncan" : {
+            "roomName" : "2053"
         },
-        "Di Xu" : {
-            "roomName" : "2054",
-            "fullName" : "Di Xu",
-            "firstName" : "Di",
-            "lastName" : "Xu"
+        "Xu" : {
+            "roomName" : "2054"
         },
-        "Rachel Baker" : {
-            "roomName" : "2060",
-            "fullName" : "Rachel Baker",
-            "firstName" : "Rachel",
-            "lastName" : "Baker"
+        "Baker" : {
+            "roomName" : "2060"
         },
-        "Emily Penner" : {
-            "roomName" : "2062",
-            "fullName" : "Emily Penner",
-            "firstName" : "Emily",
-            "lastName" : "Penner"
+        "Penner" : {
+            "roomName" : "2062"
         },
-        "Constance Iloh" : {
-            "roomName" : "2064",
-            "fullName" : "Constance Iloh",
-            "firstName" : "Constance",
-            "lastName" : "Iloh"
+        "Iloh" : {
+            "roomName" : "2064"
         },
-        "Hosun Kang" : {
-            "roomName" : "2064",
-            "fullName" : "Hosun Kang",
-            "firstName" : "Hosun",
-            "lastName" : "Kang"
+        "Kang" : {
+            "roomName" : "2064"
         },
-        "Robert Duncan" : {
-            "roomName" : "2066",
-            "fullName" : "Robert Duncan",
-            "firstName" : "Robert",
-            "lastName" : "Duncan"
+        "Duncan" : {
+            "roomName" : "2066"
         },
-        "Melinda Petre" : {
-            "roomName" : "2066",
-            "fullName" : "Melinda Petre",
-            "firstName" : "Melinda",
-            "lastName" : "Petre"
+        "Petre" : {
+            "roomName" : "2066"
         },
-        "Jacquelynne Eccles" : {
-            "roomName" : "2068",
-            "fullName" : "Jacquelynne Eccles",
-            "firstName" : "Jacquelynne",
-            "lastName" : "Eccles"
+        "Eccles" : {
+            "roomName" : "2068"
         },
-        "Drew Bailey" : {
-            "roomName" : "2072",
-            "fullName" : "Drew Bailey",
-            "firstName" : "Drew",
-            "lastName" : "Bailey"
+        "Bailey" : {
+            "roomName" : "2072"
         },
-        "Geneva Lopez-Sandoval" : {
-            "roomName" : "2074",
-            "fullName" : "Geneva Lopez-Sandoval",
-            "firstName" : "Geneva",
-            "lastName" : "Lopez-Sandoval"
+        "Lopez-Sandoval" : {
+            "roomName" : "2074"
         },
-        "Valerie Henry" : {
-            "roomName" : "2076",
-            "fullName" : "Valerie Henry",
-            "firstName" : "Valerie",
-            "lastName" : "Henry"
+        "Henry" : {
+            "roomName" : "2076"
         },
-        "Sarah Singh" : {
-            "roomName" : "2076",
-            "fullName" : "Sarah Singh",
-            "firstName" : "Sarah",
-            "lastName" : "Singh"
+        "Singh" : {
+            "roomName" : "2076"
         },
-        "Sue Vaughn" : {
-            "roomName" : "2078",
-            "fullName" : "Sue Vaughn",
-            "firstName" : "Sue",
-            "lastName" : "Vaughn"
+        "Vaughn" : {
+            "roomName" : "2078"
         },
-        "Susan Guilfoyle" : {
-            "roomName" : "2080",
-            "fullName" : "Susan Guilfoyle",
-            "firstName" : "Susan",
-            "lastName" : "Guilfoyle"
+        "Guilfoyle" : {
+            "roomName" : "2080"
         },
-        "Susan Toma-Berge" : {
-            "roomName" : "2082",
-            "fullName" : "Susan Toma-Berge",
-            "firstName" : "Susan",
-            "lastName" : "Toma-Berge"
+        "Toma-Berge" : {
+            "roomName" : "2082"
         },
-        "Jeanne Stone" : {
-            "roomName" : "2084",
-            "fullName" : "Jeanne Stone",
-            "firstName" : "Jeanne",
-            "lastName" : "Stone"
+        "Stone" : {
+            "roomName" : "2084"
         },
         "Lao" : {
             "roomName" : "2084"
