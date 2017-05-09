@@ -28,11 +28,17 @@ window.onload = function(){
     var welcome = "Hello, what can I help you with today?";
     
     //Events Voice Responses
-    var eventWelcome = "Here's what's happening this week."
+    var eventWelcome = "Here's what's happening this week.";
+    
+    //Modal Voice Responses
+    var output_options = "There seems to be multiple faculty members with that name. Which one are you referring to?";
 
     // annyang Locator functions
     var roomLocator;
     var facultyLocator;
+    
+    // array of possible faculty
+    var possibleFaculty = [];
 
     var commands = {};
     
@@ -96,6 +102,19 @@ window.onload = function(){
         
     }
     
+    function modalResponse(){
+        //Notify user that there are multiple faculty members with the last name
+        message.text = output_options;
+        window.speechSynthesis.speak(message);
+        
+        systemPause(output_options, output_options.split(' ').length);
+        delay(output_options, output_options.split(' ').length);
+        
+        annyang.addCommands(commands_option);
+        annyang.removeCommands(commands);
+        
+    }
+    
     
     function endSystem() {
 
@@ -150,6 +169,7 @@ window.onload = function(){
         
         $(".menu-block").hide();
         $(".result-block").show();
+        $(".modal-bg").hide();
         
 
         if(isNaN(input)) {
@@ -349,7 +369,7 @@ window.onload = function(){
             var lastName = splitFacName[1];
             
             var matchFound = false;
-            var possibleFaculty = [];
+//            var possibleFaculty = [];
             
             //If they only provided one name (i.e. Professor Denenberg)
             if(lastName == null)
@@ -406,6 +426,7 @@ window.onload = function(){
                                     // Ask user which one they meant.
                                     alert("ASK USER WHICH ONE");
                                     resultOptions(data, possibleFaculty);
+                                    modalResponse();
                                     
                                 }
                             else
@@ -551,9 +572,17 @@ window.onload = function(){
                 
             }
    
-        }
+        };
         
-    
+        var optionFunc = function(num){
+            
+            var facultyIndex = parseInt(num) - 1;
+            annyang.addCommands(commands);
+            annyang.removeCommands(commands_option);
+            
+            displayResult(data, possibleFaculty[facultyIndex]);
+            
+        };
 
         commands = {
             
@@ -564,7 +593,6 @@ window.onload = function(){
             'Where is room *room_num' : roomLocator,
             'room *room_num' : roomLocator,
 
-           
             //Adding multiple name request
             
             // 'I am looking for professor *fac_name' : facultyLocator,
@@ -582,6 +610,12 @@ window.onload = function(){
             // randomWord can only be yes or no now to avoid it being called very        time.
             ':randomWord' : {'regexp' : /^(yes|no)$/, 'callback' : randomFunction}
         };
+        
+        commands_option = {
+            '(option) (number) :number' : optionFunc
+        }
+
+        
         annyang.addCommands(commands);
         annyang.setLanguage("en-US");
         annyang.start({continuous: false}); 
