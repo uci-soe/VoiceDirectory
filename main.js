@@ -1,10 +1,10 @@
 window.onload = function(){
             
-    var timeLeft = 45; // System countdown after initiation
+    var timeLeft = 4500; // System countdown after initiation
     var timeToAsk = 30; // System will ask if user wants more time after this amount of seconds
     var timeToAsk2 = 15 // Second time asking
     var timeToEnd = 1; // System will reset the system with this amount of seconds left
-    var grantTime = 45; // System will grant user extra time (grantTime will be set equal to "timeLeft")
+    var grantTime = 4005; // System will grant user extra time (grantTime will be set equal to "timeLeft")
 
     var roomLocator_active = false;
     var facultyLocator_active = false;
@@ -102,6 +102,8 @@ window.onload = function(){
     */
     function resultOptions(data,duplicatesArray) {
         
+        $(".modal-bg").show();
+        
         alert(duplicatesArray.length);
         var htmlString = "<ul>";
         
@@ -113,13 +115,20 @@ window.onload = function(){
         for(var i = 0; i < duplicatesArray.length ; i++){
             
             count = i;
+            countDisplay = i+1;
             var stringCount = count.toString();
                         
             newClass = "faculty-shot-" + stringCount;
             
             var myStr = "";
-            myStr = myStr + "<div class=\"faculty-shot " + newClass + "\"></div>";
+            var myStr2 = "";
+            
+            myStr = myStr + "<div class=\"faculty-shot " + newClass + "\"></div><p class=\"faculty-name \">" + countDisplay + ". " + data.faculty[duplicatesArray[i]].fullName + "</p><br/>";
+            
+//            myStr2 = myStr2 + "<p>" + data.faculty[duplicatesArray[i]].fullName + "</p>";
+            
             $("#dynamic-facultyImg").append(myStr);
+//            $("#dynamic-facultyName").append(myStr2);
                         
             num = data.faculty[duplicatesArray[i]].roomName;
             $("."+newClass).css('background-image', 'url('+ data.rooms[num].facultyImage + ')');
@@ -317,6 +326,8 @@ window.onload = function(){
         
         //responsiveVoice.speak(welcome);
 
+//        facultyLocator("Sandoval");
+        
         message.text = welcome;
         window.speechSynthesis.speak(message);
         
@@ -662,7 +673,7 @@ window.onload = function(){
         $("#systemMic").show();
         $("#subtitle").show();
         
-        $(".modal-bg").show();
+
         
         //ANIMATION   ******************************
         
