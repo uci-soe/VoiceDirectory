@@ -42,6 +42,8 @@ window.onload = function(){
 
     var commands = {};
     
+    var annyangPaused = false
+    
     
     //Creating voice synthesis utterance object.
     if('speechSynthesis' in window)
@@ -53,6 +55,30 @@ window.onload = function(){
     }
     
     universalTime();
+    /*
+    function isSpeaking()
+    {
+        if(window.speechSynthesis.speaking == true)
+            {
+                if(annyangPaused == false)
+                    {
+                        annyang.pause();
+                        console.log("Annyang paused");
+                        annyangPaused = true;
+                    }
+            }
+        
+        else if(window.speechSynthesis.speaking == false)
+            {
+                if(annyangPaused == true)
+                    {
+                        annyang.resume();
+                        console.log("Annyang resumed");
+                        annyangPaused = false;
+                    }
+            }
+    }*/
+    
     //*********************************************************************************************************   FUNCTION DECLARATIONS
 
 //    $(".intro-block").hide();
@@ -380,7 +406,8 @@ window.onload = function(){
             var lastName = splitFacName[1];
             
             var matchFound = false;
-//            var possibleFaculty = [];
+            
+            possibleFaculty = [];
             
             //If they only provided one name (i.e. Professor Denenberg)
             if(lastName == null)
