@@ -364,10 +364,23 @@ z-index: 5;
 
 .faculty-shot
 {
-    width: 300px;
-    height: 300px;
+    width: 150px;
+    height: 150px;
     background-size: cover;
     background-position: center;
     
+    border-radius: 300px;
+    margin-bottom: 0px;
+    margin: auto;
+    display: block;
     
+}
+.faculty-name{
+    font-size: 2em;
+}
+
+.modal-bg .modal-body{
+    padding: 5%;
+    
+    text-align: center;
 }
