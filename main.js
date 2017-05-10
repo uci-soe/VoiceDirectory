@@ -55,7 +55,7 @@ window.onload = function(){
     }
     
     universalTime();
-    
+    /*
     function isSpeaking()
     {
         if(window.speechSynthesis.speaking == true)
@@ -77,7 +77,7 @@ window.onload = function(){
                         annyangPaused = false;
                     }
             }
-    }
+    }*/
     
     //*********************************************************************************************************   FUNCTION DECLARATIONS
 
@@ -406,7 +406,8 @@ window.onload = function(){
             var lastName = splitFacName[1];
             
             var matchFound = false;
-//            var possibleFaculty = [];
+            
+            possibleFaculty = [];
             
             //If they only provided one name (i.e. Professor Denenberg)
             if(lastName == null)
