@@ -36,6 +36,7 @@ window.onload = function(){
     // annyang Locator functions
     var roomLocator;
     var facultyLocator;
+    var calendarView;
     
     // array of possible faculty
     var possibleFaculty = [];
@@ -45,13 +46,18 @@ window.onload = function(){
     var annyangPaused = false
     
     
+    
+    
+    
+    
+    
     //Creating voice synthesis utterance object.
     if('speechSynthesis' in window)
     {
         var message = new SpeechSynthesisUtterance();
         message.text = " ";
         message.lang = 'en-US';
-        message.rate = 1;
+        message.rate = 1.23;
     }
     
     universalTime();
@@ -85,10 +91,12 @@ window.onload = function(){
     
     $(".blue-block").hide();
     $(".menu-block").hide();
-    $(".result-block").hide();
-    $(".events-block").hide(); //hide events block
     $("#systemMic").hide();
     $("#subtitle").hide();
+    
+    $(".result-block").hide();
+    $(".events-block").hide(); //hide events block
+    
     
     $(".modal-bg").hide();
    
@@ -101,6 +109,8 @@ window.onload = function(){
             
     */
     function resultOptions(data,duplicatesArray) {
+        
+        commandManager("FacultyOptions");
         
         $(".modal-bg").show();
         
@@ -145,7 +155,7 @@ window.onload = function(){
         systemPause(output_options, output_options.split(' ').length);
         delay(output_options, output_options.split(' ').length);
         
-        annyang.addCommands(commands_option);
+        annyang.addCommands(facultyOptionsCommands);
         annyang.removeCommands(commands);
         
     }
@@ -197,10 +207,23 @@ window.onload = function(){
         
     }
     
+    function displayMainMenu(reset)
+    {
+        $(".result-block").hide();
+        $(".events-block").hide();
+        $(".modal-bg").hide();
+        
+        
+        $(".menu-block").show();
+        $("#systemMic").show();
+        $("#subtitle").show();
+        
+        timeLeft = grantTime;
+    }
     
     function displayResult(data, input){
         
-        
+        commandManager("ResultsView");
         
         $(".menu-block").hide();
         $(".result-block").show();
@@ -319,12 +342,38 @@ window.onload = function(){
         },systemTimer_interval);
     }
 
-    function startSystem(data) {              
+    
+    function commandManager(commandKey)
+    {
+        
+        switch(commandKey)
+        {
+            case "MainMenu": 
+                annyang.addCommands(mainMenuCommands);
+                break;
+            case "ResultsView":
+                annyang.init(commands,true);
+                break;
+            case "FacultyOptions":
+                annyang.init(commands,true);
+                annyang.addCommands(facultyOptionsCommands);
+                break;
+            case "CalendarView":
+                annyang.init(commands,true);
+                break;
+        }
+        
+    }
+    
+    function startSystem(data) {     
+        
         systemTimer();
+        
         
         delay(output_pleasewait, welcome.split(' ').length);
         
-        //responsiveVoice.speak(welcome);
+        
+        
 
 //        facultyLocator("Sandoval");
         
@@ -478,8 +527,6 @@ window.onload = function(){
                                 
                                 }
                             
-                            
-                            
                         }
                 }
             // If they provide first and last name.
@@ -571,6 +618,8 @@ window.onload = function(){
             
             //responsiveVoice.speak(eventWelcome);
             
+            
+            
             message.text = eventWelcome;
             window.speechSynthesis.speak(message);
             
@@ -616,45 +665,61 @@ window.onload = function(){
             
             var facultyIndex = parseInt(num) - 1;
             annyang.addCommands(commands);
-            annyang.removeCommands(commands_option);
+            annyang.removeCommands(facultyOptionsCommands);
             
             displayResult(data, possibleFaculty[facultyIndex]);
             
         };
 
-        commands = {
-            
-            // * = capture everything after 
-            // : = capture only one word
-            
+         
+        mainMenuCommands = {
+            // Room Locator
             'I am looking for room *room_num' : roomLocator,
             'Where is room *room_num' : roomLocator,
             'room *room_num' : roomLocator,
-
-            //Adding multiple name request
+            
+            // Faculty Locator
+            'professor *name': facultyLocator,
+           // 'I am looking for (dr.) *name':facultyLocator,
+            'I am looking for (professor) *name':facultyLocator,
+            'Im looking for (professor) *name':facultyLocator, 
             
             // 'I am looking for professor *fac_name' : facultyLocator,
            // 'I am looking for professor *fac_first_name :fac_last_name' : facultyLocator,
             //'professor *fac_first_name (*fac_last_name)' : facultyLocator,
             
-            // This command takes first and last name but saves it one variable
-           'professor *name': facultyLocator,
-           // 'I am looking for (dr.) *name':facultyLocator,
-            'I am looking for (professor) *name':facultyLocator,
-            'Im looking for (professor) *name':facultyLocator,          
             //Event View
             'What events are coming up' : calendarView,
-            'I want to know upcoming events' : calendarView,
-            // randomWord can only be yes or no now to avoid it being called very        time.
+            'I want to know upcoming events' : calendarView
+            // randomWord can only be yes or no now to avoid it being called very    time.
+            
+        };
+    
+        
+        commands = {
+            
+            // * = capture everything after 
+            // : = capture only one word
+            
+            
+            //RESET COMMAND
+            ':reset' : {'regexp' : /^(reset)$/, 'callback' : displayMainMenu},
             ':randomWord' : {'regexp' : /^(yes|no)$/, 'callback' : randomFunction}
         };
         
-        commands_option = {
+        facultyOptionsCommands = {
             '(option) (number) :number' : optionFunc
-        }
+        };
+        
+        eventsOptionsCommands = {
+            //'(This) :viewType': 
+            '(this) :timeFrame' : {'regexp' : /^(month|today|week)$/, 'callback' : randomFunction}
+        };
 
         
         annyang.addCommands(commands);
+        commandManager("MainMenu");
+        
         annyang.setLanguage("en-US");
         annyang.start({continuous: false}); 
         
