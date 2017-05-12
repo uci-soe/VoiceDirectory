@@ -112,6 +112,8 @@ window.onload = function(){
         
         commandManager("FacultyOptions");
         
+        timeLeft = grantTime;
+        
         $(".modal-bg").show();
         
         alert(duplicatesArray.length);
@@ -130,15 +132,21 @@ window.onload = function(){
                         
             newClass = "faculty-shot-" + stringCount;
             
+            var myStr_col4 = "<div class=\"col-sm-2\">";
+            var myStr_col8 = "<div class=\"col-sm-8\">";
+            var end_div = "</div>";
+            
             var myStr = "";
             var myStr2 = "";
             
-            myStr = myStr + "<div class=\"faculty-shot " + newClass + "\"></div><p class=\"faculty-name \">" + countDisplay + ". " + data.faculty[duplicatesArray[i]].fullName + "</p><br/>";
             
-//            myStr2 = myStr2 + "<p>" + data.faculty[duplicatesArray[i]].fullName + "</p>";
+            myStr = myStr_col4 + "<div class=\"faculty-shot " + newClass + "\"></div>" + end_div;
             
-            $("#dynamic-facultyImg").append(myStr);
-//            $("#dynamic-facultyName").append(myStr2);
+            myStr2 = myStr_col8 + "<div class=\"faculty-name\">" + data.faculty[duplicatesArray[i]].fullName + end_div + end_div;
+  
+            $("#dynamic-options").append(myStr);
+            $("#dynamic-options").append(myStr2);
+            $("#dynamic-options").append("<div class=\"clear\"></div>");
                         
             num = data.faculty[duplicatesArray[i]].roomName;
             $("."+newClass).css('background-image', 'url('+ data.rooms[num].facultyImage + ')');
@@ -153,10 +161,7 @@ window.onload = function(){
         window.speechSynthesis.speak(message);
         
         systemPause(output_options, output_options.split(' ').length);
-        delay(output_options, output_options.split(' ').length);
-        
-        annyang.addCommands(facultyOptionsCommands);
-        annyang.removeCommands(commands);
+//        delay(output_options, output_options.split(' ').length);
         
     }
     
@@ -184,6 +189,7 @@ window.onload = function(){
 
         $('#subtitle').html(word);
 //        annyang.pause();
+        $('#systemMic').attr("src", "css/images/mic-disabled2.png");
 
         setTimeout(function(){ 
 //            annyang.resume() 
@@ -191,7 +197,7 @@ window.onload = function(){
             $('#subtitle').html("I'm Listening...");
             $('#systemMic').attr("src", "css/images/microphone.png");
             
-            }, wordCount*600);
+            }, wordCount*450);
     }
     
     function delay(word, wordCount) {
@@ -203,7 +209,7 @@ window.onload = function(){
             $('#subtitle').html("I'm Listening...");
             $('#systemMic').attr("src", "css/images/microphone.png");
             
-            }, wordCount + 3000);
+            }, wordCount * 500);
         
     }
     
@@ -238,7 +244,7 @@ window.onload = function(){
             message.text = data.rooms[num].voiceResponse_faculty;
             window.speechSynthesis.speak(message);
             
-            delay(data.rooms[num].voiceResponse_faculty, data.rooms[num].voiceResponse_faculty.split(' ').length);
+//            delay(data.rooms[num].voiceResponse_faculty, data.rooms[num].voiceResponse_faculty.split(' ').length);
         }
         else {
             var num = input;
@@ -248,7 +254,7 @@ window.onload = function(){
             message.text = data.rooms[num].voiceResponse_room;
             window.speechSynthesis.speak(message);
             
-            delay(data.rooms[num].voiceResponse_room, data.rooms[num].voiceResponse_room.split(' ').length);
+//            delay(data.rooms[num].voiceResponse_room, data.rooms[num].voiceResponse_room.split(' ').length);
         }
              
         $(".room-name").html(data.rooms[num].roomName);
@@ -326,7 +332,7 @@ window.onload = function(){
                     
                     
                     systemPause(output_moreTime, output_moreTime.split(' ').length);
-                    delay(output_moreTime, output_moreTime.split(' ').length);
+//                    delay(output_moreTime, output_moreTime.split(' ').length);
                     systemAsked = true; 
                 }
                 systemTimer();
@@ -369,13 +375,7 @@ window.onload = function(){
         
         systemTimer();
         
-        
-        delay(output_pleasewait, welcome.split(' ').length);
-        
-        
-        
-
-//        facultyLocator("Sandoval");
+        systemPause(output_pleasewait, welcome.split(' ').length);
         
         message.text = welcome;
         window.speechSynthesis.speak(message);
@@ -391,7 +391,7 @@ window.onload = function(){
                 
                 systemPause(output_repeat, output_repeat.split(' ').length);
                 
-                delay(output_repeat, output_repeat.split(' ').length);
+//                delay(output_repeat, output_repeat.split(' ').length);
             }                        
             else {
 
@@ -617,14 +617,12 @@ window.onload = function(){
             //alert("here");
             
             //responsiveVoice.speak(eventWelcome);
-            
-            
-            
+                        
             message.text = eventWelcome;
             window.speechSynthesis.speak(message);
             
             systemPause(eventWelcome, eventWelcome.split(' ').length);
-            delay(eventWelcome, eventWelcome.split(' ').length);
+//            delay(eventWelcome, eventWelcome.split(' ').length);
             resultShown = true; 
             
             timeLeft = grantTime;
@@ -795,7 +793,7 @@ window.onload = function(){
         window.speechSynthesis.speak(message);
         
         systemPause(output_speak, output_speak.split(' ').length);
-        delay(output_speak, output_speak.split(' ').length);
+//        delay(output_speak, output_speak.split(' ').length);
 
         
     });

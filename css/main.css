@@ -349,7 +349,7 @@ z-index: 5;
     margin: auto;
     display: block;
     
-    box-shadow: 0px 0px 35px BLACK;
+/*    box-shadow: 0px 0px 35px BLACK;*/
 
 }
 
@@ -364,23 +364,30 @@ z-index: 5;
 
 .faculty-shot
 {
-    width: 150px;
-    height: 150px;
+    width: 115px;
+    height: 115px;
     background-size: cover;
     background-position: center;
     
     border-radius: 300px;
-    margin-bottom: 0px;
+
     margin: auto;
     display: block;
+    
+    float: right;
     
 }
 .faculty-name{
     font-size: 2em;
+    margin: 32px 0 32px 0;  
 }
 
 .modal-bg .modal-body{
     padding: 5%;
     
-    text-align: center;
+
+}
+
+#dynamic-options .col-sm-4, #dynamic-options .col-sm-8{
+    margin-bottom: 45px;
 }
