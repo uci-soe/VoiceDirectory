@@ -360,6 +360,7 @@ window.onload = function(){
                 break;
             case "CalendarView":
                 annyang.init(commands,true);
+                annyang.addCommands(eventsOptionsCommands);
                 break;
         }
         
@@ -613,12 +614,28 @@ window.onload = function(){
         
         // Calendar View Function //
         
-        calendarView = function(hello) {
-            //alert("here");
+        calendarView = function(viewMode = "week") {
+            var source = ""
+            commandManager("CalendarView");
             
-            //responsiveVoice.speak(eventWelcome);
-            
-            
+            if(viewMode == "week")
+                {
+                    source = "https://calendar.google.com/calendar/embed?mode=WEEK&amp;title=School%20of%20Education%20Events&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=639&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%23125A12&amp;src=tp813fc8tfi3uoeb2k1kr8ivn8%40group.calendar.google.com&amp;color=%238D6F47&amp;ctz=America%2FLos_Angeles";
+                    $(".calendarFrame").attr = source;
+                }
+            else if(viewMode == "today")
+                {
+                    
+                    source = "https://calendar.google.com/calendar/embed?mode=AGENDA&amp;title=School%20of%20Education%20Events&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=639&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%23125A12&amp;src=tp813fc8tfi3uoeb2k1kr8ivn8%40group.calendar.google.com&amp;color=%238D6F47&amp;ctz=America%2FLos_Angeles";
+                    
+                    $(".calendarFrame").attr('src',source);
+                }
+            else if(viewMode == "month")
+                {
+                    source = "https://calendar.google.com/calendar/embed?mode=MONTH&amp;title=School%20of%20Education%20Events&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=639&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%23125A12&amp;src=tp813fc8tfi3uoeb2k1kr8ivn8%40group.calendar.google.com&amp;color=%238D6F47&amp;ctz=America%2FLos_Angeles";
+                    
+                    $(".calendarFrame").src = source;
+                }
             
             message.text = eventWelcome;
             window.speechSynthesis.speak(message);
@@ -713,7 +730,7 @@ window.onload = function(){
         
         eventsOptionsCommands = {
             //'(This) :viewType': 
-            '(this) :timeFrame' : {'regexp' : /^(month|today|week)$/, 'callback' : randomFunction}
+            '(this) :timeFrame' : {'regexp' : /^(month|today|week)$/, 'callback' : calendarView}
         };
 
         
