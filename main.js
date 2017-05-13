@@ -28,7 +28,9 @@ window.onload = function(){
     var welcome = "Hello, what can I help you with today?";
     
     //Events Voice Responses
-    var eventWelcome = "Here's what's happening this week.";
+    var eventWeekWelcome = "Here's what's happening this week.";
+    var eventTodayWelcome = "Here's what's happening today.";
+    var eventMonthWelcome = "Here's what's happening this month.";
     
     //Modal Voice Responses
     var output_options = "There seems to be multiple faculty members with that name. Which one are you referring to?";
@@ -614,33 +616,39 @@ window.onload = function(){
         
         // Calendar View Function //
 
-        calendarView = function(viewMode = "week") {
+        calendarView = function(viewMode = "what's happening this week") {
             var source = ""
             commandManager("CalendarView");
             
-            if(viewMode == "week")
+            if(viewMode == "what's happening this week")
                 {
-                    source = "https://calendar.google.com/calendar/embed?mode=WEEK&amp;title=School%20of%20Education%20Events&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=639&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%23125A12&amp;src=tp813fc8tfi3uoeb2k1kr8ivn8%40group.calendar.google.com&amp;color=%238D6F47&amp;ctz=America%2FLos_Angeles";
-                    $(".calendarFrame").attr = source;
+                    source = "https://calendar.google.com/calendar/embed?mode=WEEK&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=tp813fc8tfi3uoeb2k1kr8ivn8%40group.calendar.google.com&amp;color=%238D6F47&amp;ctz=America%2FLos_Angeles";
+                   
+                    $("#calendarFrame").attr('src',source);
+                    
+                    message.text = eventWeekWelcome;
                 }
-            else if(viewMode == "today")
+            else if(viewMode == "what's happening today")
                 {
                     
-                    source = "https://calendar.google.com/calendar/embed?mode=AGENDA&amp;title=School%20of%20Education%20Events&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=639&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%23125A12&amp;src=tp813fc8tfi3uoeb2k1kr8ivn8%40group.calendar.google.com&amp;color=%238D6F47&amp;ctz=America%2FLos_Angeles";
+                    source = "https://calendar.google.com/calendar/embed?mode=AGENDA&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=tp813fc8tfi3uoeb2k1kr8ivn8%40group.calendar.google.com&amp;color=%238D6F47&amp;ctz=America%2FLos_Angeles";
                     
-                    $(".calendarFrame").attr('src',source);
+                    $("#calendarFrame").attr('src',source);
+                    
+                    message.text = eventTodayWelcome;
                 }
-            else if(viewMode == "month")
+            else if(viewMode == "what's happening this month")
                 {
-                    source = "https://calendar.google.com/calendar/embed?mode=MONTH&amp;title=School%20of%20Education%20Events&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=639&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%23125A12&amp;src=tp813fc8tfi3uoeb2k1kr8ivn8%40group.calendar.google.com&amp;color=%238D6F47&amp;ctz=America%2FLos_Angeles";
+                    source = "https://calendar.google.com/calendar/embed?mode=MONTH&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=tp813fc8tfi3uoeb2k1kr8ivn8%40group.calendar.google.com&amp;color=%238D6F47&amp;ctz=America%2FLos_Angeles";
                     
-                    $(".calendarFrame").src = source;
+                    $("#calendarFrame").attr('src',source);
+                    
+                    message.text = eventMonthWelcome; 
                 }
             
-            message.text = eventWelcome;
+            
             window.speechSynthesis.speak(message);
-            
-            systemPause(eventWelcome, eventWelcome.split(' ').length);
+            systemPause(eventMonthWelcome, eventMonthWelcome.split(' ').length);
 //            delay(eventWelcome, eventWelcome.split(' ').length);
             resultShown = true; 
             
@@ -672,10 +680,8 @@ window.onload = function(){
                     
                     message.text = welcome;
                     window.speechSynthesis.speak(message);
-                }
-                
+                }   
             }
-   
         };
         
         var optionFunc = function(num){
@@ -730,7 +736,7 @@ window.onload = function(){
         
         eventsOptionsCommands = {
             //'(This) :viewType': 
-            '(this) :timeFrame' : {'regexp' : /^(month|today|week)$/, 'callback' : calendarView}
+            '*timeFrame' : {'regexp' : /^(what's happening this month|what's happening today|what's happening this week)$/, 'callback' : calendarView}
         };
 
         
