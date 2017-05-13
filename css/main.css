@@ -116,6 +116,7 @@ body
 
     position: relative;
     bottom: 90px;
+    z-index: 10;
 
 }
 
@@ -306,9 +307,36 @@ img
 /* Events Block Styling */
 .events-block #calendar
 {
-    margin-top: -3%;
-    margin-left: 4.5%;
+    margin-top: 0;
+    margin-left: 0;
 }
+
+#calendarFrame
+{
+    position: relative;
+    bottom:100px
+}
+
+#topBorder
+{
+    min-height: 45px;
+    max-width: 100%;
+    background-color: gainsboro;
+    z-index: 1;
+    position: relative;
+    top:-56px;  
+}
+#bottomBorder
+{
+    min-height: 45px;
+    max-width: 100%;
+    background-color: gainsboro;
+    z-index: 1;
+    position: relative;
+    top:496px;
+}
+
+
 
 
 .blue-block
