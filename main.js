@@ -19,7 +19,7 @@ window.onload = function(){
     var resultShown = false;
 
     // System's General Voice Responses
-    var output_speak = "Please speak your request!";
+    var output_speak = "Please say your request!";
     var output_repeat = "Could you repeat that please?";
     var output_moreTime = "Do you need more time?";
     var output_systemReset = "System will reset.";
@@ -327,8 +327,6 @@ window.onload = function(){
                 
                 if(resultShown) {
                     
-                    //responsiveVoice.speak(output_moreTime);
-                    
                     message.text = output_moreTime;
                     window.speechSynthesis.speak(message);
                     
@@ -386,9 +384,6 @@ window.onload = function(){
         roomLocator = function(room_num) {  
             if(!(room_num in data.rooms)){
                 
-                
-                //responsiveVoice.speak(output_repeat);
-                
                 message.text = output_repeat;
                 window.speechSynthesis.speak(message);
                 
@@ -400,7 +395,6 @@ window.onload = function(){
 
                 displayResult(data, room_num);
                 resultShown = true; 
-//                responsiveVoice.speak(data.rooms[room_num].voiceResponse_room); 
                 systemPause((data.rooms[room_num].voiceResponse_room), (data.rooms[room_num].voiceResponse_room).split(' ').length);
                 
             }
@@ -408,46 +402,6 @@ window.onload = function(){
             
         };
 
-       /* facultyLocator = function(fac_name) {  
-            if(!(fac_name in data.faculty)) {
-//                alert(fac_name);
-                responsiveVoice.speak(output_repeat); 
-                systemPause(output_repeat, output_repeat.split(' ').length);
-                
-                delay(output_repeat, output_repeat.split(' ').length);
-            }
-            else {
-               
-                displayResult(data, fac_name);
-                resultShown = true; 
-                               
-                var num = data.faculty[fac_name].roomName;
-//                responsiveVoice.speak(data.rooms[num].voiceResponse_faculty);
-                systemPause((data.rooms[num].voiceResponse_faculty), (data.rooms[num].voiceResponse_faculty).split(' ').length);
-            }
-            timeLeft = grantTime;
-            
-        };
-        */
-        
-        
-        // Testing full name faculty locator
-        
-        
-        /*
-        Search last name
-            when they search last name we search through keys
-            if match save in temp array 
-
-
-            if duplicates add to array 
-
-            then ask user which one?
-
-            if no duplicates present results	
-
-            if no match at all return ask again
-        */
         
         facultyLocator = function(fac_name) {  
             //alert(fac_name);
@@ -486,38 +440,14 @@ window.onload = function(){
                         systemPause(output_repeat, output_repeat.split(' ').length);  
                     }
                     
-                    /*
-                    if(!(fac_name in data.faculty))
-                        {
-                            message.text = output_repeat;
-                            window.speechSynthesis.speak(message);
-                            systemPause(output_repeat, output_repeat.split(' ').length);  
-                        }
-                    */
-                    
                     else
                         {   
-                            /*var possibleFaculty = [];
-                            var count = 0;
-                            
-                            for(key in data.faculty)
-                                {
-                                    //alert(key);
-                                    if (key == fac_name)
-                                        {
-                                            possibleFaculty.push(key);
-                                            alert("Possible Faculty: " + possibleFaculty.length);
-                                        }
-                                    count++;
-                                }
-                            */
                            if(possibleFaculty.length > 1) // ooo
                                 {
                                     // Ask user which one they meant.
-                                    alert("ASK USER WHICH ONE");
+                                    //alert("ASK USER WHICH ONE");
                                     resultOptions(data, possibleFaculty);
-                                    modalResponse();
-                                    
+                                    modalResponse(); 
                                 }
                             else
                                 {
@@ -525,11 +455,8 @@ window.onload = function(){
                                     resultShown = true;
                             
                                     var num = data.faculty[fac_name].roomName;
-//                                  responsiveVoice.speak(data.rooms[num].voiceResponse_faculty);
                                     systemPause((data.rooms[num].voiceResponse_faculty), (data.rooms[num].voiceResponse_faculty).split(' ').length);
-                                
                                 }
-                            
                         }
                 }
             // If they provide first and last name.
@@ -554,65 +481,7 @@ window.onload = function(){
                 }
             
             timeLeft = grantTime;
-            
-            
-            
-            
-            
-            
-            
-            /*
-            if(!(fac_name in data.faculty)) {
-                alert(fac_name);
-                responsiveVoice.speak(output_repeat); 
-                systemPause(output_repeat, output_repeat.split(' ').length);
-            }
-            else {
-               
-                displayResult(data, fac_name);
-                resultShown = true; 
-                               
-                var num = data.faculty[fac_name].roomName;
-//                responsiveVoice.speak(data.rooms[num].voiceResponse_faculty);
-                systemPause((data.rooms[num].voiceResponse_faculty), (data.rooms[num].voiceResponse_faculty).split(' ').length);
-            }
-            timeLeft = grantTime;
-            */
         };
-        
-        
-        
-        
-        
-        
-        /*
-        // Adding two word faculty search
-        facultyLocator2 = function(fac_first_name,fac_last_name) { 
-            var full_name = fac_first_name.concat(" ");
-            full_name = full_name.concat(fac_last_name);
-            
-            //alert(full_name);
-            
-            
-            if(!(full_name in data.faculty)) {
-                //alert(fac_name);
-                responsiveVoice.speak(output_repeat); 
-                systemPause(output_repeat, output_repeat.split(' ').length);
-            }
-            else {
-               
-                displayResult(data, full_name);
-                resultShown = true; 
-                               
-                var num = data.faculty[full_name].roomName;
-//                responsiveVoice.speak(data.rooms[num].voiceResponse_faculty);
-                systemPause((data.rooms[num].voiceResponse_faculty), (data.rooms[num].voiceResponse_faculty).split(' ').length);
-            }
-            timeLeft = grantTime;
-            
-        };
-        
-        */
         
         // Calendar View Function //
 
@@ -675,8 +544,6 @@ window.onload = function(){
                     resultShown = false;
 
                     timeLeft = grantTime;
-
-                    //responsiveVoice.speak(welcome);
                     
                     message.text = welcome;
                     window.speechSynthesis.speak(message);
@@ -693,7 +560,6 @@ window.onload = function(){
             displayResult(data, possibleFaculty[facultyIndex]);
             
         };
-
          
         mainMenuCommands = {
             // Room Locator
@@ -714,16 +580,13 @@ window.onload = function(){
             //Event View
             'What events are coming up' : calendarView,
             'I want to know upcoming events' : calendarView
-            // randomWord can only be yes or no now to avoid it being called very    time.
-            
+            // randomWord can only be yes or no now to avoid it being called very    time. 
         };
     
         
         commands = {
-            
             // * = capture everything after 
             // : = capture only one word
-            
             
             //RESET COMMAND
             ':reset' : {'regexp' : /^(reset)$/, 'callback' : displayMainMenu},
@@ -738,8 +601,7 @@ window.onload = function(){
             //'(This) :viewType': 
             '*timeFrame' : {'regexp' : /^(what's happening this month|what's happening today|what's happening this week)$/, 'callback' : calendarView}
         };
-
-        
+   
         annyang.addCommands(commands);
         commandManager("MainMenu");
         
@@ -761,8 +623,6 @@ window.onload = function(){
         $(".menu-block").show();
         $("#systemMic").show();
         $("#subtitle").show();
-        
-
         
         //ANIMATION   ******************************
         
@@ -810,18 +670,12 @@ window.onload = function(){
             $(".bubble").removeClass("tada");
         }, 1000);
         
-       
-        
-        //responsiveVoice.speak(output_speak);
-        
         message.text = output_speak;
         window.speechSynthesis.speak(message);
         
         systemPause(output_speak, output_speak.split(' ').length);
 //        delay(output_speak, output_speak.split(' ').length);
 
-        
     });
-
-    
+ 
 }
