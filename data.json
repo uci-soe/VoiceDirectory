@@ -16,7 +16,7 @@
             "lastName" : "Martin"
         },
         "Denise Martin" : {
-            "roomName" : "2000",
+            "roomName" : "2207",
             "fullName" : "Denise Earley",
             "firstName" : "Denise",
             "lastName" : "Earley"
@@ -257,7 +257,7 @@
     "rooms" : {
         
 
-       	"2000" : {
+       	"2207" : {
        		"roomName" : "Room 2000",
        		"roomType" : "Student Affairs Office",
        		"mapImage" : "/images/maps/room2000.png",
@@ -274,7 +274,7 @@
        		"voiceResponse_faculty" : "Take a left and then a right into the hallway. Earley's office will be on the first entrance on your left."
        	},
 
-       	"2000" : {
+       	"2200" : {
        		"roomName" : "Room 2000",
        		"roomType" : "Student Affairs Office",
        		"mapImage" : "/images/maps/room2000.png",
@@ -291,7 +291,7 @@
        		"voiceResponse_faculty" : "Take a left and then a right into the hallway. Lim's office will be on the first entrance on your left."
        	},
 
-       	"2000" : {
+       	"2200" : {
        		"roomName" : "Room 2000",
        		"roomType" : "Student Affairs Office",
        		"mapImage" : "/images/maps/room2000.png",
@@ -308,7 +308,7 @@
        		"voiceResponse_faculty" : "Take a left and then a right into the hallway. McDougall's office will be on the first entrance on your left."
        	},
 
-       	"2000" : {
+       	"2200" : {
        		"roomName" : "Room 2000",
        		"roomType" : "Student Affairs Office",
        		"mapImage" : "/images/maps/room2000.png",
