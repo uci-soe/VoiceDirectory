@@ -75,29 +75,6 @@ window.onload = function(){
     }
     
     universalTime();
-    /*
-    function isSpeaking()
-    {
-        if(window.speechSynthesis.speaking == true)
-            {
-                if(annyangPaused == false)
-                    {
-                        annyang.pause();
-                        console.log("Annyang paused");
-                        annyangPaused = true;
-                    }
-            }
-        
-        else if(window.speechSynthesis.speaking == false)
-            {
-                if(annyangPaused == true)
-                    {
-                        annyang.resume();
-                        console.log("Annyang resumed");
-                        annyangPaused = false;
-                    }
-            }
-    }*/
     
     //*********************************************************************************************************   FUNCTION DECLARATIONS
 
@@ -394,8 +371,7 @@ window.onload = function(){
                 annyang.init(commands,true);
                 annyang.addCommands(eventsOptionsCommands);
                 break;
-        }
-        
+        }   
     }
     
     function startSystem(data) {     
@@ -446,7 +422,6 @@ window.onload = function(){
                 {
                     for(key in data.faculty)
                         {
-                            
                             var keyCheck = key.split(" ");
                            // console.log("Key: " + key + " | faculty Input: " + fac_name + " | Key Comparrison: " + keyCheck[1]);
                             
@@ -454,8 +429,7 @@ window.onload = function(){
                             {
                                 matchFound = true;
                                 possibleFaculty.push(key);
-                                //alert("Possible Faculty: " + possibleFaculty.length);
-                                
+                                alert("Possible Faculty: " + possibleFaculty.length);
                             }
                         }
                     alert(possibleFaculty.length);
@@ -474,13 +448,17 @@ window.onload = function(){
                                     //alert("ASK USER WHICH ONE");
                                     resultOptions(data, possibleFaculty);
                                     modalResponse(); 
+                                    alert("List too long");
                                 }
                             else
                                 {
                                     displayResult(data, possibleFaculty[0]);
                                     resultShown = true;
-                            
-                                    var num = data.faculty[fac_name].roomName;
+                                    
+                                    
+                                    alert(data.faculty[possibleFaculty[0]].roomName);
+                                    
+                                    var num = data.faculty[possibleFaculty[0]].roomName;
                                     systemPause((data.rooms[num].voiceResponse_faculty), (data.rooms[num].voiceResponse_faculty).split(' ').length);
                                 }
                         }
