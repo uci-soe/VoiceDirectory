@@ -26,7 +26,7 @@ window.onload = function(){
     var output_ok = "Ok";
     var output_pleasewait = "Please Wait...";
     var welcome = "Hello, what can I help you with today?";
-    var vaildCommand = "Please say, a valid command.";
+    var vaildCommand = "Please make a valid request.";
     
     
     //Events Voice Responses
@@ -62,8 +62,16 @@ window.onload = function(){
         message.text = " ";
         message.lang = 'en-US';
         message.rate = 1.23;
-        //message.onstart = function(event){ alert("Starting to talk!")};
-        //message.onend = function(event){ alert("Done talking!")};
+        message.onstart = function(event)
+        { 
+            //alert("Starting to talk!");
+            $('#systemMic').attr("src", "css/images/mic-disabled2.png");
+        };
+        message.onend = function(event)
+        { 
+            //alert("Done talking!")
+            $('#systemMic').attr("src", "css/images/microphone.png");
+        };
     }
     
     universalTime();
@@ -394,7 +402,7 @@ window.onload = function(){
         
         systemTimer();
         
-        systemPause(output_pleasewait, welcome.split(' ').length);
+        systemPause(welcome, welcome.split(' ').length);
         
         message.text = welcome;
         window.speechSynthesis.speak(message);
