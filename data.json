@@ -22,19 +22,19 @@
             "lastName" : "Earley"
         },
         "David Lim" : {
-            "roomName" : "2000",
+            "roomName" : "2203",
             "fullName" : "David Lim",
             "firstName" : "David",
             "lastName" : "Lim"
         },
         "Sarah McDougall" : {
-            "roomName" : "2000",
+            "roomName" : "2206",
             "fullName" : "Sarah McDougall",
             "firstName" : "Sarah",
             "lastName" : "McDougall"
         },
         "Whitney Young" : {
-            "roomName" : "2000",
+            "roomName" : "2204",
             "fullName" : "Whitney Young",
             "firstName" : "Whitney",
             "lastName" : "Young"
@@ -260,8 +260,8 @@
        	"2207" : {
        		"roomName" : "Room 2000",
        		"roomType" : "Student Affairs Office",
-       		"mapImage" : "/images/maps/room2000.png",
-       		"roomImage" : "/images/rooms/room2000.jpg",
+       		"mapImage" : "/images/maps/Room2000.png",
+       		"roomImage" : "/images/rooms/Room2000.jpg",
        		"voiceResponse_room" : "Take a left and then a right into the hallway. Room 2000 will be on the first entrance on your left.",
 
        		"facultyName" : "Denise Earley",
@@ -277,8 +277,8 @@
        	"2200" : {
        		"roomName" : "Room 2000",
        		"roomType" : "Student Affairs Office",
-       		"mapImage" : "/images/maps/room2000.png",
-       		"roomImage" : "/images/rooms/room2000.jpg",
+       		"mapImage" : "/images/maps/Room2000.png",
+       		"roomImage" : "/images/rooms/Room2000.jpg",
        		"voiceResponse_room" : "Take a left and then a right into the hallway. Room 2000 will be on the first entrance on your left.",
 
        		"facultyName" : "David Lim",
@@ -294,8 +294,8 @@
        	"2200" : {
        		"roomName" : "Room 2000",
        		"roomType" : "Student Affairs Office",
-       		"mapImage" : "/images/maps/room2000.png",
-       		"roomImage" : "/images/rooms/room2000.jpg",
+       		"mapImage" : "/images/maps/Room2000.png",
+       		"roomImage" : "/images/rooms/Room2000.jpg",
        		"voiceResponse_room" : "Take a left and then a right into the hallway. Room 2000 will be on the first entrance on your left.",
 
        		"facultyName" : "Sarah McDougall",
@@ -311,8 +311,8 @@
        	"2200" : {
        		"roomName" : "Room 2000",
        		"roomType" : "Student Affairs Office",
-       		"mapImage" : "/images/maps/room2000.png",
-       		"roomImage" : "/images/rooms/room2000.jpg",
+       		"mapImage" : "/images/maps/Room2000.png",
+       		"roomImage" : "/images/rooms/Room2000.jpg",
        		"voiceResponse_room" : "Take a left and then a right into the hallway. Room 2000 will be on the first entrance on your left.",
 
        		"facultyName" : "Whitney Young",
@@ -328,8 +328,8 @@
        	"2001" : {
        		"roomName" : "Room 2001",
        		"roomType" : "Classroom",
-       		"mapImage" : "css/images/maps/room2001.png",
-       		"roomImage" : "css/images/rooms/room2001.jpg",
+       		"mapImage" : "css/images/maps/Room2001.png",
+       		"roomImage" : "css/images/rooms/Room2001.jpg",
        		"voiceResponse_room" : "Room 2001 is the first entrance on your right.",
 
        		"facultyName" : "Jody Guarino",
@@ -345,8 +345,8 @@
        	"2003" : {
        		"roomName" : "Suite 2003",
        		"roomType" : "Suite",
-       		"mapImage" : "/images/maps/room2003.png",
-       		"roomImage" : "/images/rooms/room2003.jpg",
+       		"mapImage" : "/images/maps/Room2003.png",
+       		"roomImage" : "/images/rooms/Room2003.jpg",
        		"voiceResponse_room" : "Suite 2003 will either be on your first entrance on your left or the second entrance on your right.",
 
        		"facultyName" : "",
@@ -362,8 +362,8 @@
        	"2005" : {
        		"roomName" : "Room 2005",
        		"roomType" : "Classroom",
-       		"mapImage" : "/images/maps/room2005.png",
-       		"roomImage" : "/images/rooms/room2005.jpg",
+       		"mapImage" : "/images/maps/Room2005.png",
+       		"roomImage" : "/images/rooms/Room2005.jpg",
        		"voiceResponse_room" : "Room 2005 will be the fourth entrance on your left straight ahead.",
 
        		"facultyName" : "",
@@ -379,8 +379,8 @@
        	"2007" : {
        		"roomName" : "Room 2007",
        		"roomType" : "PhD. Workroom",
-       		"mapImage" : "/images/maps/room2007.png",
-       		"roomImage" : "/images/rooms/room2007.jpg",
+       		"mapImage" : "/images/maps/Room2007.png",
+       		"roomImage" : "/images/rooms/Room2007.jpg",
        		"voiceResponse_room" : "Room 2007 will be the sixth entrance on your left straight ahead",
 
        		"facultyName" : "",
@@ -396,8 +396,8 @@
        	"2008" : {
        		"roomName" : "Room 2008",
        		"roomType" : "Resource Center",
-       		"mapImage" : "/images/maps/room2008.png",
-       		"roomImage" : "/images/rooms/room2008.jpg",
+       		"mapImage" : "/images/maps/Room2008.png",
+       		"roomImage" : "/images/rooms/Room2008.jpg",
        		"voiceResponse_room" : "Room 2008 will be the third entrance on your right straight ahead",
 
        		"facultyName" : "",
@@ -413,8 +413,8 @@
        	"2009" : {
        		"roomName" : "Room 2009",
        		"roomType" : "Classroom",
-       		"mapImage" : "/images/maps/room2009.png",
-       		"roomImage" : "/images/rooms/room2009.jpg",
+       		"mapImage" : "/images/maps/Room2009.png",
+       		"roomImage" : "/images/rooms/Room2009.jpg",
        		"voiceResponse_room" : "Room 2009 will be at the end of the hallway straight ahead.",
 
        		"facultyName" : "Kim Burge",
@@ -430,8 +430,8 @@
        	"2010" : {
        		"roomName" : "Room 2010",
        		"roomType" : "Classroom",
-       		"mapImage" : "/images/maps/room2010.png",
-       		"roomImage" : "/images/rooms/room2010.jpg",
+       		"mapImage" : "/images/maps/Room2010.png",
+       		"roomImage" : "/images/rooms/Room2010.jpg",
        		"voiceResponse_room" : "Room 2010 will be immediately on your right.",
 
        		"facultyName" : "",
@@ -447,8 +447,8 @@
        	"2012" : {
        		"roomName" : "Room 2012",
        		"roomType" : "Faculty Office",
-       		"mapImage" : "/images/maps/room2012.png",
-       		"roomImage" : "/images/rooms/room2012.jpg",
+       		"mapImage" : "/images/maps/Room2012.png",
+       		"roomImage" : "/images/rooms/Room2012.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 on your right. Room 2012 will be the first door straight ahead.",
 
        		"facultyName" : "Jenel Lao",
@@ -464,8 +464,8 @@
        	"2024" : {
        		"roomName" : "Room 2024",
        		"roomType" : "Seminar",
-       		"mapImage" : "/images/maps/room2024.png",
-       		"roomImage" : "/images/rooms/room2024.jpg",
+       		"mapImage" : "/images/maps/Room2024.png",
+       		"roomImage" : "/images/rooms/Room2024.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 on your right. Go all the way down the hall and take a left. Room 2024 will be the first door on your right.",
 
        		"facultyName" : "",
@@ -481,8 +481,8 @@
        	"2030" : {
        		"roomName" : "Room 2030",
        		"roomType" : "Kitchen",
-       		"mapImage" : "/images/maps/room2030.png",
-       		"roomImage" : "/images/rooms/room2030.jpg",
+       		"mapImage" : "/images/maps/Room2030.png",
+       		"roomImage" : "/images/rooms/Room2030.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. Room 2030 will be the third door on your right.",
 
        		"facultyName" : "",
@@ -498,8 +498,8 @@
        	"2031" : {
        		"roomName" : "Room 2031",
        		"roomType" : "Research Room",
-       		"mapImage" : "/images/maps/room2031.png",
-       		"roomImage" : "/images/rooms/room2031.jpg",
+       		"mapImage" : "/images/maps/Room2031.png",
+       		"roomImage" : "/images/rooms/Room2031.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. Room 2031 will be the first door on your left.",
 
        		"facultyName" : "",
@@ -515,8 +515,8 @@
        	"2032" : {
        		"roomName" : "Room 2032",
        		"roomType" : "Faculty Office",
-       		"mapImage" : "/images/maps/room2032.png",
-       		"roomImage" : "/images/rooms/room2032.jpg",
+       		"mapImage" : "/images/maps/Room2032.png",
+       		"roomImage" : "/images/rooms/Room2032.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. Room 2032 will be the fourth door on your right.",
 
        		"facultyName" : "Liane Brouillette",
@@ -532,8 +532,8 @@
        	"2034" : {
        		"roomName" : "Room 2034",
        		"roomType" : "Faculty Office",
-       		"mapImage" : "/images/maps/room2034.png",
-       		"roomImage" : "/images/rooms/room2034.jpg",
+       		"mapImage" : "/images/maps/Room2034.png",
+       		"roomImage" : "/images/rooms/Room2034.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. Room 2034 will be the fifth door on your right.",
 
        		"facultyName" : "Jamal Abedi",
@@ -549,8 +549,8 @@
        	"2036" : {
        		"roomName" : "Room 2036",
        		"roomType" : "Faculty Office",
-       		"mapImage" : "/images/maps/room2036.png",
-       		"roomImage" : "/images/rooms/room2036.jpg",
+       		"mapImage" : "/images/maps/Room2036.png",
+       		"roomImage" : "/images/rooms/Room2036.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. Room 2036 will be the sixth door on your right.",
 
        		"facultyName" : "Maria Rosales-Rueda",
@@ -566,8 +566,8 @@
        	"2037" : {
        		"roomName" : "Room 2037",
        		"roomType" : "Graduate Student",
-       		"mapImage" : "/images/maps/room2037.png",
-       		"roomImage" : "/images/rooms/room2037.jpg",
+       		"mapImage" : "/images/maps/Room2037.png",
+       		"roomImage" : "/images/rooms/Room2037.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. Room 2037 will be the third door on your left.",
 
        		"facultyName" : "",
@@ -583,8 +583,8 @@
        	"2038" : {
        		"roomName" : "Room 2038",
        		"roomType" : "Faculty Office",
-       		"mapImage" : "/images/maps/room2038.png",
-       		"roomImage" : "/images/rooms/room2038.jpg",
+       		"mapImage" : "/images/maps/Room2038.png",
+       		"roomImage" : "/images/rooms/Room2038.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. Room 2038 will be the seventh door on your right.",
 
        		"facultyName" : "Penelope Collins",
@@ -600,8 +600,8 @@
        	"2040" : {
        		"roomName" : "Room 2040",
        		"roomType" : "Faculty Office",
-       		"mapImage" : "/images/maps/room2040.png",
-       		"roomImage" : "/images/maps/room2040.jpg",
+       		"mapImage" : "/images/maps/Room2040.png",
+       		"roomImage" : "/images/maps/Room2040.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. Room 2040 will be the eighth door on your right.",
 
        		"facultyName" : "Rhett Lowe",
@@ -617,8 +617,8 @@
        	"2042" : {
        		"roomName" : "Room 2042",
        		"roomType" : "Faculty Office",
-       		"mapImage" : "/images/maps/room2042.png",
-       		"roomImage" : "/images/rooms/room2042.jpg",
+       		"mapImage" : "/images/maps/Room2042.png",
+       		"roomImage" : "/images/rooms/Room2042.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 on your right, go all the way down the hall and take a left. Room 2042 will be the eighth door on your right.",
 
        		"facultyName" : "Hyuk Kang",
@@ -634,8 +634,8 @@
        	"2044" : {
        		"roomName" : "Room 2044",
        		"roomType" : "Faculty Office",
-       		"mapImage" : "/images/maps/room2044.png",
-       		"roomImage" : "/images/rooms/room2044.jpg",
+       		"mapImage" : "/images/maps/Room2044.png",
+       		"roomImage" : "/images/rooms/Room2044.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 on your right, go all the way down the hall and take a left. Room 2044 will be the ninth door on your right.",
 
        		"facultyName" : "Spenser Clark",
@@ -651,8 +651,8 @@
        	"2045" : {
        		"roomName" : "Room 2045",
        		"roomType" : "Server Room",
-       		"mapImage" : "/images/maps/room2045.png",
-       		"roomImage" : "/images/rooms/room2045.jpg",
+       		"mapImage" : "/images/maps/Room2045.png",
+       		"roomImage" : "/images/rooms/Room2045.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 on your right, go all the way down the hall and take a left. Room 2045 will be the sixth door on your right.",
 
        		"facultyName" : "",
@@ -668,8 +668,8 @@
        	"2046" : {
        		"roomName" : "Room 2046",
        		"roomType" : "Faculty Office",
-       		"mapImage" : "/images/maps/room2046.png",
-       		"roomImage" : "/images/rooms/room2046.jpg",
+       		"mapImage" : "/images/maps/Room2046.png",
+       		"roomImage" : "/images/rooms/Room2046.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 on your right, go all the way down the hall and take a left. Room 2046 will be the tenth door on your right.",
 
        		"facultyName" : "George Farkas",
@@ -685,8 +685,8 @@
        	"2050" : {
        		"roomName" : "Room 2050",
        		"roomType" : "Faculty Office",
-       		"mapImage" : "/images/maps/room2050.png",
-       		"roomImage" : "/images/rooms/room2050.jpg",
+       		"mapImage" : "/images/maps/Room2050.png",
+       		"roomImage" : "/images/rooms/Room2050.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 on your right, go all the way down the hall and take a left. Room 2050 will be the third-to-the-last door on your right.",
 
        		"facultyName" : "Deborah Vandell",
@@ -702,8 +702,8 @@
        	"2052" : {
        		"roomName" : "Room 2052",
        		"roomType" : "Faculty Office",
-       		"mapImage" : "/images/maps/room2052.png",
-       		"roomImage" : "/images/rooms/room2052.jpg",
+       		"mapImage" : "/images/maps/Room2052.png",
+       		"roomImage" : "/images/rooms/Room2052.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 on your right, go all the way down the hall and take a left. Room 2052 will be the second-to-the-last door on your right.",
 
        		"facultyName" : "Jade Jenkins",
@@ -719,8 +719,8 @@
        	"2054" : {
        		"roomName" : "Room 2054",
        		"roomType" : "Faculty Office",
-       		"mapImage" : "/images/maps/room2054.png",
-       		"roomImage" : "/images/rooms/room2054.jpg",
+       		"mapImage" : "/images/maps/Room2054.png",
+       		"roomImage" : "/images/rooms/Room2054.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 on your right, go all the way down the hall and take a left. Room 2054 will be the last door on your right.",
 
        		"facultyName" : "Di Xu",
@@ -736,8 +736,8 @@
        	"2056" : {
        		"roomName" : "Room 2056",
        		"roomType" : "Faculty Office",
-       		"mapImage" : "/images/maps/room2056.png",
-       		"roomImage" : "/images/rooms/room2056.jpg",
+       		"mapImage" : "/images/maps/Room2056.png",
+       		"roomImage" : "/images/rooms/Room2056.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 on your right, go all the way down the hall and take a left. Room 2056 will at the end of the hallway. ",
 
        		"facultyName" : "Greg Duncan",
@@ -753,8 +753,8 @@
        	"2060" : {
        		"roomName" : "Room 2060",
        		"roomType" : "Faculty Office",
-       		"mapImage" : "/images/maps/room2060.png",
-       		"roomImage" : "/images/rooms/room2060.jpg",
+       		"mapImage" : "/images/maps/Room2060.png",
+       		"roomImage" : "/images/rooms/Room2060.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left, go all the way down the hall and take a right. Room 2060 will be four doors down on your left",
 
        		"facultyName" : "Rachel Baker",
@@ -770,8 +770,8 @@
        	"2062" : {
        		"roomName" : "Room 2062",
        		"roomType" : "Faculty Office",
-       		"mapImage" : "/images/maps/room2062.png",
-       		"roomImage" : "/images/rooms/room2062.jpg",
+       		"mapImage" : "/images/maps/Room2062.png",
+       		"roomImage" : "/images/rooms/Room2062.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left, go all the way down the hall and take a right. Room 2062 will be three doors down on your left",
 
        		"facultyName" : "Emily Penner",
@@ -787,8 +787,8 @@
        	"2064" : {
        		"roomName" : "Room 2064",
        		"roomType" : "Faculty Office",
-       		"mapImage" : "/images/maps/room2064.png",
-       		"roomImage" : "/images/rooms/room2064.jpg",
+       		"mapImage" : "/images/maps/Room2064.png",
+       		"roomImage" : "/images/rooms/Room2064.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left, go all the way down the hall and take a right. Room 2064 will be two doors down on your left",
 
        		"facultyName" : "Hosun Kang",
@@ -804,8 +804,8 @@
        	"2066" : {
        		"roomName" : "Room 2066",
        		"roomType" : "Faculty Office",
-       		"mapImage" : "/images/maps/room2066.png",
-       		"roomImage" : "/images/rooms/room2066.jpg",
+       		"mapImage" : "/images/maps/Room2066.png",
+       		"roomImage" : "/images/rooms/Room2066.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left, go all the way down the hall and take a right. Room 2066 will be one door down on your left",
 
        		"facultyName" : "Robert Duncan",
@@ -821,8 +821,8 @@
        	"2068" : {
        		"roomName" : "Room 2068",
        		"roomType" : "Faculty Office",
-       		"mapImage" : "/images/maps/room2068.png",
-       		"roomImage" : "/images/rooms/room2068.jpg",
+       		"mapImage" : "/images/maps/Room2068.png",
+       		"roomImage" : "/images/rooms/Room2068.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left, go all the way down the hall and take a right. Room 2068 will be the first door straight ahead.",
 
        		"facultyName" : "Jacquelynne Eccles",
@@ -838,8 +838,8 @@
        	"2072" : {
        		"roomName" : "Room 2072",
        		"roomType" : "Faculty Office",
-       		"mapImage" : "/images/maps/room2072.png",
-       		"roomImage" : "/images/rooms/room2072.jpg",
+       		"mapImage" : "/images/maps/Room2072.png",
+       		"roomImage" : "/images/rooms/Room2072.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 by the thrid entrance on your left and go all the way down the hall. Room 2072 will be the last door on your left.",
 
        		"facultyName" : "Drew Bailey",
@@ -855,8 +855,8 @@
        	"2074" : {
        		"roomName" : "Room 2074",
        		"roomType" : "Faculty Office",
-       		"mapImage" : "/images/maps/room2074.png",
-       		"roomImage" : "/images/rooms/room2074.jpg",
+       		"mapImage" : "/images/maps/Room2074.png",
+       		"roomImage" : "/images/rooms/Room2074.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 by the thrid entrance on your left and go all the way down the hall. Room 2074 will be the second-to-the-last door on your left.",
 
        		"facultyName" : "Geneva Lopez-Sandoval",
@@ -872,8 +872,8 @@
        	"2075" : {
        		"roomName" : "Simpkins Lab",
        		"roomType" : "Lab",
-       		"mapImage" : "/images/maps/room2075.png",
-       		"roomImage" : "/images/rooms/room2075.jpg",
+       		"mapImage" : "/images/maps/Room2075.png",
+       		"roomImage" : "/images/rooms/Room2075.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 by the thrid entrance on your left and go all the way down the hall. Room 2075 will be the last door on your right.",
 
        		"facultyName" : "",
@@ -889,8 +889,8 @@
        	"2076" : {
        		"roomName" : "Room 2076",
        		"roomType" : "Faculty Office",
-       		"mapImage" : "/images/maps/room2076.png",
-       		"roomImage" : "/images/rooms/room2076.jpg",
+       		"mapImage" : "/images/maps/Room2076.png",
+       		"roomImage" : "/images/rooms/Room2076.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 by the thrid entrance on your left and go all the way down the hall. Room 2076 will be the ninth door on your left.",
 
        		"facultyName" : "Valerie Henry",
@@ -906,8 +906,8 @@
        	"2077" : {
        		"roomName" : "Simpkins Lab",
           "roomType" : "Lab",
-          "mapImage" : "/images/maps/room2075.png",
-          "roomImage" : "/images/rooms/room2075.jpg",
+          "mapImage" : "/images/maps/Room2075.png",
+          "roomImage" : "/images/rooms/Room2075.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 by the thrid entrance on your left and go all the way down the hall. Room 2077 will be the second-to-the-last door on your right.",
 
        		"facultyName" : "",
@@ -923,8 +923,8 @@
        	"2078" : {
        		"roomName" : "Room 2078",
        		"roomType" : "Faculty Office",
-       		"mapImage" : "/images/maps/room2078.png",
-       		"roomImage" : "/images/rooms/room2078.jpg",
+       		"mapImage" : "/images/maps/Room2078.png",
+       		"roomImage" : "/images/rooms/Room2078.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 by the thrid entrance on your left and go all the way down the hall. Room 2078 will be the eighth door on your left.",
 
        		"facultyName" : "Sue Vaughn",
@@ -940,8 +940,8 @@
        	"2079" : {
        		"roomName" : "Room 2079",
        		"roomType" : "Lab",
-       		"mapImage" : "/images/maps/room2079.png",
-       		"roomImage" : "/images/rooms/room2079.jpg",
+       		"mapImage" : "/images/maps/Room2079.png",
+       		"roomImage" : "/images/rooms/Room2079.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 by the thrid entrance on your left and go all the way down the hall. Room 2079 will be the second on your right.",
 
        		"facultyName" : "",
@@ -958,7 +958,7 @@
             "roomName" : "Room 2080",
             "roomType" : "Faculty Office",
             "mapImage" : "css/images/maps/main.png",
-            "roomImage" : "images/rooms/room1.jpg",
+            "roomImage" : "images/rooms/Room1.jpg",
             "voiceResponse_room" : "Room 2080 is behind you.",
             
             "facultyName" : "Guilfoyle",
@@ -976,8 +976,8 @@
        	"2082" : {
        		"roomName" : "Room 2082",
        		"roomType" : "Faculty Office",
-       		"mapImage" : "/images/maps/room2082.png",
-       		"roomImage" : "/images/rooms/room2082.jpg",
+       		"mapImage" : "/images/maps/Room2082.png",
+       		"roomImage" : "/images/rooms/Room2082.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 by the thrid entrance on your left and go all the way down the hall. Room 2082 will be the sixth door on your left.",
 
        		"facultyName" : "Susan Toma",
@@ -993,8 +993,8 @@
        	"2084" : {
        		"roomName" : "Room 2084",
        		"roomType" : "Faculty Office",
-       		"mapImage" : "/images/maps/room2084.png",
-       		"roomImage" : "/images/rooms/room2084.jpg",
+       		"mapImage" : "/images/maps/Room2084.png",
+       		"roomImage" : "/images/rooms/Room2084.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 by the thrid entrance on your left and go all the way down the hall. Room 2084 will be the fifth door on your left.",
 
        		"facultyName" : "Jeanne Stone",
@@ -1010,8 +1010,8 @@
        	"2086" : {
        		"roomName" : "Room 2086",
        		"roomType" : "Faculty Office",
-       		"mapImage" : "/images/maps/room2086.png",
-       		"roomImage" : "/images/rooms/room2086.jpg",
+       		"mapImage" : "/images/maps/Room2086.png",
+       		"roomImage" : "/images/rooms/Room2086.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 by the thrid entrance on your left and go all the way down the hall. Room 2086 will be the fourth door on your left.",
 
        		"facultyName" : "Maria Takacs",
@@ -1027,8 +1027,8 @@
        	"2092" : {
        		"roomName" : "Room 2092",
        		"roomType" : "Faculty Office",
-       		"mapImage" : "/images/maps/room2092.png",
-       		"roomImage" : "/images/rooms/room2092.jpg",
+       		"mapImage" : "/images/maps/Room2092.png",
+       		"roomImage" : "/images/rooms/Room2092.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 by the thrid entrance on your left and go all the way down the hall. Room 2092 will be the third door on your left.",
 
        		"facultyName" : "Jeff Johnston",
@@ -1044,8 +1044,8 @@
        	"2094" : {
        		"roomName" : "Room 2094",
        		"roomType" : "Faculty Office",
-       		"mapImage" : "css/images/maps/room2094.png",
-       		"roomImage" : "css/images/rooms/room2094.jpg",
+       		"mapImage" : "css/images/maps/Room2094.png",
+       		"roomImage" : "css/images/rooms/Room2094.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 by the thrid entrance on your left and go all the way down the hall. Room 2094 will be the second door on your left.",
 
        		"facultyName" : "Sandra Simpkins",
@@ -1061,8 +1061,8 @@
        	"2096" : {
        		"roomName" : "Room 2096",
        		"roomType" : "Faculty Office",
-       		"mapImage" : "/images/maps/room2096.png",
-       		"roomImage" : "/images/rooms/room2096.jpg",
+       		"mapImage" : "/images/maps/Room2096.png",
+       		"roomImage" : "/images/rooms/Room2096.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 by the thrid entrance on your left and go all the way down the hall. Room 2096 will be the first door on your left.",
 
        		"facultyName" : "Virginia Panish",
@@ -1078,8 +1078,8 @@
        	"2203" : {
        		"roomName" : "Room 2203",
        		"roomType" : "Faculty Office",
-       		"mapImage" : "/images/maps/room2203.png",
-       		"roomImage" : "/images/rooms/room2203.jpg",
+       		"mapImage" : "/images/maps/Room2203.png",
+       		"roomImage" : "/images/rooms/Room2203.jpg",
        		"voiceResponse_room" : "Enter Suite 2000 by the first entrance on your left, Room 2203 will be the first door on your left.",
 
        		"facultyName" : "David Lim",
@@ -1095,8 +1095,8 @@
        	"2204" : {
        		"roomName" : "Room 2204",
        		"roomType" : "Faculty Office",
-       		"mapImage" : "/images/maps/room2204.png",
-       		"roomImage" : "/images/rooms/room2204.jpg",
+       		"mapImage" : "/images/maps/main.png",
+       		"roomImage" : "/images/rooms/room1.jpg",
        		"voiceResponse_room" : "Enter Suite 2000 by the first entrance on your right, Room 2204 will be the second door on your left.",
 
        		"facultyName" : "Whitney Young",
@@ -1105,15 +1105,15 @@
        		"officeHours" : {
 
        		},
-       		"facultyImage" : "/images/faculty/whitneyYoung.jpg",
+       		"facultyImage" : "images/faculty/one.jpg",
        		"voiceResponse_faculty" : "Enter Suite 2000 by the first entrance on your right, Young's office will be the second door on your left."
        	},
 
        	"2206" : {
        		"roomName" : "Room 2206",
        		"roomType" : "Faculty Office",
-       		"mapImage" : "/images/maps/room2206.png",
-       		"roomImage" : "/images/rooms/room2206.jpg",
+       		"mapImage" : "/images/maps/Room2206.png",
+       		"roomImage" : "/images/rooms/Room2206.jpg",
        		"voiceResponse_room" : "Enter Suite 2000 by the first entrance on your left, Room 2206 will be the left door straight ahead.",
 
        		"facultyName" : "Sarah McDougall",
@@ -1129,8 +1129,8 @@
        	"2207" : {
        		"roomName" : "Room 2207",
        		"roomType" : "Faculty Office",
-       		"mapImage" : "/images/maps/room2207.png",
-       		"roomImage" : "/images/rooms/room2207.jpg",
+       		"mapImage" : "/images/maps/Room2207.png",
+       		"roomImage" : "/images/rooms/Room2207.jpg",
        		"voiceResponse_room" : "Enter Suite 2000 by the first entrance on your left, Room 2207 will be the right door straight ahead.",
 
        		"facultyName" : "Mary Earley",
@@ -1146,8 +1146,8 @@
        	"2205A" : {
        		"roomName" : "Room 2205A",
        		"roomType" : "Classroom",
-       		"mapImage" : "/images/maps/room2205A.jppngg",
-       		"roomImage" : "/images/rooms/room2205A.jpg",
+       		"mapImage" : "/images/maps/Room2205A.jppngg",
+       		"roomImage" : "/images/rooms/Room2205A.jpg",
        		"voiceResponse_room" : "Go left way, Room 2005A will be the fifth entrance on your left.",
 
        		"facultyName" : "",

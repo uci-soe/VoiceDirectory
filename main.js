@@ -262,12 +262,12 @@ window.onload = function(){
         $(".room-name").html(data.rooms[num].roomName);
         $(".room-type").html(data.rooms[num].roomType);
         $(".room-img").css('background-image', 'url(css/' + data.rooms[num].roomImage + ')');
-        $(".room-map").attr("src", data.rooms[num].mapImage);
+        $(".room-map").attr("src", "css/" + data.rooms[num].mapImage);
             
         $(".faculty-name").html(data.rooms[num].facultyName);
         $(".faculty-email").html(data.rooms[num].facultyEmail);
         $(".faculty-number").html(data.rooms[num].facultyNumber);
-        $(".faculty-img").attr("src", data.rooms[num].facultyImage);
+        $(".faculty-img").attr("src", "css/" + data.rooms[num].facultyImage);
         
         
         var roomType = data.rooms[num].roomType;
