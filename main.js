@@ -183,6 +183,7 @@ window.onload = function(){
     {
         message.text = vaildCommand;
         window.speechSynthesis.speak(message);
+        systemPause(message.text,message.text.split(" ").length);
     }
     
     function universalTime() {
