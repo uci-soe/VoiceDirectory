@@ -62,6 +62,8 @@ window.onload = function(){
         message.text = " ";
         message.lang = 'en-US';
         message.rate = 1.23;
+        //message.onstart = function(event){ alert("Starting to talk!")};
+        //message.onend = function(event){ alert("Done talking!")};
     }
     
     universalTime();
