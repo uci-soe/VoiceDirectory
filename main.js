@@ -26,6 +26,8 @@ window.onload = function(){
     var output_ok = "Ok";
     var output_pleasewait = "Please Wait...";
     var welcome = "Hello, what can I help you with today?";
+    var vaildCommand = "Please say, a valid command.";
+    
     
     //Events Voice Responses
     var eventWeekWelcome = "Here's what's happening this week.";
@@ -169,13 +171,18 @@ window.onload = function(){
     
     
     function endSystem() {
-
-        //responsiveVoice.speak(output_systemReset); 
         
         message.text = output_systemReset;
         window.speechSynthesis.speak(message);
         
         window.location.reload();
+    }
+    
+    // Is called everytime a user talks and annyang does not find a valid command.
+    function noMatch()
+    {
+        message.text = vaildCommand;
+        window.speechSynthesis.speak(message);
     }
     
     function universalTime() {
@@ -187,12 +194,27 @@ window.onload = function(){
 
     }
     
+   /* function isTalking()
+    {
+        if(window.speechSynthesis.speaking == true)
+        {
+            annyang.pause();
+        }
+        else if(window.speechSynthesis.speaking == false)
+        {
+            annyang.resume()       
+        }
+    }
+    */
+    
     function systemPause(word, wordCount) {
 
         $('#subtitle').html(word);
 //        annyang.pause();
         $('#systemMic').attr("src", "css/images/mic-disabled2.png");
 
+ 
+        
         setTimeout(function(){ 
 //            annyang.resume() 
 
@@ -241,8 +263,6 @@ window.onload = function(){
         if(isNaN(input)) {
             var num = data.faculty[input].roomName;
             
-            //responsiveVoice.speak(data.rooms[num].voiceResponse_faculty);
-            
             message.text = data.rooms[num].voiceResponse_faculty;
             window.speechSynthesis.speak(message);
             
@@ -250,8 +270,6 @@ window.onload = function(){
         }
         else {
             var num = input;
-            
-            //responsiveVoice.speak(data.rooms[num].voiceResponse_room);
             
             message.text = data.rooms[num].voiceResponse_room;
             window.speechSynthesis.speak(message);
@@ -300,9 +318,6 @@ window.onload = function(){
         if(yes) {
             timeLeft = grantTime;
             systemPause(output_ok, output_ok.split(' ').length);
-
-           
-            //responsiveVoice.speak(output_ok);
             
             message.text = output_ok;
             window.speechSynthesis.speak(message);
@@ -611,6 +626,8 @@ window.onload = function(){
         
         annyang.debug([newState=true]);
         
+        // adds NoMatch everytime no match is found.
+        annyang.addCallback('resultNoMatch',noMatch);
         //$('#subtitle').html("I'm Listening...");
 
     }
