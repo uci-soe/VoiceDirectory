@@ -242,7 +242,7 @@ window.onload = function(){
     function displayResult(data, input){
         
         commandManager("ResultsView");
-        
+        console.log("result commands added");
         $(".menu-block").hide();
         $(".result-block").show();
         $(".modal-bg").hide();
@@ -362,6 +362,7 @@ window.onload = function(){
                 break;
             case "ResultsView":
                 annyang.init(commands,true);
+                annyang.addCommands(commands);
                 break;
             case "FacultyOptions":
                 annyang.init(commands,true);
@@ -448,7 +449,6 @@ window.onload = function(){
                                     //alert("ASK USER WHICH ONE");
                                     resultOptions(data, possibleFaculty);
                                     modalResponse(); 
-                                    alert("List too long");
                                 }
                             else
                                 {
@@ -593,7 +593,7 @@ window.onload = function(){
             // : = capture only one word
             
             //RESET COMMAND
-            ':reset' : {'regexp' : /^(reset)$/, 'callback' : displayMainMenu},
+            'reset' : displayMainMenu,
             ':randomWord' : {'regexp' : /^(yes|no)$/, 'callback' : randomFunction}
         };
         
