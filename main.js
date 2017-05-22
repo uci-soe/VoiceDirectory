@@ -1,10 +1,10 @@
 window.onload = function(){
             
-    var timeLeft = 4500; // System countdown after initiation
+    var timeLeft = 45; // System countdown after initiation
     var timeToAsk = 30; // System will ask if user wants more time after this amount of seconds
     var timeToAsk2 = 15 // Second time asking
     var timeToEnd = 1; // System will reset the system with this amount of seconds left
-    var grantTime = 4005; // System will grant user extra time (grantTime will be set equal to "timeLeft")
+    var grantTime = 45; // System will grant user extra time (grantTime will be set equal to "timeLeft")
 
     var roomLocator_active = false;
     var facultyLocator_active = false;
@@ -27,6 +27,7 @@ window.onload = function(){
     var output_pleasewait = "Please Wait...";
     var welcome = "Hello, what can I help you with today?";
     var vaildCommand = "Please make a valid request.";
+    var output_listening = "I'm Listening...";
     
     
     //Events Voice Responses
@@ -47,35 +48,39 @@ window.onload = function(){
 
     var commands = {};
     
-    var annyangPaused = false
+    var annyangPaused = false;
     
-    
-    
-    
-    
-    
+    var caption = "";
+    var resultsCaption = "";
+
     
     //Creating voice synthesis utterance object.
     if('speechSynthesis' in window)
     {
         var message = new SpeechSynthesisUtterance();
+        
         message.text = " ";
         message.lang = 'en-US';
         message.rate = 1.23;
         message.onstart = function(event)
         { 
-            //alert("Starting to talk!");
             $('#systemMic').attr("src", "css/images/mic-disabled2.png");
+            $('#subtitle').html(caption);
         };
         message.onend = function(event)
         { 
-            //alert("Done talking!")
             $('#systemMic').attr("src", "css/images/microphone.png");
+            
+            if(!resultShown){
+                caption = output_listening;
+                $('#subtitle').html(caption);
+            }
+            else   
+                $('#subtitle').html(resultsCaption);
         };
     }
     
     universalTime();
-    
     //*********************************************************************************************************   FUNCTION DECLARATIONS
 
 //    $(".intro-block").hide();
@@ -147,11 +152,13 @@ window.onload = function(){
     }
     
     function modalResponse(){
+        
+        caption = output_options;
         //Notify user that there are multiple faculty members with the last name
         message.text = output_options;
         window.speechSynthesis.speak(message);
         
-        systemPause(output_options, output_options.split(' ').length);
+//        systemPause(output_options, output_options.split(' ').length);
 //        delay(output_options, output_options.split(' ').length);
         
     }
@@ -170,7 +177,8 @@ window.onload = function(){
     {
         message.text = vaildCommand;
         window.speechSynthesis.speak(message);
-        systemPause(message.text,message.text.split(" ").length);
+        caption = message.text;
+//        systemPause(message.text,message.text.split(" ").length);
     }
     
     function universalTime() {
@@ -196,30 +204,17 @@ window.onload = function(){
     */
     
     function systemPause(word, wordCount) {
-
-        $('#subtitle').html(word);
-//        annyang.pause();
-        $('#systemMic').attr("src", "css/images/mic-disabled2.png");
-
- 
-        
-        setTimeout(function(){ 
-//            annyang.resume() 
-
-            $('#subtitle').html("I'm Listening...");
-            $('#systemMic').attr("src", "css/images/microphone.png");
-            
-            }, wordCount*450);
+        caption = word;
     }
     
     function delay(word, wordCount) {
         
         $('#subtitle').html(word);
-        $('#systemMic').attr("src", "css/images/mic-disabled2.png");
+//        $('#systemMic').attr("src", "css/images/mic-disabled2.png");
 
         setTimeout(function(){ 
-            $('#subtitle').html("I'm Listening...");
-            $('#systemMic').attr("src", "css/images/microphone.png");
+            $('#subtitle').html(output_listening);
+//            $('#systemMic').attr("src", "css/images/microphone.png");
             
             }, wordCount * 500);
         
@@ -237,6 +232,14 @@ window.onload = function(){
         $("#subtitle").show();
         
         timeLeft = grantTime;
+        resultShown = false;
+        
+        commandManager("MainMenu");
+        
+        caption = output_pleasewait;
+        
+        message.text = welcome;
+        window.speechSynthesis.speak(message);
     }
     
     function displayResult(data, input){
@@ -305,8 +308,9 @@ window.onload = function(){
     function moretime() {
         if(yes) {
             timeLeft = grantTime;
-            systemPause(output_ok, output_ok.split(' ').length);
-            
+//            systemPause(output_ok, output_ok.split(' ').length);
+//            
+            caption = output_ok;
             message.text = output_ok;
             window.speechSynthesis.speak(message);
             
@@ -333,8 +337,8 @@ window.onload = function(){
                     message.text = output_moreTime;
                     window.speechSynthesis.speak(message);
                     
-                    
-                    systemPause(output_moreTime, output_moreTime.split(' ').length);
+                    caption = output_moreTime;
+//                    systemPause(output_moreTime, output_moreTime.split(' ').length);
 //                    delay(output_moreTime, output_moreTime.split(' ').length);
                     systemAsked = true; 
                 }
@@ -366,10 +370,12 @@ window.onload = function(){
                 break;
             case "FacultyOptions":
                 annyang.init(commands,true);
+                annyang.addCommands(commands);
                 annyang.addCommands(facultyOptionsCommands);
                 break;
             case "CalendarView":
                 annyang.init(commands,true);
+                annyang.addCommands(commands);
                 annyang.addCommands(eventsOptionsCommands);
                 break;
         }   
@@ -379,8 +385,9 @@ window.onload = function(){
         
         systemTimer();
         
-        systemPause(welcome, welcome.split(' ').length);
+//        systemPause(welcome, welcome.split(' ').length);
         
+        caption = welcome;
         message.text = welcome;
         window.speechSynthesis.speak(message);
         
@@ -390,7 +397,8 @@ window.onload = function(){
                 message.text = output_repeat;
                 window.speechSynthesis.speak(message);
                 
-                systemPause(output_repeat, output_repeat.split(' ').length);
+//                systemPause(output_repeat, output_repeat.split(' ').length);
+                caption = output_repeat;
                 
 //                delay(output_repeat, output_repeat.split(' ').length);
             }                        
@@ -398,7 +406,9 @@ window.onload = function(){
 
                 displayResult(data, room_num);
                 resultShown = true; 
-                systemPause((data.rooms[room_num].voiceResponse_room), (data.rooms[room_num].voiceResponse_room).split(' ').length);
+//                systemPause((data.rooms[room_num].voiceResponse_room), (data.rooms[room_num].voiceResponse_room).split(' ').length);
+                caption = data.rooms[room_num].voiceResponse_room;
+                resultsCaption = caption;
                 
             }
             timeLeft = grantTime;
@@ -436,9 +446,10 @@ window.onload = function(){
                     alert(possibleFaculty.length);
                     if(matchFound == false)
                     {
+                        caption = output_repeat;
                         message.text = output_repeat;
                         window.speechSynthesis.speak(message);
-                        systemPause(output_repeat, output_repeat.split(' ').length);  
+//                        systemPause(output_repeat, output_repeat.split(' ').length);  
                     }
                     
                     else
@@ -459,7 +470,10 @@ window.onload = function(){
                                     alert(data.faculty[possibleFaculty[0]].roomName);
                                     
                                     var num = data.faculty[possibleFaculty[0]].roomName;
-                                    systemPause((data.rooms[num].voiceResponse_faculty), (data.rooms[num].voiceResponse_faculty).split(' ').length);
+                                    
+                                    caption = data.rooms[num].voiceResponse_faculty;
+                                    resultsCaption = caption;
+//                                    systemPause((data.rooms[num].voiceResponse_faculty), (data.rooms[num].voiceResponse_faculty).split(' ').length);
                                 }
                         }
                 }
@@ -469,9 +483,10 @@ window.onload = function(){
 
                     if(!(fac_name in data.faculty))
                         {
+                            caption = output_repeat;
                             message.text = output_repeat;
                             window.speechSynthesis.speak(message);
-                            systemPause(output_repeat, output_repeat.split(' ').length);  
+//                            systemPause(output_repeat, output_repeat.split(' ').length);  
                         }
                     else
                         {
@@ -480,7 +495,10 @@ window.onload = function(){
                             
                             var num = data.faculty[fac_name].roomName;
 //                          responsiveVoice.speak(data.rooms[num].voiceResponse_faculty);
-                            systemPause((data.rooms[num].voiceResponse_faculty), (data.rooms[num].voiceResponse_faculty).split(' ').length);
+//                            systemPause((data.rooms[num].voiceResponse_faculty), (data.rooms[num].voiceResponse_faculty).split(' ').length);
+                            
+                            caption = data.rooms[num].voiceResponse_faculty;
+                            resultsCaption = caption;
                         }
                 }
             
@@ -519,9 +537,10 @@ window.onload = function(){
                     message.text = eventMonthWelcome; 
                 }
             
-            
+            caption = eventMonthWelcome;
             window.speechSynthesis.speak(message);
-            systemPause(eventMonthWelcome, eventMonthWelcome.split(' ').length);
+            resultsCaption = caption;
+//            systemPause(eventMonthWelcome, eventMonthWelcome.split(' ').length);
 //            delay(eventWelcome, eventWelcome.split(' ').length);
             resultShown = true; 
             
@@ -612,7 +631,6 @@ window.onload = function(){
         annyang.setLanguage("en-US");
         annyang.start({continuous: false}); 
         
-        
         annyang.debug([newState=true]);
         
         // adds NoMatch everytime no match is found.
@@ -676,10 +694,12 @@ window.onload = function(){
             $(".bubble").removeClass("tada");
         }, 1000);
         
+        
+        caption = output_speak;
         message.text = output_speak;
         window.speechSynthesis.speak(message);
         
-        systemPause(output_speak, output_speak.split(' ').length);
+//        systemPause(output_speak, output_speak.split(' ').length);
 //        delay(output_speak, output_speak.split(' ').length);
 
     });
