@@ -19,13 +19,15 @@ window.onload = function(){
     var resultShown = false;
 
     // System's General Voice Responses
-    var output_speak = "Please speak your request!";
+    var output_speak = "Please say your request!";
     var output_repeat = "Could you repeat that please?";
     var output_moreTime = "Do you need more time?";
     var output_systemReset = "System will reset.";
     var output_ok = "Ok";
     var output_pleasewait = "Please Wait...";
     var welcome = "Hello, what can I help you with today?";
+    var vaildCommand = "Please make a valid request.";
+    
     
     //Events Voice Responses
     var eventWeekWelcome = "Here's what's happening this week.";
@@ -60,32 +62,19 @@ window.onload = function(){
         message.text = " ";
         message.lang = 'en-US';
         message.rate = 1.23;
+        message.onstart = function(event)
+        { 
+            //alert("Starting to talk!");
+            $('#systemMic').attr("src", "css/images/mic-disabled2.png");
+        };
+        message.onend = function(event)
+        { 
+            //alert("Done talking!")
+            $('#systemMic').attr("src", "css/images/microphone.png");
+        };
     }
     
     universalTime();
-    /*
-    function isSpeaking()
-    {
-        if(window.speechSynthesis.speaking == true)
-            {
-                if(annyangPaused == false)
-                    {
-                        annyang.pause();
-                        console.log("Annyang paused");
-                        annyangPaused = true;
-                    }
-            }
-        
-        else if(window.speechSynthesis.speaking == false)
-            {
-                if(annyangPaused == true)
-                    {
-                        annyang.resume();
-                        console.log("Annyang resumed");
-                        annyangPaused = false;
-                    }
-            }
-    }*/
     
     //*********************************************************************************************************   FUNCTION DECLARATIONS
 
@@ -169,13 +158,19 @@ window.onload = function(){
     
     
     function endSystem() {
-
-        //responsiveVoice.speak(output_systemReset); 
         
         message.text = output_systemReset;
         window.speechSynthesis.speak(message);
         
         window.location.reload();
+    }
+    
+    // Is called everytime a user talks and annyang does not find a valid command.
+    function noMatch()
+    {
+        message.text = vaildCommand;
+        window.speechSynthesis.speak(message);
+        systemPause(message.text,message.text.split(" ").length);
     }
     
     function universalTime() {
@@ -187,12 +182,27 @@ window.onload = function(){
 
     }
     
+   /* function isTalking()
+    {
+        if(window.speechSynthesis.speaking == true)
+        {
+            annyang.pause();
+        }
+        else if(window.speechSynthesis.speaking == false)
+        {
+            annyang.resume()       
+        }
+    }
+    */
+    
     function systemPause(word, wordCount) {
 
         $('#subtitle').html(word);
 //        annyang.pause();
         $('#systemMic').attr("src", "css/images/mic-disabled2.png");
 
+ 
+        
         setTimeout(function(){ 
 //            annyang.resume() 
 
@@ -232,7 +242,7 @@ window.onload = function(){
     function displayResult(data, input){
         
         commandManager("ResultsView");
-        
+        console.log("result commands added");
         $(".menu-block").hide();
         $(".result-block").show();
         $(".modal-bg").hide();
@@ -241,8 +251,6 @@ window.onload = function(){
         if(isNaN(input)) {
             var num = data.faculty[input].roomName;
             
-            //responsiveVoice.speak(data.rooms[num].voiceResponse_faculty);
-            
             message.text = data.rooms[num].voiceResponse_faculty;
             window.speechSynthesis.speak(message);
             
@@ -250,8 +258,6 @@ window.onload = function(){
         }
         else {
             var num = input;
-            
-            //responsiveVoice.speak(data.rooms[num].voiceResponse_room);
             
             message.text = data.rooms[num].voiceResponse_room;
             window.speechSynthesis.speak(message);
@@ -262,12 +268,12 @@ window.onload = function(){
         $(".room-name").html(data.rooms[num].roomName);
         $(".room-type").html(data.rooms[num].roomType);
         $(".room-img").css('background-image', 'url(css/' + data.rooms[num].roomImage + ')');
-        $(".room-map").attr("src", data.rooms[num].mapImage);
+        $(".room-map").attr("src", "css/" + data.rooms[num].mapImage);
             
         $(".faculty-name").html(data.rooms[num].facultyName);
         $(".faculty-email").html(data.rooms[num].facultyEmail);
         $(".faculty-number").html(data.rooms[num].facultyNumber);
-        $(".faculty-img").attr("src", data.rooms[num].facultyImage);
+        $(".faculty-img").attr("src", "css/" + data.rooms[num].facultyImage);
         
         
         var roomType = data.rooms[num].roomType;
@@ -300,9 +306,6 @@ window.onload = function(){
         if(yes) {
             timeLeft = grantTime;
             systemPause(output_ok, output_ok.split(' ').length);
-
-           
-            //responsiveVoice.speak(output_ok);
             
             message.text = output_ok;
             window.speechSynthesis.speak(message);
@@ -326,8 +329,6 @@ window.onload = function(){
                 }
                 
                 if(resultShown) {
-                    
-                    //responsiveVoice.speak(output_moreTime);
                     
                     message.text = output_moreTime;
                     window.speechSynthesis.speak(message);
@@ -361,6 +362,7 @@ window.onload = function(){
                 break;
             case "ResultsView":
                 annyang.init(commands,true);
+                annyang.addCommands(commands);
                 break;
             case "FacultyOptions":
                 annyang.init(commands,true);
@@ -370,24 +372,20 @@ window.onload = function(){
                 annyang.init(commands,true);
                 annyang.addCommands(eventsOptionsCommands);
                 break;
-        }
-        
+        }   
     }
     
     function startSystem(data) {     
         
         systemTimer();
         
-        systemPause(output_pleasewait, welcome.split(' ').length);
+        systemPause(welcome, welcome.split(' ').length);
         
         message.text = welcome;
         window.speechSynthesis.speak(message);
         
         roomLocator = function(room_num) {  
             if(!(room_num in data.rooms)){
-                
-                
-                //responsiveVoice.speak(output_repeat);
                 
                 message.text = output_repeat;
                 window.speechSynthesis.speak(message);
@@ -400,7 +398,6 @@ window.onload = function(){
 
                 displayResult(data, room_num);
                 resultShown = true; 
-//                responsiveVoice.speak(data.rooms[room_num].voiceResponse_room); 
                 systemPause((data.rooms[room_num].voiceResponse_room), (data.rooms[room_num].voiceResponse_room).split(' ').length);
                 
             }
@@ -408,46 +405,6 @@ window.onload = function(){
             
         };
 
-       /* facultyLocator = function(fac_name) {  
-            if(!(fac_name in data.faculty)) {
-//                alert(fac_name);
-                responsiveVoice.speak(output_repeat); 
-                systemPause(output_repeat, output_repeat.split(' ').length);
-                
-                delay(output_repeat, output_repeat.split(' ').length);
-            }
-            else {
-               
-                displayResult(data, fac_name);
-                resultShown = true; 
-                               
-                var num = data.faculty[fac_name].roomName;
-//                responsiveVoice.speak(data.rooms[num].voiceResponse_faculty);
-                systemPause((data.rooms[num].voiceResponse_faculty), (data.rooms[num].voiceResponse_faculty).split(' ').length);
-            }
-            timeLeft = grantTime;
-            
-        };
-        */
-        
-        
-        // Testing full name faculty locator
-        
-        
-        /*
-        Search last name
-            when they search last name we search through keys
-            if match save in temp array 
-
-
-            if duplicates add to array 
-
-            then ask user which one?
-
-            if no duplicates present results	
-
-            if no match at all return ask again
-        */
         
         facultyLocator = function(fac_name) {  
             //alert(fac_name);
@@ -466,7 +423,6 @@ window.onload = function(){
                 {
                     for(key in data.faculty)
                         {
-                            
                             var keyCheck = key.split(" ");
                            // console.log("Key: " + key + " | faculty Input: " + fac_name + " | Key Comparrison: " + keyCheck[1]);
                             
@@ -474,8 +430,7 @@ window.onload = function(){
                             {
                                 matchFound = true;
                                 possibleFaculty.push(key);
-                                //alert("Possible Faculty: " + possibleFaculty.length);
-                                
+                                alert("Possible Faculty: " + possibleFaculty.length);
                             }
                         }
                     alert(possibleFaculty.length);
@@ -486,50 +441,26 @@ window.onload = function(){
                         systemPause(output_repeat, output_repeat.split(' ').length);  
                     }
                     
-                    /*
-                    if(!(fac_name in data.faculty))
-                        {
-                            message.text = output_repeat;
-                            window.speechSynthesis.speak(message);
-                            systemPause(output_repeat, output_repeat.split(' ').length);  
-                        }
-                    */
-                    
                     else
                         {   
-                            /*var possibleFaculty = [];
-                            var count = 0;
-                            
-                            for(key in data.faculty)
-                                {
-                                    //alert(key);
-                                    if (key == fac_name)
-                                        {
-                                            possibleFaculty.push(key);
-                                            alert("Possible Faculty: " + possibleFaculty.length);
-                                        }
-                                    count++;
-                                }
-                            */
                            if(possibleFaculty.length > 1) // ooo
                                 {
                                     // Ask user which one they meant.
-                                    alert("ASK USER WHICH ONE");
+                                    //alert("ASK USER WHICH ONE");
                                     resultOptions(data, possibleFaculty);
-                                    modalResponse();
-                                    
+                                    modalResponse(); 
                                 }
                             else
                                 {
                                     displayResult(data, possibleFaculty[0]);
                                     resultShown = true;
-                            
-                                    var num = data.faculty[fac_name].roomName;
-//                                  responsiveVoice.speak(data.rooms[num].voiceResponse_faculty);
+                                    
+                                    
+                                    alert(data.faculty[possibleFaculty[0]].roomName);
+                                    
+                                    var num = data.faculty[possibleFaculty[0]].roomName;
                                     systemPause((data.rooms[num].voiceResponse_faculty), (data.rooms[num].voiceResponse_faculty).split(' ').length);
-                                
                                 }
-                            
                         }
                 }
             // If they provide first and last name.
@@ -554,65 +485,7 @@ window.onload = function(){
                 }
             
             timeLeft = grantTime;
-            
-            
-            
-            
-            
-            
-            
-            /*
-            if(!(fac_name in data.faculty)) {
-                alert(fac_name);
-                responsiveVoice.speak(output_repeat); 
-                systemPause(output_repeat, output_repeat.split(' ').length);
-            }
-            else {
-               
-                displayResult(data, fac_name);
-                resultShown = true; 
-                               
-                var num = data.faculty[fac_name].roomName;
-//                responsiveVoice.speak(data.rooms[num].voiceResponse_faculty);
-                systemPause((data.rooms[num].voiceResponse_faculty), (data.rooms[num].voiceResponse_faculty).split(' ').length);
-            }
-            timeLeft = grantTime;
-            */
         };
-        
-        
-        
-        
-        
-        
-        /*
-        // Adding two word faculty search
-        facultyLocator2 = function(fac_first_name,fac_last_name) { 
-            var full_name = fac_first_name.concat(" ");
-            full_name = full_name.concat(fac_last_name);
-            
-            //alert(full_name);
-            
-            
-            if(!(full_name in data.faculty)) {
-                //alert(fac_name);
-                responsiveVoice.speak(output_repeat); 
-                systemPause(output_repeat, output_repeat.split(' ').length);
-            }
-            else {
-               
-                displayResult(data, full_name);
-                resultShown = true; 
-                               
-                var num = data.faculty[full_name].roomName;
-//                responsiveVoice.speak(data.rooms[num].voiceResponse_faculty);
-                systemPause((data.rooms[num].voiceResponse_faculty), (data.rooms[num].voiceResponse_faculty).split(' ').length);
-            }
-            timeLeft = grantTime;
-            
-        };
-        
-        */
         
         // Calendar View Function //
 
@@ -675,8 +548,6 @@ window.onload = function(){
                     resultShown = false;
 
                     timeLeft = grantTime;
-
-                    //responsiveVoice.speak(welcome);
                     
                     message.text = welcome;
                     window.speechSynthesis.speak(message);
@@ -693,7 +564,6 @@ window.onload = function(){
             displayResult(data, possibleFaculty[facultyIndex]);
             
         };
-
          
         mainMenuCommands = {
             // Room Locator
@@ -714,19 +584,16 @@ window.onload = function(){
             //Event View
             'What events are coming up' : calendarView,
             'I want to know upcoming events' : calendarView
-            // randomWord can only be yes or no now to avoid it being called very    time.
-            
+            // randomWord can only be yes or no now to avoid it being called very    time. 
         };
     
         
         commands = {
-            
             // * = capture everything after 
             // : = capture only one word
             
-            
             //RESET COMMAND
-            ':reset' : {'regexp' : /^(reset)$/, 'callback' : displayMainMenu},
+            'reset' : displayMainMenu,
             ':randomWord' : {'regexp' : /^(yes|no)$/, 'callback' : randomFunction}
         };
         
@@ -738,8 +605,7 @@ window.onload = function(){
             //'(This) :viewType': 
             '*timeFrame' : {'regexp' : /^(what's happening this month|what's happening today|what's happening this week)$/, 'callback' : calendarView}
         };
-
-        
+   
         annyang.addCommands(commands);
         commandManager("MainMenu");
         
@@ -749,6 +615,8 @@ window.onload = function(){
         
         annyang.debug([newState=true]);
         
+        // adds NoMatch everytime no match is found.
+        annyang.addCallback('resultNoMatch',noMatch);
         //$('#subtitle').html("I'm Listening...");
 
     }
@@ -761,8 +629,6 @@ window.onload = function(){
         $(".menu-block").show();
         $("#systemMic").show();
         $("#subtitle").show();
-        
-
         
         //ANIMATION   ******************************
         
@@ -810,18 +676,12 @@ window.onload = function(){
             $(".bubble").removeClass("tada");
         }, 1000);
         
-       
-        
-        //responsiveVoice.speak(output_speak);
-        
         message.text = output_speak;
         window.speechSynthesis.speak(message);
         
         systemPause(output_speak, output_speak.split(' ').length);
 //        delay(output_speak, output_speak.split(' ').length);
 
-        
     });
-
-    
+ 
 }
