@@ -15,7 +15,7 @@
             "firstName" : "Chris",
             "lastName" : "Martin"
         },
-        "Denise Martin" : {
+        "Denise Earley" : {
             "roomName" : "2207",
             "fullName" : "Denise Earley",
             "firstName" : "Denise",
@@ -328,8 +328,8 @@
        	"2001" : {
        		"roomName" : "Room 2001",
        		"roomType" : "Classroom",
-       		"mapImage" : "css/images/maps/Room2001.png",
-       		"roomImage" : "css/images/rooms/Room2001.jpg",
+       		"mapImage" : "/images/maps/Room2001.png",
+       		"roomImage" : "/images/rooms/Room2001.jpg",
        		"voiceResponse_room" : "Room 2001 is the first entrance on your right.",
 
        		"facultyName" : "Jody Guarino",
@@ -338,7 +338,7 @@
        		"officeHours" : {
 
        		},
-       		"facultyImage" : "css/images/faculty/one.jpg",
+       		"facultyImage" : "/images/faculty/one.jpg",
        		"voiceResponse_faculty" : "Guarino's office is the first entrance on your right."
        	},
 
