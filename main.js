@@ -61,14 +61,16 @@ window.onload = function(){
         
         message.text = " ";
         message.lang = 'en-US';
-        message.rate = 1.23;
+        message.rate = 1;
         message.onstart = function(event)
         { 
+            annyang.abort();
             $('#systemMic').attr("src", "css/images/mic-disabled2.png");
             $('#subtitle').html(caption);
         };
         message.onend = function(event)
         { 
+            annyang.resume();
             $('#systemMic').attr("src", "css/images/microphone.png");
             
             if(!resultShown){
@@ -79,6 +81,8 @@ window.onload = function(){
                 $('#subtitle').html(resultsCaption);
         };
     }
+    
+//    Failed to execute 'start' on 'SpeechRecognition': recognition has already started.
     
     universalTime();
     //*********************************************************************************************************   FUNCTION DECLARATIONS
@@ -277,14 +281,14 @@ window.onload = function(){
         $(".faculty-email").html(data.rooms[num].facultyEmail);
         $(".faculty-number").html(data.rooms[num].facultyNumber);
         $(".faculty-img").attr("src", "css/" + data.rooms[num].facultyImage);
-        
-        
         var roomType = data.rooms[num].roomType;
         
         if(roomType == "Faculty Office")
             $('.room-img').css('height', '0px');
-        else
+        else{
             $('.fac-info').css('display', 'none');
+            $(".room-type").css('display','none');
+        }
        
         var officeHours = data.rooms[num].officeHours;
         
@@ -591,7 +595,7 @@ window.onload = function(){
             'room *room_num' : roomLocator,
             
             // Faculty Locator
-            'professor *name': facultyLocator,
+            '(professor) *name': facultyLocator,
            // 'I am looking for (dr.) *name':facultyLocator,
             'I am looking for (professor) *name':facultyLocator,
             'Im looking for (professor) *name':facultyLocator, 
