@@ -396,6 +396,26 @@ window.onload = function(){
         window.speechSynthesis.speak(message);
         
         roomLocator = function(room_num) {  
+            
+            //Check if asking for a room that has multiple room objects due to faculty sharing the same room.
+    /*        
+            if(room_num == "2064")
+            {
+                room_num = "2064a";
+            }
+            else if(room_num == "2066")
+            {
+                room_num = "2066a";
+            }
+            else if(room_num == "2076")
+            {
+                room_num = "2076a";
+            }
+            else if(room_num == "2084")
+            {
+                room_num = "2084a";
+            }
+*/
             if(!(room_num in data.rooms)){
                 
                 message.text = output_repeat;
@@ -407,7 +427,7 @@ window.onload = function(){
 //                delay(output_repeat, output_repeat.split(' ').length);
             }                        
             else {
-
+                console.log(room_num);
                 displayResult(data, room_num);
                 resultShown = true; 
 //                systemPause((data.rooms[room_num].voiceResponse_room), (data.rooms[room_num].voiceResponse_room).split(' ').length);
@@ -421,6 +441,80 @@ window.onload = function(){
 
         
         facultyLocator = function(fac_name) {  
+            
+            
+            if(fac_name == "cambridge" || fac_name == "Cambridge" || fac_name == "Kim Birge" || fac_name == "Kim Bridge")
+            {  
+                fac_name = "Kim Burge";
+                alert(fac_name);
+            }
+            else if(fac_name == "Janelle Lau" )
+            {  
+                fac_name = "Jenel Lao";
+                alert(fac_name);
+            }
+            else if(fac_name == "die shoe")
+            {
+                fac_name = "Di Xu";
+                alert(fac_name);
+            }
+            else if(fac_name == "constance iloh")
+            {
+                fac_name = "Constance Iloh";
+                alert(fac_name);
+            }
+            else if(fac_name == "Melinda petre")
+            {
+                fac_name = "Melinda Petre";
+                alert(fac_name);
+            }
+            else if(fac_name == "Jacqueline Echols")
+            {
+                fac_name = "Jacquelynne Eccles";
+                alert(fac_name);
+            }
+            else if(fac_name == "Geneva Lopez Sandoval")
+            {
+                fac_name = "Geneva Lopez-Sandoval";
+                alert(fac_name);
+            }
+            else if(fac_name == "Sarah sing")
+            {
+                fac_name = "Sarah Singh";
+                alert(fac_name);
+            }
+            else if(fac_name == "Susan Toma bears" || fac_name == "Susan Toma Berg" || fac_name == "Susan Toma bush" || fac_name == "Susan Toma Burj")
+            {
+                fac_name = "Susan Toma Berge";
+                alert(fac_name);
+            }
+            else if(fac_name == "Gene Stone" || fac_name == "June Stone")
+            {
+                fac_name = "Jeanne Stone";
+                alert(fac_name);
+            }
+            else if(fac_name == "Maria tax" || fac_name == "Murrieta Cox")
+            {
+                fac_name = "Maria Takacs";
+                alert(fac_name);
+            }
+            else if(fac_name == "Sandra Simkins")
+            {
+                fac_name = "Sandra Simpkins";
+                alert(fac_name);
+            }
+            else if(fac_name == "Virginia panish")
+            {
+                fac_name = "Virginia Panish";
+                alert(fac_name);
+            }
+            
+            
+            
+            
+            
+            
+            
             //alert(fac_name);
             var splitFacName = fac_name.split(" ");
             //alert(splitFacName[0]);
@@ -484,7 +578,8 @@ window.onload = function(){
             // If they provide first and last name.
             else
                 {
-
+                    
+                        
                     if(!(fac_name in data.faculty))
                         {
                             caption = output_repeat;
@@ -512,12 +607,12 @@ window.onload = function(){
         // Calendar View Function //
 
         calendarView = function(viewMode = "what's happening this week") {
-            var source = ""
+           /* var source = "https://calendar.google.com/calendar/embed?mode=MONTH&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=ucieducationevents%40gmail.com&amp;color=%238D6F47&amp;ctz=America%2FLos_Angeles"
             commandManager("CalendarView");
             
             if(viewMode == "what's happening this week")
                 {
-                    source = "https://calendar.google.com/calendar/embed?mode=WEEK&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=tp813fc8tfi3uoeb2k1kr8ivn8%40group.calendar.google.com&amp;color=%238D6F47&amp;ctz=America%2FLos_Angeles";
+                    source = "https://calendar.google.com/calendar/embed?mode=MONTH&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=ucieducationevents%40gmail.com&amp;color=%238D6F47&amp;ctz=America%2FLos_Angeles";
                    
                     $("#calendarFrame").attr('src',source);
                     
@@ -540,7 +635,9 @@ window.onload = function(){
                     
                     message.text = eventMonthWelcome; 
                 }
+            */
             
+            message.text = eventMonthWelcome; 
             caption = eventMonthWelcome;
             window.speechSynthesis.speak(message);
             resultsCaption = caption;
@@ -593,7 +690,7 @@ window.onload = function(){
             'I am looking for room *room_num' : roomLocator,
             'Where is room *room_num' : roomLocator,
             'room *room_num' : roomLocator,
-            
+            'What events are coming up' : calendarView,
             // Faculty Locator
             '(professor) *name': facultyLocator,
            // 'I am looking for (dr.) *name':facultyLocator,
@@ -605,7 +702,7 @@ window.onload = function(){
             //'professor *fac_first_name (*fac_last_name)' : facultyLocator,
             
             //Event View
-            'What events are coming up' : calendarView,
+            
             'I want to know upcoming events' : calendarView
             // randomWord can only be yes or no now to avoid it being called very    time. 
         };
