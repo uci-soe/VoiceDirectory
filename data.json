@@ -15,16 +15,22 @@
             "firstName" : "David",
             "lastName" : "Lim"
         },
+        "Kim Burge" : {
+            "roomName" : "2009",
+            "fullName" : "Kim Burge",
+            "firstName" : "Kim",
+            "lastName" : "Burge"
+        },
         "Sarah McDougall" : {
             "roomName" : "2206",
             "fullName" : "Sarah McDougall",
             "firstName" : "Sarah",
             "lastName" : "McDougall"
         },
-        "Whitney Young" : {
+        "Neil Young" : {
             "roomName" : "2204",
-            "fullName" : "Whitney Young",
-            "firstName" : "Whitney",
+            "fullName" : "Neil Young",
+            "firstName" : "Neil",
             "lastName" : "Young"
         },
         "Jody Guarino" : {
@@ -45,13 +51,13 @@
             "firstName" : "Liane",
             "lastName" : "Brouillette"
         },
-        "Jamal Abedi" : {
+        "Jamal abedi" : {
             "roomName" : "2034",
             "fullName" : "Jamal Abedi",
             "firstName" : "Jamal",
             "lastName" : "Abedi"
         },
-        "Maria Rosales-Rueda" : {
+        "Maria Rosales Rueda" : {
             "roomName" : "2036",
             "fullName" : "Maria Rosales-Rueda",
             "firstName" : "Maria",
@@ -93,7 +99,7 @@
             "firstName" : "George",
             "lastName" : "Farkas"
         },
-        "Deborah Vandell" : {
+        "Deborah vandell" : {
             "roomName" : "2050",
             "fullName" : "Deborah Vandell",
             "firstName" : "Deborah",
@@ -106,7 +112,7 @@
             "lastName" : "Jenkins"
         },
         "Greg Duncan" : {
-            "roomName" : "2053",
+            "roomName" : "2056",
             "fullName" : "Greg Duncan",
             "firstName" : "Greg",
             "lastName" : "Duncan"
@@ -130,25 +136,25 @@
             "lastName" : "Penner"
         },
         "Constance Iloh" : {
-            "roomName" : "2064",
+            "roomName" : "2064a",
             "fullName" : "Constance Iloh",
             "firstName" : "Constance",
             "lastName" : "Iloh"
         },
         "Hosun Kang" : {
-            "roomName" : "2064",
+            "roomName" : "2064b",
             "fullName" : "Hosun Kang",
             "firstName" : "Hosun",
             "lastName" : "Kang"
         },
         "Robert Duncan" : {
-            "roomName" : "2066",
+            "roomName" : "2066a",
             "fullName" : "Robert Duncan",
             "firstName" : "Robert",
             "lastName" : "Duncan"
         },
         "Melinda Petre" : {
-            "roomName" : "2066",
+            "roomName" : "2066b",
             "fullName" : "Melinda Petre",
             "firstName" : "Melinda",
             "lastName" : "Petre"
@@ -172,13 +178,13 @@
             "lastName" : "Lopez-Sandoval"
         },
         "Valerie Henry" : {
-            "roomName" : "2076",
+            "roomName" : "2076a",
             "fullName" : "Valerie Henry",
             "firstName" : "Valerie",
             "lastName" : "Henry"
         },
         "Sarah Singh" : {
-            "roomName" : "2076",
+            "roomName" : "2076b",
             "fullName" : "Sarah Singh",
             "firstName" : "Sarah",
             "lastName" : "Singh"
@@ -195,23 +201,29 @@
             "firstName" : "Susan",
             "lastName" : "Guilfoyle"
         },
-        "Susan Toma-Berge" : {
+        "Susan Toma Berge" : {
             "roomName" : "2082",
             "fullName" : "Susan Toma-Berge",
             "firstName" : "Susan",
             "lastName" : "Toma-Berge"
         },
         "Jeanne Stone" : {
-            "roomName" : "2084",
+            "roomName" : "2084a",
             "fullName" : "Jeanne Stone",
             "firstName" : "Jeanne",
             "lastName" : "Stone"
         },
         "Jenel Lao" : {
-            "roomName" : "2084",
+            "roomName" : "2084b",
             "fullName" : "Jenel Lao",
             "firstName" : "Jenel",
             "lastName" : "Lao"
+        },
+        "Maria Takacs" : {
+            "roomName" : "2086",
+            "fullName" : "Maria Takacs",
+            "firstName" : "Maria",
+            "lastName" : "Takacs"
         },
         "Jeff Johnston" : {
             "roomName" : "2092",
@@ -233,7 +245,10 @@
         },
         "Student Affairs" : {
             "roomName" : "2000"
-        }     
+        },
+        "Simpkin's Lab" : {
+            "roomName" : "2075"
+        }
     },
     
     "rooms" : {
@@ -473,7 +488,7 @@
        		"officeHours" : {
 
        		},
-       		"facultyImage" : "/images/faculty/mariaRueda.jph",
+       		"facultyImage" : "/images/faculty/mariaRosalesRueda.jph",
        		"voiceResponse_faculty" : "Enter Suite 2003 on your right and take a left at the end of the hall. Rueda's office will be the sixth door on your right."
        	},
 
@@ -558,7 +573,7 @@
        		"officeHours" : {
 
        		},
-       		"facultyImage" : "/images/faculty/spenserClark.jpg",
+       		"facultyImage" : "/images/faculty/clarkSpenser.jpg",
        		"voiceResponse_faculty" : "Enter Suite 2003 on your right, go all the way down the hall and take a left. Clark's office will be the ninth door on your right."
        	},
 
@@ -698,7 +713,23 @@
        		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left, go all the way down the hall and take a right. Penner's office will be three doors down on your left"
        	},
 
-       	"2064" : {
+        "2064a" : {
+       		"roomName" : "Room 2064",
+       		"roomType" : "Faculty Office",
+       		"mapImage" : "/images/maps/Room2064.png",
+       		"roomImage" : "/images/rooms/Room2064.jpg",
+       		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left, go all the way down the hall and take a right. Room 2064 will be two doors down on your left",
+
+       		"facultyName" : "Constance Iloh",
+       		"facultyEmail" : "hosunk@uci.edu",
+       		"facultyNumber" : "(949)824-6914",
+       		"officeHours" : {
+
+       		},
+       		"facultyImage" : "/images/faculty/constanceIloh.jpg",
+       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left, go all the way down the hall and take a right. Hosun Kang, and Constance Iloh's office will be two doors down on your left"
+       	},
+       	"2064b" : {
        		"roomName" : "Room 2064",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2064.png",
@@ -712,10 +743,9 @@
 
        		},
        		"facultyImage" : "/images/faculty/hosunKang.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left, go all the way down the hall and take a right. Kang's office will be two doors down on your left"
+       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left, go all the way down the hall and take a right. Hosun Kang, and Constance Iloh's office will be two doors down on your left"
        	},
-
-       	"2066" : {
+       	"2066a" : {
        		"roomName" : "Room 2066",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2066.png",
@@ -729,8 +759,27 @@
 
        		},
        		"facultyImage" : "/images/faculty/robertDuncan.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left, go all the way down the hall and take a right. Duncan's office will be one door down on your left"
+       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left, go all the way down the hall and take a right. Robert Duncan and Melinda Petre's office will be one door down on your left"
        	},
+        "2066b" : {
+       		"roomName" : "Room 2066",
+       		"roomType" : "Faculty Office",
+       		"mapImage" : "/images/maps/Room2066.png",
+       		"roomImage" : "/images/rooms/Room2066.jpg",
+       		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left, go all the way down the hall and take a right. Room 2066 will be one door down on your left",
+
+       		"facultyName" : "Melinda Petre",
+       		"facultyEmail" : "duncanrj@uci.edu",
+       		"facultyNumber" : "(949)824-3068",
+       		"officeHours" : {
+
+       		},
+       		"facultyImage" : "/images/faculty/melindaPetre.jpg",
+       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left, go all the way down the hall and take a right. Robert Duncan and Melinda Petre's will be one door down on your left"
+       	},
+
+        
+        
 
        	"2068" : {
        		"roomName" : "Room 2068",
@@ -745,8 +794,8 @@
        		"officeHours" : {
 
        		},
-       		"facultyImage" : "/images/faculty/jacquelynneEccles.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left, go all the way down the hall and take a right. Eccles' office will be the first door straight ahead."
+       		"facultyImage" : "/images/faculty/jacquelynneSueEccles.jpg",
+       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left, go all the way down the hall and take a right. Jacquelynne Eccles' office will be the first door straight ahead."
        	},
 
        	"2072" : {
@@ -762,8 +811,8 @@
        		"officeHours" : {
 
        		},
-       		"facultyImage" : "/images/faculty/drewBailey.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Bailey's office will be the last door on your left."
+       		"facultyImage" : "/images/faculty/drewBailey.png",
+       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Drew Bailey's office will be the last door on your left."
        	},
 
        	"2074" : {
@@ -784,7 +833,7 @@
        	},
 
        	"2075" : {
-       		"roomName" : "Simpkins Lab",
+       		"roomName" : "Simpkin's Lab",
        		"roomType" : "Lab",
        		"mapImage" : "/images/maps/Room2075.png",
        		"roomImage" : "/images/rooms/Room2075.jpg",
@@ -800,7 +849,7 @@
        		"voiceResponse_faculty" : ""
        	},
 
-       	"2076" : {
+       	"2076a" : {
        		"roomName" : "Room 2076",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2076.png",
@@ -813,9 +862,28 @@
        		"officeHours" : {
 
        		},
-       		"facultyImage" : "/images/rooms/room2075.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Henry's office will be the ninth door on your left."
+       		"facultyImage" : "/images/faculty/valerieHenry.jpg",
+       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Valerie Henry and Sarah Singh's office will be the ninth door on your left."
        	},
+        
+        "2076b" : {
+       		"roomName" : "Room 2076",
+       		"roomType" : "Faculty Office",
+       		"mapImage" : "/images/maps/Room2076.png",
+       		"roomImage" : "/images/rooms/Room2076.jpg",
+       		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Room 2076 will be the ninth door on your left.",
+
+       		"facultyName" : "Sarah Singh",
+       		"facultyEmail" : "vhenry@uci.edu",
+       		"facultyNumber" : "(949)824-1494",
+       		"officeHours" : {
+
+       		},
+       		"facultyImage" : "/images/faculty/sarahSingh.jpg",
+       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Valerie Henry and Sarah Singh's office will be the ninth door on your left."
+       	},
+        
+        
 
        	"2077" : {
        		"roomName" : "Simpkins Lab",
@@ -848,7 +916,7 @@
 
        		},
        		"facultyImage" : "/images/faculty/sueVaughn.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Vaughn's office will be the eighth door on your left."
+       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Sue Vaughn's office will be the eighth door on your left."
        	},
 
        	"2079" : {
@@ -894,17 +962,17 @@
        		"roomImage" : "/images/rooms/Room2082.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Susan's office will be the sixth door on your left.",
 
-       		"facultyName" : "Susan Toma",
+       		"facultyName" : "Susan Toma-Berge",
        		"facultyEmail" : "tomas@uci.edu",
        		"facultyNumber" : "(949)824-4172",
        		"officeHours" : {
 
        		},
        		"facultyImage" : "/images/faculty/susanTomaBerge.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Susan's office will be the sixth door on your left."
+       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Susan Toma-Berge's office will be the sixth door on your left."
        	},
 
-       	"2084" : {
+       	"2084a" : {
        		"roomName" : "Room 2084",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2084.png",
@@ -917,9 +985,27 @@
        		"officeHours" : {
 
        		},
-       		"facultyImage" : "/images/faculty/jeanneStone.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Stone's office will be the fifth door on your left."
+       		"facultyImage" : "/images/faculty/stoneJeanne.jpg",
+       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Jenel Lao and Jeanne Stone's office will be the fifth door on your left."
        	},
+        
+        "2084b" : {
+       		"roomName" : "Room 2084",
+       		"roomType" : "Faculty Office",
+       		"mapImage" : "/images/maps/Room2084.png",
+       		"roomImage" : "/images/rooms/Room2084.jpg",
+       		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Room 2084 will be the fifth door on your left.",
+
+       		"facultyName" : "Jenel Lao",
+       		"facultyEmail" : "jmstone@uci.edu",
+       		"facultyNumber" : "(949)824-7836",
+       		"officeHours" : {
+
+       		},
+       		"facultyImage" : "/images/faculty/laoJenel.jpg",
+       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Jenel Lao and Jeanne Stone's office will be the fifth door on your left."
+       	},
+        
 
        	"2086" : {
        		"roomName" : "Room 2086",
@@ -935,7 +1021,7 @@
 
        		},
        		"facultyImage" : "/images/faculty/mariaTakacs.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Takacs' office will be the fourth door on your left."
+       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Maria Takacs' office will be the fourth door on your left."
        	},
 
        	"2092" : {
@@ -952,7 +1038,7 @@
 
        		},
        		"facultyImage" : "/images/faculty/jeffJohnston.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Johnston's office will be the third door on your left."
+       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Jeff Johnston's office will be the third door on your left."
        	},
 
        	"2094" : {
@@ -969,7 +1055,7 @@
 
        		},
        		"facultyImage" : "/images/faculty/sandraSimpkins.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Simpkins' office will be the second door on your left."
+       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Sandra Simpkins' office will be the second door on your left."
        	},
 
        	"2096" : {
@@ -986,7 +1072,7 @@
 
        		},
        		"facultyImage" : "/images/faculty/virginiaPanish.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Panish's office will be the first door on your left."
+       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Virginia Panish's office will be the first door on your left."
        	},
 
        	"2203" : {
@@ -1003,7 +1089,7 @@
 
        		},
        		"facultyImage" : "/images/faculty/davidLim.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2000 by the first entrance on your left, Lim's office will be the first door on your left."
+       		"voiceResponse_faculty" : "Enter Suite 2000 by the first entrance on your left, David Lim's office will be the first door on your left."
        	},
 
        	"2204" : {
@@ -1013,14 +1099,14 @@
        		"roomImage" : "/images/rooms/Room2204.png",
        		"voiceResponse_room" : "Enter Suite 2000 by the first entrance on your right, Room 2204 will be the second door on your left.",
 
-       		"facultyName" : "Whitney Young",
+       		"facultyName" : "Neil Young",
        		"facultyEmail" : "youngw@uci.edu",
        		"facultyNumber" : "(949)824-8082",
        		"officeHours" : {
 
        		},
-       		"facultyImage" : "/images/faculty/one.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2000 by the first entrance on your right, Young's office will be the second door on your left."
+       		"facultyImage" : "/images/faculty/neilYoung.jpg",
+       		"voiceResponse_faculty" : "Enter Suite 2000 by the first entrance on your right, Neil Young's office will be the second door on your left."
        	},
 
        	"2206" : {
@@ -1037,7 +1123,7 @@
 
        		},
        		"facultyImage" : "/images/faculty/sarahMcDougall.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2000 by the first entrance on your left, McDougall's office will be the left door straight ahead."
+       		"voiceResponse_faculty" : "Enter Suite 2000 by the first entrance on your left, Sarah McDougall's office will be the left door straight ahead."
        	},
         
 
@@ -1054,8 +1140,8 @@
        		"officeHours" : {
 
        		},
-       		"facultyImage" : "/images/faculty/maryEarley.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2000 by the first entrance on your left, Earley's office will be the right door straight ahead."
+       		"facultyImage" : "/images/faculty/deniseEarley.jpg",
+       		"voiceResponse_faculty" : "Enter Suite 2000 by the first entrance on your left, Denise Earley's office will be the right door straight ahead."
        	},
 
        	"2005A" : {

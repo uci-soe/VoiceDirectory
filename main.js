@@ -421,6 +421,80 @@ window.onload = function(){
 
         
         facultyLocator = function(fac_name) {  
+            
+            
+            if(fac_name == "cambridge" || fac_name == "Cambridge" || fac_name == "Kim Birge" || fac_name == "Kim Bridge")
+            {  
+                fac_name = "Kim Burge";
+                alert(fac_name);
+            }
+            else if(fac_name == "Janelle Lau" )
+            {  
+                fac_name = "Jenel Lao";
+                alert(fac_name);
+            }
+            else if(fac_name == "die shoe")
+            {
+                fac_name = "Di Xu";
+                alert(fac_name);
+            }
+            else if(fac_name == "constance iloh")
+            {
+                fac_name = "Constance Iloh";
+                alert(fac_name);
+            }
+            else if(fac_name == "Melinda petre")
+            {
+                fac_name = "Melinda Petre";
+                alert(fac_name);
+            }
+            else if(fac_name == "Jacqueline Echols")
+            {
+                fac_name = "Jacquelynne Eccles";
+                alert(fac_name);
+            }
+            else if(fac_name == "Geneva Lopez Sandoval")
+            {
+                fac_name = "Geneva Lopez-Sandoval";
+                alert(fac_name);
+            }
+            else if(fac_name == "Sarah sing")
+            {
+                fac_name = "Sarah Singh";
+                alert(fac_name);
+            }
+            else if(fac_name == "Susan Toma bears" || fac_name == "Susan Toma Berg" || fac_name == "Susan Toma bush" || fac_name == "Susan Toma Burj")
+            {
+                fac_name = "Susan Toma Berge";
+                alert(fac_name);
+            }
+            else if(fac_name == "Gene Stone" || fac_name == "June Stone")
+            {
+                fac_name = "Jeanne Stone";
+                alert(fac_name);
+            }
+            else if(fac_name == "Maria tax" || fac_name == "Murrieta Cox")
+            {
+                fac_name = "Maria Takacs";
+                alert(fac_name);
+            }
+            else if(fac_name == "Sandra Simkins")
+            {
+                fac_name = "Sandra Simpkins";
+                alert(fac_name);
+            }
+            else if(fac_name == "Virginia panish")
+            {
+                fac_name = "Virginia Panish";
+                alert(fac_name);
+            }
+            
+            
+            
+            
+            
+            
+            
             //alert(fac_name);
             var splitFacName = fac_name.split(" ");
             //alert(splitFacName[0]);
@@ -484,7 +558,8 @@ window.onload = function(){
             // If they provide first and last name.
             else
                 {
-
+                    
+                        
                     if(!(fac_name in data.faculty))
                         {
                             caption = output_repeat;
