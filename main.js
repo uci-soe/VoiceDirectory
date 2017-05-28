@@ -396,6 +396,26 @@ window.onload = function(){
         window.speechSynthesis.speak(message);
         
         roomLocator = function(room_num) {  
+            
+            //Check if asking for a room that has multiple room objects due to faculty sharing the same room.
+    /*        
+            if(room_num == "2064")
+            {
+                room_num = "2064a";
+            }
+            else if(room_num == "2066")
+            {
+                room_num = "2066a";
+            }
+            else if(room_num == "2076")
+            {
+                room_num = "2076a";
+            }
+            else if(room_num == "2084")
+            {
+                room_num = "2084a";
+            }
+*/
             if(!(room_num in data.rooms)){
                 
                 message.text = output_repeat;
@@ -407,7 +427,7 @@ window.onload = function(){
 //                delay(output_repeat, output_repeat.split(' ').length);
             }                        
             else {
-
+                console.log(room_num);
                 displayResult(data, room_num);
                 resultShown = true; 
 //                systemPause((data.rooms[room_num].voiceResponse_room), (data.rooms[room_num].voiceResponse_room).split(' ').length);
