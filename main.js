@@ -303,6 +303,7 @@ window.onload = function(){
 //            $(".room-type").css('display','none');
 //        }
         
+        
         if(roomType == "Faculty Office")
             $('.room-img').css('display', 'none');
         else if(roomType == "Classroom"){
@@ -313,6 +314,7 @@ window.onload = function(){
             $('.fac-info').css('display', 'none');
             $('.room-type').css('display','none');
         }
+        
         
         if(isEmpty(data.rooms[num].officeHours)){
             $('.officeHours').hide();
