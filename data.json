@@ -896,7 +896,7 @@
        		"roomName" : "Room 2076a",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2076.png",
-       		"roomImage" : "/images/rooms/Room2076.jpg",
+       		"roomImage" : "",
        		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Room 2076 will be the ninth door on your left.",
 
        		"facultyName" : "Valerie Henry",

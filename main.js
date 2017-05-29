@@ -1,10 +1,10 @@
 window.onload = function(){
             
-    var timeLeft = 450; // System countdown after initiation
-    var timeToAsk = 300; // System will ask if user wants more time after this amount of seconds
-    var timeToAsk2 = 150; // Second time asking
+    var timeLeft = 550; // System countdown after initiation
+    var timeToAsk = 30; // System will ask if user wants more time after this amount of seconds
+    var timeToAsk2 = 15; // Second time asking
     var timeToEnd = 1; // System will reset the system with this amount of seconds left
-    var grantTime = 450; // System will grant user extra time (grantTime will be set equal to "timeLeft")
+    var grantTime = 550; // System will grant user extra time (grantTime will be set equal to "timeLeft")
 
     var roomLocator_active = false;
     var facultyLocator_active = false;
@@ -26,7 +26,7 @@ window.onload = function(){
     var output_ok = "Ok";
     var output_pleasewait = "Please Wait...";
     var welcome = "Hello, what can I help you with today?";
-    var vaildCommand = "Please make a valid request.";
+    var validCommand = "Please make a valid request.";
     var output_listening = "I'm Listening...";
     
     
@@ -36,7 +36,7 @@ window.onload = function(){
     var eventMonthWelcome = "Here's what's happening this month.";
     
     //Modal Voice Responses
-    var output_options = "There seems to be multiple items associated with your request. Which one are you referring to?";
+    var output_options = "Please say the number of the item you're referring to.";
 
     // annyang Locator functions
     var roomLocator;
@@ -208,7 +208,7 @@ window.onload = function(){
     // Is called everytime a user talks and annyang does not find a valid command.
     function noMatch()
     {
-        message.text = vaildCommand;
+        message.text = validCommand;
         window.speechSynthesis.speak(message);
         caption = message.text;
 //        systemPause(message.text,message.text.split(" ").length);
@@ -288,7 +288,6 @@ window.onload = function(){
         
         var num;
         
-        alert(input);
         if(isNaN(input)) {
             if(/\d/.test(input)){
                 num = input;
@@ -306,7 +305,8 @@ window.onload = function(){
             message.text = data.rooms[num].voiceResponse_room;
             window.speechSynthesis.speak(message);
         }
-             
+        
+        
         $(".room-name").html(data.rooms[num].roomName);
         $(".room-type").html(data.rooms[num].roomType);
         $(".room-img").css('background-image', 'url(css/' + data.rooms[num].roomImage + ')');
@@ -317,15 +317,16 @@ window.onload = function(){
         $(".faculty-number").html(data.rooms[num].facultyNumber);
         $(".faculty-img").attr("src", "css/" + data.rooms[num].facultyImage);
         var roomType = data.rooms[num].roomType;
-
         
-        if(roomType == "Faculty Office")
+        if(roomType == "Faculty Office"){
             $('.room-img').css('display', 'none');
+            $('.fac-info').css('display','block');
+        }
         else if(roomType == "Classroom"){
             $('.room-img').css('display', 'block');
             $('.fac-info').css('display', 'none');
         }
-        else{
+        else {
             $('.fac-info').css('display', 'none');
             $('.room-type').css('display','none');
         }
@@ -576,8 +577,6 @@ window.onload = function(){
                             resultShown = true;
                             
                             var num = data.faculty[fac_name].roomName;
-//                          responsiveVoice.speak(data.rooms[num].voiceResponse_faculty);
-//                            systemPause((data.rooms[num].voiceResponse_faculty), (data.rooms[num].voiceResponse_faculty).split(' ').length);
                             
                             caption = data.rooms[num].voiceResponse_faculty;
                             resultsCaption = caption;
