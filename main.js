@@ -1,10 +1,10 @@
 window.onload = function(){
             
-    var timeLeft = 45; // System countdown after initiation
-    var timeToAsk = 30; // System will ask if user wants more time after this amount of seconds
-    var timeToAsk2 = 15 // Second time asking
+    var timeLeft = 450; // System countdown after initiation
+    var timeToAsk = 300; // System will ask if user wants more time after this amount of seconds
+    var timeToAsk2 = 150; // Second time asking
     var timeToEnd = 1; // System will reset the system with this amount of seconds left
-    var grantTime = 45; // System will grant user extra time (grantTime will be set equal to "timeLeft")
+    var grantTime = 450; // System will grant user extra time (grantTime will be set equal to "timeLeft")
 
     var roomLocator_active = false;
     var facultyLocator_active = false;
@@ -53,6 +53,15 @@ window.onload = function(){
     var caption = "";
     var resultsCaption = "";
 
+    
+    // Function to check if an object is empty
+    function isEmpty(obj) {
+        for(var key in obj) {
+            if(obj.hasOwnProperty(key))
+                return false;
+        }
+        return true;
+    }
     
     //Creating voice synthesis utterance object.
     if('speechSynthesis' in window)
@@ -111,47 +120,53 @@ window.onload = function(){
     function resultOptions(data,duplicatesArray) {
         
         commandManager("FacultyOptions");
-        
         timeLeft = grantTime;
-        
         $(".modal-bg").show();
         
         alert(duplicatesArray.length);
         var htmlString = "<ul>";
         
-        var num;
+        var myStr = "";
         var count;
         
-        var newClass = "";
-            
         for(var i = 0; i < duplicatesArray.length ; i++){
-            
-            count = i;
-            countDisplay = i+1;
-            var stringCount = count.toString();
-                        
-            newClass = "faculty-shot-" + stringCount;
-            
-            var myStr_col4 = "<div class=\"col-sm-2\">";
-            var myStr_col8 = "<div class=\"col-sm-8\">";
-            var end_div = "</div>";
-            
-            var myStr = "";
-            var myStr2 = "";
-            
-            
-            myStr = myStr_col4 + "<div class=\"faculty-shot " + newClass + "\"></div>" + end_div;
-            
-            myStr2 = myStr_col8 + "<div class=\"faculty-name\">" + data.faculty[duplicatesArray[i]].fullName + end_div + end_div;
-  
-            $("#dynamic-options").append(myStr);
-            $("#dynamic-options").append(myStr2);
-            $("#dynamic-options").append("<div class=\"clear\"></div>");
-                        
-            num = data.faculty[duplicatesArray[i]].roomName;
-            $("."+newClass).css('background-image', 'url('+ data.rooms[num].facultyImage + ')');
-            
+             myStr = myStr + "<p>" + (i+1) + " - " + data.faculty[duplicatesArray[i]].fullName + "</p>"
         }
+        
+        $('#dynamic-options').append(myStr);
+//        var num;
+//        var count;
+//        
+//        var newClass = "";
+//            
+//        for(var i = 0; i < duplicatesArray.length ; i++){
+//            
+//            count = i;
+//            countDisplay = i+1;
+//            var stringCount = count.toString();
+//                        
+//            newClass = "faculty-shot-" + stringCount;
+//            
+//            var myStr_col4 = "<div class=\"col-sm-2\">";
+//            var myStr_col8 = "<div class=\"col-sm-8\">";
+//            var end_div = "</div>";
+//            
+//            var myStr = "";
+//            var myStr2 = "";
+//            
+//            
+//            myStr = myStr_col4 + "<div class=\"faculty-shot " + newClass + "\"></div>" + end_div;
+//            
+//            myStr2 = myStr_col8 + "<div class=\"faculty-name\">" + data.faculty[duplicatesArray[i]].fullName + end_div + end_div;
+//  
+//            $("#dynamic-options").append(myStr);
+//            $("#dynamic-options").append(myStr2);
+//            $("#dynamic-options").append("<div class=\"clear\"></div>");
+//                        
+//            num = data.faculty[duplicatesArray[i]].roomName;
+//            $("."+newClass).css('background-image', 'url('+ data.rooms[num].facultyImage + ')');
+//            
+//        }
         
     }
     
@@ -164,9 +179,7 @@ window.onload = function(){
         
 //        systemPause(output_options, output_options.split(' ').length);
 //        delay(output_options, output_options.split(' ').length);
-        
     }
-    
     
     function endSystem() {
         
@@ -283,12 +296,30 @@ window.onload = function(){
         $(".faculty-img").attr("src", "css/" + data.rooms[num].facultyImage);
         var roomType = data.rooms[num].roomType;
         
+//        if(roomType == "Faculty Office")
+//            $('.room-img').css('height', '0px');
+//        else{
+//            $('.fac-info').css('display', 'none');
+//            $(".room-type").css('display','none');
+//        }
+        
         if(roomType == "Faculty Office")
-            $('.room-img').css('height', '0px');
+            $('.room-img').css('display', 'none');
+        else if(roomType == "Classroom"){
+            $('.room-img').css('display', 'block');
+            $('.fac-info').css('display', 'none');
+        }
         else{
             $('.fac-info').css('display', 'none');
-            $(".room-type").css('display','none');
+            $('.room-type').css('display','none');
         }
+        
+        if(isEmpty(data.rooms[num].officeHours)){
+            $('.officeHours').hide();
+        }
+        else
+            $('.officeHours').show();
+
        
         var officeHours = data.rooms[num].officeHours;
         
