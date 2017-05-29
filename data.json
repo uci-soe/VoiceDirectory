@@ -87,12 +87,6 @@
             "firstName" : "Spenser",
             "lastName" : "Clark"
         },
-        "Hyuk Kang" : {
-            "roomName" : "2044",
-            "fullName" : "Hyuk Kang",
-            "firstName" : "Hyuk",
-            "lastName" : "Kang"
-        },
         "George Farkas" : {
             "roomName" : "2046",
             "fullName" : "George Farkas",
@@ -105,11 +99,11 @@
             "firstName" : "Deborah",
             "lastName" : "Vandell"
         },
-        "Jade Young" : {
+        "Jade Jenkins" : {
             "roomName" : "2052",
-            "fullName" : "Jade Young",
+            "fullName" : "Jade Jenkins",
             "firstName" : "Jade",
-            "lastName" : "Young"
+            "lastName" : "Jenkins"
         },
         "Greg Duncan" : {
             "roomName" : "2056",
@@ -673,7 +667,7 @@
 
        		},
        		"facultyImage" : "/images/faculty/gregDuncan.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 on your right, go all the way down the hall and take a left. Duncan's office will at the end of the hallway. "
+       		"voiceResponse_faculty" : "Enter Suite 2003 on your right, go all the way down the hall and take a left. Duncan's office will be at the end of the hallway. "
        	},
 
        	"2060" : {
@@ -728,7 +722,7 @@
        	},
         
         "2064a" : {
-       		"roomName" : "Room 2064",
+       		"roomName" : "Room 2064a",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2064.png",
        		"roomImage" : "/images/rooms/Room2064.jpg",
@@ -744,7 +738,7 @@
        		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left, go all the way down the hall and take a right. Hosun Kang, and Constance Iloh's office will be two doors down on your left"
        	},
        	"2064b" : {
-       		"roomName" : "Room 2064",
+       		"roomName" : "Room 2064b",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2064.png",
        		"roomImage" : "/images/rooms/Room2064.jpg",
@@ -778,7 +772,7 @@
        	},
         
        	"2066a" : {
-       		"roomName" : "Room 2066",
+       		"roomName" : "Room 2066a",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2066.png",
        		"roomImage" : "/images/rooms/Room2066.jpg",
@@ -794,7 +788,7 @@
        		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left, go all the way down the hall and take a right. Robert Duncan and Melinda Petre's office will be one door down on your left"
        	},
         "2066b" : {
-       		"roomName" : "Room 2066",
+       		"roomName" : "Room 2066b",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2066.png",
        		"roomImage" : "/images/rooms/Room2066.jpg",
@@ -899,10 +893,10 @@
        	},
         
        	"2076a" : {
-       		"roomName" : "Room 2076",
+       		"roomName" : "Room 2076a",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2076.png",
-       		"roomImage" : "/images/rooms/Room2076.jpg",
+       		"roomImage" : "",
        		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Room 2076 will be the ninth door on your left.",
 
        		"facultyName" : "Valerie Henry",
@@ -916,7 +910,7 @@
        	},
         
         "2076b" : {
-       		"roomName" : "Room 2076",
+       		"roomName" : "Room 2076b",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2076.png",
        		"roomImage" : "/images/rooms/Room2076.jpg",
@@ -1039,7 +1033,7 @@
        	},
         
        	"2084a" : {
-       		"roomName" : "Room 2084",
+       		"roomName" : "Room 2084a",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2084.png",
        		"roomImage" : "/images/rooms/Room2084.jpg",
@@ -1056,7 +1050,7 @@
        	},
         
         "2084b" : {
-       		"roomName" : "Room 2084",
+       		"roomName" : "Room 2084b",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2084.png",
        		"roomImage" : "/images/rooms/Room2084.jpg",
@@ -1228,8 +1222,8 @@
        		"voiceResponse_faculty" : "Enter Suite 2000 by the first entrance on your left, Denise Earley's office will be the right door straight ahead."
        	},
 
-       	"2005A" : {
-       		"roomName" : "Room 2005A",
+       	"2005a" : {
+       		"roomName" : "Room 2005a",
        		"roomType" : "Classroom",
        		"mapImage" : "/images/maps/Room2005A.png",
        		"roomImage" : "/images/rooms/Room2205A.jpg",
