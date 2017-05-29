@@ -124,9 +124,11 @@ body
 {
     width: 100%;
     background-color: #2C3746;
-    padding: 0 100px 0 100px;
+    
 /*    padding: 5% 0 2% 0;*/
     height: 180px;
+    
+    padding: 0 100px 0 100px;
     
 }
 
@@ -359,8 +361,9 @@ img
     
     width: 100%;
     
+    
+    padding: 300px 0 0 0;
     height: 1000px;
-    padding: 320px 0 0 0;
     
     position: absolute;
     
@@ -372,7 +375,6 @@ z-index: 5;
     
     width: 501px;
     
-/*    height: 650px;*/
     
     margin: auto;
     display: block;
@@ -389,10 +391,6 @@ z-index: 5;
     color: white;
 } 
 
-.modal-bg h3{
-    font-size: 2.5em;
-/*    text-align: center;*/
-}
 .modal-bg p{
     font-size: 2em;
 /*    text-align: center;*/
