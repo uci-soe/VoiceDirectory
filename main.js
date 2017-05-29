@@ -119,6 +119,8 @@ window.onload = function(){
     */
     function resultOptions(data,duplicatesArray) {
         
+        $('#dynamic-options').empty();
+
         commandManager("FacultyOptions");
         timeLeft = grantTime;
         $(".modal-bg").show();
@@ -267,7 +269,6 @@ window.onload = function(){
         $(".result-block").show();
         $(".modal-bg").hide();
         
-
         if(isNaN(input)) {
             var num = data.faculty[input].roomName;
             
@@ -708,14 +709,27 @@ window.onload = function(){
             }
         };
         
-        var optionFunc = function(num){
+        var convertToNumber = function(word){
+            if(word == "one")
+                return 1;
+            else if(word == "two" || word == "to" || word == "too")
+                return 2;
+            else if (word == "three" || word == "tree")
+                return 3;
+            else if(word == "four" || word == "for")
+                return 4;
+            else if (word == "five")
+                return 5;
+        }
+        var optionFunc = function(numString){
             
-            var facultyIndex = parseInt(num) - 1;
+            var facultyIndex = convertToNumber(numString) - 1;
+            alert(facultyIndex);
             annyang.addCommands(commands);
             annyang.removeCommands(facultyOptionsCommands);
             
             displayResult(data, possibleFaculty[facultyIndex]);
-            
+
         };
          
         mainMenuCommands = {
