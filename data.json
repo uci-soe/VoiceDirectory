@@ -697,7 +697,7 @@
        		"roomName" : "Room 2062",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2062.png",
-       		"roomImage" : "/images/rooms/Room2062.jpg",
+       		"roomImage" : "",
        		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left, go all the way down the hall and take a right. Room 2062 will be three doors down on your left",
 
        		"facultyName" : "Emily Penner",
@@ -706,7 +706,7 @@
        		"officeHours" : {
 
        		},
-       		"facultyImage" : "/images/faculty/emilyPenner.jpg",
+       		"facultyImage" : "",
        		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left, go all the way down the hall and take a right. Penner's office will be three doors down on your left"
        	},
 
@@ -764,7 +764,7 @@
        		"roomName" : "Room 2066",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2066.png",
-       		"roomImage" : "/images/rooms/Room2066.jpg",
+       		"roomImage" : "",
        		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left, go all the way down the hall and take a right. Room 2066 will be one door down on your left",
 
        		"facultyName" : "Robert Duncan",
