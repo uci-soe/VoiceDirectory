@@ -370,7 +370,7 @@ z-index: 5;
 .modal-options{
     background-color: white;
     
-    width: 1000px;
+    width: 501px;
     
     height: 650px;
     
@@ -388,6 +388,11 @@ z-index: 5;
     background-color: #2C3746;
     color: white;
 } 
+
+.modal-bg p{
+    font-size: 2em;
+/*    text-align: center;*/
+}
 
 
 .faculty-shot
