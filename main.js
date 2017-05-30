@@ -702,15 +702,21 @@ window.onload = function(){
         mainMenuCommands = {
             // Room Locator
             'I am looking for room *room_num' : roomLocator,
+            "I'm looking for room *room_num" : roomLocator,
             'Where is room *room_num' : roomLocator,
             'room *room_num' : roomLocator,
             'What events are coming up' : calendarView,
-            // Faculty Locator
-            '(professor) *name': facultyLocator,
-           // 'I am looking for (dr.) *name':facultyLocator,
-            'I am looking for (professor) *name':facultyLocator,
-            'Im looking for (professor) *name':facultyLocator, 
             
+            // Faculty Locator
+            
+            "I'm looking for mr. *name":facultyLocator,
+            "I'm looking for ms. *name":facultyLocator,
+            "I'm looking for mrs. *name":facultyLocator,
+            "I'm looking for dr. *name":facultyLocator,
+            "I'm looking for (professor) *name":facultyLocator, 
+            'I am looking for (professor) *name':facultyLocator,
+
+            '(professor) *name': facultyLocator,
             // 'I am looking for professor *fac_name' : facultyLocator,
            // 'I am looking for professor *fac_first_name :fac_last_name' : facultyLocator,
             //'professor *fac_first_name (*fac_last_name)' : facultyLocator,
