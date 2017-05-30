@@ -1,10 +1,10 @@
 window.onload = function(){
             
-    var timeLeft = 450; // System countdown after initiation
-    var timeToAsk = 300; // System will ask if user wants more time after this amount of seconds
-    var timeToAsk2 = 150; // Second time asking
+    var timeLeft = 550; // System countdown after initiation
+    var timeToAsk = 30; // System will ask if user wants more time after this amount of seconds
+    var timeToAsk2 = 15; // Second time asking
     var timeToEnd = 1; // System will reset the system with this amount of seconds left
-    var grantTime = 450; // System will grant user extra time (grantTime will be set equal to "timeLeft")
+    var grantTime = 550; // System will grant user extra time (grantTime will be set equal to "timeLeft")
 
     var roomLocator_active = false;
     var facultyLocator_active = false;
@@ -26,7 +26,7 @@ window.onload = function(){
     var output_ok = "Ok";
     var output_pleasewait = "Please Wait...";
     var welcome = "Hello, what can I help you with today?";
-    var vaildCommand = "Please make a valid request.";
+    var validCommand = "Please make a valid request.";
     var output_listening = "I'm Listening...";
     
     
@@ -36,7 +36,7 @@ window.onload = function(){
     var eventMonthWelcome = "Here's what's happening this month.";
     
     //Modal Voice Responses
-    var output_options = "There seems to be multiple faculty members with that name. Which one are you referring to?";
+    var output_options = "Please say the number of the item you're referring to.";
 
     // annyang Locator functions
     var roomLocator;
@@ -45,6 +45,9 @@ window.onload = function(){
     
     // array of possible faculty
     var possibleFaculty = [];
+    
+    // array of possible room
+    var possibleRoom = [];
 
     var commands = {};
     
@@ -117,57 +120,70 @@ window.onload = function(){
         Number of Duplicates
             
     */
+    
+    function spellChecker(fac_name){
+        if(fac_name == "cambridge" || fac_name == "Cambridge" || fac_name == "Kim Birge" || fac_name == "Kim Bridge")
+            return "Kim Burge";
+        else if(fac_name == "Janelle Lau" || fac_name == "Professor Lau"  || fac_name == "Lau")
+            return "Jenel Lao";
+        else if(fac_name == "die shoe")
+            return "Di Xu";
+        else if(fac_name == "constance iloh")
+            return "Constance Iloh";
+        else if(fac_name == "Melinda petre" || fac_name == "Petra")
+            return "Melinda Petre";
+        else if(fac_name == "Jacqueline Echols")
+            return "Jacquelynne Eccles";
+        else if(fac_name == "Geneva Lopez Sandoval")
+            return "Geneva Lopez-Sandoval";
+        else if(fac_name == "Sarah sing")
+            return "Sarah Singh";
+        else if(fac_name == "Susan Toma bears" || fac_name == "Susan Toma Berg" || fac_name == "Susan Toma bush" || fac_name == "Susan Toma Burj")
+            return "Susan Toma Berge";
+        else if(fac_name == "Gene Stone" || fac_name == "June Stone")
+            return "Jeanne Stone";
+        else if(fac_name == "Maria tax" || fac_name == "Murrieta Cox")
+            return "Maria Takacs";
+        else if(fac_name == "Sandra Simkins")
+            return "Sandra Simpkins";
+        else if(fac_name == "Virginia panish")
+            return "Virginia Panish";
+        else if(fac_name == "cute King" || fac_name == "cute Kang" || fac_name == "Kyu Kang" || fac_name == "Hugh Kang" || fac_name == "puke King")
+            return "Hyuk Kang";
+
+        return fac_name;
+        
+        
+    }
     function resultOptions(data,duplicatesArray) {
         
+        $('#dynamic-options').empty();
+
         commandManager("FacultyOptions");
         timeLeft = grantTime;
         $(".modal-bg").show();
         
-        alert(duplicatesArray.length);
+//        alert(duplicatesArray.length);
         var htmlString = "<ul>";
         
         var myStr = "";
         var count;
         
-        for(var i = 0; i < duplicatesArray.length ; i++){
-             myStr = myStr + "<p>" + (i+1) + " - " + data.faculty[duplicatesArray[i]].fullName + "</p>"
+        if(isNaN(duplicatesArray[0])){
+            for(var i = 0; i < duplicatesArray.length ; i++){
+                 myStr = myStr + "<p>" + (i+1) + " - " + data.faculty[duplicatesArray[i]].fullName + "</p>"
+            }
+        }
+        else{
+//            alert(duplicatesArray);
+            
+            for(var i = 0; i < duplicatesArray.length ; i++){
+                 myStr = myStr + "<p>" + (i+1) + " - " + data.rooms[duplicatesArray[i]].roomName + "</p>"
+            }
         }
         
-        $('#dynamic-options').append(myStr);
-//        var num;
-//        var count;
-//        
-//        var newClass = "";
-//            
-//        for(var i = 0; i < duplicatesArray.length ; i++){
-//            
-//            count = i;
-//            countDisplay = i+1;
-//            var stringCount = count.toString();
-//                        
-//            newClass = "faculty-shot-" + stringCount;
-//            
-//            var myStr_col4 = "<div class=\"col-sm-2\">";
-//            var myStr_col8 = "<div class=\"col-sm-8\">";
-//            var end_div = "</div>";
-//            
-//            var myStr = "";
-//            var myStr2 = "";
-//            
-//            
-//            myStr = myStr_col4 + "<div class=\"faculty-shot " + newClass + "\"></div>" + end_div;
-//            
-//            myStr2 = myStr_col8 + "<div class=\"faculty-name\">" + data.faculty[duplicatesArray[i]].fullName + end_div + end_div;
-//  
-//            $("#dynamic-options").append(myStr);
-//            $("#dynamic-options").append(myStr2);
-//            $("#dynamic-options").append("<div class=\"clear\"></div>");
-//                        
-//            num = data.faculty[duplicatesArray[i]].roomName;
-//            $("."+newClass).css('background-image', 'url('+ data.rooms[num].facultyImage + ')');
-//            
-//        }
         
+        $('#dynamic-options').append(myStr);        
     }
     
     function modalResponse(){
@@ -192,7 +208,7 @@ window.onload = function(){
     // Is called everytime a user talks and annyang does not find a valid command.
     function noMatch()
     {
-        message.text = vaildCommand;
+        message.text = validCommand;
         window.speechSynthesis.speak(message);
         caption = message.text;
 //        systemPause(message.text,message.text.split(" ").length);
@@ -267,24 +283,30 @@ window.onload = function(){
         $(".result-block").show();
         $(".modal-bg").hide();
         
-
+//        alert("input: " + isNaN(input));
+//        alert(input.includes("a"));
+        
+        var num;
+        
         if(isNaN(input)) {
-            var num = data.faculty[input].roomName;
-            
-            message.text = data.rooms[num].voiceResponse_faculty;
-            window.speechSynthesis.speak(message);
-            
-//            delay(data.rooms[num].voiceResponse_faculty, data.rooms[num].voiceResponse_faculty.split(' ').length);
+            if(/\d/.test(input)){
+                num = input;
+                message.text = data.rooms[num].voiceResponse_room;
+                window.speechSynthesis.speak(message);    
+            }
+            else{
+                num = data.faculty[input].roomName;
+                message.text = data.rooms[num].voiceResponse_faculty;
+                window.speechSynthesis.speak(message);
+            }            
         }
         else {
-            var num = input;
-            
+            num = input;
             message.text = data.rooms[num].voiceResponse_room;
             window.speechSynthesis.speak(message);
-            
-//            delay(data.rooms[num].voiceResponse_room, data.rooms[num].voiceResponse_room.split(' ').length);
         }
-             
+        
+        
         $(".room-name").html(data.rooms[num].roomName);
         $(".room-type").html(data.rooms[num].roomType);
         $(".room-img").css('background-image', 'url(css/' + data.rooms[num].roomImage + ')');
@@ -296,29 +318,22 @@ window.onload = function(){
         $(".faculty-img").attr("src", "css/" + data.rooms[num].facultyImage);
         var roomType = data.rooms[num].roomType;
         
-//        if(roomType == "Faculty Office")
-//            $('.room-img').css('height', '0px');
-//        else{
-//            $('.fac-info').css('display', 'none');
-//            $(".room-type").css('display','none');
-//        }
-        
-        
-        if(roomType == "Faculty Office")
+        if(roomType == "Faculty Office"){
             $('.room-img').css('display', 'none');
+            $('.fac-info').css('display','block');
+        }
         else if(roomType == "Classroom"){
             $('.room-img').css('display', 'block');
             $('.fac-info').css('display', 'none');
         }
-        else{
+        else {
             $('.fac-info').css('display', 'none');
             $('.room-type').css('display','none');
         }
         
         
-        if(isEmpty(data.rooms[num].officeHours)){
+        if(isEmpty(data.rooms[num].officeHours))
             $('.officeHours').hide();
-        }
         else
             $('.officeHours').show();
 
@@ -330,23 +345,25 @@ window.onload = function(){
         for (var day in officeHours){
             
             myStr = myStr + day + "<br/>";
-            if(officeHours[day].length > 1){
+            if(officeHours[day].length > 1)
                 for(var i = 0 ; i < officeHours[day].length ; i++)
                     myStr = myStr + officeHours[day][i] + "<br/>";
-            }
             else
                 myStr = myStr + officeHours[day] + "<br/>";
             myStr = myStr + "<div class=\"spacer-xs\"></div>";
             
         }
         $(".faculty-hours").html(myStr);  
+        
+        roomLocator_active = false;
+        facultyLocator_active = false;
+    
     }
     
     function moretime() {
         if(yes) {
             timeLeft = grantTime;
-//            systemPause(output_ok, output_ok.split(' ').length);
-//            
+
             caption = output_ok;
             message.text = output_ok;
             window.speechSynthesis.speak(message);
@@ -386,8 +403,6 @@ window.onload = function(){
             else
                 systemTimer();
 
-            roomLocator_active = false;
-            facultyLocator_active = false;
 
         },systemTimer_interval);
     }
@@ -430,123 +445,57 @@ window.onload = function(){
         
         roomLocator = function(room_num) {  
             
-            //Check if asking for a room that has multiple room objects due to faculty sharing the same room.
-    /*        
-            if(room_num == "2064")
-            {
-                room_num = "2064a";
-            }
-            else if(room_num == "2066")
-            {
-                room_num = "2066a";
-            }
-            else if(room_num == "2076")
-            {
-                room_num = "2076a";
-            }
-            else if(room_num == "2084")
-            {
-                room_num = "2084a";
-            }
-*/
             if(!(room_num in data.rooms)){
                 
                 message.text = output_repeat;
                 window.speechSynthesis.speak(message);
                 
-//                systemPause(output_repeat, output_repeat.split(' ').length);
                 caption = output_repeat;
                 
-//                delay(output_repeat, output_repeat.split(' ').length);
             }                        
             else {
-                console.log(room_num);
-                displayResult(data, room_num);
-                resultShown = true; 
-//                systemPause((data.rooms[room_num].voiceResponse_room), (data.rooms[room_num].voiceResponse_room).split(' ').length);
-                caption = data.rooms[room_num].voiceResponse_room;
-                resultsCaption = caption;
+                
+                roomLocator_active = true;
+                
+                var tempStr = "";
+                var letter = "a";
+                
+                possibleRoom = [room_num];
+                
+                for(var i = 0; ;i++){
+                    tempStr = room_num + letter;
+                    
+                    if(tempStr in data.rooms)
+                        possibleRoom.push(tempStr);
+                    else
+                        break;
+                    
+                    letter = String.fromCharCode(letter.charCodeAt() + 1);
+                }
+                    
+                if(possibleRoom.length > 1){
+                    resultOptions(data, possibleRoom);
+                    modalResponse();
+                }
+                else{
+                    console.log(room_num);
+                    displayResult(data, room_num);
+                    resultShown = true; 
+
+                    caption = data.rooms[room_num].voiceResponse_room;
+                    resultsCaption = caption;
+                }                
                 
             }
             timeLeft = grantTime;
             
         };
-
+//giaa
         
         facultyLocator = function(fac_name) {  
             
-            
-            if(fac_name == "cambridge" || fac_name == "Cambridge" || fac_name == "Kim Birge" || fac_name == "Kim Bridge")
-            {  
-                fac_name = "Kim Burge";
-                alert(fac_name);
-            }
-            else if(fac_name == "Janelle Lau" )
-            {  
-                fac_name = "Jenel Lao";
-                alert(fac_name);
-            }
-            else if(fac_name == "die shoe")
-            {
-                fac_name = "Di Xu";
-                alert(fac_name);
-            }
-            else if(fac_name == "constance iloh")
-            {
-                fac_name = "Constance Iloh";
-                alert(fac_name);
-            }
-            else if(fac_name == "Melinda petre")
-            {
-                fac_name = "Melinda Petre";
-                alert(fac_name);
-            }
-            else if(fac_name == "Jacqueline Echols")
-            {
-                fac_name = "Jacquelynne Eccles";
-                alert(fac_name);
-            }
-            else if(fac_name == "Geneva Lopez Sandoval")
-            {
-                fac_name = "Geneva Lopez-Sandoval";
-                alert(fac_name);
-            }
-            else if(fac_name == "Sarah sing")
-            {
-                fac_name = "Sarah Singh";
-                alert(fac_name);
-            }
-            else if(fac_name == "Susan Toma bears" || fac_name == "Susan Toma Berg" || fac_name == "Susan Toma bush" || fac_name == "Susan Toma Burj")
-            {
-                fac_name = "Susan Toma Berge";
-                alert(fac_name);
-            }
-            else if(fac_name == "Gene Stone" || fac_name == "June Stone")
-            {
-                fac_name = "Jeanne Stone";
-                alert(fac_name);
-            }
-            else if(fac_name == "Maria tax" || fac_name == "Murrieta Cox")
-            {
-                fac_name = "Maria Takacs";
-                alert(fac_name);
-            }
-            else if(fac_name == "Sandra Simkins")
-            {
-                fac_name = "Sandra Simpkins";
-                alert(fac_name);
-            }
-            else if(fac_name == "Virginia panish")
-            {
-                fac_name = "Virginia Panish";
-                alert(fac_name);
-            }
-            
-            
-            
-            
-            
-            
+            //Spell check faculty name input
+            fac_name = spellChecker(fac_name);
             
             //alert(fac_name);
             var splitFacName = fac_name.split(" ");
@@ -558,6 +507,8 @@ window.onload = function(){
             var matchFound = false;
             
             possibleFaculty = [];
+            
+            facultyLocator_active = true;
             
             //If they only provided one name (i.e. Professor Denenberg)
             if(lastName == null)
@@ -571,26 +522,26 @@ window.onload = function(){
                             {
                                 matchFound = true;
                                 possibleFaculty.push(key);
-                                alert("Possible Faculty: " + possibleFaculty.length);
+//                                alert("Possible Faculty: " + possibleFaculty.length);
                             }
                         }
-                    alert(possibleFaculty.length);
-                    if(matchFound == false)
+//                    alert(possibleFaculty.length);
+                    if(!matchFound)
                     {
                         caption = output_repeat;
                         message.text = output_repeat;
                         window.speechSynthesis.speak(message);
 //                        systemPause(output_repeat, output_repeat.split(' ').length);  
                     }
-                    
                     else
                         {   
                            if(possibleFaculty.length > 1) // ooo
                                 {
-                                    // Ask user which one they meant.
-                                    //alert("ASK USER WHICH ONE");
+                                    //display to DOM
                                     resultOptions(data, possibleFaculty);
-                                    modalResponse(); 
+                                    
+                                    //speech for modal
+                                    modalResponse();
                                 }
                             else
                                 {
@@ -598,7 +549,7 @@ window.onload = function(){
                                     resultShown = true;
                                     
                                     
-                                    alert(data.faculty[possibleFaculty[0]].roomName);
+//                                    alert(data.faculty[possibleFaculty[0]].roomName);
                                     
                                     var num = data.faculty[possibleFaculty[0]].roomName;
                                     
@@ -626,8 +577,6 @@ window.onload = function(){
                             resultShown = true;
                             
                             var num = data.faculty[fac_name].roomName;
-//                          responsiveVoice.speak(data.rooms[num].voiceResponse_faculty);
-//                            systemPause((data.rooms[num].voiceResponse_faculty), (data.rooms[num].voiceResponse_faculty).split(' ').length);
                             
                             caption = data.rooms[num].voiceResponse_faculty;
                             resultsCaption = caption;
@@ -708,14 +657,46 @@ window.onload = function(){
             }
         };
         
-        var optionFunc = function(num){
+        var convertToNumber = function(word){
+            if(word == "one")
+                return 1;
+            else if(word == "two" || word == "to" || word == "too")
+                return 2;
+            else if (word == "three" || word == "tree")
+                return 3;
+            else if(word == "four" || word == "for")
+                return 4;
+            else if (word == "five")
+                return 5;
+        }
+        var optionFunc = function(numString){
             
-            var facultyIndex = parseInt(num) - 1;
+            var index = convertToNumber(numString) - 1;
+
             annyang.addCommands(commands);
             annyang.removeCommands(facultyOptionsCommands);
             
-            displayResult(data, possibleFaculty[facultyIndex]);
+//            alert("Index: " + possibleRoom[index]);
             
+            var indexItem = "";
+//            alert(roomLocator_active + " " + facultyLocator_active);
+            if(roomLocator_active){
+                indexItem = possibleRoom[index];  
+//                alert(data.rooms[indexItem].voiceResponse_room);
+                caption = data.rooms[indexItem].voiceResponse_room;
+            }
+            else if(facultyLocator_active){
+                indexItem = possibleFaculty[index];
+                num = data.faculty[possibleFaculty[index]].roomName;
+                caption = data.rooms[num].voiceResponse_faculty;
+            }
+            resultsCaption = caption;
+           
+//            alert(indexItem);
+            
+            displayResult(data, indexItem);
+            resultShown = true;
+
         };
          
         mainMenuCommands = {
