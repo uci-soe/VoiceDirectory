@@ -128,9 +128,11 @@ window.onload = function(){
             return "Jenel Lao";
         else if(fac_name == "die shoe")
             return "Di Xu";
-        else if(fac_name == "constance iloh")
+        else if(fac_name == "constance iloh" || fac_name == "Constance Ehlo" || fac_name == "constants Hilo" || fac_name == "Constance I love" || fac_name == "Constance Ela")
             return "Constance Iloh";
-        else if(fac_name == "Melinda petre" || fac_name == "Petra")
+        else if(fac_name == "Deborah vendell" || fac_name == "Deborah vandal" || fac_name == "Deborah vandal" || fac_name == "Deborah vandell")
+            return "Deborah Vandell";
+        else if(fac_name == "Melinda petre" || fac_name == "Melinda Petrie" || fac_name == "Melinda Petry" || fac_name == "Melinda Peter" || fac_name == "Petra")
             return "Melinda Petre";
         else if(fac_name == "Jacqueline Echols")
             return "Jacquelynne Eccles";
@@ -705,14 +707,16 @@ window.onload = function(){
             "I'm looking for room *room_num" : roomLocator,
             'Where is room *room_num' : roomLocator,
             'room *room_num' : roomLocator,
-            'What events are coming up' : calendarView,
+            
             
             // Faculty Locator
             
             "I'm looking for mr. *name":facultyLocator,
             "I'm looking for ms. *name":facultyLocator,
+            "I'm looking for Miss *name":facultyLocator,
             "I'm looking for mrs. *name":facultyLocator,
             "I'm looking for dr. *name":facultyLocator,
+            "I'm looking for dr *name":facultyLocator,
             "I'm looking for (professor) *name":facultyLocator, 
             'I am looking for (professor) *name':facultyLocator,
 
@@ -722,7 +726,7 @@ window.onload = function(){
             //'professor *fac_first_name (*fac_last_name)' : facultyLocator,
             
             //Event View
-            
+            'What events are coming up' : calendarView,
             'I want to know upcoming events' : calendarView
             // randomWord can only be yes or no now to avoid it being called very    time. 
         };
