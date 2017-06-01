@@ -93,7 +93,7 @@
             "firstName" : "George",
             "lastName" : "Farkas"
         },
-        "Deborah vandell" : {
+        "Deborah Vandell" : {
             "roomName" : "2050",
             "fullName" : "Deborah Vandell",
             "firstName" : "Deborah",
@@ -1137,7 +1137,7 @@
 
        		},
        		"facultyImage" : "/images/faculty/virginiaPanish.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Virginia Panish's office will be the first door on your left."
+       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Virginia Paanish's office will be the first door on your left."
        	},
 
         "2200" : {
