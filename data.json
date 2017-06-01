@@ -1,8 +1,5 @@
 {
     "faculty" : {                                                                     
-        "Guilfoyle" : {
-            "roomName" : "2080"
-        },
         "Denise Earley" : {
             "roomName" : "2207",
             "fullName" : "Denise Earley",
@@ -51,7 +48,7 @@
             "firstName" : "Liane",
             "lastName" : "Brouillette"
         },
-        "Jamal abedi" : {
+        "Jamal Abedi" : {
             "roomName" : "2034",
             "fullName" : "Jamal Abedi",
             "firstName" : "Jamal",
@@ -462,7 +459,7 @@
        		"officeHours" : {
 
        		},
-       		"facultyImage" : "/images/faculty/jamalAbedi.png",
+       		"facultyImage" : "/images/faculty/jamalAbedi.jpg",
        		"voiceResponse_faculty" : "Enter Suite 2003 on your right and take a left at the end of the hall. Jamal Abedi's office will be the fifth door on your right."
        	},
 
@@ -479,7 +476,7 @@
        		"officeHours" : {
 
        		},
-       		"facultyImage" : "/images/faculty/mariaRosalesRueda.jph",
+       		"facultyImage" : "/images/faculty/mariaRosalesRueda.jpg",
        		"voiceResponse_faculty" : "Enter Suite 2003 on your right and take a left at the end of the hall. Maria Rosales-Rueda's office will be the sixth door on your right."
        	},
 
@@ -564,7 +561,7 @@
        		"officeHours" : {
 
        		},
-       		"facultyImage" : "/images/faculty/clarkSpenser.jpg",
+       		"facultyImage" : "/images/faculty/spenserClark.jpg",
        		"voiceResponse_faculty" : "Enter Suite 2003 on your right and take a left at the end of the hall. Spencer Clark's will be the tenth door on your right."
        	},
 
@@ -692,7 +689,7 @@
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2060.png",
        		"roomImage" : "",
-       		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. At the end of the hall, turn left. Room 2060 will be the first door on your left.",
+       		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. At the end of the hall, turn left. Room 2060 will be the first door on your right.",
 
        		"facultyName" : "Rachel Baker",
        		"facultyEmail" : "rachelbb@uci.edu",
@@ -701,7 +698,7 @@
 
        		},
        		"facultyImage" : "/images/faculty/rachelBaker.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 on your right and take a left at the end of the hall. At the end of the hall, turn left. Rachel Baker's office will be the first door on your left."
+       		"voiceResponse_faculty" : "Enter Suite 2003 on your right and take a left at the end of the hall. At the end of the hall, turn left. Rachel Baker's office will be the first door on your right."
        	},
 
        	"2062" : {
@@ -717,7 +714,7 @@
        		"officeHours" : {
 
        		},
-       		"facultyImage" : "",
+       		"facultyImage" : "/images/faculty/emilyPenner.jpg",
        		"voiceResponse_faculty" : "Enter Suite 2003 on your right and take a left at the end of the hall. At the end of the hall, turn left. Emily Penner's office will be the second door on your left."
        	},
 
@@ -742,7 +739,7 @@
        		"roomName" : "Room 2064a",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2064.png",
-       		"roomImage" : "/images/rooms/Room2064.jpg",
+       		"roomImage" : "",
        		"voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Go all the way down the hall and take another right. Room 2064 will be the third door on your left",
 
        		"facultyName" : "Constance Iloh",
@@ -758,7 +755,7 @@
        		"roomName" : "Room 2064b",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2064.png",
-       		"roomImage" : "/images/rooms/Room2064.jpg",
+       		"roomImage" : "",
        		"voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Go all the way down the hall and take another right. Room 2064 will be the third door on your left",
 
        		"facultyName" : "Hosun Kang",
@@ -825,7 +822,7 @@
        		"roomName" : "Room 2068",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2068.png",
-       		"roomImage" : "/images/rooms/Room2068.jpg",
+       		"roomImage" : "",
        		"voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Room 2068 will be at then end of the hall.",
 
        		"facultyName" : "Jacquelynne Eccles",
@@ -1001,7 +998,7 @@
        	"2080" : {
             "roomName" : "Room 2080",
             "roomType" : "Faculty Office",
-            "mapImage" : "/images/maps/main.png",
+            "mapImage" : "/images/maps/Room2080.png",
             "roomImage" : "",
             "voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Room 2080 will be the seventh door on your left.",
             
@@ -1031,7 +1028,7 @@
 
        		},
        		"facultyImage" : "/images/faculty/susanTomaBerge.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Susan Toma-Berge's will be the sixth door on your left."
+       		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Susan Toma-Berge's office will be the sixth door on your left."
        	},
 
         "2084" : {
@@ -1047,7 +1044,7 @@
        		"officeHours" : {
 
        		},
-       		"facultyImage" : "/images/faculty/stoneJeanne.jpg",
+       		"facultyImage" : "/images/faculty/jeanneStone.jpg",
        		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Jenel Lao and Jeanne Stone's office will be the fifth door on your left."
        	},
         
@@ -1064,7 +1061,7 @@
        		"officeHours" : {
 
        		},
-       		"facultyImage" : "/images/faculty/stoneJeanne.jpg",
+       		"facultyImage" : "/images/faculty/jeanneStone.jpg",
        		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Jenel Lao and Jeanne Stone's office will be the fifth door on your left."
        	},
         
@@ -1081,7 +1078,7 @@
        		"officeHours" : {
 
        		},
-       		"facultyImage" : "/images/faculty/laoJenel.jpg",
+       		"facultyImage" : "/images/faculty/jenelLao.jpg",
        		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Jenel Lao and Jeanne Stone's office will be the fifth door on your left."
        	},
         
@@ -1090,7 +1087,7 @@
        		"roomName" : "Room 2086",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2086.png",
-       		"roomImage" : "/images/rooms/Room2086.jpg",
+       		"roomImage" : "",
        		"voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Room 2086 will be the fourth door on your left.",
 
        		"facultyName" : "Maria Takacs",
@@ -1192,7 +1189,7 @@
        	"2204" : {
        		"roomName" : "Room 2204",
        		"roomType" : "Faculty Office",
-       		"mapImage" : "/images/maps/main.png",
+       		"mapImage" : "/images/maps/Room2204.png",
        		"roomImage" : "",
        		"voiceResponse_room" : "Turn to your left and enter Suite 2200. Room 2204 will be the second door on your left.",
 
