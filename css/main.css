@@ -259,7 +259,7 @@ img
     margin: 0;
     padding: 0;
     font-weight: 900;
-    font-size: 1em;
+    font-size: 1.1em;
 }
 
 .result-block .result-title
@@ -275,6 +275,11 @@ img
 .result-block .result-text 
 {
     font-size: 1em;
+}
+.result-block .result-text-name
+{
+    font-size: 1.5em;
+    font-weight: 600;
 }
 
 .result-block #info-section
