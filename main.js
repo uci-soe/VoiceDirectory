@@ -638,7 +638,7 @@ window.onload = function(){
 
         calendarView = function(viewMode = "what's happening this week") {
            /* var source = "https://calendar.google.com/calendar/embed?mode=MONTH&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=ucieducationevents%40gmail.com&amp;color=%238D6F47&amp;ctz=America%2FLos_Angeles"
-            commandManager("CalendarView");
+            
             
             if(viewMode == "what's happening this week")
                 {
@@ -666,7 +666,7 @@ window.onload = function(){
                     message.text = eventMonthWelcome; 
                 }
             */
-            
+            commandManager("CalendarView");
             message.text = eventMonthWelcome; 
             caption = eventMonthWelcome;
             window.speechSynthesis.speak(message);
@@ -776,6 +776,7 @@ window.onload = function(){
             
             //Event View
             'What events are coming up' : calendarView,
+            'Show me upcoming events' : calendarView,
             'I want to know upcoming events' : calendarView
             // randomWord can only be yes or no now to avoid it being called very    time. 
         };
