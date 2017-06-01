@@ -692,7 +692,7 @@
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2060.png",
        		"roomImage" : "",
-       		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. At the end of the hall, turn left. Room 2060 will be the first door on your left.,
+       		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. At the end of the hall, turn left. Room 2060 will be the first door on your left.",
 
        		"facultyName" : "Rachel Baker",
        		"facultyEmail" : "rachelbb@uci.edu",
@@ -818,7 +818,7 @@
 
        		},
        		"facultyImage" : "/images/faculty/melindaPetre.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left, go all the way down tEnter Suite 2003 which is the third door on your left. At the end of the hall take a right. Go all the way down the hall and take another right. Robert Duncan and Melinda Petre's office will be the second door on your left."
+       		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Go all the way down the hall and take another right. Robert Duncan and Melinda Petre's office will be the second door on your left."
        	},
 
        	"2068" : {
@@ -1220,7 +1220,7 @@
 
        		},
        		"facultyImage" : "/images/faculty/sarahMcDougall.jpg",
-       		"voiceResponse_faculty" : "Turn to your left and enter Suite 2200. Sarah McDougall;s office will be the left door straight ahead."
+       		"voiceResponse_faculty" : "Turn to your left and enter Suite 2200. Sarah McDougall's office will be the left door straight ahead."
        	},
         
 
