@@ -886,6 +886,9 @@
        		"facultyEmail" : "vhenry@uci.edu",
        		"facultyNumber" : "(949)824-1494",
        		"officeHours" : {
+                "Mondays" : ["12:00pm - 3:00pm"],
+                "Tuesdays" : ["9:00am - 11:00pm"],
+                "Wednesday" : ["9:00am - 11:00pm"]
 
        		},
        		"facultyImage" : "/images/faculty/valerieHenry.jpg",
@@ -903,7 +906,9 @@
        		"facultyEmail" : "vhenry@uci.edu",
        		"facultyNumber" : "(949)824-1494",
        		"officeHours" : {
-
+                "Mondays" : ["12:00pm - 3:00pm"],
+                "Tuesdays" : ["9:00am - 11:00pm"],
+                "Wednesday" : ["9:00am - 11:00pm"]
        		},
        		"facultyImage" : "/images/faculty/valerieHenry.jpg",
        		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Valerie Henry and Sarah Singh's office will be the ninth door on your left."
