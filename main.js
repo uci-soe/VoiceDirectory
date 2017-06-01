@@ -253,6 +253,23 @@ window.onload = function(){
         
     }
     
+    function removeResults(){
+        $(".room-name").html("");
+        $(".room-type").html("");
+        $(".room-img").css('background-image', 'none');
+        $(".room-map").attr("src", "");
+        $(".faculty-name").html("");
+        
+//        $(".faculty-email").html("");
+//        $(".faculty-number").html("");
+//        $(".faculty-img").attr("src", "");
+        
+        $('.fac-info').css('display','none');
+        $('.officeHours').hide();        
+        $('.faculty-hours').html("");
+        
+    }
+    
     function displayMainMenu(reset)
     {
         $(".result-block").hide();
@@ -444,6 +461,8 @@ window.onload = function(){
         window.speechSynthesis.speak(message);
         
         roomLocator = function(room_num) {  
+            
+            alert(room_num);
             
             if(!(room_num in data.rooms)){
                 
