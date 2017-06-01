@@ -259,7 +259,7 @@
 
        		},
        		"facultyImage" : "/images/faculty/one.jpg",
-       		"voiceResponse_faculty" : "Guarino's office is the first entrance on your right."
+       		"voiceResponse_faculty" : "Jody Guarino's office is the first entrance on your right."
        	},
 
        	"2003" : {
@@ -318,7 +318,7 @@
        		"roomType" : "Resource Center",
        		"mapImage" : "/images/maps/Room2008.png",
        		"roomImage" : "/images/rooms/Room2008.jpg",
-       		"voiceResponse_room" : "Go straight down the hallway, Room 2008 will be the third entrance on your right straight ahead",
+       		"voiceResponse_room" : "Go straight down the hallway, Room 2008 will be the third entrance on your right",
 
        		"facultyName" : "",
        		"facultyEmail" : "",
@@ -335,7 +335,7 @@
        		"roomType" : "Classroom",
        		"mapImage" : "/images/maps/Room2009.png",
        		"roomImage" : "/images/rooms/Room2009.jpg",
-       		"voiceResponse_room" : "Room 2009 will be at the end of the hallway straight ahead.",
+       		"voiceResponse_room" : "Go straight down the hallway. Room 2009 is at the end of the hallway.",
 
        		"facultyName" : "Kim Burge",
        		"facultyEmail" : "kburge@uci.edu",
@@ -344,7 +344,7 @@
 
        		},
        		"facultyImage" : "/images/faculty/kimBurge.png",
-       		"voiceResponse_faculty" : "Burge's office will be at the end of the hallway straight ahead."
+       		"voiceResponse_faculty" : "Kim Burge's office is at the end of the hallway straight ahead."
        	},
 
        	"2010" : {
@@ -352,7 +352,7 @@
        		"roomType" : "Classroom",
        		"mapImage" : "/images/maps/Room2010.png",
        		"roomImage" : "/images/rooms/Room2010.jpg",
-       		"voiceResponse_room" : "Room 2010 will be immediately on your right.",
+       		"voiceResponse_room" : "Room 2010 is immediately on your right.",
 
        		"facultyName" : "",
        		"facultyEmail" : "",
@@ -378,7 +378,7 @@
 
        		},
        		"facultyImage" : "/images/faculty/jenelLao.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 on your right. Room 2012 will be the first door straight ahead."
+       		"voiceResponse_faculty" : "Enter Suite 2003 on your right. Jenel Lao's office will be the first door straight ahead."
        	},
 
        	"2024" : {
@@ -403,7 +403,7 @@
        		"roomType" : "Kitchen",
        		"mapImage" : "/images/maps/Room2030.png",
        		"roomImage" : "/images/rooms/Room2030.jpg",
-       		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. Room 2030 will be the third door on your right.",
+       		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. The kitchen will be the third door on your right.",
 
        		"facultyName" : "",
        		"facultyEmail" : "",
@@ -436,7 +436,7 @@
        		"roomName" : "Room 2032",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2032.png",
-       		"roomImage" : "/images/rooms/Room2032.jpg",
+       		"roomImage" : "",
        		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. Room 2032 will be the fourth door on your right.",
 
        		"facultyName" : "Liane Brouillette",
@@ -446,14 +446,14 @@
 
        		},
        		"facultyImage" : "/images/maps/lianeBrouillette.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 on your right and take a left at the end of the hall. Brouillette's office will be the fourth door on your right."
+       		"voiceResponse_faculty" : "Enter Suite 2003 on your right and take a left at the end of the hall. Liane Brouillette's office will be the fourth door on your right."
        	},
 
        	"2034" : {
        		"roomName" : "Room 2034",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2034.png",
-       		"roomImage" : "/images/rooms/Room2034.jpg",
+       		"roomImage" : "",
        		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. Room 2034 will be the fifth door on your right.",
 
        		"facultyName" : "Jamal Abedi",
@@ -463,14 +463,14 @@
 
        		},
        		"facultyImage" : "/images/faculty/jamalAbedi.png",
-       		"voiceResponse_faculty" : "Enter Suite 2003 on your right and take a left at the end of the hall. Abedi's office will be the fifth door on your right."
+       		"voiceResponse_faculty" : "Enter Suite 2003 on your right and take a left at the end of the hall. Jamal Abedi's office will be the fifth door on your right."
        	},
 
        	"2036" : {
        		"roomName" : "Room 2036",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2036.png",
-       		"roomImage" : "/images/rooms/Room2036.jpg",
+       		"roomImage" : "",
        		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. Room 2036 will be the sixth door on your right.",
 
        		"facultyName" : "Maria Rosales-Rueda",
@@ -480,7 +480,7 @@
 
        		},
        		"facultyImage" : "/images/faculty/mariaRosalesRueda.jph",
-       		"voiceResponse_faculty" : "Enter Suite 2003 on your right and take a left at the end of the hall. Rueda's office will be the sixth door on your right."
+       		"voiceResponse_faculty" : "Enter Suite 2003 on your right and take a left at the end of the hall. Maria Rosales-Rueda's office will be the sixth door on your right."
        	},
 
        	"2037" : {
@@ -504,7 +504,7 @@
        		"roomName" : "Room 2038",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2038.png",
-       		"roomImage" : "/images/rooms/Room2038.jpg",
+       		"roomImage" : "",
        		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. Room 2038 will be the seventh door on your right.",
 
        		"facultyName" : "Penelope Collins",
@@ -514,14 +514,14 @@
 
        		},
        		"facultyImage" : "/images/faculty/penelopeCollins.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 on your right and take a left at the end of the hall. Collins' office will be the seventh door on your right."
+       		"voiceResponse_faculty" : "Enter Suite 2003 on your right and take a left at the end of the hall. Penelope Collins' office will be the seventh door on your right."
        	},
 
        	"2040" : {
        		"roomName" : "Room 2040",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2040.png",
-       		"roomImage" : "/images/maps/Room2040.jpg",
+       		"roomImage" : "",
        		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. Room 2040 will be the eighth door on your right.",
 
        		"facultyName" : "Rhett Lowe",
@@ -538,8 +538,8 @@
        		"roomName" : "Room 2042",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2042.png",
-       		"roomImage" : "/images/rooms/Room2042.jpg",
-       		"voiceResponse_room" : "Enter Suite 2003 on your right, go all the way down the hall and take a left. Room 2042 will be the eighth door on your right.",
+       		"roomImage" : "",
+       		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. Room 2042 will be the ninth door on your right.",
 
        		"facultyName" : "Hyuk Kang",
        		"facultyEmail" : "hmkang@uci.edu",
@@ -548,15 +548,15 @@
 
        		},
        		"facultyImage" : "/images/faculty/hyukKang.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 on your right, go all the way down the hall and take a left. Hyuk's office will be the eighth door on your right."
+       		"voiceResponse_faculty" : "Enter Suite 2003 on your right and take a left at the end of the hall. Hyuk Kang's office will be the ninth door on your right."
        	},
 
        	"2044" : {
        		"roomName" : "Room 2044",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2044.png",
-       		"roomImage" : "/images/rooms/Room2044.jpg",
-       		"voiceResponse_room" : "Enter Suite 2003 on your right, go all the way down the hall and take a left. Room 2044 will be the ninth door on your right.",
+       		"roomImage" : "",
+       		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. Room 2044 will be the tenth door on your right.",
 
        		"facultyName" : "Spenser Clark",
        		"facultyEmail" : "saclark@uci.edu",
@@ -565,7 +565,7 @@
 
        		},
        		"facultyImage" : "/images/faculty/clarkSpenser.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 on your right, go all the way down the hall and take a left. Clark's office will be the ninth door on your right."
+       		"voiceResponse_faculty" : "Enter Suite 2003 on your right and take a left at the end of the hall. Spencer Clark's will be the tenth door on your right."
        	},
 
        	"2045" : {
@@ -573,7 +573,7 @@
        		"roomType" : "Server Room",
        		"mapImage" : "/images/maps/Room2045.png",
        		"roomImage" : "/images/rooms/Room2045.jpg",
-       		"voiceResponse_room" : "Enter Suite 2003 on your right, go all the way down the hall and take a left. Room 2045 will be the sixth door on your right.",
+       		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. Room 2045 will be the sixth door on your left.",
 
        		"facultyName" : "",
        		"facultyEmail" : "",
@@ -589,8 +589,8 @@
        		"roomName" : "Room 2046",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2046.png",
-       		"roomImage" : "/images/rooms/Room2046.jpg",
-       		"voiceResponse_room" : "Enter Suite 2003 on your right, go all the way down the hall and take a left. Room 2046 will be the tenth door on your right.",
+       		"roomImage" : "",
+       		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. Room 2046 will be the twelfth door on your right.",
 
        		"facultyName" : "George Farkas",
        		"facultyEmail" : "gfarkas@uci.edu",
@@ -599,15 +599,32 @@
 
        		},
        		"facultyImage" : "/images/faculty/georgeFarkas.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 on your right, go all the way down the hall and take a left. Farkas' office will be the tenth door on your right."
+       		"voiceResponse_faculty" : "Enter Suite 2003 on your right and take a left at the end of the hall. George Farkas' office will be the eleventh door on your right."
+       	},
+        
+        "2048" : {
+       		"roomName" : "Room 2048",
+       		"roomType" : "Faculty Office",
+       		"mapImage" : "/images/maps/Room2048.png",
+       		"roomImage" : "",
+       		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. Room 2046 will be the eleventh door on your right.",
+
+       		"facultyName" : "George Farkas",
+       		"facultyEmail" : "gfarkas@uci.edu",
+       		"facultyNumber" : "(949)824-3523",
+       		"officeHours" : {
+
+       		},
+       		"facultyImage" : "/images/faculty/georgeFarkas.jpg",
+       		"voiceResponse_faculty" : "Enter Suite 2003 on your right and take a left at the end of the hall. George Farkas' office will be the eleventh door on your right."
        	},
 
        	"2050" : {
        		"roomName" : "Room 2050",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2050.png",
-       		"roomImage" : "/images/rooms/Room2050.jpg",
-       		"voiceResponse_room" : "Enter Suite 2003 on your right, go all the way down the hall and take a left. Room 2050 will be the third-to-the-last door on your right.",
+       		"roomImage" : "",
+       		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. Room 2050 will be the thirteenth door on your right.",
 
        		"facultyName" : "Deborah Vandell",
        		"facultyEmail" : "dvandell@uci.edu",
@@ -616,15 +633,15 @@
 
        		},
        		"facultyImage" : "/images/faculty/deborahVandell.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 on your right, go all the way down the hall and take a left. Vandell's office will be the third-to-the-last door on your right."
+       		"voiceResponse_faculty" : "Enter Suite 2003 on your right and take a left at the end of the hall. Deborah Vandell's office will be the thirteenth door on your right."
        	},
 
        	"2052" : {
        		"roomName" : "Room 2052",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2052.png",
-       		"roomImage" : "/images/rooms/Room2052.jpg",
-       		"voiceResponse_room" : "Enter Suite 2003 on your right, go all the way down the hall and take a left. Room 2052 will be the second-to-the-last door on your right.",
+       		"roomImage" : "",
+       		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. Room 2052 will be the third-to-the-last door on your right.",
 
        		"facultyName" : "Jade Jenkins",
        		"facultyEmail" : "jvjenkin@uci.edu",
@@ -633,15 +650,15 @@
 
        		},
        		"facultyImage" : "/images/faculty/jadeJenkins.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 on your right, go all the way down the hall and take a left. Jenkin's office will be the second-to-the-last door on your right."
+       		"voiceResponse_faculty" : "Enter Suite 2003 on your right and take a left at the end of the hall. Jade Jenkins' office will be the third-to-the-last door on your right."
        	},
 
        	"2054" : {
        		"roomName" : "Room 2054",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2054.png",
-       		"roomImage" : "/images/rooms/Room2054.jpg",
-       		"voiceResponse_room" : "Enter Suite 2003 on your right, go all the way down the hall and take a left. Room 2054 will be the last door on your right.",
+       		"roomImage" : "",
+       		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. Room 2054 will be the second-to-last door on your right.",
 
        		"facultyName" : "Di Xu",
        		"facultyEmail" : "dix3@uci.edu",
@@ -650,15 +667,15 @@
 
        		},
        		"facultyImage" : "/images/faculty/diXu.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 on your right, go all the way down the hall and take a left. Xu's office will be the last door on your right."
+       		"voiceResponse_faculty" : "Enter Suite 2003 on your right and take a left at the end of the hall. Di Xu's office will be the second-to-last door on your right."
        	},
 
        	"2056" : {
        		"roomName" : "Room 2056",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2056.png",
-       		"roomImage" : "/images/rooms/Room2056.jpg",
-       		"voiceResponse_room" : "Enter Suite 2003 on your right, go all the way down the hall and take a left. Room 2056 will be at the end of the hallway. ",
+       		"roomImage" : "",
+       		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. Room 2056 will be at the end of the hallway.",
 
        		"facultyName" : "Greg Duncan",
        		"facultyEmail" : "gduncan@uci.edu",
@@ -667,15 +684,15 @@
 
        		},
        		"facultyImage" : "/images/faculty/gregDuncan.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 on your right, go all the way down the hall and take a left. Duncan's office will be at the end of the hallway. "
+       		"voiceResponse_faculty" : "Enter Suite 2003 on your right and take a left at the end of the hall. Greg Duncan's office will be at the end of the hallway. "
        	},
 
        	"2060" : {
        		"roomName" : "Room 2060",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2060.png",
-       		"roomImage" : "/images/rooms/Room2060.jpg",
-       		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left, go all the way down the hall and take a right. Room 2060 will be four doors down on your left",
+       		"roomImage" : "",
+       		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. At the end of the hall, turn left. Room 2060 will be the first door on your left.,
 
        		"facultyName" : "Rachel Baker",
        		"facultyEmail" : "rachelbb@uci.edu",
@@ -684,7 +701,7 @@
 
        		},
        		"facultyImage" : "/images/faculty/rachelBaker.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left, go all the way down the hall and take a right. Baker's office will be four doors down on your left"
+       		"voiceResponse_faculty" : "Enter Suite 2003 on your right and take a left at the end of the hall. At the end of the hall, turn left. Rachel Baker's office will be the first door on your left."
        	},
 
        	"2062" : {
@@ -692,7 +709,7 @@
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2062.png",
        		"roomImage" : "",
-       		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left, go all the way down the hall and take a right. Room 2062 will be three doors down on your left",
+       		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. At the end of the hall, turn left. Room 2062 will be the second door on your left.",
 
        		"facultyName" : "Emily Penner",
        		"facultyEmail" : "emily.penner@uci.edu",
@@ -701,15 +718,15 @@
 
        		},
        		"facultyImage" : "",
-       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left, go all the way down the hall and take a right. Penner's office will be three doors down on your left"
+       		"voiceResponse_faculty" : "Enter Suite 2003 on your right and take a left at the end of the hall. At the end of the hall, turn left. Emily Penner's office will be the second door on your left."
        	},
 
          "2064" : {
        		"roomName" : "Room 2064",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2064.png",
-       		"roomImage" : "/images/rooms/Room2064.jpg",
-       		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left, go all the way down the hall and take a right. Room 2064 will be two doors down on your left",
+       		"roomImage" : "",
+       		"voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Go all the way down the hall and take another right. Room 2064 will be the third door on your left",
 
        		"facultyName" : "Constance Iloh",
        		"facultyEmail" : "hosunk@uci.edu",
@@ -718,7 +735,7 @@
 
        		},
        		"facultyImage" : "/images/faculty/constanceIloh.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left, go all the way down the hall and take a right. Hosun Kang, and Constance Iloh's office will be two doors down on your left"
+       		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Go all the way down the hall and take another right. Hosun Kang, and Constance Iloh's office will be the third door on your left"
        	},
         
         "2064a" : {
@@ -726,7 +743,7 @@
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2064.png",
        		"roomImage" : "/images/rooms/Room2064.jpg",
-       		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left, go all the way down the hall and take a right. Room 2064 will be two doors down on your left",
+       		"voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Go all the way down the hall and take another right. Room 2064 will be the third door on your left",
 
        		"facultyName" : "Constance Iloh",
        		"facultyEmail" : "hosunk@uci.edu",
@@ -735,14 +752,14 @@
 
        		},
        		"facultyImage" : "/images/faculty/constanceIloh.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left, go all the way down the hall and take a right. Hosun Kang, and Constance Iloh's office will be two doors down on your left"
+       		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Go all the way down the hall and take another right. Hosun Kang, and Constance Iloh's office will be the third door on your left"
        	},
        	"2064b" : {
        		"roomName" : "Room 2064b",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2064.png",
        		"roomImage" : "/images/rooms/Room2064.jpg",
-       		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left, go all the way down the hall and take a right. Room 2064 will be two doors down on your left",
+       		"voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Go all the way down the hall and take another right. Room 2064 will be the third door on your left",
 
        		"facultyName" : "Hosun Kang",
        		"facultyEmail" : "hosunk@uci.edu",
@@ -751,7 +768,7 @@
 
        		},
        		"facultyImage" : "/images/faculty/hosunKang.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left, go all the way down the hall and take a right. Hosun Kang, and Constance Iloh's office will be two doors down on your left"
+       		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Go all the way down the hall and take another right. Hosun Kang, and Constance Iloh's office will be the third door on your left"
        	},
         
         "2066" : {
@@ -759,7 +776,7 @@
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2066.png",
        		"roomImage" : "",
-       		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left, go all the way down the hall and take a right. Room 2066 will be one door down on your left",
+       		"voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Go all the way down the hall and take another right. Room 2066 will be the second door on your left.",
 
        		"facultyName" : "Robert Duncan",
        		"facultyEmail" : "duncanrj@uci.edu",
@@ -768,15 +785,15 @@
 
        		},
        		"facultyImage" : "/images/faculty/robertDuncan.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left, go all the way down the hall and take a right. Robert Duncan and Melinda Petre's office will be one door down on your left"
+       		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Go all the way down the hall and take another right. Robert Duncan and Melinda Petre's office will be the second door on your left."
        	},
         
        	"2066a" : {
        		"roomName" : "Room 2066a",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2066.png",
-       		"roomImage" : "/images/rooms/Room2066.jpg",
-       		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left, go all the way down the hall and take a right. Room 2066 will be one door down on your left",
+       		"roomImage" : "",
+       		"voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Go all the way down the hall and take another right. Room 2066 will be the second door on your left.",
 
        		"facultyName" : "Robert Duncan",
        		"facultyEmail" : "duncanrj@uci.edu",
@@ -785,14 +802,14 @@
 
        		},
        		"facultyImage" : "/images/faculty/robertDuncan.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left, go all the way down the hall and take a right. Robert Duncan and Melinda Petre's office will be one door down on your left"
+       		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Go all the way down the hall and take another right. Robert Duncan and Melinda Petre's office will be the second door on your left."
        	},
         "2066b" : {
        		"roomName" : "Room 2066b",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2066.png",
-       		"roomImage" : "/images/rooms/Room2066.jpg",
-       		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left, go all the way down the hall and take a right. Room 2066 will be one door down on your left",
+       		"roomImage" : "",
+       		"voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Go all the way down the hall and take another right. Room 2066 will be the second door on your left.",
 
        		"facultyName" : "Melinda Petre",
        		"facultyEmail" : "duncanrj@uci.edu",
@@ -801,18 +818,15 @@
 
        		},
        		"facultyImage" : "/images/faculty/melindaPetre.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left, go all the way down the hall and take a right. Robert Duncan and Melinda Petre's will be one door down on your left"
+       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left, go all the way down tEnter Suite 2003 which is the third door on your left. At the end of the hall take a right. Go all the way down the hall and take another right. Robert Duncan and Melinda Petre's office will be the second door on your left."
        	},
-
-        
-        
 
        	"2068" : {
        		"roomName" : "Room 2068",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2068.png",
        		"roomImage" : "/images/rooms/Room2068.jpg",
-       		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left, go all the way down the hall and take a right. Room 2068 will be the first door straight ahead.",
+       		"voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Room 2068 will be at then end of the hall.",
 
        		"facultyName" : "Jacquelynne Eccles",
        		"facultyEmail" : "jseccles@uci.edu",
@@ -821,15 +835,15 @@
 
        		},
        		"facultyImage" : "/images/faculty/jacquelynneSueEccles.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left, go all the way down the hall and take a right. Jacquelynne Eccles' office will be the first door straight ahead."
+       		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Jacquelynne Eccles' office will be at then end of the hall."
        	},
 
        	"2072" : {
        		"roomName" : "Room 2072",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2072.png",
-       		"roomImage" : "/images/rooms/Room2072.jpg",
-       		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Room 2072 will be the last door on your left.",
+       		"roomImage" : "",
+       		"voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Room 2072 will be the last door on your left.",
 
        		"facultyName" : "Drew Bailey",
        		"facultyEmail" : "dhbailey@uci.edu",
@@ -837,16 +851,16 @@
        		"officeHours" : {
 
        		},
-       		"facultyImage" : "/images/faculty/drewBailey.png",
-       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Drew Bailey's office will be the last door on your left."
+       		"facultyImage" : "/images/faculty/drewBailey.jpg",
+       		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Drew Bailey's office will be the last door on your left."
        	},
 
        	"2074" : {
        		"roomName" : "Room 2074",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2074.png",
-       		"roomImage" : "/images/rooms/Room2074.jpg",
-       		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Room 2074 will be the second-to-the-last door on your left.",
+       		"roomImage" : "",
+       		"voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Room 2074 will be the second-to-the-last door on your left.",
 
        		"facultyName" : "Geneva Lopez-Sandoval",
        		"facultyEmail" : "lopezg@uci.edu",
@@ -855,7 +869,7 @@
 
        		},
        		"facultyImage" : "/images/faculty/genevaLopezSandoval.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Her office will be the second-to-the-last door on your left."
+       		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Geneva Lopez-Sandoval office will be the second-to-the-last door on your left."
        	},
 
        	"2075" : {
@@ -863,7 +877,7 @@
        		"roomType" : "Lab",
        		"mapImage" : "/images/maps/Room2075.png",
        		"roomImage" : "/images/rooms/Room2075.jpg",
-       		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Room 2075 will be the last door on your right.",
+       		"voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Room 2075 will be the last door on your right.",
 
        		"facultyName" : "",
        		"facultyEmail" : "",
@@ -879,8 +893,8 @@
        		"roomName" : "Room 2076",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2076.png",
-       		"roomImage" : "/images/rooms/Room2076.jpg",
-       		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Room 2076 will be the ninth door on your left.",
+       		"roomImage" : "",
+       		"voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Room 2076 will be the ninth door on your left.",
 
        		"facultyName" : "Valerie Henry",
        		"facultyEmail" : "vhenry@uci.edu",
@@ -892,7 +906,7 @@
 
        		},
        		"facultyImage" : "/images/faculty/valerieHenry.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Valerie Henry and Sarah Singh's office will be the ninth door on your left."
+       		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Valerie Henry and Sarah Singh's office will be the ninth door on your left."
        	},
         
        	"2076a" : {
@@ -900,7 +914,7 @@
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2076.png",
        		"roomImage" : "",
-       		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Room 2076 will be the ninth door on your left.",
+       		"voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Room 2076 will be the ninth door on your left.",
 
        		"facultyName" : "Valerie Henry",
        		"facultyEmail" : "vhenry@uci.edu",
@@ -911,15 +925,15 @@
                 "Wednesday" : ["9:00am - 11:00pm"]
        		},
        		"facultyImage" : "/images/faculty/valerieHenry.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Valerie Henry and Sarah Singh's office will be the ninth door on your left."
+       		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Valerie Henry and Sarah Singh's office will be the ninth door on your left."
        	},
         
         "2076b" : {
        		"roomName" : "Room 2076b",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2076.png",
-       		"roomImage" : "/images/rooms/Room2076.jpg",
-       		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Room 2076 will be the ninth door on your left.",
+       		"roomImage" : "",
+       		"voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Room 2076 will be the ninth door on your left.",
 
        		"facultyName" : "Sarah Singh",
        		"facultyEmail" : "vhenry@uci.edu",
@@ -928,7 +942,7 @@
 
        		},
        		"facultyImage" : "/images/faculty/sarahSingh.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Valerie Henry and Sarah Singh's office will be the ninth door on your left."
+       		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Valerie Henry and Sarah Singh's office will be the ninth door on your left."
        	},
         
         
@@ -938,7 +952,7 @@
           "roomType" : "Lab",
           "mapImage" : "/images/maps/Room2075.png",
           "roomImage" : "/images/rooms/Room2075.jpg",
-       		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Room 2077 will be the second-to-the-last door on your right.",
+       		"voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Room 2077 will be the second-to-the-last door on your right.",
 
        		"facultyName" : "",
        		"facultyEmail" : "",
@@ -954,8 +968,8 @@
        		"roomName" : "Room 2078",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2078.png",
-       		"roomImage" : "/images/rooms/Room2078.jpg",
-       		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Room 2078 will be the eighth door on your left.",
+       		"roomImage" : "",
+       		"voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Room 2078 will be the eighth door on your left.",
 
        		"facultyName" : "Sue Vaughn",
        		"facultyEmail" : "smvaughn@uci.edu",
@@ -964,7 +978,7 @@
 
        		},
        		"facultyImage" : "/images/faculty/sueVaughn.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Sue Vaughn's office will be the eighth door on your left."
+       		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Sue Vaughn's office will be the eighth door on your left."
        	},
 
        	"2079" : {
@@ -972,7 +986,7 @@
        		"roomType" : "Lab",
        		"mapImage" : "/images/maps/Room2079.png",
        		"roomImage" : "/images/rooms/Room2079.jpg",
-       		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Room 2079 will be the second on your right.",
+       		"voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Room 2079 will be the second door on your right.",
 
        		"facultyName" : "",
        		"facultyEmail" : "",
@@ -988,8 +1002,8 @@
             "roomName" : "Room 2080",
             "roomType" : "Faculty Office",
             "mapImage" : "/images/maps/main.png",
-            "roomImage" : "/images/rooms/Room2080.jpg",
-            "voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Room 2080 will be the seventh door on your left.",
+            "roomImage" : "",
+            "voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Room 2080 will be the seventh door on your left.",
             
             "facultyName" : "Susan Guilfoyle",
             "facultyEmail" : "dd@uci.edu",
@@ -1000,15 +1014,15 @@
                 "Wednesday" : ["9:00am - 11:00pm"]
             },
             "facultyImage" : "/images/faculty/susanGuilfoyle.jpg",
-            "voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Room 2080 will be the seventh door on your left."
+            "voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Susan Guilfoyle's office will be the seventh door on your left."
         },
 
        	"2082" : {
        		"roomName" : "Room 2082",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2082.png",
-       		"roomImage" : "/images/rooms/Room2082.jpg",
-       		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Room 2082 will be the sixth door on your left.",
+       		"roomImage" : "",
+       		"voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Room 2082 will be the sixth door on your left.",
 
        		"facultyName" : "Susan Toma-Berge",
        		"facultyEmail" : "tomas@uci.edu",
@@ -1017,15 +1031,15 @@
 
        		},
        		"facultyImage" : "/images/faculty/susanTomaBerge.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Susan Toma-Berge's office will be the sixth door on your left."
+       		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Susan Toma-Berge's will be the sixth door on your left."
        	},
 
         "2084" : {
        		"roomName" : "Room 2084",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2084.png",
-       		"roomImage" : "/images/rooms/Room2084.jpg",
-       		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Room 2084 will be the fifth door on your left.",
+       		"roomImage" : "",
+       		"voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Room 2084 will be the fifth door on your left.",
 
        		"facultyName" : "Jeanne Stone",
        		"facultyEmail" : "jmstone@uci.edu",
@@ -1034,15 +1048,15 @@
 
        		},
        		"facultyImage" : "/images/faculty/stoneJeanne.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Jenel Lao and Jeanne Stone's office will be the fifth door on your left."
+       		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Jenel Lao and Jeanne Stone's office will be the fifth door on your left."
        	},
         
        	"2084a" : {
        		"roomName" : "Room 2084a",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2084.png",
-       		"roomImage" : "/images/rooms/Room2084.jpg",
-       		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Room 2084 will be the fifth door on your left.",
+       		"roomImage" : "",
+       		"voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Room 2084 will be the fifth door on your left.",
 
        		"facultyName" : "Jeanne Stone",
        		"facultyEmail" : "jmstone@uci.edu",
@@ -1051,15 +1065,15 @@
 
        		},
        		"facultyImage" : "/images/faculty/stoneJeanne.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Jenel Lao and Jeanne Stone's office will be the fifth door on your left."
+       		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Jenel Lao and Jeanne Stone's office will be the fifth door on your left."
        	},
         
         "2084b" : {
        		"roomName" : "Room 2084b",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2084.png",
-       		"roomImage" : "/images/rooms/Room2084.jpg",
-       		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Room 2084 will be the fifth door on your left.",
+       		"roomImage" : "",
+       		"voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Room 2084 will be the fifth door on your left.",
 
        		"facultyName" : "Jenel Lao",
        		"facultyEmail" : "jmstone@uci.edu",
@@ -1068,7 +1082,7 @@
 
        		},
        		"facultyImage" : "/images/faculty/laoJenel.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Jenel Lao and Jeanne Stone's office will be the fifth door on your left."
+       		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Jenel Lao and Jeanne Stone's office will be the fifth door on your left."
        	},
         
 
@@ -1077,7 +1091,7 @@
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2086.png",
        		"roomImage" : "/images/rooms/Room2086.jpg",
-       		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Room 2086 will be the fourth door on your left.",
+       		"voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Room 2086 will be the fourth door on your left.",
 
        		"facultyName" : "Maria Takacs",
        		"facultyEmail" : "mtakacs@uci.edu",
@@ -1086,15 +1100,15 @@
 
        		},
        		"facultyImage" : "/images/faculty/mariaTakacs.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Maria Takacs' office will be the fourth door on your left."
+       		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Maria Takacs' office will be the fourth door on your left."
        	},
 
        	"2092" : {
        		"roomName" : "Room 2092",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2092.png",
-       		"roomImage" : "/images/rooms/Room2092.jpg",
-       		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Room 2092 will be the third door on your left.",
+       		"roomImage" : "",
+       		"voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Room 2092 will be the third door on your left.",
 
        		"facultyName" : "Jeff Johnston",
        		"facultyEmail" : "jmjohnst@uci.edu",
@@ -1103,15 +1117,15 @@
 
        		},
        		"facultyImage" : "/images/faculty/jeffJohnston.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Jeff Johnston's office will be the third door on your left."
+       		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Jeff Johnston's office will be the third door on your left."
        	},
 
        	"2094" : {
        		"roomName" : "Room 2094",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2094.png",
-       		"roomImage" : "/images/rooms/Room2094.jpg",
-       		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Room 2094 will be the second door on your left.",
+       		"roomImage" : "",
+       		"voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Room 2094 will be the second door on your left.",
 
        		"facultyName" : "Sandra Simpkins",
        		"facultyEmail" : "simpkins@uci.edu",
@@ -1120,15 +1134,15 @@
 
        		},
        		"facultyImage" : "/images/faculty/sandraSimpkins.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Sandra Simpkins' office will be the second door on your left."
+       		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Sandra Simpkins' office will be the second door on your left."
        	},
 
        	"2096" : {
        		"roomName" : "Room 2096",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2096.png",
-       		"roomImage" : "/images/rooms/Room2096.jpg",
-       		"voiceResponse_room" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Room 2096 will be the first door on your left.",
+       		"roomImage" : "",
+       		"voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Room 2096 will be the first door on your left.",
 
        		"facultyName" : "Virginia Panish",
        		"facultyEmail" : "vpanish@uci.edu",
@@ -1137,7 +1151,7 @@
 
        		},
        		"facultyImage" : "/images/faculty/virginiaPanish.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 by the third entrance on your left and go all the way down the hall. Virginia Paanish's office will be the first door on your left."
+       		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Virginia Paanish's office will be the first door on your left."
        	},
 
         "2200" : {
@@ -1162,8 +1176,8 @@
        		"roomName" : "Room 2203",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2203.png",
-       		"roomImage" : "/images/rooms/Room2203.jpg",
-       		"voiceResponse_room" : "Enter Suite 2000 by the first entrance on your left, Room 2203 will be the first door on your left.",
+       		"roomImage" : "",
+       		"voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Room 2096 will be the first door on your left.",
 
        		"facultyName" : "David Lim",
        		"facultyEmail" : "dklim@uci.edu",
@@ -1172,15 +1186,15 @@
 
        		},
        		"facultyImage" : "/images/faculty/davidLim.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2000 by the first entrance on your left, David Lim's office will be the first door on your left."
+       		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. David Lim's office will be the first door on your left."
        	},
 
        	"2204" : {
        		"roomName" : "Room 2204",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/main.png",
-       		"roomImage" : "/images/rooms/Room2204.png",
-       		"voiceResponse_room" : "Enter Suite 2000 by the first entrance on your right, Room 2204 will be the second door on your left.",
+       		"roomImage" : "",
+       		"voiceResponse_room" : "Turn to your left and enter Suite 2200. Room 2204 will be the second door on your left.",
 
        		"facultyName" : "Neil Young",
        		"facultyEmail" : "youngw@uci.edu",
@@ -1189,15 +1203,15 @@
 
        		},
        		"facultyImage" : "/images/faculty/neilYoung.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2000 by the first entrance on your right, Neil Young's office will be the second door on your left."
+       		"voiceResponse_faculty" : "Turn to your left and enter Suite 2200. Neil Young's office will be the second door on your left."
        	},
 
        	"2206" : {
        		"roomName" : "Room 2206",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2206.png",
-       		"roomImage" : "/images/rooms/Room2206.jpg",
-       		"voiceResponse_room" : "Enter Suite 2000 by the first entrance on your left, Room 2206 will be the left door straight ahead.",
+       		"roomImage" : "",
+       		"voiceResponse_room" : "Turn to your left and enter Suite 2200. Room 2206 will be the left door straight ahead.",
 
        		"facultyName" : "Sarah McDougall",
        		"facultyEmail" : "smcdouga@uci.edu",
@@ -1206,7 +1220,7 @@
 
        		},
        		"facultyImage" : "/images/faculty/sarahMcDougall.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2000 by the first entrance on your left, Sarah McDougall's office will be the left door straight ahead."
+       		"voiceResponse_faculty" : "Turn to your left and enter Suite 2200. Sarah McDougall;s office will be the left door straight ahead."
        	},
         
 
@@ -1214,8 +1228,8 @@
        		"roomName" : "Room 2207",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2207.png",
-       		"roomImage" : "/images/rooms/Room2207.jpg",
-       		"voiceResponse_room" : "Enter Suite 2000 by the first entrance on your left, Room 2207 will be the right door straight ahead.",
+       		"roomImage" : "",
+       		"voiceResponse_room" : "Turn to your left and enter Suite 2200. Room 2207 will be the right door straight ahead.",
 
        		"facultyName" : "Denise Earley",
        		"facultyEmail" : "denise.earley@uci.edu",
@@ -1224,7 +1238,7 @@
 
        		},
        		"facultyImage" : "/images/faculty/deniseEarley.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2000 by the first entrance on your left, Denise Earley's office will be the right door straight ahead."
+       		"voiceResponse_faculty" : "Turn to your left and enter Suite 2200. Denise Earley's office will be the right door straight ahead."
        	},
 
        	"2005a" : {
@@ -1232,7 +1246,7 @@
        		"roomType" : "Classroom",
        		"mapImage" : "/images/maps/Room2005A.png",
        		"roomImage" : "/images/rooms/Room2205A.jpg",
-       		"voiceResponse_room" : "Go left way, Room 2005A will be the fifth entrance on your left.",
+       		"voiceResponse_room" : "Go straight. Room 2005A will be the fifth entrance on your left.",
 
        		"facultyName" : "",
        		"facultyEmail" : "",

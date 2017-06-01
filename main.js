@@ -769,7 +769,7 @@ window.onload = function(){
             "I'm looking for (professor) *name":facultyLocator, 
             'I am looking for (professor) *name':facultyLocator,
 
-            '(professor) *name': facultyLocator,
+            'professor *name': facultyLocator,
             // 'I am looking for professor *fac_name' : facultyLocator,
            // 'I am looking for professor *fac_first_name :fac_last_name' : facultyLocator,
             //'professor *fac_first_name (*fac_last_name)' : facultyLocator,
