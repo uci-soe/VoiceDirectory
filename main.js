@@ -147,52 +147,88 @@ window.onload = function(){
     function spellChecker(fac_name){
         if(fac_name == "cambridge" || fac_name == "Cambridge" || fac_name == "Kim Birge" || fac_name == "Kim Bridge" || fac_name == "Burg" || fac_name == "Kim birge" || fac_name == "Kim Berg" || fac_name == "Birch")
             return "Kim Burge";
+        if(fac_name == "Berg" || fac_name == "Cambridge")
+            return "Burge";
+        
         else if(fac_name == "Janelle Lau" || fac_name == "Professor Lau"  || fac_name == "Lau")
             return "Jenel Lao";
+        
         else if(fac_name == "die shoe" || fac_name == "disha" || fac_name == "disa" || fac_name == "D shoe")
             return "Di Xu";
+        else if(fac_name == "shoe" || fac_name == "sure")
+            return "Xu";
+        
+        
         else if(fac_name == "young")
             return "Neil Young";
+        
         else if(fac_name == "constance iloh" || fac_name == "Constance Ehlo" || fac_name == "constants Hilo" || fac_name == "Constance I love" || fac_name == "Constance Ela" || fac_name == "Constance eilo" || fac_name == "Constance Isla" || fac_name == "Constance Hilo")
             return "Constance Iloh";
-        else if(fac_name == "I know")
+        else if(fac_name == "I know" || fac_name == "I lo" || fac_name == "Missy Lowe")
             return "Constance Iloh";
+        
         else if(fac_name == "Deborah vendell" || fac_name == "Deborah vandal" || fac_name == "Deborah vandal" || fac_name == "Deborah vandell" || fac_name == "Deborah Vando" || fac_name == "Deborah Van Dale")
             return "Deborah Vandell";
+        else if(fac_name == "vendell" || fac_name == "bandel" || fac_name == "Van Dell" || fac_name == "vandal")
+            return "Vandell";
+        
         else if(fac_name == "Melinda petre" || fac_name == "Melinda Petrie" || fac_name == "Melinda Petry" || fac_name == "Melinda Peter" || fac_name == "Petra" || fac_name == "Melinda better" || fac_name == "Melinda Petra")
             return "Melinda Petre";
+        else if(fac_name == "Petri" || fac_name == "Petrie")
+            return "Petre";
+        
         else if(fac_name == "Jacqueline Echols" || fac_name == "Jacqueline eckley's" || fac_name == "Jaclyn eckley's" || fac_name == "Jacqueline eclise")
             return "Jacquelynne Eccles";
+         
         else if(fac_name == "Liane brouillette" || fac_name == "Leon brouillette" || fac_name == "Leanne bralette" || fac_name == "Lee Ann brouillette")
             return "Liane Brouillette";
+        else if(fac_name == "brouillette" || fac_name == "Leon brouillette")
+            return "Brouillette";
+        
         else if(fac_name == "Geneva Lopez Sandoval")
             return "Geneva Lopez-Sandoval";
+        
         else if(fac_name == "Sarah sing" || fac_name == "sing")
             return "Sarah Singh";
+        
         else if(fac_name == "Susan Toma bears" || fac_name == "Susan Toma Berg" || fac_name == "Susan Toma bush" || fac_name == "Susan Toma Burj" || fac_name == "Susan Toma Burge" || fac_name == "Toma Berg" || fac_name == "Toma bersch" || fac_name == "Toma Burge" || fac_name == "Toma bears")
             return "Susan Toma Berge";
+        
         else if(fac_name == "Gene Stone" || fac_name == "June Stone" || fac_name == "jeans Stone" || fac_name == "stone")
             return "Jeanne Stone";
+        
         else if(fac_name == "Maria tax" || fac_name == "Murrieta Cox" || fac_name == "Maria tactics" || fac_name == "Maria tac-x" || fac_name == "tac-x" || fac_name == "Mystic X")
             return "Maria Takacs";
+        
         else if(fac_name == "Sandra Simkins" || fac_name == "Simkins")
             return "Sandra Simpkins";
+        
         else if(fac_name == "Maria Rosales weather" || fac_name == "Maria Rosales Loretta" || fac_name == "Maria Rosales Ruda")
             return "Maria Rosales Rueda";
+        
         else if(fac_name == "Jamal a Betty" || fac_name == "Jamal abedi")
             return "Jamal Abedi";
-        else if(fac_name == "Virginia panish" || fac_name == "Virginia punished" || fac_name == "panish" || fac_name == "punish")
+        else if(fac_name == "a Betty" || fac_name == "abiti")
+            return "Abedi";
+        
+        else if(fac_name == "Virginia panish" || fac_name == "Virginia punished")
             return "Virginia Panish";
+        else if(fac_name == "panish" || fac_name == "punish" || fac_name == "Spanish")
+            return "Panish";
+       
         else if(fac_name == "Vaughan")
             return "Sue Vaughn";
         else if(fac_name == "von" || fac_name == "Von")
             return "Vaughn";
+        
         else if(fac_name == "Denise early")
             return "Denise Earley";
         else if(fac_name == "early" || fac_name == "ear Lee")
             return "Earley";
+       
         else if(fac_name == "right low")
             return "Rhett Lowe";
+        
         else if(fac_name == "cute King" || fac_name == "cute Kang" || fac_name == "Kyu Kang" || fac_name == "Hugh Kang" || fac_name == "puke King" || fac_name == "Hugh King")
             return "Hyuk Kang";
 
@@ -611,10 +647,10 @@ window.onload = function(){
         msChecker = function(fac_name)
         {
             fac_name = spellChecker(fac_name);
-            
+
             msListFullName = ["Kim Burge","Jenel Lao","Liane Brouillette","Maria Rosales Rueda","Penelope Collins","Deborah Vandell","Jade Jenkins","Di Xu","Rachel Baker","Emily Penner","Constance Iloh","Hosun Kang","Melinda Petre","Jacquelynne Eccles","Geneva Lopez-Sandoval","Valerie Henry","Sarah Singh","Sue Vaughn","Susan Guilfoyle","Susan Toma Berge","Jenel Lao","Jeanne Stone","Maria Takacs","Sandra Simpkins","Virginia Panish","Sarah McDougall","Denise Earley"];
             
-            msListLastName = ["Burge","Lao","Brouillette","Rosales Rueda","Collins","Vandell","Jenkins","Xu","Baker","Penner","Iloh","Kang","Petre","Eccles","Lopez-Sandoval","Henry","Singh","Vaughn","Guilfoyle","Toma Berge","Lao","Stone","Takacs","Simpkins","Panish","McDougall","Earley"];
+            msListLastName = ["Burge","Lao","Brouillette","Rosales Rueda","Collins","Vandell","Jenkins","Xu","Baker","Penner","Iloh","Kang","Petre","Eccles","LopezSandoval","Henry","Singh","Vaughn","Guilfoyle","TomaBerge","Lao","Stone","Takacs","Simpkins","Panish","McDougall","Earley"];
             
             // Checks to see if fac_name is in drList. If not in drList indexOf will    return -1.
             if(msListFullName.indexOf(fac_name) != -1)
