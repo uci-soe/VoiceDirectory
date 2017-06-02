@@ -565,10 +565,16 @@ window.onload = function(){
         {
             fac_name = spellChecker(fac_name);
             console.log(fac_name);
-            drList = ["Sandra Simpkins","Virginia Panish","Geneva Lopez-Sandoval","Drew Bailey","Jacquelynne Eccles","Robert Duncan","Constance Iloh","Emily Penner","Rachel Baker","Greg Duncan","Di Xu","Jade Jenkins","Deborah Vandell","George Farkas","Penelope Colllins","Susan Toma Berge","Maria Rosales Rueda","Jamal Abedi","Liana Brouillette","Jenel Lao","Melinda Petre","Hosun Kang"];
+            drListFullName = ["Sandra Simpkins","Virginia Panish","Geneva Lopez-Sandoval","Drew Bailey","Jacquelynne Eccles","Robert Duncan","Constance Iloh","Emily Penner","Rachel Baker","Greg Duncan","Di Xu","Jade Jenkins","Deborah Vandell","George Farkas","Penelope Colllins","Susan Toma Berge","Maria Rosales Rueda","Jamal Abedi","Liana Brouillette","Jenel Lao","Melinda Petre","Hosun Kang"];
+            
+            
+            drListLastName = ["Simpkins","Panish","Lopez-Sandoval","Bailey","Eccles","Duncan","Iloh","Penner","Baker","Duncan","Xu","Jenkins","Vandell","Farkas","Collins","Toma Berge","Rosales Rueda","Abedi","Brouillette","Lao","Petre","Kang"];
+            
             
             // Checks to see if fac_name is in drList. If not in drList indexOf will    return -1.
-            if(drList.indexOf(fac_name) != -1)
+            if(drListFullName.indexOf(fac_name) != -1)
+                facultyLocator(fac_name);
+            else if(drListLastName.indexOf(fac_name) != -1)
                 facultyLocator(fac_name);
             else
             {
@@ -582,11 +588,15 @@ window.onload = function(){
         mrChecker = function(fac_name)
         {
             fac_name = spellChecker(fac_name);
-            alert(fac_name);
-            mrList = ["Jamal Abedi","Rhett Lowe","Hyuk Kang","Spenser Clark","Georg Farkas","Greg Duncan","Robert Duncan","Drew Bailey","Jeff Johnston","David Lim","Neil Young"];
+
+            mrListFullName = ["Jamal Abedi","Rhett Lowe","Hyuk Kang","Spenser Clark","Georg Farkas","Greg Duncan","Robert Duncan","Drew Bailey","Jeff Johnston","David Lim","Neil Young"];
             
+            mrListLastName = ["Abedi","Lowe","Kang","Clarks","Farkas","Duncan","Duncan","Bailey","Johnston","Lim","Young"];
             // Checks to see if fac_name is in drList. If not in drList indexOf will    return -1.
-            if(mrList.indexOf(fac_name) != -1)
+            
+            if(mrListFullName.indexOf(fac_name) != -1)
+                facultyLocator(fac_name);
+            else if(mrListLastName.indexOf(fac_name) != -1)
                 facultyLocator(fac_name);
             else
             {
@@ -602,10 +612,14 @@ window.onload = function(){
         {
             fac_name = spellChecker(fac_name);
             
-            msList = ["Kim Burge","Jenel Lao","Liane Brouillette","Maria Rosales Rueda","Penelope Collins","Deborah Vandell","Jade Jenkins","Di Xu","Rachel Baker","Emily Penner","Constance Iloh","Hosun Kang","Melinda Petre","Jacquelynne Eccles","Geneva Lopez-Sandoval","Valerie Henry","Sarah Singh","Sue Vaughn","Susan Guilfoyle","Susan Toma Berge","Jenel Lao","Jeanne Stone","Maria Takacs","Sandra Simpkins","Virginia Panish","Sarah McDougall","Denise Earley"];
+            msListFullName = ["Kim Burge","Jenel Lao","Liane Brouillette","Maria Rosales Rueda","Penelope Collins","Deborah Vandell","Jade Jenkins","Di Xu","Rachel Baker","Emily Penner","Constance Iloh","Hosun Kang","Melinda Petre","Jacquelynne Eccles","Geneva Lopez-Sandoval","Valerie Henry","Sarah Singh","Sue Vaughn","Susan Guilfoyle","Susan Toma Berge","Jenel Lao","Jeanne Stone","Maria Takacs","Sandra Simpkins","Virginia Panish","Sarah McDougall","Denise Earley"];
+            
+            msListLastName = ["Burge","Lao","Brouillette","Rosales Rueda","Collins","Vandell","Jenkins","Xu","Baker","Penner","Iloh","Kang","Petre","Eccles","Lopez-Sandoval","Henry","Singh","Vaughn","Guilfoyle","Toma Berge","Lao","Stone","Takacs","Simpkins","Panish","McDougall","Earley"];
             
             // Checks to see if fac_name is in drList. If not in drList indexOf will    return -1.
-            if(msList.indexOf(fac_name) != -1)
+            if(msListFullName.indexOf(fac_name) != -1)
+                facultyLocator(fac_name);
+            else if(msListLastName.indexOf(fac_name) != -1)
                 facultyLocator(fac_name);
             else
             {
@@ -621,10 +635,14 @@ window.onload = function(){
         {
             fac_name = spellChecker(fac_name);
             
-            professorList = ["Kim Burge","Jenel Lao","Liane Brouillette","Jamal Abedi","Maria Rosales Rueda","Penelope Collins","George Farkas","Deborah Vandell","Jade Jenkins","Di Xu","Greg Duncan","Rachel Baker","Emily Penner","Constance Iloh","Hosun Kang","Robert Duncan","Melinda Petre","Jacquelynne Eccles","Drew Bailey","Geneva Lopez-Sandoval","Valerie Henry","Susan Guilfoyle","Susan Toma Berge","Jenel Lao","Jeanne Stone","Jeff Johnston","Sandra Simpkins","Virginia Panish"];
+            professorListFullName = ["Kim Burge","Jenel Lao","Liane Brouillette","Jamal Abedi","Maria Rosales Rueda","Penelope Collins","George Farkas","Deborah Vandell","Jade Jenkins","Di Xu","Greg Duncan","Rachel Baker","Emily Penner","Constance Iloh","Hosun Kang","Robert Duncan","Melinda Petre","Jacquelynne Eccles","Drew Bailey","Geneva Lopez-Sandoval","Valerie Henry","Susan Guilfoyle","Susan Toma Berge","Jenel Lao","Jeanne Stone","Jeff Johnston","Sandra Simpkins","Virginia Panish"];
+            
+            professorListLastName = ["Burge","Lao","Brouillette","Abedi","Rosales Rueda","Collins","Farkas","Vandell","Jenkins","Xu","Duncan","Baker","Penner","Iloh","Kang","Duncan","Petre","Eccles","Bailey","Lopez-Sandoval","Henry","Guilfoyle","Toma Berge","Lao","Stone","Johnston","Simpkins","Panish"];
             
             // Checks to see if fac_name is in drList. If not in drList indexOf will    return -1.
-            if(professorList.indexOf(fac_name) != -1)
+            if(professorListFullName.indexOf(fac_name) != -1)
+                facultyLocator(fac_name);
+            else if(professorListLastName.indexOf(fac_name) != -1)
                 facultyLocator(fac_name);
             else
             {
@@ -852,14 +870,15 @@ window.onload = function(){
         }
          
         mainMenuCommands = {
-            // Room Locator
+            // Room Locator Commands
             'I am looking for room *room_num' : roomLocator,
             "I'm looking for room *room_num" : roomLocator,
             'Where is room *room_num' : roomLocator,
             'room *room_num' : roomLocator,
             
             
-            // Faculty Locator            
+            // Faculty Locator Commands
+            
             "I'm looking for mr. *name":mrChecker,
             "I'm looking for ms. *name":msChecker,
             "I'm looking for Miss *name":msChecker,
@@ -870,7 +889,7 @@ window.onload = function(){
             "I'm looking for professor *name":professorChecker, 
             'I am looking for professor *name':professorChecker,
             
-            //"I'm looking for a *name": facultyLocator,
+            "I'm looking for *name": facultyLocator,
             'professor *name': facultyLocator,
             // 'I am looking for professor *fac_name' : facultyLocator,
            // 'I am looking for professor *fac_first_name :fac_last_name' : facultyLocator,
