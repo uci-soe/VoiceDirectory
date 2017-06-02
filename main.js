@@ -46,8 +46,6 @@ window.onload = function(){
         else{
             output_repeat = "Sorry, Room " + output_item + " does not exist. Please make a valid request.";
         }
-
-            
     }
     
     //Events Voice Responses
@@ -215,8 +213,8 @@ window.onload = function(){
 //            alert(duplicatesArray);
         
             
-            for(var i = 0; i < duplicatesArray.length ; i++){
-                 myStr = myStr + "<p>" + (i+1) + " - " + data.rooms[duplicatesArray[i]].roomName + " - " + data.rooms[duplicatesArray[i]].facultyName +  "</p>"
+            for(var i = 1; i < duplicatesArray.length ; i++){
+                 myStr = myStr + "<p>" + i + " - Room " + data.rooms[duplicatesArray[i]].roomNumber + " - " + data.rooms[duplicatesArray[i]].facultyName +  "</p>"
             }
         }
         
@@ -356,10 +354,7 @@ window.onload = function(){
                 message.text = data.rooms[num].voiceResponse_faculty;
                 window.speechSynthesis.speak(message);
                 
-                $(".faculty-name").html(data.rooms[num].facultyName);
-                $(".faculty-email").html(data.rooms[num].facultyEmail);
-                $(".faculty-number").html(data.rooms[num].facultyNumber);
-                $(".faculty-img").attr("src", "css/" + data.rooms[num].facultyImage);
+                
             }            
         }
         else {
@@ -373,7 +368,11 @@ window.onload = function(){
         $(".room-type").html(data.rooms[num].roomType);
         $(".room-img").css('background-image', 'url(css/' + data.rooms[num].roomImage + ')');
         $(".room-map").attr("src", "css/" + data.rooms[num].mapImage);
-            
+        
+        $(".faculty-name").html(data.rooms[num].facultyName);
+        $(".faculty-email").html(data.rooms[num].facultyEmail);
+        $(".faculty-number").html(data.rooms[num].facultyNumber);
+        $(".faculty-img").attr("src", "css/" + data.rooms[num].facultyImage);    
         
         var roomType = data.rooms[num].roomType;
         
@@ -381,14 +380,10 @@ window.onload = function(){
             $('.room-img').css('display', 'none');
             $('.fac-info').css('display','block');
         }
-        else if(roomType == "Classroom"){
-            $('.room-img').css('display', 'block');
-//            if(data.rooms[num].facultyName == "")
-            $('.fac-info').css('display', 'none');
-        }
         else {
+            $('.room-img').css('display', 'block');
+//            $('.room-type').css('display','none');
             $('.fac-info').css('display', 'none');
-            $('.room-type').css('display','none');
         }
         
         if(isEmpty(data.rooms[num].officeHours))
@@ -743,7 +738,7 @@ window.onload = function(){
             var indexItem = "";
 //            alert(roomLocator_active + " " + facultyLocator_active);
             if(roomLocator_active){
-                indexItem = possibleRoom[index];  
+                indexItem = possibleRoom[index+1];  
 //                alert(data.rooms[indexItem].voiceResponse_room);
                 caption = data.rooms[indexItem].voiceResponse_room;
             }

@@ -244,6 +244,7 @@
 
        	"2001" : {
        		"roomName" : "Room 2001",
+            "roomNumber" : "2001",
        		"roomType" : "Classroom",
        		"mapImage" : "/images/maps/Room2001.png",
        		"roomImage" : "/images/rooms/Room2001.jpg",
@@ -261,6 +262,7 @@
 
        	"2003" : {
        		"roomName" : "Suite 2003",
+            "roomNumber" : "2003",
        		"roomType" : "Suite",
        		"mapImage" : "/images/maps/Room2003.png",
        		"roomImage" : "/images/rooms/Room2003.jpg",
@@ -278,6 +280,7 @@
 
        	"2005" : {
        		"roomName" : "Room 2005",
+            "roomNumber" : "2005",
        		"roomType" : "Classroom",
        		"mapImage" : "/images/maps/Room2005.png",
        		"roomImage" : "/images/rooms/Room2005.jpg",
@@ -295,6 +298,7 @@
 
        	"2007" : {
        		"roomName" : "Room 2007",
+            "roomNumber" : "2007",
        		"roomType" : "PhD. Workroom",
        		"mapImage" : "/images/maps/Room2007.png",
        		"roomImage" : "/images/rooms/Room2007.jpg",
@@ -312,6 +316,7 @@
 
        	"2008" : {
        		"roomName" : "Room 2008",
+            "roomNumber" : "2008",
        		"roomType" : "Resource Center",
        		"mapImage" : "/images/maps/Room2008.png",
        		"roomImage" : "/images/rooms/Room2008.jpg",
@@ -329,6 +334,7 @@
 
        	"2009" : {
        		"roomName" : "Room 2009",
+            "roomNumber" : "2009",
        		"roomType" : "Classroom",
        		"mapImage" : "/images/maps/Room2009.png",
        		"roomImage" : "/images/rooms/Room2009.jpg",
@@ -346,6 +352,7 @@
 
        	"2010" : {
        		"roomName" : "Room 2010",
+            "roomNumber" : "2010",
        		"roomType" : "Classroom",
        		"mapImage" : "/images/maps/Room2010.png",
        		"roomImage" : "/images/rooms/Room2010.jpg",
@@ -363,6 +370,7 @@
 
        	"2012" : {
        		"roomName" : "Room 2012",
+            "roomNumber" : "2012",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2012.png",
        		"roomImage" : "/images/rooms/Room2012.jpg",
@@ -380,6 +388,7 @@
 
        	"2024" : {
        		"roomName" : "Room 2024",
+            "roomNumber" : "2024",
        		"roomType" : "Seminar",
        		"mapImage" : "/images/maps/Room2024.png",
        		"roomImage" : "/images/rooms/room2024.jpg",
@@ -397,6 +406,7 @@
 
        	"2030" : {
        		"roomName" : "Room 2030",
+            "roomNumber" : "2030",
        		"roomType" : "Kitchen",
        		"mapImage" : "/images/maps/Room2030.png",
        		"roomImage" : "/images/rooms/Room2030.jpg",
@@ -414,6 +424,7 @@
 
        	"2031" : {
        		"roomName" : "Room 2031",
+            "roomNumber" : "2031",
        		"roomType" : "Research Room",
        		"mapImage" : "/images/maps/Room2031.png",
        		"roomImage" : "/images/rooms/Room2031.jpg",
@@ -431,6 +442,7 @@
 
        	"2032" : {
        		"roomName" : "Room 2032",
+            "roomNumber" : "2032",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2032.png",
        		"roomImage" : "",
@@ -448,6 +460,7 @@
 
        	"2034" : {
        		"roomName" : "Room 2034",
+            "roomNumber" : "2034",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2034.png",
        		"roomImage" : "",
@@ -465,6 +478,7 @@
 
        	"2036" : {
        		"roomName" : "Room 2036",
+            "roomNumber" : "2036",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2036.png",
        		"roomImage" : "",
@@ -482,6 +496,7 @@
 
        	"2037" : {
        		"roomName" : "Room 2037",
+            "roomNumber" : "2037",
        		"roomType" : "Graduate Student",
        		"mapImage" : "/images/maps/Room2037.png",
        		"roomImage" : "/images/rooms/Room2037.jpg",
@@ -499,6 +514,7 @@
 
        	"2038" : {
        		"roomName" : "Room 2038",
+            "roomNumber" : "2038",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2038.png",
        		"roomImage" : "",
@@ -516,6 +532,7 @@
 
        	"2040" : {
        		"roomName" : "Room 2040",
+            "roomNumber" : "2038",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2040.png",
        		"roomImage" : "",
@@ -533,6 +550,7 @@
 
        	"2042" : {
        		"roomName" : "Room 2042",
+            "roomNumber" : "2042",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2042.png",
        		"roomImage" : "",
@@ -550,6 +568,7 @@
 
        	"2044" : {
        		"roomName" : "Room 2044",
+            "roomNumber" : "2044",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2044.png",
        		"roomImage" : "",
@@ -567,6 +586,7 @@
 
        	"2045" : {
        		"roomName" : "Room 2045",
+            "roomNumber" : "2045",
        		"roomType" : "Server Room",
        		"mapImage" : "/images/maps/Room2045.png",
        		"roomImage" : "/images/rooms/Room2045.jpg",
@@ -584,6 +604,7 @@
 
        	"2046" : {
        		"roomName" : "Room 2046",
+            "roomNumber" : "2046",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2046.png",
        		"roomImage" : "",
@@ -601,6 +622,7 @@
         
         "2048" : {
        		"roomName" : "Room 2048",
+            "roomNumber" : "2048",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2048.png",
        		"roomImage" : "",
@@ -618,6 +640,7 @@
 
        	"2050" : {
        		"roomName" : "Room 2050",
+            "roomNumber" : "2050",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2050.png",
        		"roomImage" : "",
@@ -635,6 +658,7 @@
 
        	"2052" : {
        		"roomName" : "Room 2052",
+            "roomNumber" : "2052",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2052.png",
        		"roomImage" : "",
@@ -652,6 +676,7 @@
 
        	"2054" : {
        		"roomName" : "Room 2054",
+            "roomNumber" : "2054",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2054.png",
        		"roomImage" : "",
@@ -669,6 +694,7 @@
 
        	"2056" : {
        		"roomName" : "Room 2056",
+            "roomNumber" : "2056",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2056.png",
        		"roomImage" : "",
@@ -686,6 +712,7 @@
 
        	"2060" : {
        		"roomName" : "Room 2060",
+            "roomNumber" : "2060",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2060.png",
        		"roomImage" : "",
@@ -703,6 +730,7 @@
 
        	"2062" : {
        		"roomName" : "Room 2062",
+            "roomNumber" : "2062",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2062.png",
        		"roomImage" : "",
@@ -718,25 +746,13 @@
        		"voiceResponse_faculty" : "Enter Suite 2003 on your right and take a left at the end of the hall. At the end of the hall, turn left. Emily Penner's office will be the second door on your left."
        	},
 
-         "2064" : {
-       		"roomName" : "Room 2064",
-       		"roomType" : "Faculty Office",
-       		"mapImage" : "/images/maps/Room2064.png",
-       		"roomImage" : "",
-       		"voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Go all the way down the hall and take another right. Room 2064 will be the third door on your left",
-
-       		"facultyName" : "Constance Iloh",
-       		"facultyEmail" : "hosunk@uci.edu",
-       		"facultyNumber" : "(949)824-6914",
-       		"officeHours" : {
-
-       		},
-       		"facultyImage" : "/images/faculty/constanceIloh.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Go all the way down the hall and take another right. Hosun Kang, and Constance Iloh's office will be the third door on your left"
-       	},
+        "2064" : {
+            
+        },
         
         "2064a" : {
-       		"roomName" : "Room 2064a",
+       		"roomName" : "Room 2064",
+            "roomNumber" : "2064",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2064.png",
        		"roomImage" : "",
@@ -752,7 +768,8 @@
        		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Go all the way down the hall and take another right. Hosun Kang, and Constance Iloh's office will be the third door on your left"
        	},
        	"2064b" : {
-       		"roomName" : "Room 2064b",
+       		"roomName" : "Room 2064",
+            "roomNumber" : "2064",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2064.png",
        		"roomImage" : "",
@@ -767,26 +784,13 @@
        		"facultyImage" : "/images/faculty/hosunKang.jpg",
        		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Go all the way down the hall and take another right. Hosun Kang, and Constance Iloh's office will be the third door on your left"
        	},
-        
         "2066" : {
-       		"roomName" : "Room 2066",
-       		"roomType" : "Faculty Office",
-       		"mapImage" : "/images/maps/Room2066.png",
-       		"roomImage" : "",
-       		"voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Go all the way down the hall and take another right. Room 2066 will be the second door on your left.",
-
-       		"facultyName" : "Robert Duncan",
-       		"facultyEmail" : "duncanrj@uci.edu",
-       		"facultyNumber" : "(949)824-3068",
-       		"officeHours" : {
-
-       		},
-       		"facultyImage" : "/images/faculty/robertDuncan.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Go all the way down the hall and take another right. Robert Duncan and Melinda Petre's office will be the second door on your left."
-       	},
+            
+        },
         
        	"2066a" : {
-       		"roomName" : "Room 2066a",
+       		"roomName" : "Room 2066",
+            "roomNumber" : "2066",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2066.png",
        		"roomImage" : "",
@@ -802,7 +806,8 @@
        		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Go all the way down the hall and take another right. Robert Duncan and Melinda Petre's office will be the second door on your left."
        	},
         "2066b" : {
-       		"roomName" : "Room 2066b",
+       		"roomName" : "Room 2066",
+            "roomNumber" : "2066",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2066.png",
        		"roomImage" : "",
@@ -820,6 +825,7 @@
 
        	"2068" : {
        		"roomName" : "Room 2068",
+            "roomNumber" : "2068",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2068.png",
        		"roomImage" : "",
@@ -837,6 +843,7 @@
 
        	"2072" : {
        		"roomName" : "Room 2072",
+            "roomNumber" : "2072",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2072.png",
        		"roomImage" : "",
@@ -854,6 +861,7 @@
 
        	"2074" : {
        		"roomName" : "Room 2074",
+            "roomNumber" : "2074",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2074.png",
        		"roomImage" : "",
@@ -870,8 +878,9 @@
        	},
 
        	"2075" : {
-       		"roomName" : "Simpkin's Lab",
-       		"roomType" : "Lab",
+       		"roomName" : "Room 2075",
+            "roomNumber" : "2075",
+       		"roomType" : "Simpkin's Lab",
        		"mapImage" : "/images/maps/Room2075.png",
        		"roomImage" : "/images/rooms/Room2075.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Room 2075 will be the last door on your right.",
@@ -885,29 +894,12 @@
        		"facultyImage" : "",
        		"voiceResponse_faculty" : ""
        	},
-
         "2076" : {
-       		"roomName" : "Room 2076",
-       		"roomType" : "Faculty Office",
-       		"mapImage" : "/images/maps/Room2076.png",
-       		"roomImage" : "",
-       		"voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Room 2076 will be the ninth door on your left.",
-
-       		"facultyName" : "Valerie Henry",
-       		"facultyEmail" : "vhenry@uci.edu",
-       		"facultyNumber" : "(949)824-1494",
-       		"officeHours" : {
-                "Mondays" : ["12:00pm - 3:00pm"],
-                "Tuesdays" : ["9:00am - 11:00pm"],
-                "Wednesday" : ["9:00am - 11:00pm"]
-
-       		},
-       		"facultyImage" : "/images/faculty/valerieHenry.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Valerie Henry and Sarah Singh's office will be the ninth door on your left."
-       	},
-        
+            
+        },
        	"2076a" : {
-       		"roomName" : "Room 2076a",
+       		"roomName" : "Room 2076",
+            "roomNumber" : "2076",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2076.png",
        		"roomImage" : "",
@@ -926,7 +918,8 @@
        	},
         
         "2076b" : {
-       		"roomName" : "Room 2076b",
+       		"roomName" : "Room 2076",
+            "roomNumber" : "2076",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2076.png",
        		"roomImage" : "",
@@ -945,8 +938,9 @@
         
 
        	"2077" : {
-       		"roomName" : "Simpkins Lab",
-          "roomType" : "Lab",
+       		"roomName" : "Room 2077",
+            "roomNumber" : "2077",
+          "roomType" : "Simpkin's Lab",
           "mapImage" : "/images/maps/Room2075.png",
           "roomImage" : "/images/rooms/Room2075.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Room 2077 will be the second-to-the-last door on your right.",
@@ -963,6 +957,7 @@
 
        	"2078" : {
        		"roomName" : "Room 2078",
+            "roomNumber" : "2078",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2078.png",
        		"roomImage" : "",
@@ -980,6 +975,7 @@
 
        	"2079" : {
        		"roomName" : "Room 2079",
+            "roomNumber" : "2079",
        		"roomType" : "Lab",
        		"mapImage" : "/images/maps/Room2079.png",
        		"roomImage" : "/images/rooms/Room2079.jpg",
@@ -997,6 +993,7 @@
 
        	"2080" : {
             "roomName" : "Room 2080",
+            "roomNumber" : "2080",
             "roomType" : "Faculty Office",
             "mapImage" : "/images/maps/Room2080.png",
             "roomImage" : "",
@@ -1016,6 +1013,7 @@
 
        	"2082" : {
        		"roomName" : "Room 2082",
+            "roomNumber" : "2082",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2082.png",
        		"roomImage" : "",
@@ -1032,24 +1030,11 @@
        	},
 
         "2084" : {
-       		"roomName" : "Room 2084",
-       		"roomType" : "Faculty Office",
-       		"mapImage" : "/images/maps/Room2084.png",
-       		"roomImage" : "",
-       		"voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Room 2084 will be the fifth door on your left.",
-
-       		"facultyName" : "Jeanne Stone",
-       		"facultyEmail" : "jmstone@uci.edu",
-       		"facultyNumber" : "(949)824-7836",
-       		"officeHours" : {
-
-       		},
-       		"facultyImage" : "/images/faculty/jeanneStone.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Jenel Lao and Jeanne Stone's office will be the fifth door on your left."
        	},
-        
+    
        	"2084a" : {
-       		"roomName" : "Room 2084a",
+       		"roomName" : "Room 2084",
+            "roomNumber" : "2084",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2084.png",
        		"roomImage" : "",
@@ -1066,7 +1051,8 @@
        	},
         
         "2084b" : {
-       		"roomName" : "Room 2084b",
+       		"roomName" : "Room 2084",
+            "roomNumber" : "2084",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2084.png",
        		"roomImage" : "",
@@ -1085,6 +1071,7 @@
 
        	"2086" : {
        		"roomName" : "Room 2086",
+            "roomNumber" : "2086",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2086.png",
        		"roomImage" : "",
@@ -1102,6 +1089,7 @@
 
        	"2092" : {
        		"roomName" : "Room 2092",
+            "roomNumber" : "2092",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2092.png",
        		"roomImage" : "",
@@ -1119,6 +1107,7 @@
 
        	"2094" : {
        		"roomName" : "Room 2094",
+            "roomNumber" : "2094",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2094.png",
        		"roomImage" : "",
@@ -1136,6 +1125,7 @@
 
        	"2096" : {
        		"roomName" : "Room 2096",
+            "roomNumber" : "2096",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2096.png",
        		"roomImage" : "",
@@ -1152,7 +1142,8 @@
        	},
 
         "2200" : {
-       		"roomName" : "Room 2200 - Student Affairs",
+       		"roomName" : "Room 2200",
+            "roomNumber" : "2200",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2203.png",
        		"roomImage" : "/images/rooms/Room2203.jpg",
@@ -1171,6 +1162,7 @@
         
        	"2203" : {
        		"roomName" : "Room 2203",
+            "roomNumber" : "2203",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2203.png",
        		"roomImage" : "",
@@ -1188,6 +1180,7 @@
 
        	"2204" : {
        		"roomName" : "Room 2204",
+            "roomNumber" : "2204",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2204.png",
        		"roomImage" : "",
@@ -1205,6 +1198,7 @@
 
        	"2206" : {
        		"roomName" : "Room 2206",
+            "roomNumber" : "2206",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2206.png",
        		"roomImage" : "",
@@ -1223,6 +1217,7 @@
 
        	"2207" : {
        		"roomName" : "Room 2207",
+            "roomNumber" : "2207",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2207.png",
        		"roomImage" : "",
