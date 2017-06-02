@@ -73,6 +73,8 @@ window.onload = function(){
     var resultsCaption = "";
 
     
+    var validPrefix;
+    
     // Function to check if an object is empty
     function isEmpty(obj) {
         for(var key in obj) {
@@ -92,15 +94,15 @@ window.onload = function(){
         message.rate = 1;
         message.onstart = function(event)
         { 
-
             annyang.abort();
+                         
+            
             $('#systemMic').attr("src", "css/images/mic-disabled2.png");
             $('#subtitle').html(caption);
         };
         message.onend = function(event)
         { 
 
-            annyang.resume();
             $('#systemMic').attr("src", "css/images/microphone.png");
             
             if(!resultShown){
@@ -109,6 +111,9 @@ window.onload = function(){
             }
             else   
                 $('#subtitle').html(resultsCaption);
+            
+            annyang.resume();
+    
         };
     }
     
@@ -150,6 +155,8 @@ window.onload = function(){
             return "Neil Young";
         else if(fac_name == "constance iloh" || fac_name == "Constance Ehlo" || fac_name == "constants Hilo" || fac_name == "Constance I love" || fac_name == "Constance Ela" || fac_name == "Constance eilo" || fac_name == "Constance Isla" || fac_name == "Constance Hilo")
             return "Constance Iloh";
+        else if(fac_name == "I know")
+            return "Constance Iloh";
         else if(fac_name == "Deborah vendell" || fac_name == "Deborah vandal" || fac_name == "Deborah vandal" || fac_name == "Deborah vandell" || fac_name == "Deborah Vando" || fac_name == "Deborah Van Dale")
             return "Deborah Vandell";
         else if(fac_name == "Melinda petre" || fac_name == "Melinda Petrie" || fac_name == "Melinda Petry" || fac_name == "Melinda Peter" || fac_name == "Petra" || fac_name == "Melinda better" || fac_name == "Melinda Petra")
@@ -184,7 +191,7 @@ window.onload = function(){
             return "Denise Earley";
         else if(fac_name == "early" || fac_name == "ear Lee")
             return "Earley";
-        else if(fac_name == "cute King" || fac_name == "cute Kang" || fac_name == "Kyu Kang" || fac_name == "Hugh Kang" || fac_name == "puke King")
+        else if(fac_name == "cute King" || fac_name == "cute Kang" || fac_name == "Kyu Kang" || fac_name == "Hugh Kang" || fac_name == "puke King" || fac_name == "Hugh King")
             return "Hyuk Kang";
 
         return fac_name;
@@ -550,10 +557,85 @@ window.onload = function(){
         };
 //giaa
         
-        facultyLocator = function(fac_name) {  
-            
-            //Spell check faculty name input
+        drChecker = function(fac_name)
+        {
             fac_name = spellChecker(fac_name);
+            console.log(fac_name);
+            drList = ["Sandra Simpkins","Virginia Panish","Geneva Lopez-Sandoval","Drew Bailey","Jacquelynne Eccles","Robert Duncan","Constance Iloh","Emily Penner","Rachel Baker","Greg Duncan","Di Xu","Jade Jenkins","Deborah Vandell","George Farkas","Penelope Colllins","Susan Toma Berge","Maria Rosales Rueda","Jamal Abedi","Liana Brouillette","Jenel Lao","Melinda Petre","Hosun Kang"];
+            
+            // Checks to see if fac_name is in drList. If not in drList indexOf will    return -1.
+            if(drList.indexOf(fac_name) != -1)
+                facultyLocator(fac_name);
+            else
+            {
+                outputRepeat(fac_name);
+                caption = output_repeat;
+                message.text = output_repeat;
+                window.speechSynthesis.speak(message); 
+            }
+        }
+        
+        mrChecker = function(fac_name)
+        {
+            fac_name = spellChecker(fac_name);
+            
+            mrList = ["Jamal Abedi","Rhett Lowe","Hyuk Kang","Spenser Clark","Georg Farkas","Greg Duncan","Robert Duncan","Drew Bailey","Jeff Johnston","David Lim","Neil Young"];
+            
+            // Checks to see if fac_name is in drList. If not in drList indexOf will    return -1.
+            if(drList.indexOf(fac_name) != -1)
+                facultyLocator(fac_name);
+            else
+            {
+                outputRepeat(fac_name);
+                caption = output_repeat;
+                message.text = output_repeat;
+                window.speechSynthesis.speak(message); 
+            }
+            
+        }
+        
+        msChecker = function(fac_name)
+        {
+            fac_name = spellChecker(fac_name);
+            
+            msList = ["Kim Burge","Jenel Lao","Liane Brouillette","Maria Rosales Rueda","Penelope Collins","Deborah Vandell","Jade Jenkins","Di Xu","Rachel Baker","Emily Penner","Constance Iloh","Hosun Kang","Melinda Petre","Jacquelynne Eccles","Geneva Lopez-Sandoval","Valerie Henry","Sarah Singh","Sue Vaughn","Susan Guilfoyle","Susan Toma Berge","Jenel Lao","Jeanne Stone","Maria Takacs","Sandra Simpkins","Virginia Panish","Sarah McDougall","Denise Earley"];
+            
+            // Checks to see if fac_name is in drList. If not in drList indexOf will    return -1.
+            if(drList.indexOf(fac_name) != -1)
+            else
+            {
+                outputRepeat(fac_name);
+                caption = output_repeat;
+                message.text = output_repeat;
+                window.speechSynthesis.speak(message); 
+            }
+            
+        }
+        
+        professorChecker = function(fac_name)
+        {
+            fac_name = spellChecker(fac_name);
+            
+            professorList = ["Kim Burge","Jenel Lao","Liane Brouillette","Jamal Abedi","Maria Rosales Rueda","Penelope Collins","George Farkas","Deborah Vandell","Jade Jenkins","Di Xu","Greg Duncan","Rachel Baker","Emily Penner","Constance Iloh","Hosun Kang","Robert Duncan","Melinda Petre","Jacquelynne Eccles","Drew Bailey","Geneva Lopez-Sandoval","Valerie Henry","Susan Guilfoyle","Susan Toma Berge","Jenel Lao","Jeanne Stone","Jeff Johnston","Sandra Simpkins","Virginia Panish"];
+            
+            // Checks to see if fac_name is in drList. If not in drList indexOf will    return -1.
+            if(professorList.indexOf(fac_name) != -1)
+            else
+            {
+                outputRepeat(fac_name);
+                caption = output_repeat;
+                message.text = output_repeat;
+                window.speechSynthesis.speak(message); 
+            }
+            
+        }
+        
+        
+        
+        
+        facultyLocator = function(fac_name) {  
+            fac_name = spellChecker(fac_name);
+            //Spell check faculty name input
             
             //alert(fac_name);
             var splitFacName = fac_name.split(" ");
@@ -772,16 +854,17 @@ window.onload = function(){
             
             
             // Faculty Locator            
-            "I'm looking for mr. *name":facultyLocator,
-            "I'm looking for ms. *name":facultyLocator,
-            "I'm looking for Miss *name":facultyLocator,
-            "I'm looking for mrs. *name":facultyLocator,
-            "I'm looking for dr. *name":facultyLocator,
-            "I'm looking for dr *name":facultyLocator,
-            "I'm looking for professor *name":facultyLocator, 
-            'I am looking for professor *name':facultyLocator,
+            "I'm looking for mr. *name":mrChecker,
+            "I'm looking for ms. *name":msChecker,
+            "I'm looking for Miss *name":msChecker,
+            "I'm looking for mrs. *name":msChecker,
+            "I'm looking for dr. *name":drChecker,
+            "I'm looking for dr *name":drChecker,
+            "I'm looking for a professor *name":professorChecker, 
+            "I'm looking for professor *name":professorChecker, 
+            'I am looking for professor *name':professorChecker,
             
-            "I'm looking for *name": facultyLocator,
+            //"I'm looking for a *name": facultyLocator,
             'professor *name': facultyLocator,
             // 'I am looking for professor *fac_name' : facultyLocator,
            // 'I am looking for professor *fac_first_name :fac_last_name' : facultyLocator,
