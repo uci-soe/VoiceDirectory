@@ -46,8 +46,6 @@ window.onload = function(){
         else{
             output_repeat = "Sorry, Room " + output_item + " does not exist. Please make a valid request.";
         }
-
-            
     }
     
     //Events Voice Responses
@@ -94,15 +92,15 @@ window.onload = function(){
         message.rate = 1;
         message.onstart = function(event)
         { 
-
             annyang.abort();
+                         
+            
             $('#systemMic').attr("src", "css/images/mic-disabled2.png");
             $('#subtitle').html(caption);
         };
         message.onend = function(event)
         { 
 
-            annyang.resume();
             $('#systemMic').attr("src", "css/images/microphone.png");
             
             if(!resultShown){
@@ -111,6 +109,9 @@ window.onload = function(){
             }
             else   
                 $('#subtitle').html(resultsCaption);
+            
+            annyang.resume();
+    
         };
     }
     
@@ -151,6 +152,8 @@ window.onload = function(){
         else if(fac_name == "young")
             return "Neil Young";
         else if(fac_name == "constance iloh" || fac_name == "Constance Ehlo" || fac_name == "constants Hilo" || fac_name == "Constance I love" || fac_name == "Constance Ela" || fac_name == "Constance eilo" || fac_name == "Constance Isla" || fac_name == "Constance Hilo")
+            return "Constance Iloh";
+        else if(fac_name == "I know")
             return "Constance Iloh";
         else if(fac_name == "Deborah vendell" || fac_name == "Deborah vandal" || fac_name == "Deborah vandal" || fac_name == "Deborah vandell" || fac_name == "Deborah Vando" || fac_name == "Deborah Van Dale")
             return "Deborah Vandell";
@@ -215,8 +218,8 @@ window.onload = function(){
 //            alert(duplicatesArray);
         
             
-            for(var i = 0; i < duplicatesArray.length ; i++){
-                 myStr = myStr + "<p>" + (i+1) + " - " + data.rooms[duplicatesArray[i]].roomName + " - " + data.rooms[duplicatesArray[i]].facultyName +  "</p>"
+            for(var i = 1; i < duplicatesArray.length ; i++){
+                 myStr = myStr + "<p>" + i + " - Room " + data.rooms[duplicatesArray[i]].roomNumber + " - " + data.rooms[duplicatesArray[i]].facultyName +  "</p>"
             }
         }
         
@@ -356,10 +359,7 @@ window.onload = function(){
                 message.text = data.rooms[num].voiceResponse_faculty;
                 window.speechSynthesis.speak(message);
                 
-                $(".faculty-name").html(data.rooms[num].facultyName);
-                $(".faculty-email").html(data.rooms[num].facultyEmail);
-                $(".faculty-number").html(data.rooms[num].facultyNumber);
-                $(".faculty-img").attr("src", "css/" + data.rooms[num].facultyImage);
+                
             }            
         }
         else {
@@ -373,7 +373,11 @@ window.onload = function(){
         $(".room-type").html(data.rooms[num].roomType);
         $(".room-img").css('background-image', 'url(css/' + data.rooms[num].roomImage + ')');
         $(".room-map").attr("src", "css/" + data.rooms[num].mapImage);
-            
+        
+        $(".faculty-name").html(data.rooms[num].facultyName);
+        $(".faculty-email").html(data.rooms[num].facultyEmail);
+        $(".faculty-number").html(data.rooms[num].facultyNumber);
+        $(".faculty-img").attr("src", "css/" + data.rooms[num].facultyImage);    
         
         var roomType = data.rooms[num].roomType;
         
@@ -381,14 +385,10 @@ window.onload = function(){
             $('.room-img').css('display', 'none');
             $('.fac-info').css('display','block');
         }
-        else if(roomType == "Classroom"){
-            $('.room-img').css('display', 'block');
-//            if(data.rooms[num].facultyName == "")
-            $('.fac-info').css('display', 'none');
-        }
         else {
+            $('.room-img').css('display', 'block');
+//            $('.room-type').css('display','none');
             $('.fac-info').css('display', 'none');
-            $('.room-type').css('display','none');
         }
         
         if(isEmpty(data.rooms[num].officeHours))
@@ -555,10 +555,25 @@ window.onload = function(){
         };
 //giaa
         
+        drChecker = function(fac_name)
+        {
+            fac_name = spellChecker(fac_name);
+            
+            drList = ["Sandra Simpkins","Virginia Panish","Geneva Lopez-Sandoval","Drew Bailey","Jacquelynne Eccles","Robert Duncan","Constance Iloh","Emily Penner","Rachel Baker","Greg Duncan","Di Xu","Jade Jenkins","Deborah Vandell","George Farkas","Penelope Colllins","Susan Toma Berge","Maria Rosales Rueda","Jamal Abedi","Liana Brouillette","Jenel Lao","Melinda Petre","Hosun Kang"];
+            
+            if(fac_name in drList)
+                alert("Doctor");
+                return fac_name;
+            else
+            {
+                return false;    
+            }
+        }
+        
         facultyLocator = function(fac_name) {  
             
             //Spell check faculty name input
-            fac_name = spellChecker(fac_name);
+            
             
             //alert(fac_name);
             var splitFacName = fac_name.split(" ");
@@ -743,7 +758,7 @@ window.onload = function(){
             var indexItem = "";
 //            alert(roomLocator_active + " " + facultyLocator_active);
             if(roomLocator_active){
-                indexItem = possibleRoom[index];  
+                indexItem = possibleRoom[index+1];  
 //                alert(data.rooms[indexItem].voiceResponse_room);
                 caption = data.rooms[indexItem].voiceResponse_room;
             }
@@ -783,10 +798,11 @@ window.onload = function(){
             "I'm looking for mrs. *name":facultyLocator,
             "I'm looking for dr. *name":facultyLocator,
             "I'm looking for dr *name":facultyLocator,
+            "I'm looking for a professor *name":facultyLocator, 
             "I'm looking for professor *name":facultyLocator, 
             'I am looking for professor *name':facultyLocator,
             
-            "I'm looking for *name": facultyLocator,
+            "I'm looking for a *name": facultyLocator,
             'professor *name': facultyLocator,
             // 'I am looking for professor *fac_name' : facultyLocator,
            // 'I am looking for professor *fac_first_name :fac_last_name' : facultyLocator,
