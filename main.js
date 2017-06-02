@@ -92,15 +92,15 @@ window.onload = function(){
         message.rate = 1;
         message.onstart = function(event)
         { 
-
             annyang.abort();
+                         
+            
             $('#systemMic').attr("src", "css/images/mic-disabled2.png");
             $('#subtitle').html(caption);
         };
         message.onend = function(event)
         { 
 
-            annyang.resume();
             $('#systemMic').attr("src", "css/images/microphone.png");
             
             if(!resultShown){
@@ -109,6 +109,9 @@ window.onload = function(){
             }
             else   
                 $('#subtitle').html(resultsCaption);
+            
+            annyang.resume();
+    
         };
     }
     
@@ -149,6 +152,8 @@ window.onload = function(){
         else if(fac_name == "young")
             return "Neil Young";
         else if(fac_name == "constance iloh" || fac_name == "Constance Ehlo" || fac_name == "constants Hilo" || fac_name == "Constance I love" || fac_name == "Constance Ela" || fac_name == "Constance eilo" || fac_name == "Constance Isla" || fac_name == "Constance Hilo")
+            return "Constance Iloh";
+        else if(fac_name == "I know")
             return "Constance Iloh";
         else if(fac_name == "Deborah vendell" || fac_name == "Deborah vandal" || fac_name == "Deborah vandal" || fac_name == "Deborah vandell" || fac_name == "Deborah Vando" || fac_name == "Deborah Van Dale")
             return "Deborah Vandell";
@@ -550,10 +555,25 @@ window.onload = function(){
         };
 //giaa
         
+        drChecker = function(fac_name)
+        {
+            fac_name = spellChecker(fac_name);
+            
+            drList = ["Sandra Simpkins","Virginia Panish","Geneva Lopez-Sandoval","Drew Bailey","Jacquelynne Eccles","Robert Duncan","Constance Iloh","Emily Penner","Rachel Baker","Greg Duncan","Di Xu","Jade Jenkins","Deborah Vandell","George Farkas","Penelope Colllins","Susan Toma Berge","Maria Rosales Rueda","Jamal Abedi","Liana Brouillette","Jenel Lao","Melinda Petre","Hosun Kang"];
+            
+            if(fac_name in drList)
+                alert("Doctor");
+                return fac_name;
+            else
+            {
+                return false;    
+            }
+        }
+        
         facultyLocator = function(fac_name) {  
             
             //Spell check faculty name input
-            fac_name = spellChecker(fac_name);
+            
             
             //alert(fac_name);
             var splitFacName = fac_name.split(" ");
@@ -778,10 +798,11 @@ window.onload = function(){
             "I'm looking for mrs. *name":facultyLocator,
             "I'm looking for dr. *name":facultyLocator,
             "I'm looking for dr *name":facultyLocator,
+            "I'm looking for a professor *name":facultyLocator, 
             "I'm looking for professor *name":facultyLocator, 
             'I am looking for professor *name':facultyLocator,
             
-            "I'm looking for *name": facultyLocator,
+            "I'm looking for a *name": facultyLocator,
             'professor *name': facultyLocator,
             // 'I am looking for professor *fac_name' : facultyLocator,
            // 'I am looking for professor *fac_first_name :fac_last_name' : facultyLocator,
