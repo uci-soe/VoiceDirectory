@@ -21,7 +21,7 @@ window.onload = function(){
     // System's General Voice Responses
     var output_speak = "Please say your request!";
 //    var output_repeat = "Could you repeat that please?";
-//    var output_repeat = "Please make a valid request.";
+    var output_repeat = "Please make a valid request.";
     var output_moreTime = "Do you need more time?";
     var output_systemReset = "System will reset.";
     var output_ok = "Ok";
@@ -142,32 +142,50 @@ window.onload = function(){
     */
     
     function spellChecker(fac_name){
-        if(fac_name == "cambridge" || fac_name == "Cambridge" || fac_name == "Kim Birge" || fac_name == "Kim Bridge" || fac_name == "Burg" || fac_name == "Birch")
+        if(fac_name == "cambridge" || fac_name == "Cambridge" || fac_name == "Kim Birge" || fac_name == "Kim Bridge" || fac_name == "Burg" || fac_name == "Kim birge" || fac_name == "Kim Berg" || fac_name == "Birch")
             return "Kim Burge";
         else if(fac_name == "Janelle Lau" || fac_name == "Professor Lau"  || fac_name == "Lau")
             return "Jenel Lao";
-        else if(fac_name == "die shoe")
+        else if(fac_name == "die shoe" || fac_name == "disha" || fac_name == "disa" || fac_name == "D shoe")
             return "Di Xu";
-        else if(fac_name == "constance iloh")
+        else if(fac_name == "young")
+            return "Neil Young";
+        else if(fac_name == "constance iloh" || fac_name == "Constance Ehlo" || fac_name == "constants Hilo" || fac_name == "Constance I love" || fac_name == "Constance Ela" || fac_name == "Constance eilo" || fac_name == "Constance Isla" || fac_name == "Constance Hilo")
             return "Constance Iloh";
-        else if(fac_name == "Melinda petre" || fac_name == "Petra")
+        else if(fac_name == "Deborah vendell" || fac_name == "Deborah vandal" || fac_name == "Deborah vandal" || fac_name == "Deborah vandell" || fac_name == "Deborah Vando" || fac_name == "Deborah Van Dale")
+            return "Deborah Vandell";
+        else if(fac_name == "Melinda petre" || fac_name == "Melinda Petrie" || fac_name == "Melinda Petry" || fac_name == "Melinda Peter" || fac_name == "Petra" || fac_name == "Melinda better" || fac_name == "Melinda Petra")
             return "Melinda Petre";
-        else if(fac_name == "Jacqueline Echols")
+        else if(fac_name == "Jacqueline Echols" || fac_name == "Jacqueline eckley's" || fac_name == "Jaclyn eckley's" || fac_name == "Jacqueline eclise")
             return "Jacquelynne Eccles";
+        else if(fac_name == "Liane brouillette" || fac_name == "Leon brouillette" || fac_name == "Leanne bralette" || fac_name == "Lee Ann brouillette")
+            return "Liane Brouillette";
         else if(fac_name == "Geneva Lopez Sandoval")
             return "Geneva Lopez-Sandoval";
-        else if(fac_name == "Sarah sing")
+        else if(fac_name == "Sarah sing" || fac_name == "sing")
             return "Sarah Singh";
-        else if(fac_name == "Susan Toma bears" || fac_name == "Susan Toma Berg" || fac_name == "Susan Toma bush" || fac_name == "Susan Toma Burj")
+        else if(fac_name == "Susan Toma bears" || fac_name == "Susan Toma Berg" || fac_name == "Susan Toma bush" || fac_name == "Susan Toma Burj" || fac_name == "Susan Toma Burge" || fac_name == "Toma Berg" || fac_name == "Toma bersch" || fac_name == "Toma Burge" || fac_name == "Toma bears")
             return "Susan Toma Berge";
-        else if(fac_name == "Gene Stone" || fac_name == "June Stone")
+        else if(fac_name == "Gene Stone" || fac_name == "June Stone" || fac_name == "jeans Stone" || fac_name == "stone")
             return "Jeanne Stone";
-        else if(fac_name == "Maria tax" || fac_name == "Murrieta Cox")
+        else if(fac_name == "Maria tax" || fac_name == "Murrieta Cox" || fac_name == "Maria tactics" || fac_name == "Maria tac-x" || fac_name == "tac-x" || fac_name == "Mystic X")
             return "Maria Takacs";
-        else if(fac_name == "Sandra Simkins")
+        else if(fac_name == "Sandra Simkins" || fac_name == "Simkins")
             return "Sandra Simpkins";
-        else if(fac_name == "Virginia panish")
+        else if(fac_name == "Maria Rosales weather" || fac_name == "Maria Rosales Loretta" || fac_name == "Maria Rosales Ruda")
+            return "Maria Rosales Rueda";
+        else if(fac_name == "Jamal a Betty" || fac_name == "Jamal abedi")
+            return "Jamal Abedi";
+        else if(fac_name == "Virginia panish" || fac_name == "Virginia punished" || fac_name == "panish" || fac_name == "punish")
             return "Virginia Panish";
+        else if(fac_name == "Vaughan")
+            return "Sue Vaughn";
+        else if(fac_name == "von" || fac_name == "Von")
+            return "Vaughn";
+        else if(fac_name == "Denise early")
+            return "Denise Earley";
+        else if(fac_name == "early" || fac_name == "ear Lee")
+            return "Earley";
         else if(fac_name == "cute King" || fac_name == "cute Kang" || fac_name == "Kyu Kang" || fac_name == "Hugh Kang" || fac_name == "puke King")
             return "Hyuk Kang";
 
@@ -612,6 +630,7 @@ window.onload = function(){
                         
                     if(!(fac_name in data.faculty))
                         {
+                            outputRepeat(fac_name);
                             caption = output_repeat;
                             message.text = output_repeat;
                             window.speechSynthesis.speak(message);
@@ -636,7 +655,7 @@ window.onload = function(){
 
         calendarView = function(viewMode = "what's happening this week") {
            /* var source = "https://calendar.google.com/calendar/embed?mode=MONTH&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=ucieducationevents%40gmail.com&amp;color=%238D6F47&amp;ctz=America%2FLos_Angeles"
-            commandManager("CalendarView");
+            
             
             if(viewMode == "what's happening this week")
                 {
@@ -664,7 +683,7 @@ window.onload = function(){
                     message.text = eventMonthWelcome; 
                 }
             */
-            
+            commandManager("CalendarView");
             message.text = eventMonthWelcome; 
             caption = eventMonthWelcome;
             window.speechSynthesis.speak(message);
@@ -752,21 +771,30 @@ window.onload = function(){
         mainMenuCommands = {
             // Room Locator
             'I am looking for room *room_num' : roomLocator,
+            "I'm looking for room *room_num" : roomLocator,
             'Where is room *room_num' : roomLocator,
             'room *room_num' : roomLocator,
-            'What events are coming up' : calendarView,
-            // Faculty Locator
-            'professor *name': facultyLocator,
-           // 'I am looking for (dr.) *name':facultyLocator,
-            'I am looking for (professor) *name':facultyLocator,
-            'Im looking for (professor) *name':facultyLocator, 
             
+            
+            // Faculty Locator            
+            "I'm looking for mr. *name":facultyLocator,
+            "I'm looking for ms. *name":facultyLocator,
+            "I'm looking for Miss *name":facultyLocator,
+            "I'm looking for mrs. *name":facultyLocator,
+            "I'm looking for dr. *name":facultyLocator,
+            "I'm looking for dr *name":facultyLocator,
+            "I'm looking for professor *name":facultyLocator, 
+            'I am looking for professor *name':facultyLocator,
+            
+            "I'm looking for *name": facultyLocator,
+            'professor *name': facultyLocator,
             // 'I am looking for professor *fac_name' : facultyLocator,
            // 'I am looking for professor *fac_first_name :fac_last_name' : facultyLocator,
             //'professor *fac_first_name (*fac_last_name)' : facultyLocator,
             
             //Event View
-            
+            'What events are coming up' : calendarView,
+            'Show me upcoming events' : calendarView,
             'I want to know upcoming events' : calendarView
             // randomWord can only be yes or no now to avoid it being called very    time. 
         };
