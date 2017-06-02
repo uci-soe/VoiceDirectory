@@ -361,7 +361,10 @@ window.onload = function(){
                 message.text = data.rooms[num].voiceResponse_faculty;
                 window.speechSynthesis.speak(message);
                 
-                
+                $(".faculty-name").html(data.rooms[num].facultyName);
+                $(".faculty-email").html(data.rooms[num].facultyEmail);
+                $(".faculty-number").html(data.rooms[num].facultyNumber);
+                $(".faculty-img").attr("src", "css/" + data.rooms[num].facultyImage);    
             }            
         }
         else {
@@ -370,20 +373,19 @@ window.onload = function(){
             window.speechSynthesis.speak(message);
         }
         
-        
         $(".room-name").html(data.rooms[num].roomName);
         $(".room-type").html(data.rooms[num].roomType);
         $(".room-img").css('background-image', 'url(css/' + data.rooms[num].roomImage + ')');
         $(".room-map").attr("src", "css/" + data.rooms[num].mapImage);
         
-        $(".faculty-name").html(data.rooms[num].facultyName);
-        $(".faculty-email").html(data.rooms[num].facultyEmail);
-        $(".faculty-number").html(data.rooms[num].facultyNumber);
-        $(".faculty-img").attr("src", "css/" + data.rooms[num].facultyImage);    
-        
         var roomType = data.rooms[num].roomType;
         
         if(roomType == "Faculty Office"){
+            $(".faculty-name").html(data.rooms[num].facultyName);
+            $(".faculty-email").html(data.rooms[num].facultyEmail);
+            $(".faculty-number").html(data.rooms[num].facultyNumber);
+            $(".faculty-img").attr("src", "css/" + data.rooms[num].facultyImage);    
+
             $('.room-img').css('display', 'none');
             $('.fac-info').css('display','block');
         }
@@ -582,7 +584,7 @@ window.onload = function(){
             mrList = ["Jamal Abedi","Rhett Lowe","Hyuk Kang","Spenser Clark","Georg Farkas","Greg Duncan","Robert Duncan","Drew Bailey","Jeff Johnston","David Lim","Neil Young"];
             
             // Checks to see if fac_name is in drList. If not in drList indexOf will    return -1.
-            if(drList.indexOf(fac_name) != -1)
+            if(mrList.indexOf(fac_name) != -1)
                 facultyLocator(fac_name);
             else
             {
@@ -601,7 +603,8 @@ window.onload = function(){
             msList = ["Kim Burge","Jenel Lao","Liane Brouillette","Maria Rosales Rueda","Penelope Collins","Deborah Vandell","Jade Jenkins","Di Xu","Rachel Baker","Emily Penner","Constance Iloh","Hosun Kang","Melinda Petre","Jacquelynne Eccles","Geneva Lopez-Sandoval","Valerie Henry","Sarah Singh","Sue Vaughn","Susan Guilfoyle","Susan Toma Berge","Jenel Lao","Jeanne Stone","Maria Takacs","Sandra Simpkins","Virginia Panish","Sarah McDougall","Denise Earley"];
             
             // Checks to see if fac_name is in drList. If not in drList indexOf will    return -1.
-            if(drList.indexOf(fac_name) != -1)
+            if(msList.indexOf(fac_name) != -1)
+                facultyLocator(fac_name);
             else
             {
                 outputRepeat(fac_name);
@@ -620,6 +623,7 @@ window.onload = function(){
             
             // Checks to see if fac_name is in drList. If not in drList indexOf will    return -1.
             if(professorList.indexOf(fac_name) != -1)
+                facultyLocator(fac_name);
             else
             {
                 outputRepeat(fac_name);
