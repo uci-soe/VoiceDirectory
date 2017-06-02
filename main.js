@@ -191,6 +191,8 @@ window.onload = function(){
             return "Denise Earley";
         else if(fac_name == "early" || fac_name == "ear Lee")
             return "Earley";
+        else if(fac_name == "right low")
+            return "Rhett Lowe";
         else if(fac_name == "cute King" || fac_name == "cute Kang" || fac_name == "Kyu Kang" || fac_name == "Hugh Kang" || fac_name == "puke King" || fac_name == "Hugh King")
             return "Hyuk Kang";
 
@@ -580,7 +582,7 @@ window.onload = function(){
         mrChecker = function(fac_name)
         {
             fac_name = spellChecker(fac_name);
-            
+            alert(fac_name);
             mrList = ["Jamal Abedi","Rhett Lowe","Hyuk Kang","Spenser Clark","Georg Farkas","Greg Duncan","Robert Duncan","Drew Bailey","Jeff Johnston","David Lim","Neil Young"];
             
             // Checks to see if fac_name is in drList. If not in drList indexOf will    return -1.
