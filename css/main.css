@@ -321,7 +321,8 @@ img
 #calendarFrame
 {
     position: relative;
-    bottom:100px
+    bottom:100px;
+    pointer-events: none;
 }
 
 #topBorder
