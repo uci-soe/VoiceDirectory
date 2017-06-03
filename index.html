@@ -35,7 +35,7 @@
   
     <body>
         
-         <div class="modal-bg">
+         <div class="systemModal modal-bg">
             <div class="modal-options">
                 <div class="modal-header">
                     <H3>Choose a number</H3>
@@ -46,6 +46,20 @@
                     </div>
                     
                     <div id="resultOptions"></div>
+                
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="systemModal modal-clarifyPrefix">
+            <div class="modal-options">
+                <div class="modal-header">
+                    <H3>Did you mean:</H3>
+                </div>
+                
+                <div class="modal-body">                  
+                    <p id="name"></p>
                 
                 </div>
             </div>
@@ -174,8 +188,15 @@
             
             <div class="bottom-block">
 
-                <img id="systemMic" class="mic animated infinite pulse" />
-                <h4 id="subtitle"></h4>
+                <div class="bottom-container newSearch-container">
+                    <p class="newSearch-prompt txt-white">To make a new request:</p>
+                    <img class="newSearch-bubble" src="css/images/newSearch-bubble.png"/>
+                    
+                </div>
+                <div class="bottom-container mic-container">
+                    <img id="systemMic" class="mic animated infinite pulse" />
+                    <h4 id="subtitle"></h4>
+                </div>
                 
             </div>
             
