@@ -8,6 +8,8 @@ window.onload = function(){
 
     var roomLocator_active = false;
     var facultyLocator_active = false;
+    
+    var clarifyPrefix_ACTIVE = false;
 
     var timer;
     var systemTimer_interval = 1200;
@@ -17,6 +19,8 @@ window.onload = function(){
     var no = false;
     
     var resultShown = false;
+    
+    var universalName = "";
 
     // System's General Voice Responses
     var output_speak = "Please say your request!";
@@ -109,8 +113,14 @@ window.onload = function(){
                 caption = output_listening;
                 $('#subtitle').html(caption);
             }
-            else   
+            else  {
                 $('#subtitle').html(resultsCaption);
+                newSearch_SHOW();
+                
+            } 
+                
+            
+            
             
             annyang.resume();
     
@@ -119,7 +129,7 @@ window.onload = function(){
     
 //    Failed to execute 'start' on 'SpeechRecognition': recognition has already started.
     
-    universalTime();
+    startTime();
     //*********************************************************************************************************   FUNCTION DECLARATIONS
 
 //    $(".intro-block").hide();
@@ -132,17 +142,32 @@ window.onload = function(){
     $(".result-block").hide();
     $(".events-block").hide(); //hide events block
     
-    
-    $(".modal-bg").hide();
+    $(".systemModal").hide();
    
-    /*
-        Data
-        - Name of Faculty
-        - Picture of Faculty
+    
+    // New Search Bubble
+    $(".newSearch-bubble").hide(); 
+    $(".newSearch-prompt").hide(); 
+    
+   
+
+    
+    function newSearch_SHOW(){
         
-        Number of Duplicates
+        setTimeout(function(){
             
-    */
+            $(".newSearch-prompt").show();
+            $('.newSearch-prompt').addClass('animated fadeInLeft');
+            setTimeout(function(){
+                $(".newSearch-bubble").show();
+                $('.newSearch-bubble').addClass('animated fadeInDown');
+            }, 1000);
+            
+        }, 1000);
+        
+        
+        
+    }
     
     function spellChecker(fac_name){
         if(fac_name == "cambridge" || fac_name == "Cambridge" || fac_name == "Kim Birge" || fac_name == "Kim Bridge" || fac_name == "Burg" || fac_name == "Kim birge" || fac_name == "Kim Berg" || fac_name == "Birch")
@@ -241,7 +266,9 @@ window.onload = function(){
 
         commandManager("FacultyOptions");
         timeLeft = grantTime;
+        $(".modal-clarifyPrefix").hide();
         $(".modal-bg").show();
+        
         
 //        alert(duplicatesArray.length);
         var htmlString = "<ul>";
@@ -262,6 +289,7 @@ window.onload = function(){
                  myStr = myStr + "<p>" + i + " - Room " + data.rooms[duplicatesArray[i]].roomNumber + " - " + data.rooms[duplicatesArray[i]].facultyName +  "</p>"
             }
         }
+        console.log(resultShown);
         
         
         $('#dynamic-options').append(myStr);        
@@ -295,13 +323,28 @@ window.onload = function(){
 //        systemPause(message.text,message.text.split(" ").length);
     }
     
-    function universalTime() {
-        var time = new Date();
-
-        time = time.toLocaleString('en-US', { hour: 'numeric',minute:'numeric', hour12: true });
-
-        document.getElementById("time").innerHTML = time;
-
+//    function universalTime() {
+//        var time = new Date();
+//
+//        time = time.toLocaleString('en-US', { hour: 'numeric',minute:'numeric', hour12: true });
+//
+//        document.getElementById("time").innerHTML = time;
+//
+//    }
+    function startTime() {
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('time').innerHTML =
+        h + ":" + m;
+        var t = setTimeout(startTime, 500);
+    }
+    function checkTime(i) {
+        if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+        return i;
     }
     
    /* function isTalking()
@@ -351,13 +394,16 @@ window.onload = function(){
         
     }
     
-    function displayMainMenu(reset)
+    function displayMainMenu(text)
     {
         removeResults();
         
+        $(".newSearch-prompt").hide();
+        $(".newSearch-bubble").hide();
+        
         $(".result-block").hide();
         $(".events-block").hide();
-        $(".modal-bg").hide();
+        $(".systemModal").hide();
         
         
         $(".menu-block").show();
@@ -369,19 +415,26 @@ window.onload = function(){
         
         commandManager("MainMenu");
         
-        caption = output_pleasewait;
+        if(clarifyPrefix_ACTIVE){
+            caption = text;
+            message.text = caption;
+            clarifyPrefix_ACTIVE = false;
+        }
+        else{
+            caption = output_pleasewait;
+            message.text = welcome;
+        }
         
-        message.text = welcome;
         window.speechSynthesis.speak(message);
     }
     
     function displayResult(data, input){
-        
+                
         commandManager("ResultsView");
         console.log("result commands added");
         $(".menu-block").hide();
         $(".result-block").show();
-        $(".modal-bg").hide();
+        $(".systemModal").hide();
         
 //        alert("input: " + isNaN(input));
 //        alert(input.includes("a"));
@@ -621,19 +674,65 @@ window.onload = function(){
             }
         }
         
+        // LIST OF MISTER'S
+        
+        // Full name
+        mrListFullName = ["Jamal Abedi","Rhett Lowe","Hyuk Kang","Spenser Clark","Georg Farkas","Greg Duncan","Robert Duncan","Drew Bailey","Jeff Johnston","David Lim","Neil Young"];
+            
+        // Last name
+        mrListLastName = ["Abedi","Lowe","Kang","Clarks","Farkas","Duncan","Duncan","Bailey","Johnston","Lim","Young"];
+        
+        
+        // LIST OF MISS'S
+        
+        // Full name
+        msListFullName = ["Kim Burge","Jenel Lao","Liane Brouillette","Maria Rosales Rueda","Penelope Collins","Deborah Vandell","Jade Jenkins","Di Xu","Rachel Baker","Emily Penner","Constance Iloh","Hosun Kang","Melinda Petre","Jacquelynne Eccles","Geneva Lopez-Sandoval","Valerie Henry","Sarah Singh","Sue Vaughn","Susan Guilfoyle","Susan Toma Berge","Jenel Lao","Jeanne Stone","Maria Takacs","Sandra Simpkins","Virginia Panish","Sarah McDougall","Denise Earley"];
+            
+        // Last name
+        msListLastName = ["Burge","Lao","Brouillette","Rosales Rueda","Collins","Vandell","Jenkins","Xu","Baker","Penner","Iloh","Kang","Petre","Eccles","LopezSandoval","Henry","Singh","Vaughn","Guilfoyle","TomaBerge","Lao","Stone","Takacs","Simpkins","Panish","McDougall","Earley"];
+        
+        
+        
+        clarifyPrefix_MODAL = function(name){
+            commandManager("FacultyOptions");
+            timeLeft = grantTime;
+            $('.modal-clarifyPrefix').show();
+            
+            clarifyPrefix_ACTIVE = true;
+            
+            $('#name').append(name);
+        }
+        
+        
+        clarifyPrefix_RESPONSE = function(name){
+            var response = "Did you mean: " + name + "?";
+            caption = response;
+            message.text = caption;
+            window.speechSynthesis.speak(message);
+        }
+        
         mrChecker = function(fac_name)
         {
             fac_name = spellChecker(fac_name);
 
-            mrListFullName = ["Jamal Abedi","Rhett Lowe","Hyuk Kang","Spenser Clark","Georg Farkas","Greg Duncan","Robert Duncan","Drew Bailey","Jeff Johnston","David Lim","Neil Young"];
             
-            mrListLastName = ["Abedi","Lowe","Kang","Clarks","Farkas","Duncan","Duncan","Bailey","Johnston","Lim","Young"];
             // Checks to see if fac_name is in drList. If not in drList indexOf will    return -1.
-            
             if(mrListFullName.indexOf(fac_name) != -1)
                 facultyLocator(fac_name);
             else if(mrListLastName.indexOf(fac_name) != -1)
                 facultyLocator(fac_name);
+            else if(msListFullName.indexOf(fac_name) != -1){
+                correctName = "Ms. " + fac_name;
+                universalName = fac_name;
+                clarifyPrefix_MODAL(correctName);
+                clarifyPrefix_RESPONSE(correctName);
+            }
+            else if(msListLastName.indexOf(fac_name) != -1){
+                correctName = "Ms. " + fac_name;
+                universalName = fac_name;
+                clarifyPrefix_MODAL(correctName);
+                clarifyPrefix_RESPONSE(correctName);
+            }
             else
             {
                 outputRepeat(fac_name);
@@ -643,20 +742,28 @@ window.onload = function(){
             }
             
         }
-        
+      
         msChecker = function(fac_name)
         {
             fac_name = spellChecker(fac_name);
-
-            msListFullName = ["Kim Burge","Jenel Lao","Liane Brouillette","Maria Rosales Rueda","Penelope Collins","Deborah Vandell","Jade Jenkins","Di Xu","Rachel Baker","Emily Penner","Constance Iloh","Hosun Kang","Melinda Petre","Jacquelynne Eccles","Geneva Lopez-Sandoval","Valerie Henry","Sarah Singh","Sue Vaughn","Susan Guilfoyle","Susan Toma Berge","Jenel Lao","Jeanne Stone","Maria Takacs","Sandra Simpkins","Virginia Panish","Sarah McDougall","Denise Earley"];
-            
-            msListLastName = ["Burge","Lao","Brouillette","Rosales Rueda","Collins","Vandell","Jenkins","Xu","Baker","Penner","Iloh","Kang","Petre","Eccles","LopezSandoval","Henry","Singh","Vaughn","Guilfoyle","TomaBerge","Lao","Stone","Takacs","Simpkins","Panish","McDougall","Earley"];
             
             // Checks to see if fac_name is in drList. If not in drList indexOf will    return -1.
             if(msListFullName.indexOf(fac_name) != -1)
                 facultyLocator(fac_name);
             else if(msListLastName.indexOf(fac_name) != -1)
                 facultyLocator(fac_name);
+            else if(mrListFullName.indexOf(fac_name) != -1){
+                correctName = "Mr. " + fac_name;
+                universalName = fac_name;
+                clarifyPrefix_MODAL(correctName);
+                clarifyPrefix_RESPONSE(correctName);
+            }
+            else if(mrListLastName.indexOf(fac_name) != -1){
+                correctName = "Mr. " + fac_name;
+                universalName = fac_name;
+                clarifyPrefix_MODAL(correctName);
+                clarifyPrefix_RESPONSE(correctName);
+            }
             else
             {
                 outputRepeat(fac_name);
@@ -709,6 +816,7 @@ window.onload = function(){
             possibleFaculty = [];
             
             facultyLocator_active = true;
+            clarifyPrefix_ACTIVE = false;
             
             //If they only provided one name (i.e. Professor Denenberg)
             if(lastName == null)
@@ -835,7 +943,7 @@ window.onload = function(){
             $(".events-block").show();
         }
         
-        var randomFunction = function(randomWord){
+        var yesOrno = function(randomWord){
             //alert(randomWord);
             if(systemAsked) {
                 if(randomWord == "yes")
@@ -856,6 +964,18 @@ window.onload = function(){
                     message.text = welcome;
                     window.speechSynthesis.speak(message);
                 }   
+            }
+            
+                        
+            //PREFIX MODAL - ACTIVE
+            if(clarifyPrefix_ACTIVE){
+
+                $('#name').empty();
+                
+                if(randomWord == "yes")
+                    facultyLocator(universalName);
+                else
+                    displayMainMenu(output_repeat);
             }
         };
         
@@ -909,13 +1029,15 @@ window.onload = function(){
             // Room Locator Commands
             'I am looking for room *room_num' : roomLocator,
             "I'm looking for room *room_num" : roomLocator,
+            "I'm looking for a room *room_num" : roomLocator,
             'Where is room *room_num' : roomLocator,
             'room *room_num' : roomLocator,
             
             
             // Faculty Locator Commands
-            
             "I'm looking for mr. *name":mrChecker,
+            "I'm looking for Mr *name":mrChecker,
+            
             "I'm looking for ms. *name":msChecker,
             "I'm looking for Miss *name":msChecker,
             "I'm looking for mrs. *name":msChecker,
@@ -925,8 +1047,8 @@ window.onload = function(){
             "I'm looking for professor *name":professorChecker, 
             'I am looking for professor *name':professorChecker,
             
-            "I'm looking for *name": facultyLocator,
-            'professor *name': facultyLocator,
+//            "I'm looking for *name": facultyLocator,
+//            'professor *name': facultyLocator,
             // 'I am looking for professor *fac_name' : facultyLocator,
            // 'I am looking for professor *fac_first_name :fac_last_name' : facultyLocator,
             //'professor *fac_first_name (*fac_last_name)' : facultyLocator,
@@ -945,7 +1067,7 @@ window.onload = function(){
             
             //RESET COMMAND
             'new search' : displayMainMenu,
-            ':randomWord' : {'regexp' : /^(yes|no)$/, 'callback' : randomFunction},
+            ':randomWord' : {'regexp' : /^(yes|no)$/, 'callback' : yesOrno},
             'thank you' : yourWelcome
         };
         
@@ -953,12 +1075,13 @@ window.onload = function(){
             '(option) (number) :number' : optionFunc
         };
         
+        
         eventsOptionsCommands = {
             //'(This) :viewType': 
             '*timeFrame' : {'regexp' : /^(what's happening this month|what's happening today|what's happening this week)$/, 'callback' : calendarView}
         };
    
-        annyang.addCommands(commands);
+//        annyang.addCommands(commands);
         commandManager("MainMenu");
         
         annyang.setLanguage("en-US");
