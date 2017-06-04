@@ -250,7 +250,7 @@ window.onload = function(){
         else if(fac_name == "brouillette" || fac_name == "Leon brouillette")
             return "Brouillette";
         
-        else if(fac_name == "Geneva Lopez Sandoval")
+        else if(fac_name == "Geneva Lopez Sandoval" || fac_name == "jenefir lopez sandoval")
             return "Geneva Lopez-Sandoval";
         
         else if(fac_name == "Sarah sing" || fac_name == "sing")
@@ -291,7 +291,7 @@ window.onload = function(){
         else if(fac_name == "early" || fac_name == "ear Lee")
             return "Earley";
        
-        else if(fac_name == "right low")
+        else if(fac_name == "right low" || fac_name == "rat low")
             return "Rhett Lowe";
         
         else if(fac_name == "cute King" || fac_name == "cute Kang" || fac_name == "Kyu Kang" || fac_name == "Hugh Kang" || fac_name == "puke King" || fac_name == "Hugh King")
