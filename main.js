@@ -1131,6 +1131,7 @@ window.onload = function(){
             
             "I'm looking for ms. *name":msChecker,
             "I'm looking for Miss *name":msChecker,
+            "I'm looking for a Miss *name":msChecker,
             "I'm looking for mrs. *name":msChecker,
             "I'm looking for dr. *name":drChecker,
             "I'm looking for dr *name":drChecker,
