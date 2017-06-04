@@ -1235,6 +1235,7 @@
 
        	"2005a" : {
        		"roomName" : "Room 2005a",
+            "roomNumber" : "2005a",
        		"roomType" : "Classroom",
        		"mapImage" : "/images/maps/Room2005A.png",
        		"roomImage" : "/images/rooms/Room2205A.jpg",
