@@ -1185,7 +1185,7 @@ window.onload = function(){
         annyang.debug([newState=true]);
         
         // adds NoMatch everytime no match is found.
-        annyang.addCallback('resultNoMatch',noMatch);
+       // annyang.addCallback('resultNoMatch',noMatch);
         //$('#subtitle').html("I'm Listening...");
 
     }
