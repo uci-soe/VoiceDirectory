@@ -86,9 +86,29 @@ window.onload = function(){
     var caption = "";
     var resultsCaption = "";
 
-    
-    
     var validPrefix;
+    
+    function loopPrefix (){
+        
+        var text = $(".prefix-dynamicText");
+        var textIndex = -1;
+        $(".left-bubble .prefix-dynamicText").addClass("slideInLeft");
+        
+        setTimeout(function(){
+            $(".left-bubble .prefix-dynamicText").removeClass("slideInLeft");
+        }, 1000);
+        
+        function showNextText() {
+            ++textIndex;
+            text.eq(textIndex % text.length)
+                .fadeIn(500)
+                .delay(2500)
+                .fadeOut(500, showNextText);
+        }
+        
+        showNextText();
+        
+    }
     
     // Function to check if an object is empty
     function isEmpty(obj) {
@@ -693,11 +713,13 @@ window.onload = function(){
         
         systemTimer();
         
-//        systemPause(welcome, welcome.split(' ').length);
+        
         
         caption = welcome;
         message.text = welcome;
         window.speechSynthesis.speak(message);
+        
+        
         
         roomLocator = function(room_num) {  
                         
@@ -768,6 +790,7 @@ window.onload = function(){
             commandManager("OptionsView");
             timeLeft = grantTime;
             $('.modal-clarifyPrefix').show();
+            $('.modal-options').addClass('animated fadeInDown');
             
             clarifyPrefix_ACTIVE = true;
             
@@ -1116,10 +1139,7 @@ window.onload = function(){
                     return;
                 }
                 
-            }
-            
-            
-
+            }            
         };
         
         var yourWelcome = function(){
@@ -1256,6 +1276,8 @@ window.onload = function(){
             }
             ajaxhttp.send(null);
         }
+        
+        loopPrefix();
 
     });
     
