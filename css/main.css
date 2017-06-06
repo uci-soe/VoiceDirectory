@@ -374,39 +374,6 @@ img
     margin: 0 5% 0 5%;
 }
 
-/* Events Block Styling */
-.events-block #calendar
-{
-    margin-top: 0;
-    margin-left: 0;
-}
-
-#calendarFrame
-{
-    position: relative;
-    bottom:100px;
-    pointer-events: none;
-}
-
-#topBorder
-{
-    min-height: 45px;
-    max-width: 100%;
-    background-color: gainsboro;
-    z-index: 1;
-    position: relative;
-    top:-56px;  
-}
-#bottomBorder
-{
-    min-height: 45px;
-    max-width: 100%;
-    background-color: gainsboro;
-    z-index: 1;
-    position: relative;
-    top:496px;
-}
-
 
 
 
@@ -509,8 +476,49 @@ z-index: 5;
 
 .modal-bg .modal-body{
     padding: 5%;
-    
+}
 
+.modal-event{
+    
+    background-image: url(images/modal-bg.png);
+    
+    width: 100%;    
+    padding: 100px 0 0 0;
+    height: 1027px;
+    margin-bottom: 30px;
+    
+    position: absolute;
+    
+    z-index: 11;
+    
+}
+
+.modal-event .calendar-container{
+    margin-bottom: 30px;
+    width: 75%;
+    margin: auto;
+    
+}
+
+
+.modal-event h3{
+    font-size: 4em;
+    color: white;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+
+#calendar-block
+{
+    position: relative;
+    bottom:0;
+    pointer-events: none;
+    
+    width:100%;
+    
+    margin: auto;
+    display: block;
 }
 
 #dynamic-options .col-sm-4, #dynamic-options .col-sm-8{
@@ -522,7 +530,7 @@ z-index: 5;
     position: absolute;
     
     right:-55.5px;
-    top: 175px;
+    top: 177px;
     
     width: 112px;
     font-weight: 900;
@@ -530,3 +538,6 @@ z-index: 5;
     text-align: center;
     display:none;
 }
+
+
+

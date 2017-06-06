@@ -1,10 +1,10 @@
 window.onload = function(){
             
-    var timeLeft = 550; // System countdown after initiation
+    var timeLeft = 305; // System countdown after initiation
     var timeToAsk = 30; // System will ask if user wants more time after this amount of seconds
-    var timeToAsk2 = 15; // Second time asking
+    var timeToAsk2 = 10; // Second time asking
     var timeToEnd = 1; // System will reset the system with this amount of seconds left
-    var grantTime = 550; // System will grant user extra time (grantTime will be set equal to "timeLeft")
+    var grantTime = 305; // System will grant user extra time (grantTime will be set equal to "timeLeft")
 
     var roomLocator_active = false;
     var facultyLocator_active = false;
@@ -13,6 +13,8 @@ window.onload = function(){
     var clarifyFaculty_ACTIVE = false;
 
     var instruction_ACTIVE = false;
+    
+    var events_ACTIVE = false;
     
     var timer;
     var systemTimer_interval = 1200;
@@ -39,6 +41,11 @@ window.onload = function(){
     var validCommand = "Please say a valid command.";
     var output_listening = "I'm Listening...";
     
+    //Events Voice Responses
+    var eventWeekWelcome = "Here's what's happening this week.";
+    var eventTodayWelcome = "Here's what's happening today.";
+    var eventMonthWelcome = "Here's what's happening this month.";
+    
     function outputRepeat (output_item){    
         
         var output_temp = "";
@@ -62,10 +69,7 @@ window.onload = function(){
         window.speechSynthesis.speak(message);          
     }
     
-    //Events Voice Responses
-    var eventWeekWelcome = "Here's what's happening this week.";
-    var eventTodayWelcome = "Here's what's happening today.";
-    var eventMonthWelcome = "Here's what's happening this month.";
+    
     
 
     // annyang Locator functions
@@ -144,25 +148,34 @@ window.onload = function(){
             
             if(resultShown)  {
                 $('#subtitle').html(resultsCaption);
-                newSearch_SHOW("main");
+                promptNewSearch("main");
             } 
             else if(clarifyFaculty_ACTIVE){
                 caption = output_listening;
                 $('#subtitle').html(caption);
-                newSearch_SHOW("clarifyFacultyModal");
+                promptNewSearch("modal");
             }
             else if(instruction_ACTIVE){
                 caption = output_listening;
                 $('#subtitle').html(caption);
-                exit_SHOW();
+                promptExit();
+            }
+            else if(events_ACTIVE){
+                caption = eventMonthWelcome;
+                $('#subtitle').html(caption);
+//                promptNewSearch("main");                
+                promptNewSearch("modal");
+                
             }
             else {
                 caption = output_listening;
                 $('#subtitle').html(caption);
-                instruction_SHOW();
+                promptInstruction();
             }
             
-            annyang.resume();
+            if(annyang.isListening() == false)
+                annyang.resume();
+            
     
         };
     }
@@ -184,15 +197,20 @@ window.onload = function(){
     
     $(".systemModal").hide();
    
-    // New Search Bubble
+    // New Search Bubble  
     $(".newSearch-bubble").hide(); 
     $(".newSearch-prompt").hide(); 
     
+    // New Search MODAL Bubble  
+    $(".newSearch-modalBubble").hide(); 
+    $(".newSearch-modalPrompt").hide(); 
+    
     // Instruction Bubble
     $(".instruction-bubble").hide(); 
-    $(".instruction-prompt").hide(); 
+    $(".instruction-prompt").hide();
     
-    function newSearch_SHOW(type){
+    
+    function promptNewSearch(type){
         
         if(type == "main"){
             $(".newSearch-prompt").show();
@@ -202,7 +220,15 @@ window.onload = function(){
                 $('.newSearch-bubble').addClass('animated fadeInDown');
             }, 1000);
         }
-        else if(type == "clarifyFacultyModal"){
+        else if(type == "modal"){
+            $(".newSearch-modalPrompt").show();
+            $('.newSearch-modalPrompt').addClass('animated fadeInLeft');
+            setTimeout(function(){
+                $(".newSearch-modalBubble").show();
+                $('.newSearch-modalBubble').addClass('animated fadeInDown');
+            }, 1000);
+        }
+        else if(type == "calendar"){
             $(".newSearch-modalPrompt").show();
             $('.newSearch-modalPrompt').addClass('animated fadeInLeft');
             setTimeout(function(){
@@ -215,7 +241,7 @@ window.onload = function(){
 
     }
     
-    function instruction_SHOW(){
+    function promptInstruction(){
         
         $('.instruction-container').css('display','block');
         $(".instruction-prompt").show();
@@ -228,7 +254,7 @@ window.onload = function(){
     }
     
     
-    function exit_SHOW(){
+    function promptExit(){
 
         $(".instruction-modalPrompt").show();
         $('.instruction-modalPrompt').addClass('animated fadeInLeft');
@@ -323,7 +349,7 @@ window.onload = function(){
         else if(fac_name == "right low" || fac_name == "rat low")
             return "Rhett Lowe";
         
-        else if(fac_name == "cute King" || fac_name == "cute Kang" || fac_name == "Kyu Kang" || fac_name == "Hugh Kang" || fac_name == "puke King" || fac_name == "Hugh King")
+        else if(fac_name == "cute King" || fac_name == "cute Kang" || fac_name == "Kyu Kang" || fac_name == "Hugh Kang" || fac_name == "puke King" || fac_name == "Hugh King" || fac_name == "King" || fac_name == "king" || fac_name == "kane")
             return "Hyuk Kang";
         else if(fac_name == "new search" || fac_name == "research")
             return "new search";
@@ -331,23 +357,45 @@ window.onload = function(){
         return fac_name;
         
     }
-    function resultOptions(data,duplicatesArray) {
+    
+     function displayEventModal (){
+         events_ACTIVE = true;   
+         alert(events_ACTIVE);
+         timeLeft = grantTime;
+         commandManager("ResultsView");
+         
+         $('.modal-event').show();
+         $(".calendar-title").show();
+         $("#calendar-block").hide();
+         
+            $('.calendar-title').addClass('animated fadeInLeft');
+            setTimeout(function(){
+                $("#calendar-block").show();
+                $('#calendar-block').addClass('animated fadeIn');
+            }, 1000);
+         
+         caption = eventMonthWelcome;
+         message.text = caption;
+         window.speechSynthesis.speak(message);
+         
+
+        
+                 
+    }
+    
+    function displayOptionsModal(data,duplicatesArray) {
         
         clarifyFaculty_ACTIVE = true;
+        timeLeft = grantTime;
+        commandManager("OptionsView");
         $(".newSearch-modalPrompt").hide();
         $(".newSearch-modalBubble").hide();
-        
-        $('#dynamic-options').empty();
-
-        commandManager("OptionsView");
-        
-        timeLeft = grantTime;
         $(".modal-clarifyPrefix").hide();
+        $('#dynamic-options').empty();                
         $(".modal-bg").show();
         
         $('.modal-options').addClass('animated fadeInDown');
         
-//        alert(duplicatesArray.length);
         var htmlString = "<ul>";
         
         var myStr = "";
@@ -479,10 +527,11 @@ window.onload = function(){
         
     }
     
-    function displayMainMenu()
+    function displayMenuView()
     {
         removeResults();
         
+        // Hide Prompts
         $(".newSearch-prompt").hide();
         $(".newSearch-bubble").hide();
         
@@ -492,17 +541,20 @@ window.onload = function(){
         $(".instruction-prompt").hide();
         $(".instruction-bubble").hide();        
         
+        
+        // Hide blocks except Menu
         $(".result-block").hide();
         $(".events-block").hide();
         $(".systemModal").hide();
         
+        // Show Menu block
         $(".menu-block").show();
         $("#systemMic").show();
         $("#subtitle").show();
         
         timeLeft = grantTime;
-        
         commandManager("MainMenu");
+        
         if(resultShown){
 //            alert(output_moreRequest);
             caption = output_moreRequest;
@@ -523,15 +575,20 @@ window.onload = function(){
             caption = output_moreRequest;
             message.text = caption;
         }
+        else if(events_ACTIVE){
+            caption = output_moreRequest;
+            message.text = caption;
+        }
         else{
             caption = output_pleasewait;
             message.text = welcome;
         }
-        
+
         resultShown = false;
         clarifyFaculty_ACTIVE = false;
         clarifyPrefix_ACTIVE = false;
         instruction_ACTIVE = false;
+        events_ACTIVE = false;
         
         roomLocator_active = false;
         facultyLocator_active = false;
@@ -542,18 +599,19 @@ window.onload = function(){
         window.speechSynthesis.speak(message);
     }
     
-    function displayResult(data, input){
+//    function animateResult(num){
+//        
+//    }
+    
+    function displayResultsView(data, input){
                 
         $('.instruction-container').hide();
         
         commandManager("ResultsView");
-        console.log("result commands added");
+
         $(".menu-block").hide();
-        $(".result-block").show();
         $(".systemModal").hide();
-        
-//        alert("input: " + isNaN(input));
-//        alert(input.includes("a"));
+        $(".result-block").show();
         
         var num;
         
@@ -749,12 +807,12 @@ window.onload = function(){
                 }
                     
                 if(possibleRoom.length > 1){
-                    resultOptions(data, possibleRoom);
+                    displayOptionsModal(data, possibleRoom);
                     modalResponse("room");
                 }
                 else{
                     console.log(room_num);
-                    displayResult(data, room_num);
+                    displayResultsView(data, room_num);
                     resultShown = true; 
 
                     caption = data.rooms[room_num].voiceResponse_room;
@@ -953,14 +1011,14 @@ window.onload = function(){
                            if(possibleFaculty.length > 1) // ooo
                                 {
                                     //display to DOM
-                                    resultOptions(data, possibleFaculty);
+                                    displayOptionsModal(data, possibleFaculty);
                                     
                                     //speech for modal
                                     modalResponse("faculty member");
                                 }
                             else
                                 {
-                                    displayResult(data, possibleFaculty[0]);
+                                    displayResultsView(data, possibleFaculty[0]);
                                     resultShown = true;
                                     
                                     
@@ -986,7 +1044,7 @@ window.onload = function(){
                         }
                     else
                         {
-                            displayResult(data, fac_name);
+                            displayResultsView(data, fac_name);
                             resultShown = true;
                             
                             var num = data.faculty[fac_name].roomName;
@@ -1031,6 +1089,18 @@ window.onload = function(){
                     message.text = eventMonthWelcome; 
                 }
             */
+            
+            
+            events_ACTIVE = true;
+
+            commandManager("ResultsView");
+
+            timeLeft = grantTime;
+
+            $(".modal-events").show();
+            
+            $('.instruction-container').hide();
+            
             commandManager("CalendarView");
             message.text = eventMonthWelcome; 
             caption = eventMonthWelcome;
@@ -1044,11 +1114,12 @@ window.onload = function(){
             
             $(".menu-block").hide();
             $(".events-block").show();
+                        
         }
         
         var yesOrno = function(randomWord){
 
-            
+            alert(systemAsked);
             if(systemAsked) {
                 if(randomWord == "yes")
                     yes = true;
@@ -1066,7 +1137,7 @@ window.onload = function(){
                 if(randomWord == "yes")
                     facultyLocator(universalName);
                 else
-                    displayMainMenu();
+                    displayMenuView();
             }
             
             
@@ -1125,13 +1196,13 @@ window.onload = function(){
     //            alert(indexItem);
 
                 annyang.removeCommands(optionCommands);
-                displayResult(data, indexItem);
+                displayResultsView(data, indexItem);
                 resultShown = true;
             }
             else{
                 
                 if(spellChecker(numString) == "new search")
-                    displayMainMenu();
+                    displayMenuView();
                 else{
                     caption = output_validRequest;
                     message.text = caption;
@@ -1148,7 +1219,7 @@ window.onload = function(){
             window.speechSynthesis.speak(message);
         }
         
-        var instruction_MODAL = function(){
+        var displayInstructionModal = function(){
             instruction_ACTIVE = true;
             timeLeft = grantTime;
             
@@ -1165,8 +1236,8 @@ window.onload = function(){
          
         mainMenuCommands = {
             //instructions
-            'Instructions' : instruction_MODAL,
-            'instructions' : instruction_MODAL,
+            'Instructions' : displayInstructionModal,
+            'instructions' : displayInstructionModal,
             
             // Room Locator Commands
             'I am looking for room *room_num' : roomLocator,
@@ -1196,14 +1267,14 @@ window.onload = function(){
             //'professor *fac_first_name (*fac_last_name)' : facultyLocator,
             
             //Event View
-            'What events are coming up' : calendarView,
-            'Show me upcoming events' : calendarView,
-            'I want to know upcoming events' : calendarView
+            'What events are coming up' : displayEventModal,
+            'Show me upcoming events' : displayEventModal,
+            'I want to know upcoming events' : displayEventModal
             // randomWord can only be yes or no now to avoid it being called very    time. 
         };
         
         exitCommands = {
-            'exit': displayMainMenu  
+            'exit': displayMenuView  
         };
     
         
@@ -1212,7 +1283,7 @@ window.onload = function(){
             // : = capture only one word
             
             //RESET COMMAND
-            'new search' : displayMainMenu,
+            'new search' : displayMenuView,
             ':randomWord' : {'regexp' : /^(yes|no)$/, 'callback' : yesOrno},
             'thank you' : yourWelcome
         };
