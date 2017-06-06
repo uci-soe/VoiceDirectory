@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     
     
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,900" rel="stylesheet">
 
 
     <!--  jQUERY -->
@@ -39,6 +39,31 @@
   
     <body>
         
+        <div class="blue-block"></div>
+        
+        <!--   MODAL - Event     -->
+         <div class="systemModal modal-event">
+            
+             <div class="calendar-container">
+                 <h3 class="calendar-title">Upcoming Events</h3>
+                 
+                 <iframe id ="calendar-block" src="https://calendar.google.com/calendar/embed?mode=MONTH&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=ucieducationevents%40gmail.com&ctz=America/Los_Angeles" style="border: 0" width="800" height="550" frameborder="0" scrolling="no"></iframe>
+                
+             </div>
+             
+             <div class="clear"></div>
+             <div class="modal-bottom">
+                <div class="bottomModal-container newSearch-container">
+                    <p class="newSearch-modalPrompt txt-white">To make a new request:</p>
+                    <img class="newSearch-modalBubble" src="css/images/newSearch-bubble.png"/>
+
+                </div>
+             </div>
+             
+
+        </div>
+        
+        <!--   MODAL - Duplicate Faculty     -->
          <div class="systemModal modal-bg">
             <div class="modal-options">
                 <div class="modal-header">
@@ -64,6 +89,8 @@
 
         </div>
         
+        <!--   MODAL - Clarify Prefix    -->
+        
         <div class="systemModal modal-clarifyPrefix">
             <div class="modal-options">
                 <div class="modal-header">
@@ -77,6 +104,8 @@
             </div>
 
         </div>
+        
+        <!--   MODAL - Instructions     -->
         
         <div class="systemModal modal-instruction">
             <div class="modal-options">
@@ -99,6 +128,33 @@
              </div>
 
         </div>
+        
+        <!--   MODAL - Events     -->
+         <div class="systemModal modal-events">
+            <div class="modal-options">
+                <div class="modal-header">
+                    <H3>Choose a number</H3>
+                </div>
+                
+                <div class="modal-body">                 
+                    alksdmal
+                    
+                    
+                </div>
+            </div>
+             
+             <div class="clear"></div>
+             <div class="modal-bottom">
+                <div class="bottomModal-container newSearch-container">
+                    <p class="newSearch-modalPrompt txt-white">To make a new request:</p>
+                    <img class="newSearch-modalBubble" src="css/images/newSearch-bubble.png"/>
+
+                </div>
+             </div>
+             
+
+        </div>
+        
 
         
         <div id="screen-home">
@@ -126,7 +182,7 @@
                 </div>
             </div>
             
-            <div class="blue-block"></div>
+            
             
             <div class="menu-block">
 <!--                <div id="timeLeft"></div>-->
@@ -140,9 +196,13 @@
                     <div class="clear"></div>
                     <div class="col-sm-4 left-bubble">
                         <img class="bubble animated" src="css/images/shades/left.png">
+                        <p class="prefix-dynamicText animated">Professor</p>
+                        <p class="prefix-dynamicText">Doctor</p>
+                        <p class="prefix-dynamicText">Mr/Ms</p>
                     </div>
                     <div class="col-sm-4 center-bubble">
                         <img class="bubble animated" src="css/images/shades/center.png">
+                        
                     </div>
                     <div class="col-sm-4 right-bubble">
                         <img class="bubble animated" src="css/images/shades/right.png">
@@ -210,8 +270,9 @@
             </div>
             
             <!-- Events Block -->
+<!--
             <div class="mid-block events-block">
-<!--                                <div id="timeLeft"></div>-->
+                                <div id="timeLeft"></div>
                 
                 <div id="calendar" class="col-sm-12 no-padding">
                     <div id="topBorder" class="no-padding"></div>
@@ -220,6 +281,7 @@
                 </div>
             </div>
             
+-->
             <div class="bottom-block">
 
                 <div class="bottom-container newSearch-container">
@@ -229,7 +291,7 @@
                 </div>
                 
                 <div class="bottom-container instruction-container">
-                    <p class="instruction-prompt txt-white">To show all commands:</p>
+                    <p class="instruction-prompt txt-white">To view all commands:</p>
                     <img class="instruction-bubble" src="css/images/instruction-bubble.png"/>
                     
                 </div>
