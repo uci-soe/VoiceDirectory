@@ -41,6 +41,11 @@ window.onload = function(){
     var validCommand = "Please say a valid command.";
     var output_listening = "I'm Listening...";
     
+    //Events Voice Responses
+    var eventWeekWelcome = "Here's what's happening this week.";
+    var eventTodayWelcome = "Here's what's happening today.";
+    var eventMonthWelcome = "Here's what's happening this month.";
+    
     function outputRepeat (output_item){    
         
         var output_temp = "";
@@ -64,10 +69,7 @@ window.onload = function(){
         window.speechSynthesis.speak(message);          
     }
     
-    //Events Voice Responses
-    var eventWeekWelcome = "Here's what's happening this week.";
-    var eventTodayWelcome = "Here's what's happening today.";
-    var eventMonthWelcome = "Here's what's happening this month.";
+    
     
 
     // annyang Locator functions
@@ -151,7 +153,7 @@ window.onload = function(){
             else if(clarifyFaculty_ACTIVE){
                 caption = output_listening;
                 $('#subtitle').html(caption);
-                promptNewSearch("clarifyFacultyModal");
+                promptNewSearch("modal");
             }
             else if(instruction_ACTIVE){
                 caption = output_listening;
@@ -161,7 +163,8 @@ window.onload = function(){
             else if(events_ACTIVE){
                 caption = eventMonthWelcome;
                 $('#subtitle').html(caption);
-                promptNewSearch("clarifyFacultyModal");
+//                promptNewSearch("main");                
+                promptNewSearch("modal");
                 
             }
             else {
@@ -170,7 +173,9 @@ window.onload = function(){
                 promptInstruction();
             }
             
-            annyang.resume();
+            if(annyang.isListening() == false)
+                annyang.resume();
+            
     
         };
     }
@@ -192,13 +197,18 @@ window.onload = function(){
     
     $(".systemModal").hide();
    
-    // New Search Bubble
+    // New Search Bubble  
     $(".newSearch-bubble").hide(); 
     $(".newSearch-prompt").hide(); 
     
+    // New Search MODAL Bubble  
+    $(".newSearch-modalBubble").hide(); 
+    $(".newSearch-modalPrompt").hide(); 
+    
     // Instruction Bubble
     $(".instruction-bubble").hide(); 
-    $(".instruction-prompt").hide(); 
+    $(".instruction-prompt").hide();
+    
     
     function promptNewSearch(type){
         
@@ -210,7 +220,7 @@ window.onload = function(){
                 $('.newSearch-bubble').addClass('animated fadeInDown');
             }, 1000);
         }
-        else if(type == "clarifyFacultyModal"){
+        else if(type == "modal"){
             $(".newSearch-modalPrompt").show();
             $('.newSearch-modalPrompt').addClass('animated fadeInLeft');
             setTimeout(function(){
@@ -339,7 +349,7 @@ window.onload = function(){
         else if(fac_name == "right low" || fac_name == "rat low")
             return "Rhett Lowe";
         
-        else if(fac_name == "cute King" || fac_name == "cute Kang" || fac_name == "Kyu Kang" || fac_name == "Hugh Kang" || fac_name == "puke King" || fac_name == "Hugh King")
+        else if(fac_name == "cute King" || fac_name == "cute Kang" || fac_name == "Kyu Kang" || fac_name == "Hugh Kang" || fac_name == "puke King" || fac_name == "Hugh King" || fac_name == "King" || fac_name == "king" || fac_name == "kane")
             return "Hyuk Kang";
         else if(fac_name == "new search" || fac_name == "research")
             return "new search";
@@ -347,23 +357,45 @@ window.onload = function(){
         return fac_name;
         
     }
+    
+     function displayEventModal (){
+         events_ACTIVE = true;   
+         alert(events_ACTIVE);
+         timeLeft = grantTime;
+         commandManager("ResultsView");
+         
+         $('.modal-event').show();
+         $(".calendar-title").show();
+         $("#calendar-block").hide();
+         
+            $('.calendar-title').addClass('animated fadeInLeft');
+            setTimeout(function(){
+                $("#calendar-block").show();
+                $('#calendar-block').addClass('animated fadeIn');
+            }, 1000);
+         
+         caption = eventMonthWelcome;
+         message.text = caption;
+         window.speechSynthesis.speak(message);
+         
+
+        
+                 
+    }
+    
     function displayOptionsModal(data,duplicatesArray) {
         
         clarifyFaculty_ACTIVE = true;
+        timeLeft = grantTime;
+        commandManager("OptionsView");
         $(".newSearch-modalPrompt").hide();
         $(".newSearch-modalBubble").hide();
-        
-        $('#dynamic-options').empty();
-
-        commandManager("OptionsView");
-        
-        timeLeft = grantTime;
         $(".modal-clarifyPrefix").hide();
+        $('#dynamic-options').empty();                
         $(".modal-bg").show();
         
         $('.modal-options').addClass('animated fadeInDown');
         
-//        alert(duplicatesArray.length);
         var htmlString = "<ul>";
         
         var myStr = "";
@@ -499,6 +531,7 @@ window.onload = function(){
     {
         removeResults();
         
+        // Hide Prompts
         $(".newSearch-prompt").hide();
         $(".newSearch-bubble").hide();
         
@@ -508,17 +541,20 @@ window.onload = function(){
         $(".instruction-prompt").hide();
         $(".instruction-bubble").hide();        
         
+        
+        // Hide blocks except Menu
         $(".result-block").hide();
         $(".events-block").hide();
         $(".systemModal").hide();
         
+        // Show Menu block
         $(".menu-block").show();
         $("#systemMic").show();
         $("#subtitle").show();
         
         timeLeft = grantTime;
-        
         commandManager("MainMenu");
+        
         if(resultShown){
 //            alert(output_moreRequest);
             caption = output_moreRequest;
@@ -539,17 +575,20 @@ window.onload = function(){
             caption = output_moreRequest;
             message.text = caption;
         }
+        else if(events_ACTIVE){
+            caption = output_moreRequest;
+            message.text = caption;
+        }
         else{
             caption = output_pleasewait;
             message.text = welcome;
         }
-        
-
 
         resultShown = false;
         clarifyFaculty_ACTIVE = false;
         clarifyPrefix_ACTIVE = false;
         instruction_ACTIVE = false;
+        events_ACTIVE = false;
         
         roomLocator_active = false;
         facultyLocator_active = false;
@@ -560,18 +599,19 @@ window.onload = function(){
         window.speechSynthesis.speak(message);
     }
     
+//    function animateResult(num){
+//        
+//    }
+    
     function displayResultsView(data, input){
                 
         $('.instruction-container').hide();
         
         commandManager("ResultsView");
-        console.log("result commands added");
+
         $(".menu-block").hide();
-        $(".result-block").show();
         $(".systemModal").hide();
-        
-//        alert("input: " + isNaN(input));
-//        alert(input.includes("a"));
+        $(".result-block").show();
         
         var num;
         
@@ -1227,9 +1267,9 @@ window.onload = function(){
             //'professor *fac_first_name (*fac_last_name)' : facultyLocator,
             
             //Event View
-            'What events are coming up' : calendarView,
-            'Show me upcoming events' : calendarView,
-            'I want to know upcoming events' : calendarView
+            'What events are coming up' : displayEventModal,
+            'Show me upcoming events' : displayEventModal,
+            'I want to know upcoming events' : displayEventModal
             // randomWord can only be yes or no now to avoid it being called very    time. 
         };
         
