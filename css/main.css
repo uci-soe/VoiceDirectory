@@ -525,19 +525,80 @@ z-index: 5;
     margin-bottom: 45px;
 }
 
-.prefix-dynamicText{
-    font-size: 26px;
+.faculty-commandText{
     position: absolute;
+    right:-110px;
+    top: 216px;
+    width: 400px;
     
-    right:-55.5px;
-    top: 177px;
+}
+
+
+.faculty-commandText .command-dynamicText, .faculty-commandText .prefix-dynamicText{
+    font-size: 21px;
+    font-weight: 300;
     
-    width: 112px;
+    float: right;
+    display:none;
+    position: relative;
+
+
+}
+
+.faculty-commandText .prefix-dynamicText{
+    font-size: 26px;
+
+    
     font-weight: 900;
     
-    text-align: center;
+    float: right;
     display:none;
+    position: relative;
+    margin-top: -4.5px;
+    margin-left: 10px;
+
+    
+    width: 42%;
 }
+
+
+.room-commandText{
+    position: absolute;
+    right:-110px;
+    top: 26px;
+    width: 400px;
+}
+
+
+.room-commandText .command-dynamicText,.room-commandText .prefix-dynamicText{
+    font-size: 21px;
+    font-weight: 300;
+    
+    float: right;
+    display:none;
+    position: relative;
+
+
+}
+
+.room-commandText .prefix-dynamicText{
+    font-size: 26px;
+
+    
+    font-weight: 900;
+    
+    float: right;
+    display:none;
+    position: relative;
+    margin-top: -4.5px;
+    margin-left: 10px;
+
+    
+    width: 42%;
+}
+
+
+
 
 
 
