@@ -527,9 +527,9 @@ z-index: 5;
 
 .faculty-commandText{
     position: absolute;
-    right:-110px;
+    right:-160px;
     top: 216px;
-    width: 400px;
+    width: 500px;
     
 }
 
@@ -546,7 +546,7 @@ z-index: 5;
 }
 
 .faculty-commandText .prefix-dynamicText{
-    font-size: 26px;
+    font-size: 24px;
 
     
     font-weight: 900;
@@ -554,51 +554,61 @@ z-index: 5;
     float: right;
     display:none;
     position: relative;
-    margin-top: -4.5px;
+    margin-top: -4px;
     margin-left: 10px;
 
     
     width: 42%;
 }
 
-
 .room-commandText{
     position: absolute;
-    right:-110px;
-    top: 26px;
+    right:164px;
+    top: 88px;  
     width: 400px;
 }
 
-
-.room-commandText .command-dynamicText,.room-commandText .prefix-dynamicText{
+.room-commandText .command-dynamicText{
     font-size: 21px;
     font-weight: 300;
     
     float: right;
     display:none;
     position: relative;
-
-
 }
 
-.room-commandText .prefix-dynamicText{
-    font-size: 26px;
-
-    
+.room-commandText .room-dynamicText{
+    font-size: 24px;    
     font-weight: 900;
     
     float: right;
-    display:none;
+    display: none;
     position: relative;
-    margin-top: -4.5px;
+    margin-top: -1px;
     margin-left: 10px;
 
     
     width: 42%;
 }
 
+.event-dynamicText{
+    font-size: 21px;    
+/*    font-weight: 900;*/
+    
 
+/*    display: none;*/
+    position: relative;
+    top:213px;
+    margin-left: -55px;
 
+    width: 42%;
+}
 
+.event-label{
+    font-size: 24px;    
+    font-weight: 900;
+    margin: 0 6px 0 6px;
+    
+}
 
 
