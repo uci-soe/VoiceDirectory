@@ -94,12 +94,12 @@ window.onload = function(){
     
     function loopPrefix (){
         
-        var text = $(".prefix-dynamicText");
+        var text = $(".faculty-commandText .prefix-dynamicText");
         var textIndex = -1;
-        $(".left-bubble .prefix-dynamicText").addClass("slideInLeft");
+        $(".faculty-commandText .prefix-dynamicText").addClass("slideInLeft");
         
         setTimeout(function(){
-            $(".left-bubble .prefix-dynamicText").removeClass("slideInLeft");
+            $(".faculty-commandText .prefix-dynamicText").removeClass("slideInLeft");
         }, 1000);
         
         function showNextText() {
@@ -116,12 +116,12 @@ window.onload = function(){
     
     function loopCommand (){
         
-        var text = $(".command-dynamicText");
+        var text = $(".faculty-commandText .command-dynamicText");
         var textIndex = -1;
-        $(".left-bubble .command-dynamicText").addClass("slideInLeft");
+        $(".faculty-commandText .command-dynamicText").addClass("slideInLeft");
         
         setTimeout(function(){
-            $(".left-bubble .command-dynamicText").removeClass("slideInLeft");
+            $(".faculty-commandText .command-dynamicText").removeClass("slideInLeft");
         }, 1000);
         
         function showNextText() {
@@ -135,6 +135,52 @@ window.onload = function(){
         showNextText();
         
     }
+    
+    function loopPrefix2 (){
+        
+        var text = $(".room-commandText .room-dynamicText");
+        var textIndex = -1;
+        $(".room-commandText .room-dynamicText").addClass("slideInLeft");
+        
+        setTimeout(function(){
+            $(".room-commandText .room-dynamicText").removeClass("slideInLeft");
+        }, 1000);
+        
+        function showNextText() {
+            ++textIndex;
+            text.eq(textIndex % text.length)
+                .fadeIn(500)
+                .delay(2500)
+                .fadeOut(500, showNextText);
+        }
+        
+        showNextText();
+    }
+    
+    function loopCommand2 (){
+        
+        var text = $(".room-commandText .command-dynamicText");
+        var textIndex = -1;
+        $(".room-commandText .command-dynamicText").addClass("slideInLeft");
+        
+        setTimeout(function(){
+            $(".room-commandText .command-dynamicText").removeClass("slideInLeft");
+        }, 1000);
+        
+        function showNextText() {
+            ++textIndex;
+            text.eq(textIndex % text.length)
+                .fadeIn(500)
+                .delay(3500)
+                .fadeOut(500, showNextText);
+        }
+        
+        showNextText();
+        
+    }
+    
+    
+    
     
     // Function to check if an object is empty
     function isEmpty(obj) {
@@ -434,7 +480,7 @@ window.onload = function(){
                 
                 for(var i = 0; i < duplicatesArray.length ; i++){
                      myStr = myStr + "<p>" + (i+1) + " - Room " + data.rooms[duplicatesArray[i]].roomNumber + " - " + data.rooms[duplicatesArray[i]].facultyName +"</p>";
-                    alert(duplicatesArray[i]);
+//                    alert(duplicatesArray[i]);
                 }
             }
             else{
@@ -1140,7 +1186,7 @@ window.onload = function(){
         
         var yesOrno = function(randomWord){
 
-            alert(systemAsked);
+//            alert(systemAsked);
             if(systemAsked) {
                 if(randomWord == "yes")
                     yes = true;
@@ -1179,10 +1225,10 @@ window.onload = function(){
                 return word;
         }
         var optionFunc = function(numString){
-            alert("numString: " + numString);
+//            alert("numString: " + numString);
             
             var index = convertToNumber(numString) - 1;
-            alert("index: " + index);
+//            alert("index: " + index);
             
             if(!isNaN(index)){
 //                alert("index: " + index + ", faculty length: " + possibleFaculty.length + ", room length: " + possibleRoom.length-1);
@@ -1257,8 +1303,8 @@ window.onload = function(){
          
         mainMenuCommands = {
             //instructions
-            'Instructions' : displayInstructionModal,
-            'instructions' : displayInstructionModal,
+//            'Instructions' : displayInstructionModal,
+//            'instructions' : displayInstructionModal,
             
             // Room Locator Commands
             'I am looking for room *room_num' : roomLocator,
@@ -1266,15 +1312,16 @@ window.onload = function(){
             "I'm looking for a room *room_num" : roomLocator,
             'Where is room *room_num' : roomLocator,
             'room *room_num' : roomLocator,
+            'Where\'s *room_num' : roomLocator,
             
             // Faculty Locator Commands
-            "I'm looking for mr. *name":mrChecker,
-            "I'm looking for Mr *name":mrChecker,
-            
-            "I'm looking for ms. *name":msChecker,
-            "I'm looking for Miss *name":msChecker,
-            "I'm looking for a Miss *name":msChecker,
-            "I'm looking for mrs. *name":msChecker,
+//            "I'm looking for mr. *name":mrChecker,
+//            "I'm looking for Mr *name":mrChecker,
+//            
+//            "I'm looking for ms. *name":msChecker,
+//            "I'm looking for Miss *name":msChecker,
+//            "I'm looking for a Miss *name":msChecker,
+//            "I'm looking for mrs. *name":msChecker,
             "I'm looking for dr. *name":facultyLocator,
             "I'm looking for dr *name":facultyLocator,
             "I'm looking for a professor *name":facultyLocator, 
@@ -1371,6 +1418,8 @@ window.onload = function(){
         
         loopPrefix();
         loopCommand();
+        loopPrefix2();
+        loopCommand2();
 
     });
     
