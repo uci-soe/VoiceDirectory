@@ -1,10 +1,10 @@
 window.onload = function(){
             
-    var timeLeft = 305; // System countdown after initiation
+    var timeLeft = 550; // System countdown after initiation
     var timeToAsk = 30; // System will ask if user wants more time after this amount of seconds
     var timeToAsk2 = 10; // Second time asking
     var timeToEnd = 1; // System will reset the system with this amount of seconds left
-    var grantTime = 305; // System will grant user extra time (grantTime will be set equal to "timeLeft")
+    var grantTime = 550; // System will grant user extra time (grantTime will be set equal to "timeLeft")
 
     var roomLocator_active = false;
     var facultyLocator_active = false;
@@ -107,6 +107,28 @@ window.onload = function(){
             text.eq(textIndex % text.length)
                 .fadeIn(500)
                 .delay(2500)
+                .fadeOut(500, showNextText);
+        }
+        
+        showNextText();
+        
+    }
+    
+    function loopCommand (){
+        
+        var text = $(".command-dynamicText");
+        var textIndex = -1;
+        $(".left-bubble .command-dynamicText").addClass("slideInLeft");
+        
+        setTimeout(function(){
+            $(".left-bubble .command-dynamicText").removeClass("slideInLeft");
+        }, 1000);
+        
+        function showNextText() {
+            ++textIndex;
+            text.eq(textIndex % text.length)
+                .fadeIn(500)
+                .delay(3500)
                 .fadeOut(500, showNextText);
         }
         
@@ -360,7 +382,6 @@ window.onload = function(){
     
      function displayEventModal (){
          events_ACTIVE = true;   
-         alert(events_ACTIVE);
          timeLeft = grantTime;
          commandManager("ResultsView");
          
@@ -1158,10 +1179,10 @@ window.onload = function(){
                 return word;
         }
         var optionFunc = function(numString){
-//            alert("numString: " + numString);
+            alert("numString: " + numString);
             
             var index = convertToNumber(numString) - 1;
-//            alert("index: " + index);
+            alert("index: " + index);
             
             if(!isNaN(index)){
 //                alert("index: " + index + ", faculty length: " + possibleFaculty.length + ", room length: " + possibleRoom.length-1);
@@ -1349,6 +1370,7 @@ window.onload = function(){
         }
         
         loopPrefix();
+        loopCommand();
 
     });
     
