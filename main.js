@@ -69,9 +69,6 @@ window.onload = function(){
         window.speechSynthesis.speak(message);          
     }
     
-    
-    
-
     // annyang Locator functions
     var roomLocator;
     var facultyLocator;
@@ -92,7 +89,7 @@ window.onload = function(){
 
     var validPrefix;
     
-    function loopPrefix (){
+    function bubblePrefix_faculty (){
         
         var text = $(".faculty-commandText .prefix-dynamicText");
         var textIndex = -1;
@@ -114,7 +111,7 @@ window.onload = function(){
         
     }
     
-    function loopCommand (){
+    function bubbleCommand_faculty (){
         
         var text = $(".faculty-commandText .command-dynamicText");
         var textIndex = -1;
@@ -136,14 +133,14 @@ window.onload = function(){
         
     }
     
-    function loopPrefix2 (){
+    function bubblePrefix_room (){
         
         var text = $(".room-commandText .room-dynamicText");
         var textIndex = -1;
-        $(".room-commandText .room-dynamicText").addClass("slideInLeft");
+        $(".room-commandText .room-dynamicText").addClass("slideInDown");
         
         setTimeout(function(){
-            $(".room-commandText .room-dynamicText").removeClass("slideInLeft");
+            $(".room-commandText .room-dynamicText").removeClass("slideInDown");
         }, 1000);
         
         function showNextText() {
@@ -157,14 +154,14 @@ window.onload = function(){
         showNextText();
     }
     
-    function loopCommand2 (){
+    function bubbleCommand_room (){
         
         var text = $(".room-commandText .command-dynamicText");
         var textIndex = -1;
-        $(".room-commandText .command-dynamicText").addClass("slideInLeft");
+        $(".room-commandText .command-dynamicText").addClass("slideInDown");
         
         setTimeout(function(){
-            $(".room-commandText .command-dynamicText").removeClass("slideInLeft");
+            $(".room-commandText .command-dynamicText").removeClass("slideInDown");
         }, 1000);
         
         function showNextText() {
@@ -179,7 +176,15 @@ window.onload = function(){
         
     }
     
-    
+    function bubbleCommand_event (){
+        
+        $(".event-dynamicText").addClass("slideInLeft");
+        
+        setTimeout(function(){
+            $(".event-dynamicText").removeClass("slideInLeft");
+        }, 1000);
+        
+    }
     
     
     // Function to check if an object is empty
@@ -338,14 +343,13 @@ window.onload = function(){
         if(fac_name == "Berg" || fac_name == "Cambridge")
             return "Burge";
         
-        else if(fac_name == "Janelle Lau" || fac_name == "Professor Lau"  || fac_name == "Lau")
+        else if(fac_name == "Janelle Lau" || fac_name == "Professor Lau"  || fac_name == "Lau" || fac_name == "Janelle now" || fac_name == "Janelle Lao" || fac_name == "genola")
             return "Jenel Lao";
         
         else if(fac_name == "die shoe" || fac_name == "disha" || fac_name == "disa" || fac_name == "D shoe")
             return "Di Xu";
         else if(fac_name == "shoe" || fac_name == "sure")
             return "Xu";
-        
         
         else if(fac_name == "young" || fac_name == "You")
             return "Neil Young";
@@ -417,7 +421,7 @@ window.onload = function(){
         else if(fac_name == "right low" || fac_name == "rat low")
             return "Rhett Lowe";
         
-        else if(fac_name == "cute King" || fac_name == "cute Kang" || fac_name == "Kyu Kang" || fac_name == "Hugh Kang" || fac_name == "puke King" || fac_name == "Hugh King" || fac_name == "King" || fac_name == "king" || fac_name == "kane")
+        else if(fac_name == "cute King" || fac_name == "cute Kang" || fac_name == "Kyu Kang" || fac_name == "Hugh Kang" || fac_name == "puke King" || fac_name == "Hugh King" || fac_name == "King" || fac_name == "king" || fac_name == "kane" || fac_name == "Hugh Cain" || fac_name == "UK")
             return "Hyuk Kang";
         else if(fac_name == "new search" || fac_name == "research")
             return "new search";
@@ -1040,7 +1044,6 @@ window.onload = function(){
             
             //alert(fac_name);
             var splitFacName = fac_name.split(" ");
-            //alert(splitFacName[0]);
             
             var firstName = splitFacName[0];
             var lastName = splitFacName[1];
@@ -1106,8 +1109,7 @@ window.onload = function(){
                         
                     if(!(fac_name in data.faculty))
                         {
-                            outputRepeat(fac_name);
-                            
+                            outputRepeat(fac_name);                            
                         }
                     else
                         {
@@ -1311,8 +1313,8 @@ window.onload = function(){
             "I'm looking for room *room_num" : roomLocator,
             "I'm looking for a room *room_num" : roomLocator,
             'Where is room *room_num' : roomLocator,
+            'Where\'s room *room_num' : roomLocator,
             'room *room_num' : roomLocator,
-            'Where\'s *room_num' : roomLocator,
             
             // Faculty Locator Commands
 //            "I'm looking for mr. *name":mrChecker,
@@ -1322,11 +1324,34 @@ window.onload = function(){
 //            "I'm looking for Miss *name":msChecker,
 //            "I'm looking for a Miss *name":msChecker,
 //            "I'm looking for mrs. *name":msChecker,
+            
             "I'm looking for dr. *name":facultyLocator,
             "I'm looking for dr *name":facultyLocator,
             "I'm looking for a professor *name":facultyLocator, 
             "I'm looking for professor *name":facultyLocator, 
             'I am looking for professor *name':facultyLocator,
+            
+            "Where is dr. *name":facultyLocator,
+            "Where is dr *name":facultyLocator,
+            "Where is a professor *name":facultyLocator, 
+            "Where is professor *name":facultyLocator, 
+            
+            "Where\'s dr. *name":facultyLocator,
+            "Where\'s dr *name":facultyLocator,
+            "Where\'s a professor *name":facultyLocator, 
+            "Where\'s professor *name":facultyLocator, 
+            
+            'I am looking for *name':facultyLocator,
+            'I\'m looking for *name':facultyLocator,
+            'I am looking for a *name':facultyLocator,
+            'I\'m looking for a *name':facultyLocator,
+            
+            'Where is *name':facultyLocator,
+            'Where\'s *name':facultyLocator,
+            'Where is a *name':facultyLocator,
+            'Where\'s a *name':facultyLocator,
+            
+            
             
 //            "I'm looking for *name": facultyLocator,
 //            'professor *name': facultyLocator,
@@ -1416,11 +1441,13 @@ window.onload = function(){
             ajaxhttp.send(null);
         }
         
-        loopPrefix();
-        loopCommand();
-        loopPrefix2();
-        loopCommand2();
-
+        bubbleCommand_room();
+        bubbleCommand_faculty();
+        
+        bubblePrefix_room();
+        bubblePrefix_faculty();
+        
+        bubbleCommand_event();
     });
     
     $('#endButton').click(function(){
