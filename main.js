@@ -1,10 +1,10 @@
 window.onload = function(){
             
-    var timeLeft = 35; // System countdown after initiation
+    var timeLeft = 55; // System countdown after initiation
     var timeToAskFirst = 30; // System will ask if user wants more time after this amount of seconds
     var timeToAskSecond = 10; // Second time asking
     var timeToEnd = 1; // System will reset the system with this amount of seconds left
-    var grantTime = 35; // System will grant user extra time (grantTime will be set equal to "timeLeft")
+    var grantTime = 55; // System will grant user extra time (grantTime will be set equal to "timeLeft")
 
     var roomLocator_active = false;
     var facultyLocator_active = false;
@@ -421,7 +421,7 @@ window.onload = function(){
         else if(fac_name == "right low" || fac_name == "rat low")
             return "Rhett Lowe";
         
-        else if(fac_name == "cute King" || fac_name == "cute Kang" || fac_name == "Kyu Kang" || fac_name == "Hugh Kang" || fac_name == "puke King" || fac_name == "Hugh King" || fac_name == "King" || fac_name == "king" || fac_name == "kane" || fac_name == "Hugh Cain" || fac_name == "UK")
+        else if(fac_name == "cute King" || fac_name == "cute Kang" || fac_name == "Kyu Kang" || fac_name == "Hugh Kang" || fac_name == "puke King" || fac_name == "Hugh King" || fac_name == "King" || fac_name == "king" || fac_name == "kane" || fac_name == "Hugh Cain" || fac_name == "UK" || fac_name == "Huck King" || fac_name == "Hayek King" || fac_name == "How you came")
             return "Hyuk Kang";
         else if(fac_name == "new search" || fac_name == "research")
             return "new search";
@@ -670,6 +670,19 @@ window.onload = function(){
         yes = false;
         no = false;
         
+        
+        // Remove Animations
+        $(".room-name").removeClass('slideInDown');
+        $(".room-type").removeClass('slideInDown');
+        $(".room-img").removeClass('fadeIn');
+        $(".room-map").removeClass('fadeIn');
+
+        $(".faculty-name").removeClass('slideInDown');
+        $(".faculty-email").removeClass('slideInDown');
+        $(".faculty-number").removeClass('slideInDown');
+        $(".faculty-img").removeClass('fadeIn');   
+        $(".label").removeClass('slideInDown');   
+        
         possibleFaculty = [];
         possibleRoom = [];
         
@@ -762,6 +775,33 @@ window.onload = function(){
         
         roomLocator_active = false;
         facultyLocator_active = false;
+        
+        // ANIMATE RESULTS
+        
+        $(".room-name").addClass('slideInDown');
+        $(".room-type").addClass('slideInDown');
+        $(".room-img").addClass('fadeIn');
+        $(".room-map").addClass('fadeIn');
+
+        $(".faculty-name").hide();
+        $(".faculty-email").hide();
+        $(".faculty-number").hide();
+        $(".faculty-img").hide();
+        $(".label").hide();  
+   
+        $(".faculty-name").show();
+        $(".faculty-email").show();
+        $(".faculty-number").show();
+        $(".faculty-img").show();
+        $(".label").show();
+
+        $(".faculty-name").addClass('slideInDown');
+        $(".faculty-email").addClass('slideInDown');
+        $(".faculty-number").addClass('slideInDown');
+        $(".faculty-img").addClass('fadeIn'); 
+        $(".label").addClass('slideInDown');   
+
+        
     
     }
     

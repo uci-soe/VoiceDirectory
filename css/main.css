@@ -90,7 +90,7 @@ body
 .left-bubble .bubble, .right-bubble .bubble
 {
     width: 600PX;
-    margin-top: 26%;
+    margin-top: 24%;
 }
 .left-bubble .bubble
 {
@@ -528,7 +528,7 @@ z-index: 5;
 .faculty-commandText{
     position: absolute;
     right:-152px;
-    top: 216px;
+    top: 205px;
     width: 500px;
     
 }
@@ -589,7 +589,7 @@ z-index: 5;
 .event-dynamicText{
     font-size: 21px;    
     position: relative;
-    top:216px;
+    top:204px;
     margin-left: -55px;
 
     width: 42%;
