@@ -2,7 +2,7 @@ window.onload = function(){
             
     var timeLeft = 35; // System countdown after initiation
     var timeToAskFirst = 30; // System will ask if user wants more time after this amount of seconds
-    var timeToAskSecond = 20; // Second time asking
+    var timeToAskSecond = 10; // Second time asking
     var timeToEnd = 1; // System will reset the system with this amount of seconds left
     var grantTime = 35; // System will grant user extra time (grantTime will be set equal to "timeLeft")
 
@@ -496,6 +496,8 @@ window.onload = function(){
             
         }
         
+        systemAsked = false;
+        
         $('#dynamic-options').append(myStr);        
     }
     
@@ -776,9 +778,12 @@ window.onload = function(){
             yes = false;
         }
         else if(no){
-            if(resultShown){
+            if(resultShown)
                 displayMenuView();
-            }                
+            else if(clarifyFaculty_ACTIVE)
+                displayMenuView();
+            else if(events_ACTIVE)
+                displayMenuView();
             else
                 endSystem();
         }
