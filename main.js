@@ -1,10 +1,10 @@
 window.onload = function(){
             
-    var timeLeft = 550; // System countdown after initiation
-    var timeToAsk = 30; // System will ask if user wants more time after this amount of seconds
-    var timeToAsk2 = 10; // Second time asking
+    var timeLeft = 35; // System countdown after initiation
+    var timeToAskFirst = 30; // System will ask if user wants more time after this amount of seconds
+    var timeToAskSecond = 20; // Second time asking
     var timeToEnd = 1; // System will reset the system with this amount of seconds left
-    var grantTime = 550; // System will grant user extra time (grantTime will be set equal to "timeLeft")
+    var grantTime = 35; // System will grant user extra time (grantTime will be set equal to "timeLeft")
 
     var roomLocator_active = false;
     var facultyLocator_active = false;
@@ -664,6 +664,10 @@ window.onload = function(){
         roomLocator_active = false;
         facultyLocator_active = false;
         
+        //For YesOrNo
+        yes = false;
+        no = false;
+        
         possibleFaculty = [];
         possibleRoom = [];
         
@@ -771,28 +775,42 @@ window.onload = function(){
             systemAsked = false;
             yes = false;
         }
-        else if(no)
-            endSystem();
+        else if(no){
+            if(resultShown){
+                displayMenuView();
+            }                
+            else
+                endSystem();
+        }
+            
+//            endSystem();
     }
 
     function systemTimer() {                        
         timer = setTimeout(function(){
 
-            timeLeft--; $('#timeLeft').html(timeLeft);
-            if(timeLeft == timeToAsk || timeLeft == timeToAsk2) {
+            timeLeft--; 
+            $('#timeLeft').html(timeLeft);
+            
+            if(timeLeft == timeToAskFirst || timeLeft == timeToAskSecond) {
                 
-                if(timeLeft == timeToAsk2 && !resultShown) {
-                    endSystem();
-                }
                 
-                if(resultShown) {
-                    
+                if(timeLeft == timeToAskFirst && !resultShown){
                     message.text = output_moreTime;
                     window.speechSynthesis.speak(message);
                     
                     caption = output_moreTime;
-//                    systemPause(output_moreTime, output_moreTime.split(' ').length);
-//                    delay(output_moreTime, output_moreTime.split(' ').length);
+                    systemAsked = true; 
+                } 
+                
+                if(timeLeft == timeToAskSecond && !resultShown) 
+                    endSystem();
+                
+                if(resultShown) {
+                    message.text = output_moreTime;
+                    window.speechSynthesis.speak(message);
+                    
+                    caption = output_moreTime;
                     systemAsked = true; 
                 }
                 systemTimer();
@@ -1362,8 +1380,10 @@ window.onload = function(){
             //Event View
             'What events are coming up' : displayEventModal,
             'Show me upcoming events' : displayEventModal,
-            'I want to know upcoming events' : displayEventModal
+            'I want to know upcoming events' : displayEventModal,
             // randomWord can only be yes or no now to avoid it being called very    time. 
+            
+            ':randomWord' : {'regexp' : /^(yes|no)$/, 'callback' : yesOrno}
         };
         
         exitCommands = {
