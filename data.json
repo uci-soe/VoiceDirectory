@@ -234,6 +234,12 @@
             "firstName" : "Virginia",
             "lastName" : "Panish"        
         },
+        "the restroom"  :{
+            "roomName" : "The restroom",
+            "fullName" : "The restroom",
+            "firstName" : "The",
+            "lastName" : "restroom" 
+        },
         "Student Affairs" : {
             "roomName" : "2200"
         }
@@ -1249,6 +1255,23 @@
        		},
        		"facultyImage" : "",
        		"voiceResponse_faculty" : ""
+        },
+        "The restroom" : {
+       		"roomName" : "Restrooms",
+            "roomNumber" : "",
+       		"roomType" : "Public Area",
+       		"mapImage" : "/images/maps/Room2005A.png",
+       		"roomImage" : "/images/rooms/Room2205A.jpg",
+       		"voiceResponse_room" : "Here are the available restrooms in the 2nd floor. ",
+
+       		"facultyName" : "",
+       		"facultyEmail" : "",
+       		"facultyNumber" : "",
+       		"officeHours" : {
+
+       		},
+       		"facultyImage" : "",
+       		"voiceResponse_faculty" : "Here are the available restrooms in the 2nd floor."
        	}
 
     }
