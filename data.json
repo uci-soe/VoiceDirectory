@@ -1242,8 +1242,8 @@
        		"roomName" : "Restrooms",
             "roomNumber" : "",
        		"roomType" : "Public Area",
-       		"mapImage" : "/images/maps/Room2005A.png",
-       		"roomImage" : "/images/rooms/Room2205A.jpg",
+       		"mapImage" : "/images/maps/restroom.png",
+       		"roomImage" : "",
        		"voiceResponse_room" : "Here are the available restrooms in the 2nd floor. ",
 
        		"facultyName" : "",
