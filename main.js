@@ -349,8 +349,10 @@ window.onload = function(){
         else if(fac_name == "right low" || fac_name == "rat low")
             return "Rhett Lowe";
         
-        else if(fac_name == "cute King" || fac_name == "cute Kang" || fac_name == "Kyu Kang" || fac_name == "Hugh Kang" || fac_name == "puke King" || fac_name == "Hugh King" || fac_name == "King" || fac_name == "king" || fac_name == "kane")
+        else if(fac_name == "cute King" || fac_name == "cute Kang" || fac_name == "Kyu Kang" || fac_name == "Hugh Kang" || fac_name == "puke King" || fac_name == "Hugh King")
             return "Hyuk Kang";
+        else if(fac_name == "King" || fac_name == "king" || fac_name == "kane")
+            return "Kang";
         else if(fac_name == "new search" || fac_name == "research")
             return "new search";
 
