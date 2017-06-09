@@ -6,9 +6,9 @@ const ghOpts = {
     branch : "gh-pages"
  };
 
-gulp.task('gh-pages', function()
-          {
-    return gulp.src("./**/*").pipe(ghPages(ghOpts)); 
+gulp.task('gh-pages', function() {
+    return gulp.src(["./**/*", "!./.git/**/*"])
+        .pipe(ghPages(ghOpts)); 
 });
 
 
