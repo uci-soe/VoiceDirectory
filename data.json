@@ -517,6 +517,24 @@
        		"facultyImage" : "/images/faculty/penelopeCollins.jpg",
        		"voiceResponse_faculty" : "Enter Suite 2003 on your right and take a left at the end of the hall. Penelope Collins' office will be the seventh door on your right."
        	},
+        
+        "2039" : {
+       		"roomName" : "Room 2039",
+            "roomNumber" : "2039",
+       		"roomType" : "Copy Room",
+       		"mapImage" : "/images/maps/Room2039.png",
+       		"roomImage" : "/images/rooms/Room2039.jpg",
+       		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. After the third door on your right, take a left. Room 2039 will be the first door on your left.",
+
+       		"facultyName" : "",
+       		"facultyEmail" : "",
+       		"facultyNumber" : "",
+       		"officeHours" : {
+
+       		},
+       		"facultyImage" : "",
+       		"voiceResponse_faculty" : "Enter Suite 2003 on your right and take a left at the end of the hall. After the third door on your right, take a left. The Copy Room will be the first door on your left."
+       	},
 
        	"2040" : {
        		"roomName" : "Room 2040",
