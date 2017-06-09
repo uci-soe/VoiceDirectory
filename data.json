@@ -234,6 +234,12 @@
             "firstName" : "Virginia",
             "lastName" : "Panish"        
         },
+        "the restroom"  :{
+            "roomName" : "The restroom",
+            "fullName" : "The restroom",
+            "firstName" : "The",
+            "lastName" : "restroom" 
+        },
         "Student Affairs" : {
             "roomName" : "2200"
         }
@@ -258,24 +264,6 @@
        		},
        		"facultyImage" : "/images/faculty/one.jpg",
        		"voiceResponse_faculty" : "Jody Guarino's office is the first entrance on your right."
-       	},
-
-       	"2003" : {
-       		"roomName" : "Suite 2003",
-            "roomNumber" : "2003",
-       		"roomType" : "Suite",
-       		"mapImage" : "/images/maps/Room2003.png",
-       		"roomImage" : "/images/rooms/Room2003.jpg",
-       		"voiceResponse_room" : "Suite 2003 will either be on your first entrance on your left or the second entrance on your right.",
-
-       		"facultyName" : "",
-       		"facultyEmail" : "",
-       		"facultyNumber" : "",
-       		"officeHours" : {
-
-       		},
-       		"facultyImage" : "",
-       		"voiceResponse_faculty" : ""
        	},
 
        	"2005" : {
@@ -529,6 +517,24 @@
        		"facultyImage" : "/images/faculty/penelopeCollins.jpg",
        		"voiceResponse_faculty" : "Enter Suite 2003 on your right and take a left at the end of the hall. Penelope Collins' office will be the seventh door on your right."
        	},
+        
+        "2039" : {
+       		"roomName" : "Room 2039",
+            "roomNumber" : "2039",
+       		"roomType" : "Copy Room",
+       		"mapImage" : "/images/maps/Room2039.png",
+       		"roomImage" : "/images/rooms/Room2039.jpg",
+       		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. After the third door on your right, take a left. Room 2039 will be the first door on your left.",
+
+       		"facultyName" : "",
+       		"facultyEmail" : "",
+       		"facultyNumber" : "",
+       		"officeHours" : {
+
+       		},
+       		"facultyImage" : "",
+       		"voiceResponse_faculty" : "Enter Suite 2003 on your right and take a left at the end of the hall. After the third door on your right, take a left. The Copy Room will be the first door on your left."
+       	},
 
        	"2040" : {
        		"roomName" : "Room 2040",
@@ -564,6 +570,24 @@
        		},
        		"facultyImage" : "/images/faculty/hyukKang.jpg",
        		"voiceResponse_faculty" : "Enter Suite 2003 on your right and take a left at the end of the hall. Hyuk Kang's office will be the ninth door on your right."
+       	},
+        
+        "2043" : {
+       		"roomName" : "Room 2043",
+            "roomNumber" : "2043",
+       		"roomType" : "Information Tech Services",
+       		"mapImage" : "/images/maps/Room2043.png",
+       		"roomImage" : "/images/rooms/Room2043.jpg",
+       		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. Room 2043 will be the fifth door on your left.",
+
+       		"facultyName" : "",
+       		"facultyEmail" : "",
+       		"facultyNumber" : "",
+       		"officeHours" : {
+
+       		},
+       		"facultyImage" : "",
+       		"voiceResponse_faculty" : ""
        	},
 
        	"2044" : {
@@ -1249,6 +1273,23 @@
        		},
        		"facultyImage" : "",
        		"voiceResponse_faculty" : ""
+        },
+        "The restroom" : {
+       		"roomName" : "Restrooms",
+            "roomNumber" : "",
+       		"roomType" : "Public Area",
+       		"mapImage" : "/images/maps/restroom.png",
+       		"roomImage" : "/images/rooms/restroom.jpg",
+       		"voiceResponse_room" : "Here are the available restrooms in the 2nd floor. ",
+
+       		"facultyName" : "",
+       		"facultyEmail" : "",
+       		"facultyNumber" : "",
+       		"officeHours" : {
+
+       		},
+       		"facultyImage" : "",
+       		"voiceResponse_faculty" : "Here are the available restrooms in the 2nd floor."
        	}
 
     }
