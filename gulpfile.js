@@ -11,10 +11,11 @@ gulp.task('gh-pages', function()
     return gulp.src("./**/*").pipe(ghPages(ghOpts)); 
 });
 
-gulp.task('watch', ["gh-pages"], function()
-{
-    gulp.watch("./**/*", "gh-pages");
-});
+
+//gulp.task('watch', ["gh-pages"], function()
+//{
+//    gulp.watch("./**/*", "gh-pages");
+//});
           
 
-gulp.task("default", ["watch"]);
+gulp.task("default", ["gh-pages"]);
