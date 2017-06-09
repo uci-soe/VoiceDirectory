@@ -434,14 +434,13 @@ window.onload = function(){
         else if(fac_name == "right low" || fac_name == "rat low" || fac_name == "Right low")
             return "Rhett Lowe";
         
+
+        else if(fac_name == "King" || fac_name == "king" || fac_name == "kane")
+            return "Kang";
         
         else if(fac_name == "cute King" || fac_name == "cute Kang" || fac_name == "Kyu Kang" || fac_name == "Hugh Kang" || fac_name == "puke King" || fac_name == "Hugh King" || fac_name == "King" || fac_name == "king" || fac_name == "kane" || fac_name == "Hugh Cain" || fac_name == "UK" || fac_name == "Huck King" || fac_name == "Hayek King" || fac_name == "How you came")
             return "Hyuk Kang";
-        else if(fac_name == "King")
-            return "Kang";
-        
-        
-        
+
         else if(fac_name == "new search" || fac_name == "research")
             return "new search";
 
@@ -857,8 +856,6 @@ window.onload = function(){
             $('#timeLeft').html(timeLeft);
             
             if(timeLeft == timeToAskFirst || timeLeft == timeToAskSecond) {
-                
-                
                 if(timeLeft == timeToAskFirst && !resultShown){
                     message.text = output_moreTime;
                     window.speechSynthesis.speak(message);
