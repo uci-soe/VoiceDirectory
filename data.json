@@ -553,6 +553,24 @@
        		"facultyImage" : "/images/faculty/hyukKang.jpg",
        		"voiceResponse_faculty" : "Enter Suite 2003 on your right and take a left at the end of the hall. Hyuk Kang's office will be the ninth door on your right."
        	},
+        
+        "2043" : {
+       		"roomName" : "Room 2043",
+            "roomNumber" : "2043",
+       		"roomType" : "Information Tech Services",
+       		"mapImage" : "/images/maps/Room2043.png",
+       		"roomImage" : "/images/rooms/Room2043.jpg",
+       		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. Room 2043 will be the fifth door on your left.",
+
+       		"facultyName" : "",
+       		"facultyEmail" : "",
+       		"facultyNumber" : "",
+       		"officeHours" : {
+
+       		},
+       		"facultyImage" : "",
+       		"voiceResponse_faculty" : ""
+       	},
 
        	"2044" : {
        		"roomName" : "Room 2044",
@@ -1243,7 +1261,7 @@
             "roomNumber" : "",
        		"roomType" : "Public Area",
        		"mapImage" : "/images/maps/restroom.png",
-       		"roomImage" : "",
+       		"roomImage" : "/images/rooms/restroom.jpg",
        		"voiceResponse_room" : "Here are the available restrooms in the 2nd floor. ",
 
        		"facultyName" : "",
