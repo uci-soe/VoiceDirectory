@@ -46,15 +46,21 @@ window.onload = function(){
     var eventTodayWelcome = "Here's what's happening today.";
     var eventMonthWelcome = "Here's what's happening this month.";
     
-    function outputRepeat (output_item){    
-        
+    var badWords = ["stupid","a stupid","dumbass","a dumbass", "your mama","idiot","a idiot","dumb","a dumb"];
+    
+    function outputRepeat (output_item){            
         var output_temp = "";
-        
+
         if(isNaN(output_item)){
             if(/\d/.test(output_item)){
                 output_temp = "Sorry, Room " + output_item + " does not exist. Please make a valid request.";   
             }
+            else if(badWords.includes(output_item)){
+//                output_item = output_item.charAt(0).toLowerCase();
+                output_temp = "Sorry, that's inappropriate.";  
+            }
             else{
+
                 output_item = output_item.charAt(0).toUpperCase() + output_item.slice(1);
                  output_temp = "Sorry, " + output_item + " does not exist. Please make a valid request.";
             }
@@ -412,7 +418,6 @@ window.onload = function(){
             return "Sue Vaughn";
         else if(fac_name == "von" || fac_name == "Von")
             return "Vaughn";
-        
         else if(fac_name == "Denise early")
             return "Denise Earley";
         else if(fac_name == "early" || fac_name == "ear Lee")
@@ -1102,6 +1107,7 @@ window.onload = function(){
         
         
         facultyLocator = function(fac_name) {  
+            
             fac_name = spellChecker(fac_name);
             //Spell check faculty name input
             
@@ -1110,6 +1116,14 @@ window.onload = function(){
             
             var firstName = splitFacName[0];
             var lastName = splitFacName[1];
+            
+            var firstName_noCaps = firstName;
+            var firstName_noCaps = firstName_noCaps.toLowerCase();
+            if(badWords.includes(firstName)){
+                outputRepeat(firstName);
+                return;
+            }
+            
             
             var matchFound = false;
             
@@ -1291,14 +1305,15 @@ window.onload = function(){
         }
         var optionFunc = function(numString){
 //            alert("numString: " + numString);
-            
+//            
             var index = convertToNumber(numString) - 1;
 //            alert("index: " + index);
+//            alert(!isNaN(index));
             
             if(!isNaN(index)){
 //                alert("index: " + index + ", faculty length: " + possibleFaculty.length + ", room length: " + possibleRoom.length-1);
                 
-                if(index >= possibleFaculty.length && index >= possibleRoom.length - 1){
+                if(index >= possibleRoom.length && index >= possibleRoom.length - 1){
                     caption = output_validRequest;
                     message.text = caption;
                     window.speechSynthesis.speak(message);
