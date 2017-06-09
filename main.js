@@ -1,10 +1,10 @@
 window.onload = function(){
             
-    var timeLeft = 550; // System countdown after initiation
-    var timeToAsk = 30; // System will ask if user wants more time after this amount of seconds
-    var timeToAsk2 = 10; // Second time asking
+    var timeLeft = 55; // System countdown after initiation
+    var timeToAskFirst = 30; // System will ask if user wants more time after this amount of seconds
+    var timeToAskSecond = 10; // Second time asking
     var timeToEnd = 1; // System will reset the system with this amount of seconds left
-    var grantTime = 550; // System will grant user extra time (grantTime will be set equal to "timeLeft")
+    var grantTime = 55; // System will grant user extra time (grantTime will be set equal to "timeLeft")
 
     var roomLocator_active = false;
     var facultyLocator_active = false;
@@ -46,15 +46,21 @@ window.onload = function(){
     var eventTodayWelcome = "Here's what's happening today.";
     var eventMonthWelcome = "Here's what's happening this month.";
     
-    function outputRepeat (output_item){    
-        
+    var badWords = ["stupid","a stupid","dumbass","a dumbass", "your mama","idiot","a idiot","dumb","a dumb"];
+    
+    function outputRepeat (output_item){            
         var output_temp = "";
-        
+
         if(isNaN(output_item)){
             if(/\d/.test(output_item)){
                 output_temp = "Sorry, Room " + output_item + " does not exist. Please make a valid request.";   
             }
+            else if(badWords.includes(output_item)){
+//                output_item = output_item.charAt(0).toLowerCase();
+                output_temp = "Sorry, that's inappropriate.";  
+            }
             else{
+
                 output_item = output_item.charAt(0).toUpperCase() + output_item.slice(1);
                  output_temp = "Sorry, " + output_item + " does not exist. Please make a valid request.";
             }
@@ -412,7 +418,6 @@ window.onload = function(){
             return "Sue Vaughn";
         else if(fac_name == "von" || fac_name == "Von")
             return "Vaughn";
-        
         else if(fac_name == "Denise early")
             return "Denise Earley";
         else if(fac_name == "early" || fac_name == "ear Lee")
@@ -421,7 +426,7 @@ window.onload = function(){
         else if(fac_name == "right low" || fac_name == "rat low")
             return "Rhett Lowe";
         
-        else if(fac_name == "cute King" || fac_name == "cute Kang" || fac_name == "Kyu Kang" || fac_name == "Hugh Kang" || fac_name == "puke King" || fac_name == "Hugh King" || fac_name == "King" || fac_name == "king" || fac_name == "kane" || fac_name == "Hugh Cain" || fac_name == "UK")
+        else if(fac_name == "cute King" || fac_name == "cute Kang" || fac_name == "Kyu Kang" || fac_name == "Hugh Kang" || fac_name == "puke King" || fac_name == "Hugh King" || fac_name == "King" || fac_name == "king" || fac_name == "kane" || fac_name == "Hugh Cain" || fac_name == "UK" || fac_name == "Huck King" || fac_name == "Hayek King" || fac_name == "How you came")
             return "Hyuk Kang";
         else if(fac_name == "new search" || fac_name == "research")
             return "new search";
@@ -495,6 +500,8 @@ window.onload = function(){
             
             
         }
+        
+        systemAsked = false;
         
         $('#dynamic-options').append(myStr);        
     }
@@ -664,6 +671,23 @@ window.onload = function(){
         roomLocator_active = false;
         facultyLocator_active = false;
         
+        //For YesOrNo
+        yes = false;
+        no = false;
+        
+        
+        // Remove Animations
+        $(".room-name").removeClass('slideInDown');
+        $(".room-type").removeClass('slideInDown');
+        $(".room-img").removeClass('fadeIn');
+        $(".room-map").removeClass('fadeIn');
+
+        $(".faculty-name").removeClass('slideInDown');
+        $(".faculty-email").removeClass('slideInDown');
+        $(".faculty-number").removeClass('slideInDown');
+        $(".faculty-img").removeClass('fadeIn');   
+        $(".label").removeClass('slideInDown');   
+        
         possibleFaculty = [];
         possibleRoom = [];
         
@@ -756,6 +780,33 @@ window.onload = function(){
         
         roomLocator_active = false;
         facultyLocator_active = false;
+        
+        // ANIMATE RESULTS
+        
+        $(".room-name").addClass('slideInDown');
+        $(".room-type").addClass('slideInDown');
+        $(".room-img").addClass('fadeIn');
+        $(".room-map").addClass('fadeIn');
+
+        $(".faculty-name").hide();
+        $(".faculty-email").hide();
+        $(".faculty-number").hide();
+        $(".faculty-img").hide();
+        $(".label").hide();  
+   
+        $(".faculty-name").show();
+        $(".faculty-email").show();
+        $(".faculty-number").show();
+        $(".faculty-img").show();
+        $(".label").show();
+
+        $(".faculty-name").addClass('slideInDown');
+        $(".faculty-email").addClass('slideInDown');
+        $(".faculty-number").addClass('slideInDown');
+        $(".faculty-img").addClass('fadeIn'); 
+        $(".label").addClass('slideInDown');   
+
+        
     
     }
     
@@ -771,28 +822,45 @@ window.onload = function(){
             systemAsked = false;
             yes = false;
         }
-        else if(no)
-            endSystem();
+        else if(no){
+            if(resultShown)
+                displayMenuView();
+            else if(clarifyFaculty_ACTIVE)
+                displayMenuView();
+            else if(events_ACTIVE)
+                displayMenuView();
+            else
+                endSystem();
+        }
+            
+//            endSystem();
     }
 
     function systemTimer() {                        
         timer = setTimeout(function(){
 
-            timeLeft--; $('#timeLeft').html(timeLeft);
-            if(timeLeft == timeToAsk || timeLeft == timeToAsk2) {
+            timeLeft--; 
+            $('#timeLeft').html(timeLeft);
+            
+            if(timeLeft == timeToAskFirst || timeLeft == timeToAskSecond) {
                 
-                if(timeLeft == timeToAsk2 && !resultShown) {
-                    endSystem();
-                }
                 
-                if(resultShown) {
-                    
+                if(timeLeft == timeToAskFirst && !resultShown){
                     message.text = output_moreTime;
                     window.speechSynthesis.speak(message);
                     
                     caption = output_moreTime;
-//                    systemPause(output_moreTime, output_moreTime.split(' ').length);
-//                    delay(output_moreTime, output_moreTime.split(' ').length);
+                    systemAsked = true; 
+                } 
+                
+                if(timeLeft == timeToAskSecond && !resultShown) 
+                    endSystem();
+                
+                if(resultShown) {
+                    message.text = output_moreTime;
+                    window.speechSynthesis.speak(message);
+                    
+                    caption = output_moreTime;
                     systemAsked = true; 
                 }
                 systemTimer();
@@ -1039,6 +1107,7 @@ window.onload = function(){
         
         
         facultyLocator = function(fac_name) {  
+            
             fac_name = spellChecker(fac_name);
             //Spell check faculty name input
             
@@ -1047,6 +1116,14 @@ window.onload = function(){
             
             var firstName = splitFacName[0];
             var lastName = splitFacName[1];
+            
+            var firstName_noCaps = firstName;
+            var firstName_noCaps = firstName_noCaps.toLowerCase();
+            if(badWords.includes(firstName)){
+                outputRepeat(firstName);
+                return;
+            }
+            
             
             var matchFound = false;
             
@@ -1228,14 +1305,15 @@ window.onload = function(){
         }
         var optionFunc = function(numString){
 //            alert("numString: " + numString);
-            
+//            
             var index = convertToNumber(numString) - 1;
 //            alert("index: " + index);
+//            alert(!isNaN(index));
             
             if(!isNaN(index)){
 //                alert("index: " + index + ", faculty length: " + possibleFaculty.length + ", room length: " + possibleRoom.length-1);
                 
-                if(index >= possibleFaculty.length && index >= possibleRoom.length - 1){
+                if(index >= possibleRoom.length && index >= possibleRoom.length - 1){
                     caption = output_validRequest;
                     message.text = caption;
                     window.speechSynthesis.speak(message);
@@ -1362,8 +1440,10 @@ window.onload = function(){
             //Event View
             'What events are coming up' : displayEventModal,
             'Show me upcoming events' : displayEventModal,
-            'I want to know upcoming events' : displayEventModal
+            'I want to know upcoming events' : displayEventModal,
             // randomWord can only be yes or no now to avoid it being called very    time. 
+            
+            ':randomWord' : {'regexp' : /^(yes|no)$/, 'callback' : yesOrno}
         };
         
         exitCommands = {

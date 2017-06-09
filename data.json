@@ -266,24 +266,6 @@
        		"voiceResponse_faculty" : "Jody Guarino's office is the first entrance on your right."
        	},
 
-       	"2003" : {
-       		"roomName" : "Suite 2003",
-            "roomNumber" : "2003",
-       		"roomType" : "Suite",
-       		"mapImage" : "/images/maps/Room2003.png",
-       		"roomImage" : "/images/rooms/Room2003.jpg",
-       		"voiceResponse_room" : "Suite 2003 will either be on your first entrance on your left or the second entrance on your right.",
-
-       		"facultyName" : "",
-       		"facultyEmail" : "",
-       		"facultyNumber" : "",
-       		"officeHours" : {
-
-       		},
-       		"facultyImage" : "",
-       		"voiceResponse_faculty" : ""
-       	},
-
        	"2005" : {
        		"roomName" : "Room 2005",
             "roomNumber" : "2005",
@@ -570,6 +552,24 @@
        		},
        		"facultyImage" : "/images/faculty/hyukKang.jpg",
        		"voiceResponse_faculty" : "Enter Suite 2003 on your right and take a left at the end of the hall. Hyuk Kang's office will be the ninth door on your right."
+       	},
+        
+        "2043" : {
+       		"roomName" : "Room 2043",
+            "roomNumber" : "2043",
+       		"roomType" : "Information Tech Services",
+       		"mapImage" : "/images/maps/Room2043.png",
+       		"roomImage" : "/images/rooms/Room2043.jpg",
+       		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. Room 2043 will be the fifth door on your left.",
+
+       		"facultyName" : "",
+       		"facultyEmail" : "",
+       		"facultyNumber" : "",
+       		"officeHours" : {
+
+       		},
+       		"facultyImage" : "",
+       		"voiceResponse_faculty" : ""
        	},
 
        	"2044" : {
@@ -1260,8 +1260,8 @@
        		"roomName" : "Restrooms",
             "roomNumber" : "",
        		"roomType" : "Public Area",
-       		"mapImage" : "/images/maps/Room2005A.png",
-       		"roomImage" : "/images/rooms/Room2205A.jpg",
+       		"mapImage" : "/images/maps/restroom.png",
+       		"roomImage" : "/images/rooms/restroom.jpg",
        		"voiceResponse_room" : "Here are the available restrooms in the 2nd floor. ",
 
        		"facultyName" : "",
