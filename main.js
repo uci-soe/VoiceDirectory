@@ -228,6 +228,7 @@ window.onload = function(){
             if(resultShown)  {
                 $('#subtitle').html(resultsCaption);
                 promptNewSearch("main");
+                
             } 
             else if(clarifyFaculty_ACTIVE){
                 caption = output_listening;
@@ -241,8 +242,7 @@ window.onload = function(){
             }
             else if(events_ACTIVE){
                 caption = eventMonthWelcome;
-                $('#subtitle').html(caption);
-//                promptNewSearch("main");                
+                $('#subtitle').html(caption);               
                 promptNewSearch("modal");
                 
             }
@@ -298,6 +298,8 @@ window.onload = function(){
                 $(".newSearch-bubble").show();
                 $('.newSearch-bubble').addClass('animated fadeInDown');
             }, 1000);
+            
+            
         }
         else if(type == "modal"){
             $(".newSearch-modalPrompt").show();
@@ -314,6 +316,8 @@ window.onload = function(){
                 $(".newSearch-modalBubble").show();
                 $('.newSearch-modalBubble').addClass('animated fadeInDown');
             }, 1000);
+            
+            
         }
         
         
@@ -426,7 +430,7 @@ window.onload = function(){
         else if(fac_name == "right low" || fac_name == "rat low")
             return "Rhett Lowe";
         
-        else if(fac_name == "cute King" || fac_name == "cute Kang" || fac_name == "Kyu Kang" || fac_name == "Hugh Kang" || fac_name == "puke King" || fac_name == "Hugh King" || fac_name == "King" || fac_name == "king" || fac_name == "kane" || fac_name == "Hugh Cain" || fac_name == "UK" || fac_name == "Huck King" || fac_name == "Hayek King" || fac_name == "How you came")
+        else if(fac_name == "cute King" || fac_name == "cute Kang" || fac_name == "Kyu Kang" || fac_name == "Hugh Kang" || fac_name == "puke King" || fac_name == "Hugh King" || fac_name == "King" || fac_name == "king" || fac_name == "kane" || fac_name == "Hugh Cain" || fac_name == "UK" || fac_name == "Huck King" || fac_name == "Hayek King" || fac_name == "How you came" || fac_name == "heeyook kang" || fac_name == "hip pain" || fac_name == "hyatt pinion" || fac_name == "hugh connell")
             return "Hyuk Kang";
         else if(fac_name == "new search" || fac_name == "research")
             return "new search";
@@ -1412,22 +1416,28 @@ window.onload = function(){
             "Where is dr. *name":facultyLocator,
             "Where is dr *name":facultyLocator,
             "Where is a professor *name":facultyLocator, 
+            "Where is A professor *name":facultyLocator, 
             "Where is professor *name":facultyLocator, 
             
             "Where\'s dr. *name":facultyLocator,
             "Where\'s dr *name":facultyLocator,
             "Where\'s a professor *name":facultyLocator, 
+            "Where\'s A professor *name":facultyLocator, 
             "Where\'s professor *name":facultyLocator, 
             
             'I am looking for *name':facultyLocator,
             'I\'m looking for *name':facultyLocator,
             'I am looking for a *name':facultyLocator,
+            'I am looking for A *name':facultyLocator,
             'I\'m looking for a *name':facultyLocator,
+            'I\'m looking for A *name':facultyLocator,
             
             'Where is *name':facultyLocator,
             'Where\'s *name':facultyLocator,
             'Where is a *name':facultyLocator,
+            'Where is A *name':facultyLocator,
             'Where\'s a *name':facultyLocator,
+            'Where\'s A *name':facultyLocator,
             
             
             
