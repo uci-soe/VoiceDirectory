@@ -334,7 +334,7 @@
        		"officeHours" : {
 
        		},
-       		"facultyImage" : "/images/faculty/kimBurge.png",
+       		"facultyImage" : "/images/faculty/kimBurge.jpg",
        		"voiceResponse_faculty" : "Kim Burge's office is at the end of the hallway straight ahead."
        	},
 
@@ -650,7 +650,7 @@
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2048.png",
        		"roomImage" : "",
-       		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. Room 2046 will be the eleventh door on your right.",
+       		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. Room 2048 will be the eleventh door on your right.",
 
        		"facultyName" : "George Farkas",
        		"facultyEmail" : "gfarkas@uci.edu",
