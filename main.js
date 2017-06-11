@@ -359,28 +359,30 @@ window.onload = function(){
         if(fac_name == "Berg" || fac_name == "Cambridge" || fac_name == "Burg" || fac_name == "Birch" )
             return "Burge";
         
-        else if(fac_name == "Janelle Lau" || fac_name == "Professor Lau"  || fac_name == "Lau" || fac_name == "Janelle now" || fac_name == "Janelle Lao" || fac_name == "genola" || fac_name == "genola" || fac_name == "genello")
+        else if(fac_name == "Janelle Lau" || fac_name == "Professor Lau"  || fac_name == "Lau" || fac_name == "Janelle now" || fac_name == "Janelle Lao" || fac_name == "genola" || fac_name == "genola" || fac_name == "genello" || fac_name == "Janelle out" || fac_name == "Janel Lao")
             return "Jenel Lao";
-        else if(fac_name == "Lau")
+        else if(fac_name == "Lau" || fac_name == "out")
             return "Lao";
         
-        else if(fac_name == "die shoe" || fac_name == "disha" || fac_name == "disa" || fac_name == "D shoe" || fac_name == "Daiso" || fac_name == "DC" || fac_name == "DC" || fac_name == "zissou" || fac_name == "the zoo")
+        else if(fac_name == "die shoe" || fac_name == "disha" || fac_name == "disa" || fac_name == "D shoe" || fac_name == "Daiso" || fac_name == "DC" || fac_name == "DC" || fac_name == "zissou" || fac_name == "the zoo" || fac_name == "Dai Chu" || fac_name == "deitch" || fac_name == "dye shoe" || fac_name == "dice shoe")
             return "Di Xu";
-        else if(fac_name == "shoe" || fac_name == "sure" || fac_name == "Sue")
+        else if(fac_name == "shoe" || fac_name == "sure" || fac_name == "Sue" || fac_name == "zoo")
             return "Xu";
+        
+        
         
         else if(fac_name == "young" || fac_name == "You")
             return "Young";
         
-        else if(fac_name == "constance iloh" || fac_name == "Constance Ehlo" || fac_name == "constants Hilo" || fac_name == "Constance I love" || fac_name == "Constance Ela" || fac_name == "Constance eilo" || fac_name == "Constance Isla" || fac_name == "Constance Hilo" || fac_name == "Constance eloah")
+        else if(fac_name == "constance iloh" || fac_name == "Constance Ehlo" || fac_name == "constants Hilo" || fac_name == "Constance I love" || fac_name == "Constance Ela" || fac_name == "Constance eilo" || fac_name == "Constance Isla" || fac_name == "Constance Hilo" || fac_name == "Constance eloah" || fac_name == "Constance Islas")
             return "Constance Iloh";
         else if(fac_name == "I know" || fac_name == "I lo" || fac_name == "Missy Lowe" || fac_name == "Constance eloah")
             return "Iloh";
         
-        else if(fac_name == "Deborah vendell" || fac_name == "Deborah vandal" || fac_name == "Deborah vandal" || fac_name == "Deborah vandell" || fac_name == "Deborah Vando" || fac_name == "Deborah Van Dale" || fac_name == "Deborah Venta" || fac_name == "Deborah Vendome")
+        else if(fac_name == "Deborah vendell" || fac_name == "Deborah vandal" || fac_name == "Deborah vandal" || fac_name == "Deborah vandell" || fac_name == "Deborah Vando" || fac_name == "Deborah Van Dale" || fac_name == "Deborah Venta" || fac_name == "Deborah Vendome" || fac_name == "Deborah vendal" || fac_name == "Deborah van daele" || fac_name == "Deborah Venda" || fac_name == "Deborah Van-Del" || fac_name == "Deborah Vendo")
             return "Deborah Vandell";
         
-        else if(fac_name == "vendell" || fac_name == "bandel" || fac_name == "Van Dell" || fac_name == "vandal")
+        else if(fac_name == "vendell" || fac_name == "bandel" || fac_name == "Van Dell" || fac_name == "vandal" || fac_name == "Vandell" || fac_name == "vandell" || fac_name == "van daele" || fac_name == "Venda" || fac_name == "Vendo" || fac_name == "Van-Del")
             return "Vandell";
         
         else if(fac_name == "Melinda petre" || fac_name == "Melinda Petrie" || fac_name == "Melinda Petry" || fac_name == "Melinda Peter" || fac_name == "Petra" || fac_name == "Melinda better" || fac_name == "Melinda Petra")
@@ -413,9 +415,9 @@ window.onload = function(){
         else if(fac_name == "Sarah sing" || fac_name == "sing" || fac_name == "ceresin" || fac_name == "Sarah singe" || fac_name == "Sarah sink" || fac_name == "terracing")     
             return "Sarah Singh";
         
-        else if(fac_name == "Susan Toma bears" || fac_name == "Susan Toma Berg" || fac_name == "Susan Toma bush" || fac_name == "Susan Toma Burj" || fac_name == "Susan Toma Burge" || fac_name == "Susan Toma Birch" || fac_name == "Susan Thelma Burge" || fac_name == "Susan Tama Burge" || fac_name == "Susan Birch" || fac_name == "Susan Toma" )
+        else if(fac_name == "Susan Toma bears" || fac_name == "Susan Toma Berg" || fac_name == "Susan Toma bush" || fac_name == "Susan Toma Burj" || fac_name == "Susan Toma Burge" || fac_name == "Susan Toma Birch" || fac_name == "Susan Thelma Burge" || fac_name == "Susan Tama Burge" || fac_name == "Susan Birch" || fac_name == "Susan Tory Burch" || fac_name == "Susan Toma Bridge")
             return "Susan Toma Berge";
-        else if (fac_name == "Toma Berg" || fac_name == "Toma bersch" || fac_name == "Toma Burge" || fac_name == "Toma bears")
+        else if (fac_name == "Toma Berg" || fac_name == "Toma bersch" || fac_name == "Toma Burge" || fac_name == "Toma bears" || fac_name == "Toma Bridge" || fac_name == "Tama Burge" || fac_name == "Toma Birch" || fac_name == "Thelma Burge" || fac_name == "Toma Burj")
             return "Toma Berge";
         
         else if(fac_name == "Gene Stone" || fac_name == "June Stone" || fac_name == "jeans Stone" || fac_name == "stone")
@@ -462,14 +464,14 @@ window.onload = function(){
             return "Rhett Lowe";
 
         else if(fac_name == "cute King" || fac_name == "cute Kang" || fac_name == "Kyu Kang" || fac_name == "Hugh Kang" || fac_name == "puke King" || fac_name == "Hugh King" || fac_name == "Hugh Cain" || fac_name == "UK" || fac_name == "Huck King" || fac_name == "Hayek King" || fac_name == "How you came" || fac_name == "heeyook kang" || fac_name == "hip pain" || fac_name == "hyatt pinion" || fac_name == "hugh connell")
-            
-            
             return "Hyuk Kang";
-        
         else if(fac_name == "King" || fac_name == "king" || fac_name == "kane")
             return "Kang";
         
-        else if(fac_name == "Jayda Jenkins")
+        else if(fac_name == "ho Sun King" | fac_name == "ho-sun Kang" || fac_name == "ho-sun King")
+            return "Hosun Kang";
+        
+        else if(fac_name == "Jayda Jenkins" || fac_name == "Jay Jenkins" || fac_name == "J Jenkins" || fac_name == "Jada Jenkins")
             return "Jade Jenkins";
     
 
@@ -1126,27 +1128,27 @@ window.onload = function(){
 //        }
 //        
         
-//        drChecker = function(fac_name)
-//        {
-//            fac_name = spellChecker(fac_name);
-//            console.log(fac_name);
-//            drListFullName = ["Sandra Simpkins","Virginia Panish","Geneva Lopez-Sandoval","Drew Bailey","Jacquelynne Eccles","Robert Duncan","Constance Iloh","Emily Penner","Rachel Baker","Greg Duncan","Di Xu","Jade Jenkins","Deborah Vandell","George Farkas","Penelope Colllins","Susan Toma Berge","Maria Rosales Rueda","Jamal Abedi","Liana Brouillette","Ja","Melinda Petre","Hosun Kang", "Kim Burge"];
-//            
-//            
-//            drListLastName = ["Simpkins","Panish","Lope-Sandoval","Bailey","Eccles","Duncan","Iloh","Penner","Baker","Duncan","Xu","Jenkins","Vandell","Farkas","Collins","Toma Berge","Rosales Rueda","Abedi","Brouillette","Lao","Petre","Kang","Burge"];
-//            
-//            
-//            // Checks to see if fac_name is in drList. If not in drList indexOf will    return -1.
-//            if(drListFullName.indexOf(fac_name) != -1)
-//                facultyLocator(fac_name);
-//            else if(drListLastName.indexOf(fac_name) != -1)
-//                facultyLocator(fac_name);
-//            else
-//            {
-//                outputRepeat(fac_name);
-//                
-//            }
-//        }
+        drChecker = function(fac_name)
+        {
+            fac_name = spellChecker(fac_name);
+            console.log(fac_name);
+            drListFullName = ["Sandra Simpkins","Virginia Panish","Geneva Lopez-Sandoval","Drew Bailey","Jacquelynne Eccles","Robert Duncan","Constance Iloh","Emily Penner","Rachel Baker","Greg Duncan","Di Xu","Jade Jenkins","Deborah Vandell","George Farkas","Penelope Collins","Susan Toma Berge","Maria Rosales Rueda","Jamal Abedi","Liane Brouillette","Jenel Lao","Melinda Petre","Hosun Kang", "Kim Burge"];
+            
+            
+            drListLastName = ["Simpkins","Panish","Lope-Sandoval","Bailey","Eccles","Duncan","Iloh","Penner","Baker","Duncan","Xu","Jenkins","Vandell","Farkas","Collins","Toma Berge","Rosales Rueda","Abedi","Brouillette","Lao","Petre","Kang","Burge"];
+            
+            
+            // Checks to see if fac_name is in drList. If not in drList indexOf will    return -1.
+            if(drListFullName.indexOf(fac_name) != -1)
+                facultyLocator(fac_name);
+            else if(drListLastName.indexOf(fac_name) != -1)
+                facultyLocator(fac_name);
+            else
+            {
+                outputRepeat(fac_name);
+                
+            }
+        }
         
         
         
@@ -1450,20 +1452,23 @@ window.onload = function(){
 //            "I'm looking for a Miss *name":msChecker,
 //            "I'm looking for mrs. *name":msChecker,
             
-            "I'm looking for dr. *name":facultyLocator,
-            "I'm looking for dr *name":facultyLocator,
+            "I'm looking for dr. *name":drChecker,
+            "I'm looking for dr *name":drChecker,
+            "I'm looking for a dr *name":drChecker,
+            "I'm looking for a doctor *name":drChecker,
+            "I'm looking for doctor *name":drChecker,
             "I'm looking for a professor *name":facultyLocator, 
             "I'm looking for professor *name":facultyLocator, 
             'I am looking for professor *name':facultyLocator,
             
-            "Where is dr. *name":facultyLocator,
-            "Where is dr *name":facultyLocator,
+            "Where is dr. *name":drChecker,
+            "Where is dr *name":drChecker,
             "Where is a professor *name":facultyLocator, 
             "Where is A professor *name":facultyLocator, 
             "Where is professor *name":facultyLocator, 
             
-            "Where\'s dr. *name":facultyLocator,
-            "Where\'s dr *name":facultyLocator,
+            "Where\'s dr. *name":drChecker,
+            "Where\'s dr *name":drChecker,
             "Where\'s a professor *name":facultyLocator, 
             "Where\'s A professor *name":facultyLocator, 
             "Where\'s professor *name":facultyLocator, 
