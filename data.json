@@ -54,7 +54,7 @@
             "firstName" : "Jamal",
             "lastName" : "Abedi"
         },
-        "Maria Rosales Rueda" : {
+        "Maria Rosales-Rueda" : {
             "roomName" : "2036",
             "fullName" : "Maria Rosales-Rueda",
             "firstName" : "Maria",
@@ -192,14 +192,14 @@
             "firstName" : "Susan",
             "lastName" : "Guilfoyle"
         },
-        "Susan Toma Berge" : {
+        "Susan Toma-Berge" : {
             "roomName" : "2082",
             "fullName" : "Susan Toma-Berge",
             "firstName" : "Susan",
             "lastName" : "Toma-Berge"
         },
         "Jeanne Stone" : {
-            "roomName" : "2084a",
+            "roomName" : "2084",
             "fullName" : "Jeanne Stone",
             "firstName" : "Jeanne",
             "lastName" : "Stone"
@@ -916,7 +916,7 @@
 
        		},
        		"facultyImage" : "/images/faculty/genevaLopezSandoval.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Geneva Lopez-Sandoval office will be the second-to-the-last door on your left."
+       		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Geneva Lopez-Sandoval's office will be the second-to-the-last door on your left."
        	},
 
        	"2075" : {
