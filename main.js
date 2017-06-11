@@ -455,7 +455,9 @@ window.onload = function(){
         else if(fac_name == "right low" || fac_name == "rat low" || fac_name == "Right low")
             return "Rhett Lowe";
 
-        else if(fac_name == "cute King" || fac_name == "cute Kang" || fac_name == "Kyu Kang" || fac_name == "Hugh Kang" || fac_name == "puke King" || fac_name == "Hugh King" || fac_name == "King" || fac_name == "king" || fac_name == "kane" || fac_name == "Hugh Cain" || fac_name == "UK" || fac_name == "Huck King" || fac_name == "Hayek King" || fac_name == "How you came" || fac_name == "heeyook kang" || fac_name == "hip pain" || fac_name == "hyatt pinion" || fac_name == "hugh connell")
+        else if(fac_name == "cute King" || fac_name == "cute Kang" || fac_name == "Kyu Kang" || fac_name == "Hugh Kang" || fac_name == "puke King" || fac_name == "Hugh King" || fac_name == "Hugh Cain" || fac_name == "UK" || fac_name == "Huck King" || fac_name == "Hayek King" || fac_name == "How you came" || fac_name == "heeyook kang" || fac_name == "hip pain" || fac_name == "hyatt pinion" || fac_name == "hugh connell")
+            
+            
             return "Hyuk Kang";
         
         else if(fac_name == "King" || fac_name == "king" || fac_name == "kane")
@@ -1143,7 +1145,7 @@ window.onload = function(){
         
         
         facultyLocator = function(fac_name) {  
-            
+            alert(fac_name);
             fac_name = spellChecker(fac_name);
             //Spell check faculty name input
             
@@ -1340,27 +1342,29 @@ window.onload = function(){
                 return word;
         }
         var optionFunc = function(numString){
-//            alert("numString: " + numString);
-//            
+           // alert("numString: " + numString);
+//          
+            //alert(roomLocator_active + " " + facultyLocator_active);
             var index = convertToNumber(numString) - 1;
-//            alert("index: " + index);
+            //alert("index: " + index);
 //            alert(!isNaN(index));
             
             if(!isNaN(index)){
 //                alert("index: " + index + ", faculty length: " + possibleFaculty.length + ", room length: " + possibleRoom.length-1);
-                
-                if(index >= possibleRoom.length && index >= possibleRoom.length - 1){
+                //alert(possibleRoom.length);
+                if(index >= possibleRoom.length && index >= possibleRoom.length - 1 && roomLocator_active){
                     caption = output_validRequest;
                     message.text = caption;
                     window.speechSynthesis.speak(message);
-                     return;
+                    //alert("about to return");
+                    return;
                 }
                    
-
+                
                 annyang.addCommands(commands);
 
                 var indexItem = "";
-    //            alert(roomLocator_active + " " + facultyLocator_active);
+    //           alert(roomLocator_active + " " + facultyLocator_active);
                 if(roomLocator_active){
                     if(possibleRoom[0] == "2005")
                         indexItem = possibleRoom[index]; 
@@ -1370,6 +1374,7 @@ window.onload = function(){
                     caption = data.rooms[indexItem].voiceResponse_room;
                 }
                 else if(facultyLocator_active){
+                    alert("fac locator active");
                     indexItem = possibleFaculty[index];
                     num = data.faculty[possibleFaculty[index]].roomName;
                     caption = data.rooms[num].voiceResponse_faculty;
