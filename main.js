@@ -348,9 +348,9 @@ window.onload = function(){
     }
     
     function spellChecker(fac_name){
-        if(fac_name == "cambridge" || fac_name == "Cambridge" || fac_name == "Kim Birge" || fac_name == "Kim Bridge" || fac_name == "Burg" || fac_name == "Kim birge" || fac_name == "Kim Berg" || fac_name == "Birch")
+        if(fac_name == "cambridge" || fac_name == "Cambridge" || fac_name == "Kim Birge" || fac_name == "Kim Bridge"  || fac_name == "Kim birge" || fac_name == "Kim Berg" || fac_name == "Kim Birch")
             return "Kim Burge";
-        if(fac_name == "Berg" || fac_name == "Cambridge")
+        if(fac_name == "Berg" || fac_name == "Cambridge" || fac_name == "Burg" || fac_name == "Birch" )
             return "Burge";
         
         else if(fac_name == "Janelle Lau" || fac_name == "Professor Lau"  || fac_name == "Lau" || fac_name == "Janelle now" || fac_name == "Janelle Lao" || fac_name == "genola")
