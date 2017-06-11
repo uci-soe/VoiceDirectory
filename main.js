@@ -356,12 +356,12 @@ window.onload = function(){
     function spellChecker(fac_name){
         if(fac_name == "cambridge" || fac_name == "Cambridge" || fac_name == "Kim Birge" || fac_name == "Kim Bridge"  || fac_name == "Kim birge" || fac_name == "Kim Berg" || fac_name == "Kim Birch" || fac_name == "Kim Burch")
             return "Kim Burge";
-        if(fac_name == "Berg" || fac_name == "Cambridge" || fac_name == "Burg" || fac_name == "Birch" )
+        if(fac_name == "Berg" || fac_name == "Cambridge" || fac_name == "Burg" || fac_name == "Birch" || fac_name == "Bridge" || fac_name == "birge" || fac_name == "Birge" || fac_name == "bridge" || fac_name == "Burch" || fac_name == "burch")
             return "Burge";
         
-        else if(fac_name == "Janelle Lau" || fac_name == "Professor Lau"  || fac_name == "Lau" || fac_name == "Janelle now" || fac_name == "Janelle Lao" || fac_name == "genola" || fac_name == "genola" || fac_name == "genello" || fac_name == "Janelle out" || fac_name == "Janel Lao")
+        else if(fac_name == "Janelle Lau" || fac_name == "Professor Lau" || fac_name == "Janelle now" || fac_name == "Janelle Lao" || fac_name == "genola" || fac_name == "genola" || fac_name == "genello" || fac_name == "Janelle out" || fac_name == "Janel Lao")
             return "Jenel Lao";
-        else if(fac_name == "Lau" || fac_name == "out")
+        else if(fac_name == "Lau" || fac_name == "out" || fac_name == "now")
             return "Lao";
         
         else if(fac_name == "die shoe" || fac_name == "disha" || fac_name == "disa" || fac_name == "D shoe" || fac_name == "Daiso" || fac_name == "DC" || fac_name == "DC" || fac_name == "zissou" || fac_name == "the zoo" || fac_name == "Dai Chu" || fac_name == "deitch" || fac_name == "dye shoe" || fac_name == "dice shoe" || fac_name == "D Sue")
@@ -374,24 +374,21 @@ window.onload = function(){
         
         else if(fac_name == "constance iloh" || fac_name == "Constance Ehlo" || fac_name == "constants Hilo" || fac_name == "Constance I love" || fac_name == "Constance Ela" || fac_name == "Constance eilo" || fac_name == "Constance Isla" || fac_name == "Constance Hilo" || fac_name == "Constance eloah" || fac_name == "Constance Islas")
             return "Constance Iloh";
-        else if(fac_name == "I know" || fac_name == "I lo" || fac_name == "Missy Lowe" || fac_name == "Constance eloah")
+        else if(fac_name == "I know" || fac_name == "I lo" || fac_name == "Missy Lowe" || fac_name == "Constance eloah" || fac_name == "Ehlo" || fac_name == "Hilo" || fac_name == "I low" || fac_name == "I love" || fac_name == "eloah")
             return "Iloh";
         
         else if(fac_name == "Deborah vendell" || fac_name == "Deborah vandal" || fac_name == "Deborah vandal" || fac_name == "Deborah vandell" || fac_name == "Deborah Vando" || fac_name == "Deborah Van Dale" || fac_name == "Deborah Venta" || fac_name == "Deborah Vendome" || fac_name == "Deborah vendal" || fac_name == "Deborah van daele" || fac_name == "Deborah Venda" || fac_name == "Deborah Van-Del" || fac_name == "Deborah Vendo" || fac_name == "Debra vendal" || fac_name == "Debra vendel" || fac_name == "Debra Vendo" || fac_name == "Debra Van-Del")
             return "Deborah Vandell";
-        
-        else if(fac_name == "vendell" || fac_name == "bandel" || fac_name == "Van Dell" || fac_name == "vandal" || fac_name == "Vandell" || fac_name == "vandell" || fac_name == "van daele" || fac_name == "Venda" || fac_name == "Vendo" || fac_name == "Van-Del")
+        else if(fac_name == "vendell" || fac_name == "bandel" || fac_name == "Van Dell" || fac_name == "vandal" || fac_name == "Vandell" || fac_name == "vandell" || fac_name == "van daele" || fac_name == "Venda" || fac_name == "Vendo" || fac_name == "Van-Del" || fac_name == "Bendo" || fac_name == "Vindale" || fac_name == "vendal" || fac_name == "Bendell")
             return "Vandell";
         
         else if(fac_name == "Melinda petre" || fac_name == "Melinda Petrie" || fac_name == "Melinda Petry" || fac_name == "Melinda Peter" || fac_name == "Melinda better" || fac_name == "Melinda Petra" || fac_name == "Melinda Penner")
             return "Melinda Petre";
-        else if(fac_name == "Petri" || fac_name == "Petrie" || fac_name == "Petry" || fac_name == "Peter" || fac_name == "petre" || fac_name == "Petra")
+        else if(fac_name == "Petri" || fac_name == "Petrie" || fac_name == "Petry" || fac_name == "Peter" || fac_name == "petre" || fac_name == "Petra" || fac_name == "Putter")
             return "Petre";
         //Check these
         else if(fac_name == "Jacqueline Echols" || fac_name == "Jacqueline eckley's" || fac_name == "Jaclyn eckley's" || fac_name == "Jacqueline eclise" || fac_name == "Jaclyn a class" || fac_name == "Jacqueline Ellis" || fac_name == "Jacqueline eClass" || fac_name == "Jacqueline Equus" )         
             return "Jacquelynne Eccles";
-        
-        
         else if(fac_name == "Echols"|| fac_name == "a class" || fac_name == "glass" || fac_name=="at glass" || fac_name == "akhilesh" || fac_name == "ecla" || fac_name == "eckley's" || fac_name == "X")
             return "Eccles";
          
@@ -410,8 +407,10 @@ window.onload = function(){
         else if(fac_name == "Lopez Sandoval")
             return "Lopez-Sandoval"
             
-        else if(fac_name == "Sarah sing" || fac_name == "sing" || fac_name == "ceresin" || fac_name == "Sarah singe" || fac_name == "Sarah sink" || fac_name == "terracing")     
+        else if(fac_name == "Sarah sing" || fac_name == "ceresin" || fac_name == "Sarah singe" || fac_name == "Sarah sink" || fac_name == "terracing")     
             return "Sarah Singh";
+        else if(fac_name == "sing")
+            return "Singh";
         
         else if(fac_name == "Susan Toma bears" || fac_name == "Susan Toma Berg" || fac_name == "Susan Toma bush" || fac_name == "Susan Toma Burj" || fac_name == "Susan Toma Burge" || fac_name == "Susan Toma Birch" || fac_name == "Susan Thelma Burge" || fac_name == "Susan Tama Burge" || fac_name == "Susan Birch" || fac_name == "Susan Tory Burch" || fac_name == "Susan Toma Bridge" || fac_name == "Susan Toma bersch" || fac_name == "Susan Toma Berge")
             return "Susan Toma-Berge";
@@ -423,19 +422,23 @@ window.onload = function(){
         else if(fac_name == "stone")
             return "Stone";
         
-        else if(fac_name == "Maria tax" || fac_name == "Murrieta Cox" || fac_name == "Maria tactics" || fac_name == "Maria tac-x" || fac_name == "tac-x" || fac_name == "Mystic X" || fac_name == "Murrieta")
+        else if(fac_name == "Maria tax" || fac_name == "Murrieta Cox" || fac_name == "Maria tactics" || fac_name == "Maria tac-x" || fac_name == "Mystic X" || fac_name == "Murrieta")
             return "Maria Takacs";
+        else if(fac_name == "tac-x" || fac_name == "cats" || fac_name == "tacacs" || fac_name == "the cats" || fac_name == "it to cats" || fac_name == "tax" || fac_name == "tactics" || fac_name == "Technics" || fac_name == "a tech X" || fac_name == "Tech X")
+            return "Takacs";
         
-        else if(fac_name == "Sandra Simkins" || fac_name == "Simkins")
+        else if(fac_name == "Sandra Simkins")
             return "Sandra Simpkins";
+        else if(fac_name == "Simkins")
+            return "Simpkins"
         
-        else if(fac_name == "Maria Rosales weather" || fac_name == "Maria Rosales Loretta" || fac_name == "Maria Rosales Ruda" || fac_name == "Maria Rosales reta" || fac_name == "Maria Rosales Beretta" || fac_name == "Maria Rosales" || fac_name == "Maria Goretti" || fac_name == "Maria Rosales Murrieta" )
+        else if(fac_name == "Maria Rosales weather" || fac_name == "Maria Rosales Loretta" || fac_name == "Maria Rosales Ruda" || fac_name == "Maria Rosales reta" || fac_name == "Maria Rosales Beretta" || fac_name == "Maria Rosales" || fac_name == "Maria Goretti" || fac_name == "Maria Rosales Murrieta" || fac_name == "Maria Rosales Florida" || fac_name == "Maria Rosales Rueda" || fac_name == "Maria Rosales Bru weather")
             return "Maria Rosales-Rueda";
-        else if(fac_name == "Rosales Rueda" || fac_name == "Rosales Beretta" || fac_name == "Rosales Murrieta" || fac_name == "Rosales reta" || fac_name == "Rosales Loretta")
+        else if(fac_name == "Rosales Rueda" || fac_name == "Rosales Beretta" || fac_name == "Rosales Murrieta" || fac_name == "Rosales reta" || fac_name == "Rosales Loretta" || fac_name == "Rosales weather" || fac_name == "Maria Rosales La Mirada" || fac_name == "Rosales ruella")
             return "Rosales-Rueda";
         
         
-        else if(fac_name == "Jamal a Betty" || fac_name == "Jamal abedi" || fac_name == " Chemawa Betty" || fac_name == "Jamal Betty")
+        else if(fac_name == "Jamal a Betty" || fac_name == "Jamal abedi" || fac_name == "Chemawa Betty" || fac_name == "Jamal Betty")
             return "Jamal Abedi";
         else if(fac_name == "a Betty" || fac_name == "abiti" || fac_name == "Betty")
             return "Abedi";
@@ -453,7 +456,7 @@ window.onload = function(){
         else if(fac_name == "Jeff Johnson")
             return "Jeff Johnston";
         else if(fac_name == "Johnson")
-            return "Johnson";
+            return "Johnston";
         
         
         else if(fac_name == "Denise early" || fac_name == "Denise Ireland")
@@ -463,6 +466,8 @@ window.onload = function(){
        
         else if(fac_name == "right low" || fac_name == "rat low" || fac_name == "Right low" || fac_name == "reloj" || fac_name == "Reloj")
             return "Rhett Lowe";
+        else if(fac_name == "low")
+            return "Lowe";
 
         else if(fac_name == "cute King" || fac_name == "cute Kang" || fac_name == "Kyu Kang" || fac_name == "Hugh Kang" || fac_name == "puke King" || fac_name == "Hugh King" || fac_name == "Hugh Cain" || fac_name == "UK" || fac_name == "Huck King" || fac_name == "Hayek King" || fac_name == "How you came" || fac_name == "heeyook kang" || fac_name == "hip pain" || fac_name == "hyatt pinion" || fac_name == "hugh connell")
             return "Hyuk Kang";
@@ -474,6 +479,12 @@ window.onload = function(){
         
         else if(fac_name == "Jayda Jenkins" || fac_name == "Jay Jenkins" || fac_name == "J Jenkins" || fac_name == "Jada Jenkins")
             return "Jade Jenkins";
+        
+        else if(fac_name == "mcdugle")
+            return "McDougall";
+        
+        else if(fac_name == "Spencer Clark")
+            return "Spenser Clark";
     
 
         else if(fac_name == "new search" || fac_name == "research")
@@ -1016,7 +1027,7 @@ window.onload = function(){
         mrListFullName = ["Jamal Abedi","Rhett Lowe","Hyuk Kang","Spenser Clark","Georg Farkas","Greg Duncan","Robert Duncan","Drew Bailey","Jeff Johnston","David Lim","Neil Young"];
             
         // Last name
-        mrListLastName = ["Abedi","Lowe","Kang","Clarks","Farkas","Duncan","Duncan","Bailey","Johnston","Lim","Young"];
+        mrListLastName = ["Abedi","Lowe","Kang","Clark","Farkas","Duncan","Duncan","Bailey","Johnston","Lim","Young"];
         
         
         // LIST OF MISS'S
