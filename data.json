@@ -13,7 +13,7 @@
             "lastName" : "Lim"
         },
         "Kim Burge" : {
-            "roomName" : "2041",
+            "roomName" : "2009",
             "fullName" : "Kim Burge",
             "firstName" : "Kim",
             "lastName" : "Burge"
@@ -205,7 +205,7 @@
             "lastName" : "Stone"
         },
         "Jenel Lao" : {
-            "roomName" : "2012",
+            "roomName" : "2084b",
             "fullName" : "Jenel Lao",
             "firstName" : "Jenel",
             "lastName" : "Lao"
@@ -334,7 +334,7 @@
        		"officeHours" : {
 
        		},
-       		"facultyImage" : "/images/faculty/kimBurge.jpg",
+       		"facultyImage" : "/images/faculty/kimBurge.png",
        		"voiceResponse_faculty" : "Kim Burge's office is at the end of the hallway straight ahead."
        	},
 
@@ -361,7 +361,7 @@
             "roomNumber" : "2012",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2012.png",
-       		"roomImage" : "",
+       		"roomImage" : "/images/rooms/Room2012.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 on your right. Room 2012 will be the first door straight ahead.",
 
        		"facultyName" : "Jenel Lao",
@@ -538,7 +538,7 @@
 
        	"2040" : {
        		"roomName" : "Room 2040",
-            "roomNumber" : "2040",
+            "roomNumber" : "2038",
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2040.png",
        		"roomImage" : "",
@@ -552,24 +552,6 @@
        		},
        		"facultyImage" : "/images/faculty/rhettLowe.jpg",
        		"voiceResponse_faculty" : "Enter Suite 2003 on your right and take a left at the end of the hall. Rhett Lowe's office will be the eighth door on your right."
-       	},
-        
-        "2041" : {
-       		"roomName" : "Room 2041",
-            "roomNumber" : "2041",
-       		"roomType" : "Faculty Office",
-       		"mapImage" : "/images/maps/Room2041.png",
-       		"roomImage" : "",
-       		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. After the third door on your left, make a left. Room 2041 will be the first door on your right.",
-
-       		"facultyName" : "Kim Burge",
-       		"facultyEmail" : "kburge@uci.edu",
-       		"facultyNumber" : "",
-       		"officeHours" : {
-
-       		},
-       		"facultyImage" : "/images/faculty/kimBurge.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 on your right and take a left at the end of the hall. After the third door on your left, make a left. Kim Burge's office will be the first door on your right."
        	},
 
        	"2042" : {
@@ -668,7 +650,7 @@
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2048.png",
        		"roomImage" : "",
-       		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. Room 2048 will be the eleventh door on your right.",
+       		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. Room 2046 will be the eleventh door on your right.",
 
        		"facultyName" : "George Farkas",
        		"facultyEmail" : "gfarkas@uci.edu",
@@ -983,8 +965,8 @@
        		"roomName" : "Room 2077",
             "roomNumber" : "2077",
           "roomType" : "Simpkin's Lab",
-          "mapImage" : "/images/maps/Room2077.png",
-          "roomImage" : "/images/rooms/Room2077.jpg",
+          "mapImage" : "/images/maps/Room2075.png",
+          "roomImage" : "/images/rooms/Room2075.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Room 2077 will be the second-to-the-last door on your right.",
 
        		"facultyName" : "",
@@ -1071,8 +1053,10 @@
        		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Susan Toma-Berge's office will be the sixth door on your left."
        	},
 
+        "2084" : {
+       	},
     
-       	"2084" : {
+       	"2084a" : {
        		"roomName" : "Room 2084",
             "roomNumber" : "2084",
        		"roomType" : "Faculty Office",
@@ -1087,8 +1071,27 @@
 
        		},
        		"facultyImage" : "/images/faculty/jeanneStone.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Jeanne Stone's office will be the fifth door on your left."
+       		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Jenel Lao and Jeanne Stone's office will be the fifth door on your left."
        	},
+        
+        "2084b" : {
+       		"roomName" : "Room 2084",
+            "roomNumber" : "2084",
+       		"roomType" : "Faculty Office",
+       		"mapImage" : "/images/maps/Room2084.png",
+       		"roomImage" : "",
+       		"voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Room 2084 will be the fifth door on your left.",
+
+       		"facultyName" : "Jenel Lao",
+       		"facultyEmail" : "jmstone@uci.edu",
+       		"facultyNumber" : "(949)824-7836",
+       		"officeHours" : {
+
+       		},
+       		"facultyImage" : "/images/faculty/jenelLao.jpg",
+       		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Jenel Lao and Jeanne Stone's office will be the fifth door on your left."
+       	},
+        
 
        	"2086" : {
        		"roomName" : "Room 2086",
@@ -1187,7 +1190,7 @@
        		"roomType" : "Faculty Office",
        		"mapImage" : "/images/maps/Room2203.png",
        		"roomImage" : "",
-       		"voiceResponse_room" : "Turn to your left and enter Suite 2200. Room 2203 will be the first door on your left.",
+       		"voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Room 2096 will be the first door on your left.",
 
        		"facultyName" : "David Lim",
        		"facultyEmail" : "dklim@uci.edu",
@@ -1196,7 +1199,7 @@
 
        		},
        		"facultyImage" : "/images/faculty/davidLim.jpg",
-       		"voiceResponse_faculty" : "Turn to your left and enter Suite 2200. David Lim's office will be the first door on your left."
+       		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. David Lim's office will be the first door on your left."
        	},
 
        	"2204" : {
