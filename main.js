@@ -213,7 +213,7 @@ window.onload = function(){
         message.onstart = function(event)
         { 
             annyang.abort();
-                         
+            console.log("not listening");             
             
             $('#systemMic').attr("src", "css/images/mic-disabled2.png");
             $('#subtitle').html(caption);
@@ -251,9 +251,15 @@ window.onload = function(){
                 $('#subtitle').html(caption);
                 promptInstruction();
             }
+            console.log("listening");  
+            annyang.resume();
             
-            if(annyang.isListening() == false)
-                annyang.resume();
+//            if(annyang.isListening() == false)
+//            {
+//                console.log("listening");  
+//                annyang.resume();
+//            }
+                
             
     
         };
@@ -348,12 +354,12 @@ window.onload = function(){
     }
     
     function spellChecker(fac_name){
-        if(fac_name == "cambridge" || fac_name == "Cambridge" || fac_name == "Kim Birge" || fac_name == "Kim Bridge"  || fac_name == "Kim birge" || fac_name == "Kim Berg" || fac_name == "Kim Birch")
+        if(fac_name == "cambridge" || fac_name == "Cambridge" || fac_name == "Kim Birge" || fac_name == "Kim Bridge"  || fac_name == "Kim birge" || fac_name == "Kim Berg" || fac_name == "Kim Birch" || fac_name == "Kim Burch")
             return "Kim Burge";
         if(fac_name == "Berg" || fac_name == "Cambridge" || fac_name == "Burg" || fac_name == "Birch" )
             return "Burge";
         
-        else if(fac_name == "Janelle Lau" || fac_name == "Professor Lau"  || fac_name == "Lau" || fac_name == "Janelle now" || fac_name == "Janelle Lao" || fac_name == "genola")
+        else if(fac_name == "Janelle Lau" || fac_name == "Professor Lau"  || fac_name == "Lau" || fac_name == "Janelle now" || fac_name == "Janelle Lao" || fac_name == "genola" || fac_name == "genola" || fac_name == "genello")
             return "Jenel Lao";
         else if(fac_name == "Lau")
             return "Lao";
@@ -452,7 +458,7 @@ window.onload = function(){
         else if(fac_name == "early" || fac_name == "ear Lee")
             return "Earley";
        
-        else if(fac_name == "right low" || fac_name == "rat low" || fac_name == "Right low")
+        else if(fac_name == "right low" || fac_name == "rat low" || fac_name == "Right low" || fac_name == "reloj" || fac_name == "Reloj")
             return "Rhett Lowe";
 
         else if(fac_name == "cute King" || fac_name == "cute Kang" || fac_name == "Kyu Kang" || fac_name == "Hugh Kang" || fac_name == "puke King" || fac_name == "Hugh King" || fac_name == "Hugh Cain" || fac_name == "UK" || fac_name == "Huck King" || fac_name == "Hayek King" || fac_name == "How you came" || fac_name == "heeyook kang" || fac_name == "hip pain" || fac_name == "hyatt pinion" || fac_name == "hugh connell")
@@ -1119,15 +1125,15 @@ window.onload = function(){
 //            
 //        }
 //        
-//        
+        
 //        drChecker = function(fac_name)
 //        {
 //            fac_name = spellChecker(fac_name);
 //            console.log(fac_name);
-//            drListFullName = ["Sandra Simpkins","Virginia Panish","Geneva Lopez-Sandoval","Drew Bailey","Jacquelynne Eccles","Robert Duncan","Constance Iloh","Emily Penner","Rachel Baker","Greg Duncan","Di Xu","Jade Jenkins","Deborah Vandell","George Farkas","Penelope Colllins","Susan Toma Berge","Maria Rosales Rueda","Jamal Abedi","Liana Brouillette","Jenel Lao","Melinda Petre","Hosun Kang"];
+//            drListFullName = ["Sandra Simpkins","Virginia Panish","Geneva Lopez-Sandoval","Drew Bailey","Jacquelynne Eccles","Robert Duncan","Constance Iloh","Emily Penner","Rachel Baker","Greg Duncan","Di Xu","Jade Jenkins","Deborah Vandell","George Farkas","Penelope Colllins","Susan Toma Berge","Maria Rosales Rueda","Jamal Abedi","Liana Brouillette","Ja","Melinda Petre","Hosun Kang", "Kim Burge"];
 //            
 //            
-//            drListLastName = ["Simpkins","Panish","Lopez-Sandoval","Bailey","Eccles","Duncan","Iloh","Penner","Baker","Duncan","Xu","Jenkins","Vandell","Farkas","Collins","Toma Berge","Rosales Rueda","Abedi","Brouillette","Lao","Petre","Kang"];
+//            drListLastName = ["Simpkins","Panish","Lope-Sandoval","Bailey","Eccles","Duncan","Iloh","Penner","Baker","Duncan","Xu","Jenkins","Vandell","Farkas","Collins","Toma Berge","Rosales Rueda","Abedi","Brouillette","Lao","Petre","Kang","Burge"];
 //            
 //            
 //            // Checks to see if fac_name is in drList. If not in drList indexOf will    return -1.
@@ -1145,7 +1151,7 @@ window.onload = function(){
         
         
         facultyLocator = function(fac_name) {  
-            alert(fac_name);
+            //alert(fac_name);
             fac_name = spellChecker(fac_name);
             //Spell check faculty name input
             
@@ -1374,7 +1380,7 @@ window.onload = function(){
                     caption = data.rooms[indexItem].voiceResponse_room;
                 }
                 else if(facultyLocator_active){
-                    alert("fac locator active");
+                    //alert("fac locator active");
                     indexItem = possibleFaculty[index];
                     num = data.faculty[possibleFaculty[index]].roomName;
                     caption = data.rooms[num].voiceResponse_faculty;
