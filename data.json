@@ -294,7 +294,7 @@
             "roomNumber" : "2005",
        		"roomType" : "Classroom",
        		"mapImage" : "/images/maps/Room2005.png",
-       		"roomImage" : "/images/rooms/Room2005.jpg",
+       		"roomImage" : "images/rooms/Room2005.jpg",
        		"voiceResponse_room" : "Go straight down the hallway, Room 2005 will be the fourth entrance on your left.",
 
        		"facultyName" : "",
