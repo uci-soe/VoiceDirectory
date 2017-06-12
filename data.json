@@ -54,7 +54,7 @@
             "firstName" : "Jamal",
             "lastName" : "Abedi"
         },
-        "Maria Rosales-Rueda" : {
+        "Maria Rosales Rueda" : {
             "roomName" : "2036",
             "fullName" : "Maria Rosales-Rueda",
             "firstName" : "Maria",
@@ -192,14 +192,14 @@
             "firstName" : "Susan",
             "lastName" : "Guilfoyle"
         },
-        "Susan Toma-Berge" : {
+        "Susan Toma Berge" : {
             "roomName" : "2082",
             "fullName" : "Susan Toma-Berge",
             "firstName" : "Susan",
             "lastName" : "Toma-Berge"
         },
         "Jeanne Stone" : {
-            "roomName" : "2084",
+            "roomName" : "2084a",
             "fullName" : "Jeanne Stone",
             "firstName" : "Jeanne",
             "lastName" : "Stone"
@@ -234,12 +234,6 @@
             "firstName" : "Virginia",
             "lastName" : "Panish"        
         },
-        "Whitney Young" : {
-            "roomName" : "2000",
-            "fullName" : "Whitney Young",
-            "firstName" : "Whitney",
-            "lastName" : "Young"        
-        },
         "the restroom"  :{
             "roomName" : "The restroom",
             "fullName" : "The restroom",
@@ -253,23 +247,6 @@
     
     "rooms" : {
     
-        "2000" : {
-       		"roomName" : "Room 2000",
-            "roomNumber" : "2000",
-       		"roomType" : "Faculty Office",
-       		"mapImage" : "",
-       		"roomImage" : "",
-       		"voiceResponse_room" : "",
-
-       		"facultyName" : "Whitney Young",
-       		"facultyEmail" : "youngw@uci.edu",
-       		"facultyNumber" : "(949)824-8082",
-       		"officeHours" : {
-
-       		},
-       		"facultyImage" : "/images/faculty/whitneyYoung.jpg",
-       		"voiceResponse_faculty" : ""
-       	},
 
        	"2001" : {
        		"roomName" : "Room 2001",
@@ -294,7 +271,7 @@
             "roomNumber" : "2005",
        		"roomType" : "Classroom",
        		"mapImage" : "/images/maps/Room2005.png",
-       		"roomImage" : "images/rooms/Room2005.jpg",
+       		"roomImage" : "/images/rooms/Room2005.jpg",
        		"voiceResponse_room" : "Go straight down the hallway, Room 2005 will be the fourth entrance on your left.",
 
        		"facultyName" : "",
@@ -438,7 +415,7 @@
             "roomNumber" : "2031",
        		"roomType" : "Research Room",
        		"mapImage" : "/images/maps/Room2031.png",
-       		"roomImage" : "/images/rooms/room2031.jpg",
+       		"roomImage" : "/images/rooms/Room2031.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. Room 2031 will be the first door on your left.",
 
        		"facultyName" : "",
@@ -939,7 +916,7 @@
 
        		},
        		"facultyImage" : "/images/faculty/genevaLopezSandoval.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Geneva Lopez-Sandoval's office will be the second-to-the-last door on your left."
+       		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Geneva Lopez-Sandoval office will be the second-to-the-last door on your left."
        	},
 
        	"2075" : {
@@ -1075,24 +1052,6 @@
             "facultyImage" : "/images/faculty/susanGuilfoyle.jpg",
             "voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Susan Guilfoyle's office will be the seventh door on your left."
         },
-        
-        "2081" : {
-       		"roomName" : "Room 2081",
-            "roomNumber" : "2081",
-       		"roomType" : "Faculty Office",
-       		"mapImage" : "/images/maps/Room2081.png",
-       		"roomImage" : "",
-       		"voiceResponse_room" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Room 2081 will be the first door on your right.",
-
-       		"facultyName" : "Catherine D'Aoust",
-       		"facultyEmail" : "",
-       		"facultyNumber" : "",
-       		"officeHours" : {
-
-       		},
-       		"facultyImage" : "/images/faculty/empty.jpg",
-       		"voiceResponse_faculty" : "Enter Suite 2003 which is the third door on your left. At the end of the hall take a right. Catherine D'Aoust's office will be the first door on your right."
-       	},
 
        	"2082" : {
        		"roomName" : "Room 2082",
