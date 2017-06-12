@@ -265,7 +265,6 @@
        		"facultyEmail" : "youngw@uci.edu",
        		"facultyNumber" : "(949)824-8082",
        		"officeHours" : {
-
        		},
        		"facultyImage" : "/images/faculty/whitneyYoung.jpg",
        		"voiceResponse_faculty" : ""
@@ -294,7 +293,7 @@
             "roomNumber" : "2005",
        		"roomType" : "Classroom",
        		"mapImage" : "/images/maps/Room2005.png",
-       		"roomImage" : "/images/rooms/room2005.jpg",
+       		"roomImage" : "/images/rooms/Room2005.jpg",
        		"voiceResponse_room" : "Go straight down the hallway, Room 2005 will be the fourth entrance on your left.",
 
        		"facultyName" : "",
@@ -402,7 +401,7 @@
             "roomNumber" : "2024",
        		"roomType" : "Seminar",
        		"mapImage" : "/images/maps/Room2024.png",
-       		"roomImage" : "/images/rooms/room2024.jpg",
+       		"roomImage" : "/images/rooms/Room2024.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 on your right. Go all the way down the hall and take a left. Room 2024 will be the first door on your right.",
 
        		"facultyName" : "",
@@ -438,7 +437,7 @@
             "roomNumber" : "2031",
        		"roomType" : "Research Room",
        		"mapImage" : "/images/maps/Room2031.png",
-       		"roomImage" : "/images/rooms/room2031.jpg",
+       		"roomImage" : "/images/rooms/Room2031.jpg",
        		"voiceResponse_room" : "Enter Suite 2003 on your right and take a left at the end of the hall. Room 2031 will be the first door on your left.",
 
        		"facultyName" : "",
