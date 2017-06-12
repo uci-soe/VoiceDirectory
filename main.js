@@ -354,6 +354,8 @@ window.onload = function(){
     }
     
     function spellChecker(fac_name){
+        if(fac_name == "Dunkin")
+            return "Duncan";
         if(fac_name == "cambridge" || fac_name == "Cambridge" || fac_name == "Kim Birge" || fac_name == "Kim Bridge"  || fac_name == "Kim birge" || fac_name == "Kim Berg" || fac_name == "Kim Birch" || fac_name == "Kim Burch")
             return "Kim Burge";
         if(fac_name == "Berg" || fac_name == "Cambridge" || fac_name == "Burg" || fac_name == "Birch" || fac_name == "Bridge" || fac_name == "birge" || fac_name == "Birge" || fac_name == "bridge" || fac_name == "Burch" || fac_name == "burch")
@@ -1466,26 +1468,26 @@ window.onload = function(){
 //            "I'm looking for a Miss *name":msChecker,
 //            "I'm looking for mrs. *name":msChecker,
             
-            "I'm looking for dr. *name":drChecker,
-            "I'm looking for dr *name":drChecker,
-            "I'm looking for a dr *name":drChecker,
-            "I'm looking for a doctor *name":drChecker,
-            "I'm looking for doctor *name":drChecker,
-            "I'm looking for a professor *name":professorChecker, 
-            "I'm looking for professor *name":professorChecker, 
-            'I am looking for professor *name':professorChecker,
+            "I'm looking for dr. *name":facultyLocator,
+            "I'm looking for dr *name":facultyLocator,
+            "I'm looking for a dr *name":facultyLocator,
+            "I'm looking for a doctor *name":facultyLocator,
+            "I'm looking for doctor *name":facultyLocator,
+            "I'm looking for a professor *name":facultyLocator, 
+            "I'm looking for professor *name":facultyLocator, 
+            'I am looking for professor *name':facultyLocator,
             
-            "Where is dr. *name":drChecker,
-            "Where is dr *name":drChecker,
-            "Where is a professor *name":professorChecker, 
-            "Where is A professor *name":professorChecker, 
-            "Where is professor *name":professorChecker, 
+            "Where is dr. *name":facultyLocator,
+            "Where is dr *name":facultyLocator,
+            "Where is a professor *name":facultyLocator, 
+            "Where is A professor *name":facultyLocator, 
+            "Where is professor *name":facultyLocator, 
             
-            "Where\'s dr. *name":drChecker,
-            "Where\'s dr *name":drChecker,
-            "Where\'s a professor *name":professorChecker, 
-            "Where\'s A professor *name":professorChecker, 
-            "Where\'s professor *name":professorChecker, 
+            "Where\'s dr. *name":facultyLocator,
+            "Where\'s dr *name":facultyLocator,
+            "Where\'s a professor *name":facultyLocator, 
+            "Where\'s A professor *name":facultyLocator, 
+            "Where\'s professor *name":facultyLocator, 
             
             'I am looking for *name':facultyLocator,
             'I\'m looking for *name':facultyLocator,
