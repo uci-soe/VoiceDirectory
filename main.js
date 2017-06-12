@@ -206,7 +206,7 @@ window.onload = function(){
     if('speechSynthesis' in window)
     {
         var message = new SpeechSynthesisUtterance();
-        alert("lets go");
+        
         message.text = " ";
         message.lang = 'en-US';
         message.rate = 1;
