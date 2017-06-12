@@ -1,7 +1,5 @@
 window.onload = function(){
-            
-    console.log("Hello World");
-    
+                
     var timeLeft = 55; // System countdown after initiation
     var timeToAskFirst = 30; // System will ask if user wants more time after this amount of seconds
     var timeToAskSecond = 10; // Second time asking
