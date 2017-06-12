@@ -206,7 +206,7 @@ window.onload = function(){
     if('speechSynthesis' in window)
     {
         var message = new SpeechSynthesisUtterance();
-        alert("Lets go");
+        
         message.text = " ";
         message.lang = 'en-US';
         message.rate = 1;
@@ -354,7 +354,7 @@ window.onload = function(){
     }
     
     function spellChecker(fac_name){
-        if(fac_name == "Dunkin")
+        if(fac_name == "Dunkin" || fac_name == "Dunking")
             return "Duncan";
         if(fac_name == "cambridge" || fac_name == "Cambridge" || fac_name == "Kim Birge" || fac_name == "Kim Bridge"  || fac_name == "Kim birge" || fac_name == "Kim Berg" || fac_name == "Kim Birch" || fac_name == "Kim Burch")
             return "Kim Burge";
@@ -473,7 +473,7 @@ window.onload = function(){
 
         else if(fac_name == "cute King" || fac_name == "cute Kang" || fac_name == "Kyu Kang" || fac_name == "Hugh Kang" || fac_name == "puke King" || fac_name == "Hugh King" || fac_name == "Hugh Cain" || fac_name == "UK" || fac_name == "Huck King" || fac_name == "Hayek King" || fac_name == "How you came" || fac_name == "heeyook kang" || fac_name == "hip pain" || fac_name == "hyatt pinion" || fac_name == "hugh connell")
             return "Hyuk Kang";
-        else if(fac_name == "King" || fac_name == "king" || fac_name == "kane")
+        else if(fac_name == "King" || fac_name == "king" || fac_name == "kane" || fac_name == "Ken")
             return "Kang";
         
         else if(fac_name == "ho Sun King" | fac_name == "ho-sun Kang" || fac_name == "ho-sun King" || fac_name == "Hole Sun King" || fac_name == "ho Sung Kang")
