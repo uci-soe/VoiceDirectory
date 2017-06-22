@@ -202,21 +202,22 @@ window.onload = function(){
         return true;
     }
     
-    //Creating voice synthesis utterance object.
+    //Creating voice synthesis utterance object is the current browser has SpeechSynthesis
     if('speechSynthesis' in window)
     {
         var message = new SpeechSynthesisUtterance();
         
-        message.text = " ";
-        message.lang = 'en-US';
-        message.rate = 1;
+        message.text = " ";                 // Sets the initial message
+        message.lang = 'en-US';             // Sets the language of the Speech Synthesis Utterance to English
+        message.rate = 1;                   // Sets the speaking rate of the Speech Synthesis Utterance to 1 
+        
+        // Function that is called on the start of every Speech Synthesis Utterance message 
         message.onstart = function(event)
         { 
-            annyang.abort();
-            console.log("not listening");             
-            
-            $('#systemMic').attr("src", "css/images/mic-disabled2.png");
-            $('#subtitle').html(caption);
+            annyang.abort();                                                // Stops annyang from listening to voice while the Speech Synthesis object is talking
+                            
+            $('#systemMic').attr("src", "css/images/mic-disabled2.png");    // Change mic image to disabled (red mic image).
+            $('#subtitle').html(caption);                                   // Updates the subtitle to the proper caption.
         };
         message.onend = function(event)
         { 
@@ -251,7 +252,7 @@ window.onload = function(){
                 $('#subtitle').html(caption);
                 promptInstruction();
             }
-            console.log("listening");  
+            
             annyang.resume();
             
 //            if(annyang.isListening() == false)
@@ -350,147 +351,228 @@ window.onload = function(){
         }, 1000);
     }
     
+    //This function is a utility function that is called when a user utilizes a Faculty Location command. When a user makes a Faculty Location command the facultyLocator function will pass the word that was heard by annyang to this function, and this function will check to see if the word is equal to any of the name variations for professor names. If the word is equal to any of the name variations, the word will be returned to the facultyLocator function as the correct faculty name to be used to retrieve the correct faculty information.
     function spellChecker(facName){
+        // "Duncan" name vairations"
         if(facName == "Dunkin" || facName == "Dunking")
             return "Duncan";
+        
+        
+        // "Kim Burge" name variations
         if(facName == "cambridge" || facName == "Cambridge" || facName == "Kim Birge" || facName == "Kim Bridge"  || facName == "Kim birge" || facName == "Kim Berg" || facName == "Kim Birch" || facName == "Kim Burch")
             return "Kim Burge";
-        if(facName == "Berg" || facName == "Cambridge" || facName == "Burg" || facName == "Birch" || facName == "Bridge" || facName == "birge" || facName == "Birge" || facName == "bridge" || facName == "Burch" || facName == "burch")
+        // "Burge" name variations
+        else if(facName == "Berg" || facName == "Cambridge" || facName == "Burg" || facName == "Birch" || facName == "Bridge" || facName == "birge" || facName == "Birge" || facName == "bridge" || facName == "Burch" || facName == "burch")
             return "Burge";
         
+        
+        // "Jenel Lao" name variations
         else if(facName == "Janelle Lau" || facName == "Professor Lau" || facName == "Janelle now" || facName == "Janelle Lao" || facName == "genola" || facName == "genola" || facName == "genello" || facName == "Janelle out" || facName == "Janel Lao")
             return "Jenel Lao";
+        // "Lao" name variations
         else if(facName == "Lau" || facName == "out" || facName == "now")
             return "Lao";
         
+        
+        // "Di Xu" name variations
         else if(facName == "die shoe" || facName == "disha" || facName == "disa" || facName == "D shoe" || facName == "Daiso" || facName == "DC" || facName == "DC" || facName == "zissou" || facName == "the zoo" || facName == "Dai Chu" || facName == "deitch" || facName == "dye shoe" || facName == "dice shoe" || facName == "D Sue")
             return "Di Xu";
+        // "Xu" name variations
         else if(facName == "shoe" || facName == "sure" || facName == "Sue" || facName == "zoo")
             return "Xu"; 
         
+        
+        // "Young" name variations
         else if(facName == "young" || facName == "You")
             return "Young";
         
+        
+        // "Constance Iloh" name variations
         else if(facName == "constance iloh" || facName == "Constance Ehlo" || facName == "constants Hilo" || facName == "Constance I love" || facName == "Constance Ela" || facName == "Constance eilo" || facName == "Constance Isla" || facName == "Constance Hilo" || facName == "Constance eloah" || facName == "Constance Islas")
             return "Constance Iloh";
+        // "Iloh" name variations
         else if(facName == "I know" || facName == "I lo" || facName == "Missy Lowe" || facName == "Constance eloah" || facName == "Ehlo" || facName == "Hilo" || facName == "I low" || facName == "I love" || facName == "eloah")
             return "Iloh";
         
+        
+        // "Deborah Vandell" name variations
         else if(facName == "Deborah vendell" || facName == "Deborah vandal" || facName == "Deborah vandal" || facName == "Deborah vandell" || facName == "Deborah Vando" || facName == "Deborah Van Dale" || facName == "Deborah Venta" || facName == "Deborah Vendome" || facName == "Deborah vendal" || facName == "Deborah van daele" || facName == "Deborah Venda" || facName == "Deborah Van-Del" || facName == "Deborah Vendo" || facName == "Debra vendal" || facName == "Debra vendel" || facName == "Debra Vendo" || facName == "Debra Van-Del")
             return "Deborah Vandell";
+        // "Vandell" name variations
         else if(facName == "vendell" || facName == "bandel" || facName == "Van Dell" || facName == "vandal" || facName == "Vandell" || facName == "vandell" || facName == "van daele" || facName == "Venda" || facName == "Vendo" || facName == "Van-Del" || facName == "Bendo" || facName == "Vindale" || facName == "vendal" || facName == "Bendell")
             return "Vandell";
         
+        
+        // "Melinda Petre" name variations
         else if(facName == "Melinda petre" || facName == "Melinda Petrie" || facName == "Melinda Petry" || facName == "Melinda Peter" || facName == "Melinda better" || facName == "Melinda Petra" || facName == "Melinda Penner")
             return "Melinda Petre";
+        // "Petre" name variations
         else if(facName == "Petri" || facName == "Petrie" || facName == "Petry" || facName == "Peter" || facName == "petre" || facName == "Petra" || facName == "Putter")
             return "Petre";
+        
+        
+        // "Jacquelynne Eccles" name variations
         //Check these
         else if(facName == "Jacqueline Echols" || facName == "Jacqueline eckley's" || facName == "Jaclyn eckley's" || facName == "Jacqueline eclise" || facName == "Jaclyn a class" || facName == "Jacqueline Ellis" || facName == "Jacqueline eClass" || facName == "Jacqueline Equus" )         
             return "Jacquelynne Eccles";
+        // "Eccles" name variations
         else if(facName == "Echols"|| facName == "a class" || facName == "glass" || facName=="at glass" || facName == "akhilesh" || facName == "ecla" || facName == "eckley's" || facName == "X")
             return "Eccles";
          
+        
+        // "Liane Brouillette" name variations
         else if(facName == "Liane brouillette" || facName == "Leon brouillette" || facName == "Leanne bralette" || facName == "Lee Ann brouillette" || facName == "Lee Ann Brewery" || facName == "Lee Anne Burrell at" || facName == "Lee Anne Burrell"  || facName == "Leon roulette" || facName == "Leanne Grill at" || facName == "Leon bralette")
             return "Liane Brouillette";
+        // "Brouillette" name variations
         else if(facName == "brouillette" || facName == "bralette")
             return "Brouillette";
         
+        
+        // "David Lim" name variations
         else if(facName == "David Lynn")
-            return "David Lim"
+            return "David Lim";
+        // "Lim" name variations
         else if(facName == "Lynn")
-            return "Lim"    
+            return "Lim";    
+        
+        
+        // "Geneva Lopez-Sandoval" name variations
         //Check These
         else if(facName == "Geneva Lopez Sandoval" || facName == "jenefir lopez sandoval" || facName == "Geneva Lopez" || facName == "Geneva Sandoval" || facName == "Geneva sandals")
             return "Geneva Lopez-Sandoval";
+        // "Lopez-Sandoval" name variations
         else if(facName == "Lopez Sandoval")
             return "Lopez-Sandoval"
             
-        else if(facName == "Sarah sing" || facName == "ceresin" || facName == "Sarah singe" || facName == "Sarah sink" || facName == "terracing")     
+            
+        // "Sarah Singh" name variations
+        else if(facName == "Sarah sing" || facName == "ceresin" || facName == "Sarah singe" || facName == "Sarah sink" || facName == "terracing") 
             return "Sarah Singh";
+        // "Singh" name variations
         else if(facName == "sing")
             return "Singh";
         
+        
+        // "Susan Toma-Berge" name variations
         else if(facName == "Susan Toma bears" || facName == "Susan Toma Berg" || facName == "Susan Toma bush" || facName == "Susan Toma Burj" || facName == "Susan Toma Burge" || facName == "Susan Toma Birch" || facName == "Susan Thelma Burge" || facName == "Susan Tama Burge" || facName == "Susan Birch" || facName == "Susan Tory Burch" || facName == "Susan Toma Bridge" || facName == "Susan Toma bersch" || facName == "Susan Toma Berge")
             return "Susan Toma-Berge";
+        // "Toma-Berge" name variations
         else if (facName == "Toma Berg" || facName == "Toma bersch" || facName == "Toma Burge" || facName == "Toma bears" || facName == "Toma Bridge" || facName == "Tama Burge" || facName == "Toma Birch" || facName == "Thelma Burge" || facName == "Toma Burj" || facName == "Toma Berge")
             return "Toma-Berge";
         
+        
+        // "Jeanne Stone" name variations
         else if(facName == "Gene Stone" || facName == "June Stone" || facName == "jeans Stone" || facName == "Jean Stone")
             return "Jeanne Stone";
+        // "Stone" name variations
         else if(facName == "stone")
             return "Stone";
         
+         
+        // "Maria Takacs" name variations
         else if(facName == "Maria tax" || facName == "Murrieta Cox" || facName == "Maria tactics" || facName == "Maria tac-x" || facName == "Mystic X" || facName == "Murrieta")
             return "Maria Takacs";
+        // "Takacs" name variations
         else if(facName == "tac-x" || facName == "cats" || facName == "tacacs" || facName == "the cats" || facName == "it to cats" || facName == "tax" || facName == "tactics" || facName == "Technics" || facName == "a tech X" || facName == "Tech X")
             return "Takacs";
         
+        
+        // "Sandra Simpkins" name variations
         else if(facName == "Sandra Simkins")
             return "Sandra Simpkins";
+        // "Simpkins" name variations
         else if(facName == "Simkins")
-            return "Simpkins"
+            return "Simpkins";
         
+        
+        // "Maria Rosales-Rueda" name variations
         else if(facName == "Maria Rosales weather" || facName == "Maria Rosales Loretta" || facName == "Maria Rosales Ruda" || facName == "Maria Rosales reta" || facName == "Maria Rosales Beretta" || facName == "Maria Rosales" || facName == "Maria Goretti" || facName == "Maria Rosales Murrieta" || facName == "Maria Rosales Florida" || facName == "Maria Rosales Rueda" || facName == "Maria Rosales Bru weather")
             return "Maria Rosales-Rueda";
+        // "Rosales-Rueda" name variations
         else if(facName == "Rosales Rueda" || facName == "Rosales Beretta" || facName == "Rosales Murrieta" || facName == "Rosales reta" || facName == "Rosales Loretta" || facName == "Rosales weather" || facName == "Maria Rosales La Mirada" || facName == "Rosales ruella")
             return "Rosales-Rueda";
         
         
+        // "Jamal Abedi" name variations
         else if(facName == "Jamal a Betty" || facName == "Jamal abedi" || facName == "Chemawa Betty" || facName == "Jamal Betty")
             return "Jamal Abedi";
+        // "Abedi" name variations
         else if(facName == "a Betty" || facName == "abiti" || facName == "Betty")
             return "Abedi";
         
+        
+        // "Virginia Panish" name variations
         else if(facName == "Virginia panish" || facName == "Virginia punished" || facName == "Virginia Peniche")
             return "Virginia Panish";
+        // "Panish" name variations
         else if(facName == "panish" || facName == "punish" || facName == "Spanish")
             return "Panish";
        
+        
+        // "Sue Vaughn" name variations
         else if(facName == "Sudan" || facName == "Sylvan" || facName == "Sue Bond")
             return "Sue Vaughn";
+        // "Vaughn" name variations
         else if(facName == "von" || facName == "Von" || facName == "Vaughan")
             return "Vaughn";
         
+        
+        // "Jeff Johnston" name variations
         else if(facName == "Jeff Johnson")
             return "Jeff Johnston";
+        // "Johnston" name variations
         else if(facName == "Johnson")
             return "Johnston";
         
         
+        // "Denise Earley" name variations
         else if(facName == "Denise early" || facName == "Denise Ireland")
             return "Denise Earley";
+        // "Earley" name variations
         else if(facName == "early" || facName == "ear Lee")
             return "Earley";
        
+        
+        // "Rhett Lowe" name variations
         else if(facName == "right low" || facName == "rat low" || facName == "Right low" || facName == "reloj" || facName == "Reloj")
             return "Rhett Lowe";
+        // "Lowe" name variations
         else if(facName == "low")
             return "Lowe";
 
+        
+        // "Hyuk Kang" name variations
         else if(facName == "cute King" || facName == "cute Kang" || facName == "Kyu Kang" || facName == "Hugh Kang" || facName == "puke King" || facName == "Hugh King" || facName == "Hugh Cain" || facName == "UK" || facName == "Huck King" || facName == "Hayek King" || facName == "How you came" || facName == "heeyook kang" || facName == "hip pain" || facName == "hyatt pinion" || facName == "hugh connell")
             return "Hyuk Kang";
+        // "Kang" name variations
         else if(facName == "King" || facName == "king" || facName == "kane" || facName == "Ken")
             return "Kang";
         
+        
+        // "Hosun Kang" name variations
         else if(facName == "ho Sun King" | facName == "ho-sun Kang" || facName == "ho-sun King" || facName == "Hole Sun King" || facName == "ho Sung Kang")
             return "Hosun Kang";
         
+        
+        // "Jade Jenkins" name variations
         else if(facName == "Jayda Jenkins" || facName == "Jay Jenkins" || facName == "J Jenkins" || facName == "Jada Jenkins")
             return "Jade Jenkins";
         
+        
+        // "McDougall" name variations
         else if(facName == "mcdugle")
             return "McDougall";
         
+        
+        // "Spenser Clark" name variations
         else if(facName == "Spencer Clark")
             return "Spenser Clark";
     
-
+        
         else if(facName == "new search" || facName == "research")
             return "new search";
 
         return facName;
-        
     }
     
      function displayEventModal (){
@@ -1166,7 +1248,7 @@ window.onload = function(){
         }
         
         
-        
+        // This function is called when a user request the location of a faculty member's office. First the name being searched for is sent to the spellChecker function to make sure that if facName is a name variation, we use the proper faculty name for the search. Once facName returns it is compared to a list of badwords, and if the facName includes a bad word the facultyLocator function returns and stops the search and tells the user that is inappropriate. There are two valid ways a user can search for faculty the first is providing only last name (i.e. Professor Duncan) and the second is providing a full name (i.e. Professor Greg Duncan). If the user only provides last name in their search, a loop will search data.JSON to compare the facName variable with a key in the JSON file. If a key is not found the function will return, and the user will be told that the faculty member they are searching for does not exist. If a match is found in data.JSON file two things can occur. First, if there are two matches with the same last name(i.e. Greg Duncan and Robert Duncan), a user will then be shown a modal with the faculty options with that last name listed so that they can tell the system which faculty member they were referring to, and once they select an option, they will see the results of their search. Second, if there is only one match then they will see the results of their search. If the user provides both first and last name, a loop will search data.JSON to compare the facName variable with a key in the JSON file. If a key is not found the function will return, and the user will be told that the faculty member they are searching for does not exist.
         facultyLocator = function(facName) {  
             //alert(facName);
             
@@ -1267,8 +1349,8 @@ window.onload = function(){
         };
         
         // Calendar View Function //
-
-        calendarView = function(viewMode = "what's happening this week") {
+        // This function is called when a user makes an Upcoming Events request. It displays a calendar that is populated with upcoming events in a modal over the Main Menu of the system. From this view, a user can request a new search command.
+        calendarView = function() {
            /* var source = "https://calendar.google.com/calendar/embed?mode=MONTH&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=ucieducationevents%40gmail.com&amp;color=%238D6F47&amp;ctz=America%2FLos_Angeles"
             
             
@@ -1301,7 +1383,7 @@ window.onload = function(){
             
             
             events_ACTIVE = true;
-
+            // Makes the commands for the ResultsView available. ("New Search", "Thank You", "Yes", "No")
             commandManager("ResultsView");
 
             timeLeft = grantTime;
@@ -1326,6 +1408,7 @@ window.onload = function(){
                         
         }
         
+        // This function is called when a user to responds when they system asks them if they need more time to use the system.
         var yesOrno = function(randomWord){
 
 //            alert(systemAsked);
@@ -1366,6 +1449,7 @@ window.onload = function(){
             else if (!isNaN(word)) //if it's a number
                 return word;
         }
+        
         var optionFunc = function(numString){
            // alert("numString: " + numString);
 //          
@@ -1426,11 +1510,13 @@ window.onload = function(){
             }            
         };
         
-        var yourWelcome = function(){
+        // This function is called when the user says "thank you" after receiving results. It tells the user "You're Welcome", and updates the system subtime accordingly.
+        var youreWelcome = function(){
             caption = "You're Welcome!";
             message.text = "You're Welcome!";
             window.speechSynthesis.speak(message);
         }
+        
         
         var displayInstructionModal = function(){
             instruction_ACTIVE = true;
@@ -1533,7 +1619,7 @@ window.onload = function(){
             
             'new search' : displayMenuView,
             ':randomWord' : {'regexp' : /^(yes|no)$/, 'callback' : yesOrno},
-            'thank you' : yourWelcome
+            'thank you' : youreWelcome
         };
         
         // This command is available to users when they asl for a Room Location, or Professor Location and they are given the option to chosse between options. An example of this would be if they ask for Professor Duncan, a modal will appear that will ask the user which professor Duncan they are referring to (Greg Duncam or Robert Duncan).
@@ -1582,7 +1668,8 @@ window.onload = function(){
         
         
         //END - ANIMATION   ******************************
-
+        
+        // If annyang exists and is loaded properly then ajax is used to read data.json which contains all of the faculty information.
         if (annyang) {
 
             var ajaxhttp = new XMLHttpRequest();
@@ -1611,6 +1698,7 @@ window.onload = function(){
         endSystem();
     });
     
+    // If the user presses the mic icon, they are prompted to say their request so that they know that the main form of naviagtion is speech and not touch.
     $("#systemMic").click(function(){
         
         $(".left-bubble .bubble").removeClass("slideInLeft");
