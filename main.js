@@ -6,8 +6,8 @@ window.onload = function(){
     var timeToEnd = 1; // System will reset the system with this amount of seconds left
     var grantTime = 55; // System will grant user extra time (grantTime will be set equal to "timeLeft")
 
-    var roomLocator_active = false;
-    var facultyLocator_active = false;
+    var roomLocatorActive = false;
+    var facultyLocatorActive = false;
     
     var clarifyPrefix_ACTIVE = false;
     var clarifyFaculty_ACTIVE = false;
@@ -17,7 +17,7 @@ window.onload = function(){
     var events_ACTIVE = false;
     
     var timer;
-    var systemTimer_interval = 1200;
+    var systemTimerInterval = 1200;
 
     var systemAsked = false; // Check if system has asked user for more time
     var yes = false;
@@ -28,18 +28,18 @@ window.onload = function(){
     var universalName = "";
 
     // System's General Voice Responses
-    var output_speak = "Please say your request!";
-    var output_validRequest = "Please make a valid request.";
-    var output_moreTime = "Do you need more time?";
-    var output_systemReset = "System will reset.";
-    var output_ok = "Ok";
-    var output_pleasewait = "Please Wait...";
+    var outputSpeak = "Please say your request!";
+    var outputValidRequest = "Please make a valid request.";
+    var outputMoreTime = "Do you need more time?";
+    var outputSystemReset = "System will reset.";
+    var outputOk = "Ok";
+    var outputPleaseWait = "Please Wait...";
     var welcome = "Hello, what can I help you with today?";
-    var output_moreRequest = "What else can I help you with today?";
-    var output_invalidRoom = "";
-    var output_invalidFaculty = "";
+    var outputMoreRequest = "What else can I help you with today?";
+    var outputInvalidRoom = "";
+    var outputInvalidFaculty = "";
     var validCommand = "Please say a valid command.";
-    var output_listening = "I'm Listening...";
+    var outputListening = "I'm Listening...";
     
     //Events Voice Responses
     var eventWeekWelcome = "Here's what's happening this week.";
@@ -48,30 +48,30 @@ window.onload = function(){
     
     var badWords = ["stupid","a stupid","dumbass","a dumbass", "your mama","idiot","a idiot","dumb","a dumb"];
     
-    function outputRepeat (output_item){            
-        var output_temp = "";
+    function outputRepeat (outputItem){            
+        var outputTemp = "";
 
-        if(isNaN(output_item)){
-            if(/\d/.test(output_item)){
-                output_temp = "Sorry, Room " + output_item + " does not exist. Please make a valid request.";   
+        if(isNaN(outputItem)){
+            if(/\d/.test(outputItem)){
+                outputTemp = "Sorry, Room " + outputItem + " does not exist. Please make a valid request.";   
             }
-            else if(badWords.includes(output_item)){
-//                output_item = output_item.charAt(0).toLowerCase();
-                output_temp = "Sorry, that's inappropriate.";  
+            else if(badWords.includes(outputItem)){
+//                outputItem = outputItem.charAt(0).toLowerCase();
+                outputTemp = "Sorry, that's inappropriate.";  
             }
             else{
 
-                output_item = output_item.charAt(0).toUpperCase() + output_item.slice(1);
-                 output_temp = "Sorry, " + output_item + " does not exist. Please make a valid request.";
+                outputItem = outputItem.charAt(0).toUpperCase() + outputItem.slice(1);
+                 outputTemp = "Sorry, " + outputItem + " does not exist. Please make a valid request.";
             }
                
         }
         else{
-            output_temp = "Sorry, Room " + output_item + " does not exist. Please make a valid request.";
+            outputTemp = "Sorry, Room " + outputItem + " does not exist. Please make a valid request.";
         }
         
-        caption = output_temp;
-        message.text = output_temp;
+        caption = outputTemp;
+        message.text = outputTemp;
         window.speechSynthesis.speak(message);          
     }
     
@@ -95,7 +95,7 @@ window.onload = function(){
 
     var validPrefix;
     
-    function bubblePrefix_faculty (){
+    function bubblePrefixFaculty (){
         
         var text = $(".faculty-commandText .prefix-dynamicText");
         var textIndex = -1;
@@ -117,7 +117,7 @@ window.onload = function(){
         
     }
     
-    function bubbleCommand_faculty (){
+    function bubbleCommandFaculty (){
         
         var text = $(".faculty-commandText .command-dynamicText");
         var textIndex = -1;
@@ -139,7 +139,7 @@ window.onload = function(){
         
     }
     
-    function bubblePrefix_room (){
+    function bubblePrefixRoom (){
         
         var text = $(".room-commandText .room-dynamicText");
         var textIndex = -1;
@@ -160,7 +160,7 @@ window.onload = function(){
         showNextText();
     }
     
-    function bubbleCommand_room (){
+    function bubbleCommandRoom (){
         
         var text = $(".room-commandText .command-dynamicText");
         var textIndex = -1;
@@ -182,7 +182,7 @@ window.onload = function(){
         
     }
     
-    function bubbleCommand_event (){
+    function bubbleCommandEvent (){
         
         $(".event-dynamicText").addClass("slideInLeft");
         
@@ -231,12 +231,12 @@ window.onload = function(){
                 
             } 
             else if(clarifyFaculty_ACTIVE){
-                caption = output_listening;
+                caption = outputListening;
                 $('#subtitle').html(caption);
                 promptNewSearch("modal");
             }
             else if(instruction_ACTIVE){
-                caption = output_listening;
+                caption = outputListening;
                 $('#subtitle').html(caption);
                 promptExit();
             }
@@ -247,7 +247,7 @@ window.onload = function(){
                 
             }
             else {
-                caption = output_listening;
+                caption = outputListening;
                 $('#subtitle').html(caption);
                 promptInstruction();
             }
@@ -322,12 +322,9 @@ window.onload = function(){
                 $(".newSearch-modalBubble").show();
                 $('.newSearch-modalBubble').addClass('animated fadeInDown');
             }, 1000);
-            
-            
+             
         }
         
-        
-
     }
     
     function promptInstruction(){
@@ -353,146 +350,146 @@ window.onload = function(){
         }, 1000);
     }
     
-    function spellChecker(fac_name){
-        if(fac_name == "Dunkin" || fac_name == "Dunking")
+    function spellChecker(facName){
+        if(facName == "Dunkin" || facName == "Dunking")
             return "Duncan";
-        if(fac_name == "cambridge" || fac_name == "Cambridge" || fac_name == "Kim Birge" || fac_name == "Kim Bridge"  || fac_name == "Kim birge" || fac_name == "Kim Berg" || fac_name == "Kim Birch" || fac_name == "Kim Burch")
+        if(facName == "cambridge" || facName == "Cambridge" || facName == "Kim Birge" || facName == "Kim Bridge"  || facName == "Kim birge" || facName == "Kim Berg" || facName == "Kim Birch" || facName == "Kim Burch")
             return "Kim Burge";
-        if(fac_name == "Berg" || fac_name == "Cambridge" || fac_name == "Burg" || fac_name == "Birch" || fac_name == "Bridge" || fac_name == "birge" || fac_name == "Birge" || fac_name == "bridge" || fac_name == "Burch" || fac_name == "burch")
+        if(facName == "Berg" || facName == "Cambridge" || facName == "Burg" || facName == "Birch" || facName == "Bridge" || facName == "birge" || facName == "Birge" || facName == "bridge" || facName == "Burch" || facName == "burch")
             return "Burge";
         
-        else if(fac_name == "Janelle Lau" || fac_name == "Professor Lau" || fac_name == "Janelle now" || fac_name == "Janelle Lao" || fac_name == "genola" || fac_name == "genola" || fac_name == "genello" || fac_name == "Janelle out" || fac_name == "Janel Lao")
+        else if(facName == "Janelle Lau" || facName == "Professor Lau" || facName == "Janelle now" || facName == "Janelle Lao" || facName == "genola" || facName == "genola" || facName == "genello" || facName == "Janelle out" || facName == "Janel Lao")
             return "Jenel Lao";
-        else if(fac_name == "Lau" || fac_name == "out" || fac_name == "now")
+        else if(facName == "Lau" || facName == "out" || facName == "now")
             return "Lao";
         
-        else if(fac_name == "die shoe" || fac_name == "disha" || fac_name == "disa" || fac_name == "D shoe" || fac_name == "Daiso" || fac_name == "DC" || fac_name == "DC" || fac_name == "zissou" || fac_name == "the zoo" || fac_name == "Dai Chu" || fac_name == "deitch" || fac_name == "dye shoe" || fac_name == "dice shoe" || fac_name == "D Sue")
+        else if(facName == "die shoe" || facName == "disha" || facName == "disa" || facName == "D shoe" || facName == "Daiso" || facName == "DC" || facName == "DC" || facName == "zissou" || facName == "the zoo" || facName == "Dai Chu" || facName == "deitch" || facName == "dye shoe" || facName == "dice shoe" || facName == "D Sue")
             return "Di Xu";
-        else if(fac_name == "shoe" || fac_name == "sure" || fac_name == "Sue" || fac_name == "zoo")
+        else if(facName == "shoe" || facName == "sure" || facName == "Sue" || facName == "zoo")
             return "Xu"; 
         
-        else if(fac_name == "young" || fac_name == "You")
+        else if(facName == "young" || facName == "You")
             return "Young";
         
-        else if(fac_name == "constance iloh" || fac_name == "Constance Ehlo" || fac_name == "constants Hilo" || fac_name == "Constance I love" || fac_name == "Constance Ela" || fac_name == "Constance eilo" || fac_name == "Constance Isla" || fac_name == "Constance Hilo" || fac_name == "Constance eloah" || fac_name == "Constance Islas")
+        else if(facName == "constance iloh" || facName == "Constance Ehlo" || facName == "constants Hilo" || facName == "Constance I love" || facName == "Constance Ela" || facName == "Constance eilo" || facName == "Constance Isla" || facName == "Constance Hilo" || facName == "Constance eloah" || facName == "Constance Islas")
             return "Constance Iloh";
-        else if(fac_name == "I know" || fac_name == "I lo" || fac_name == "Missy Lowe" || fac_name == "Constance eloah" || fac_name == "Ehlo" || fac_name == "Hilo" || fac_name == "I low" || fac_name == "I love" || fac_name == "eloah")
+        else if(facName == "I know" || facName == "I lo" || facName == "Missy Lowe" || facName == "Constance eloah" || facName == "Ehlo" || facName == "Hilo" || facName == "I low" || facName == "I love" || facName == "eloah")
             return "Iloh";
         
-        else if(fac_name == "Deborah vendell" || fac_name == "Deborah vandal" || fac_name == "Deborah vandal" || fac_name == "Deborah vandell" || fac_name == "Deborah Vando" || fac_name == "Deborah Van Dale" || fac_name == "Deborah Venta" || fac_name == "Deborah Vendome" || fac_name == "Deborah vendal" || fac_name == "Deborah van daele" || fac_name == "Deborah Venda" || fac_name == "Deborah Van-Del" || fac_name == "Deborah Vendo" || fac_name == "Debra vendal" || fac_name == "Debra vendel" || fac_name == "Debra Vendo" || fac_name == "Debra Van-Del")
+        else if(facName == "Deborah vendell" || facName == "Deborah vandal" || facName == "Deborah vandal" || facName == "Deborah vandell" || facName == "Deborah Vando" || facName == "Deborah Van Dale" || facName == "Deborah Venta" || facName == "Deborah Vendome" || facName == "Deborah vendal" || facName == "Deborah van daele" || facName == "Deborah Venda" || facName == "Deborah Van-Del" || facName == "Deborah Vendo" || facName == "Debra vendal" || facName == "Debra vendel" || facName == "Debra Vendo" || facName == "Debra Van-Del")
             return "Deborah Vandell";
-        else if(fac_name == "vendell" || fac_name == "bandel" || fac_name == "Van Dell" || fac_name == "vandal" || fac_name == "Vandell" || fac_name == "vandell" || fac_name == "van daele" || fac_name == "Venda" || fac_name == "Vendo" || fac_name == "Van-Del" || fac_name == "Bendo" || fac_name == "Vindale" || fac_name == "vendal" || fac_name == "Bendell")
+        else if(facName == "vendell" || facName == "bandel" || facName == "Van Dell" || facName == "vandal" || facName == "Vandell" || facName == "vandell" || facName == "van daele" || facName == "Venda" || facName == "Vendo" || facName == "Van-Del" || facName == "Bendo" || facName == "Vindale" || facName == "vendal" || facName == "Bendell")
             return "Vandell";
         
-        else if(fac_name == "Melinda petre" || fac_name == "Melinda Petrie" || fac_name == "Melinda Petry" || fac_name == "Melinda Peter" || fac_name == "Melinda better" || fac_name == "Melinda Petra" || fac_name == "Melinda Penner")
+        else if(facName == "Melinda petre" || facName == "Melinda Petrie" || facName == "Melinda Petry" || facName == "Melinda Peter" || facName == "Melinda better" || facName == "Melinda Petra" || facName == "Melinda Penner")
             return "Melinda Petre";
-        else if(fac_name == "Petri" || fac_name == "Petrie" || fac_name == "Petry" || fac_name == "Peter" || fac_name == "petre" || fac_name == "Petra" || fac_name == "Putter")
+        else if(facName == "Petri" || facName == "Petrie" || facName == "Petry" || facName == "Peter" || facName == "petre" || facName == "Petra" || facName == "Putter")
             return "Petre";
         //Check these
-        else if(fac_name == "Jacqueline Echols" || fac_name == "Jacqueline eckley's" || fac_name == "Jaclyn eckley's" || fac_name == "Jacqueline eclise" || fac_name == "Jaclyn a class" || fac_name == "Jacqueline Ellis" || fac_name == "Jacqueline eClass" || fac_name == "Jacqueline Equus" )         
+        else if(facName == "Jacqueline Echols" || facName == "Jacqueline eckley's" || facName == "Jaclyn eckley's" || facName == "Jacqueline eclise" || facName == "Jaclyn a class" || facName == "Jacqueline Ellis" || facName == "Jacqueline eClass" || facName == "Jacqueline Equus" )         
             return "Jacquelynne Eccles";
-        else if(fac_name == "Echols"|| fac_name == "a class" || fac_name == "glass" || fac_name=="at glass" || fac_name == "akhilesh" || fac_name == "ecla" || fac_name == "eckley's" || fac_name == "X")
+        else if(facName == "Echols"|| facName == "a class" || facName == "glass" || facName=="at glass" || facName == "akhilesh" || facName == "ecla" || facName == "eckley's" || facName == "X")
             return "Eccles";
          
-        else if(fac_name == "Liane brouillette" || fac_name == "Leon brouillette" || fac_name == "Leanne bralette" || fac_name == "Lee Ann brouillette" || fac_name == "Lee Ann Brewery" || fac_name == "Lee Anne Burrell at" || fac_name == "Lee Anne Burrell"  || fac_name == "Leon roulette" || fac_name == "Leanne Grill at" || fac_name == "Leon bralette")
+        else if(facName == "Liane brouillette" || facName == "Leon brouillette" || facName == "Leanne bralette" || facName == "Lee Ann brouillette" || facName == "Lee Ann Brewery" || facName == "Lee Anne Burrell at" || facName == "Lee Anne Burrell"  || facName == "Leon roulette" || facName == "Leanne Grill at" || facName == "Leon bralette")
             return "Liane Brouillette";
-        else if(fac_name == "brouillette" || fac_name == "bralette")
+        else if(facName == "brouillette" || facName == "bralette")
             return "Brouillette";
         
-        else if(fac_name == "David Lynn")
+        else if(facName == "David Lynn")
             return "David Lim"
-        else if(fac_name == "Lynn")
+        else if(facName == "Lynn")
             return "Lim"    
         //Check These
-        else if(fac_name == "Geneva Lopez Sandoval" || fac_name == "jenefir lopez sandoval" || fac_name == "Geneva Lopez" || fac_name == "Geneva Sandoval" || fac_name == "Geneva sandals")
+        else if(facName == "Geneva Lopez Sandoval" || facName == "jenefir lopez sandoval" || facName == "Geneva Lopez" || facName == "Geneva Sandoval" || facName == "Geneva sandals")
             return "Geneva Lopez-Sandoval";
-        else if(fac_name == "Lopez Sandoval")
+        else if(facName == "Lopez Sandoval")
             return "Lopez-Sandoval"
             
-        else if(fac_name == "Sarah sing" || fac_name == "ceresin" || fac_name == "Sarah singe" || fac_name == "Sarah sink" || fac_name == "terracing")     
+        else if(facName == "Sarah sing" || facName == "ceresin" || facName == "Sarah singe" || facName == "Sarah sink" || facName == "terracing")     
             return "Sarah Singh";
-        else if(fac_name == "sing")
+        else if(facName == "sing")
             return "Singh";
         
-        else if(fac_name == "Susan Toma bears" || fac_name == "Susan Toma Berg" || fac_name == "Susan Toma bush" || fac_name == "Susan Toma Burj" || fac_name == "Susan Toma Burge" || fac_name == "Susan Toma Birch" || fac_name == "Susan Thelma Burge" || fac_name == "Susan Tama Burge" || fac_name == "Susan Birch" || fac_name == "Susan Tory Burch" || fac_name == "Susan Toma Bridge" || fac_name == "Susan Toma bersch" || fac_name == "Susan Toma Berge")
+        else if(facName == "Susan Toma bears" || facName == "Susan Toma Berg" || facName == "Susan Toma bush" || facName == "Susan Toma Burj" || facName == "Susan Toma Burge" || facName == "Susan Toma Birch" || facName == "Susan Thelma Burge" || facName == "Susan Tama Burge" || facName == "Susan Birch" || facName == "Susan Tory Burch" || facName == "Susan Toma Bridge" || facName == "Susan Toma bersch" || facName == "Susan Toma Berge")
             return "Susan Toma-Berge";
-        else if (fac_name == "Toma Berg" || fac_name == "Toma bersch" || fac_name == "Toma Burge" || fac_name == "Toma bears" || fac_name == "Toma Bridge" || fac_name == "Tama Burge" || fac_name == "Toma Birch" || fac_name == "Thelma Burge" || fac_name == "Toma Burj" || fac_name == "Toma Berge")
+        else if (facName == "Toma Berg" || facName == "Toma bersch" || facName == "Toma Burge" || facName == "Toma bears" || facName == "Toma Bridge" || facName == "Tama Burge" || facName == "Toma Birch" || facName == "Thelma Burge" || facName == "Toma Burj" || facName == "Toma Berge")
             return "Toma-Berge";
         
-        else if(fac_name == "Gene Stone" || fac_name == "June Stone" || fac_name == "jeans Stone" || fac_name == "Jean Stone")
+        else if(facName == "Gene Stone" || facName == "June Stone" || facName == "jeans Stone" || facName == "Jean Stone")
             return "Jeanne Stone";
-        else if(fac_name == "stone")
+        else if(facName == "stone")
             return "Stone";
         
-        else if(fac_name == "Maria tax" || fac_name == "Murrieta Cox" || fac_name == "Maria tactics" || fac_name == "Maria tac-x" || fac_name == "Mystic X" || fac_name == "Murrieta")
+        else if(facName == "Maria tax" || facName == "Murrieta Cox" || facName == "Maria tactics" || facName == "Maria tac-x" || facName == "Mystic X" || facName == "Murrieta")
             return "Maria Takacs";
-        else if(fac_name == "tac-x" || fac_name == "cats" || fac_name == "tacacs" || fac_name == "the cats" || fac_name == "it to cats" || fac_name == "tax" || fac_name == "tactics" || fac_name == "Technics" || fac_name == "a tech X" || fac_name == "Tech X")
+        else if(facName == "tac-x" || facName == "cats" || facName == "tacacs" || facName == "the cats" || facName == "it to cats" || facName == "tax" || facName == "tactics" || facName == "Technics" || facName == "a tech X" || facName == "Tech X")
             return "Takacs";
         
-        else if(fac_name == "Sandra Simkins")
+        else if(facName == "Sandra Simkins")
             return "Sandra Simpkins";
-        else if(fac_name == "Simkins")
+        else if(facName == "Simkins")
             return "Simpkins"
         
-        else if(fac_name == "Maria Rosales weather" || fac_name == "Maria Rosales Loretta" || fac_name == "Maria Rosales Ruda" || fac_name == "Maria Rosales reta" || fac_name == "Maria Rosales Beretta" || fac_name == "Maria Rosales" || fac_name == "Maria Goretti" || fac_name == "Maria Rosales Murrieta" || fac_name == "Maria Rosales Florida" || fac_name == "Maria Rosales Rueda" || fac_name == "Maria Rosales Bru weather")
+        else if(facName == "Maria Rosales weather" || facName == "Maria Rosales Loretta" || facName == "Maria Rosales Ruda" || facName == "Maria Rosales reta" || facName == "Maria Rosales Beretta" || facName == "Maria Rosales" || facName == "Maria Goretti" || facName == "Maria Rosales Murrieta" || facName == "Maria Rosales Florida" || facName == "Maria Rosales Rueda" || facName == "Maria Rosales Bru weather")
             return "Maria Rosales-Rueda";
-        else if(fac_name == "Rosales Rueda" || fac_name == "Rosales Beretta" || fac_name == "Rosales Murrieta" || fac_name == "Rosales reta" || fac_name == "Rosales Loretta" || fac_name == "Rosales weather" || fac_name == "Maria Rosales La Mirada" || fac_name == "Rosales ruella")
+        else if(facName == "Rosales Rueda" || facName == "Rosales Beretta" || facName == "Rosales Murrieta" || facName == "Rosales reta" || facName == "Rosales Loretta" || facName == "Rosales weather" || facName == "Maria Rosales La Mirada" || facName == "Rosales ruella")
             return "Rosales-Rueda";
         
         
-        else if(fac_name == "Jamal a Betty" || fac_name == "Jamal abedi" || fac_name == "Chemawa Betty" || fac_name == "Jamal Betty")
+        else if(facName == "Jamal a Betty" || facName == "Jamal abedi" || facName == "Chemawa Betty" || facName == "Jamal Betty")
             return "Jamal Abedi";
-        else if(fac_name == "a Betty" || fac_name == "abiti" || fac_name == "Betty")
+        else if(facName == "a Betty" || facName == "abiti" || facName == "Betty")
             return "Abedi";
         
-        else if(fac_name == "Virginia panish" || fac_name == "Virginia punished" || fac_name == "Virginia Peniche")
+        else if(facName == "Virginia panish" || facName == "Virginia punished" || facName == "Virginia Peniche")
             return "Virginia Panish";
-        else if(fac_name == "panish" || fac_name == "punish" || fac_name == "Spanish")
+        else if(facName == "panish" || facName == "punish" || facName == "Spanish")
             return "Panish";
        
-        else if(fac_name == "Sudan" || fac_name == "Sylvan" || fac_name == "Sue Bond")
+        else if(facName == "Sudan" || facName == "Sylvan" || facName == "Sue Bond")
             return "Sue Vaughn";
-        else if(fac_name == "von" || fac_name == "Von" || fac_name == "Vaughan")
+        else if(facName == "von" || facName == "Von" || facName == "Vaughan")
             return "Vaughn";
         
-        else if(fac_name == "Jeff Johnson")
+        else if(facName == "Jeff Johnson")
             return "Jeff Johnston";
-        else if(fac_name == "Johnson")
+        else if(facName == "Johnson")
             return "Johnston";
         
         
-        else if(fac_name == "Denise early" || fac_name == "Denise Ireland")
+        else if(facName == "Denise early" || facName == "Denise Ireland")
             return "Denise Earley";
-        else if(fac_name == "early" || fac_name == "ear Lee")
+        else if(facName == "early" || facName == "ear Lee")
             return "Earley";
        
-        else if(fac_name == "right low" || fac_name == "rat low" || fac_name == "Right low" || fac_name == "reloj" || fac_name == "Reloj")
+        else if(facName == "right low" || facName == "rat low" || facName == "Right low" || facName == "reloj" || facName == "Reloj")
             return "Rhett Lowe";
-        else if(fac_name == "low")
+        else if(facName == "low")
             return "Lowe";
 
-        else if(fac_name == "cute King" || fac_name == "cute Kang" || fac_name == "Kyu Kang" || fac_name == "Hugh Kang" || fac_name == "puke King" || fac_name == "Hugh King" || fac_name == "Hugh Cain" || fac_name == "UK" || fac_name == "Huck King" || fac_name == "Hayek King" || fac_name == "How you came" || fac_name == "heeyook kang" || fac_name == "hip pain" || fac_name == "hyatt pinion" || fac_name == "hugh connell")
+        else if(facName == "cute King" || facName == "cute Kang" || facName == "Kyu Kang" || facName == "Hugh Kang" || facName == "puke King" || facName == "Hugh King" || facName == "Hugh Cain" || facName == "UK" || facName == "Huck King" || facName == "Hayek King" || facName == "How you came" || facName == "heeyook kang" || facName == "hip pain" || facName == "hyatt pinion" || facName == "hugh connell")
             return "Hyuk Kang";
-        else if(fac_name == "King" || fac_name == "king" || fac_name == "kane" || fac_name == "Ken")
+        else if(facName == "King" || facName == "king" || facName == "kane" || facName == "Ken")
             return "Kang";
         
-        else if(fac_name == "ho Sun King" | fac_name == "ho-sun Kang" || fac_name == "ho-sun King" || fac_name == "Hole Sun King" || fac_name == "ho Sung Kang")
+        else if(facName == "ho Sun King" | facName == "ho-sun Kang" || facName == "ho-sun King" || facName == "Hole Sun King" || facName == "ho Sung Kang")
             return "Hosun Kang";
         
-        else if(fac_name == "Jayda Jenkins" || fac_name == "Jay Jenkins" || fac_name == "J Jenkins" || fac_name == "Jada Jenkins")
+        else if(facName == "Jayda Jenkins" || facName == "Jay Jenkins" || facName == "J Jenkins" || facName == "Jada Jenkins")
             return "Jade Jenkins";
         
-        else if(fac_name == "mcdugle")
+        else if(facName == "mcdugle")
             return "McDougall";
         
-        else if(fac_name == "Spencer Clark")
+        else if(facName == "Spencer Clark")
             return "Spenser Clark";
     
 
-        else if(fac_name == "new search" || fac_name == "research")
+        else if(facName == "new search" || facName == "research")
             return "new search";
 
-        return fac_name;
+        return facName;
         
     }
     
@@ -580,7 +577,7 @@ window.onload = function(){
     
     function endSystem() {
         
-        message.text = output_systemReset;
+        message.text = outputSystemReset;
         window.speechSynthesis.speak(message);
         
         window.location.reload();
@@ -642,7 +639,7 @@ window.onload = function(){
 //        $('#systemMic').attr("src", "css/images/mic-disabled2.png");
 
         setTimeout(function(){ 
-            $('#subtitle').html(output_listening);
+            $('#subtitle').html(outputListening);
 //            $('#systemMic').attr("src", "css/images/microphone.png");
             
             }, wordCount * 500);
@@ -695,31 +692,31 @@ window.onload = function(){
         commandManager("MainMenu");
         
         if(resultShown){
-//            alert(output_moreRequest);
-            caption = output_moreRequest;
+//            alert(outputMoreRequest);
+            caption = outputMoreRequest;
             message.text = caption;
         }
         else if(clarifyFaculty_ACTIVE){
-//            alert(output_moreRequest);
-            caption = output_moreRequest;
+//            alert(outputMoreRequest);
+            caption = outputMoreRequest;
             message.text = caption;
         }
         else if(clarifyPrefix_ACTIVE){
-//            alert(output_validRequest);
-            caption = output_validRequest;
+//            alert(outputValidRequest);
+            caption = outputValidRequest;
             message.text = caption;
         }
         else if(instruction_ACTIVE){
-//            alert(output_moreRequest);
-            caption = output_moreRequest;
+//            alert(outputMoreRequest);
+            caption = outputMoreRequest;
             message.text = caption;
         }
         else if(events_ACTIVE){
-            caption = output_moreRequest;
+            caption = outputMoreRequest;
             message.text = caption;
         }
         else{
-            caption = output_pleasewait;
+            caption = outputPleaseWait;
             message.text = welcome;
         }
 
@@ -729,8 +726,8 @@ window.onload = function(){
         instruction_ACTIVE = false;
         events_ACTIVE = false;
         
-        roomLocator_active = false;
-        facultyLocator_active = false;
+        roomLocatorActive = false;
+        facultyLocatorActive = false;
         
         //For YesOrNo
         yes = false;
@@ -774,12 +771,12 @@ window.onload = function(){
         if(isNaN(input)) {
             if(/\d/.test(input)){
                 num = input;
-                message.text = data.rooms[num].voiceResponse_room;
+                message.text = data.rooms[num].voiceResponseRoom;
                 window.speechSynthesis.speak(message);    
             }
             else{
                 num = data.faculty[input].roomName;
-                message.text = data.rooms[num].voiceResponse_faculty;
+                message.text = data.rooms[num].voiceResponseFaculty;
                 window.speechSynthesis.speak(message);
                 
                 $(".faculty-name").html(data.rooms[num].facultyName);
@@ -790,7 +787,7 @@ window.onload = function(){
         }
         else {
             num = input;
-            message.text = data.rooms[num].voiceResponse_room;
+            message.text = data.rooms[num].voiceResponseRoom;
             window.speechSynthesis.speak(message);
         }
         
@@ -839,8 +836,8 @@ window.onload = function(){
         }
         $(".faculty-hours").html(myStr);  
         
-        roomLocator_active = false;
-        facultyLocator_active = false;
+        roomLocatorActive = false;
+        facultyLocatorActive = false;
         
         // ANIMATE RESULTS
         
@@ -875,8 +872,8 @@ window.onload = function(){
         if(yes) {
             timeLeft = grantTime;
 
-            caption = output_ok;
-            message.text = output_ok;
+            caption = outputOk;
+            message.text = outputOk;
             window.speechSynthesis.speak(message);
             
             
@@ -906,10 +903,10 @@ window.onload = function(){
             if(timeLeft == timeToAskFirst || timeLeft == timeToAskSecond) {
                                 
                 if(timeLeft == timeToAskFirst && !resultShown){
-                    message.text = output_moreTime;
+                    message.text = outputMoreTime;
                     window.speechSynthesis.speak(message);
                     
-                    caption = output_moreTime;
+                    caption = outputMoreTime;
                     systemAsked = true; 
                 } 
                 
@@ -917,10 +914,10 @@ window.onload = function(){
                     endSystem();
                 
                 if(resultShown) {
-                    message.text = output_moreTime;
+                    message.text = outputMoreTime;
                     window.speechSynthesis.speak(message);
                     
-                    caption = output_moreTime;
+                    caption = outputMoreTime;
                     systemAsked = true; 
                 }
                 systemTimer();
@@ -931,7 +928,7 @@ window.onload = function(){
                 systemTimer();
 
 
-        },systemTimer_interval);
+        },systemTimerInterval);
     }
 
     // This function handles what commands are available to a user at various parts of the system. The function contains a switch statement and depending the value of the commandKey parameter, certain commands will be made available to the user.
@@ -982,24 +979,24 @@ window.onload = function(){
         
         
         
-        roomLocator = function(room_num) {  
+        roomLocator = function(roomNum) {  
                         
-            if(!(room_num in data.rooms)){
+            if(!(roomNum in data.rooms)){
                 
-                outputRepeat(room_num);
+                outputRepeat(roomNum);
                 
             }                        
             else {
                 
-                roomLocator_active = true;
+                roomLocatorActive = true;
                 
                 var tempStr = "";
                 var letter = "a";
                 
-                possibleRoom = [room_num];
+                possibleRoom = [roomNum];
                 
                 for(var i = 0; ;i++){
-                    tempStr = room_num + letter;
+                    tempStr = roomNum + letter;
                     
                     if(tempStr in data.rooms)
                         possibleRoom.push(tempStr);
@@ -1014,11 +1011,11 @@ window.onload = function(){
                     modalResponse("room");
                 }
                 else{
-                    console.log(room_num);
-                    displayResultsView(data, room_num);
+                    console.log(roomNum);
+                    displayResultsView(data, roomNum);
                     resultShown = true; 
 
-                    caption = data.rooms[room_num].voiceResponse_room;
+                    caption = data.rooms[roomNum].voiceResponseRoom;
                     resultsCaption = caption;
                 }                
                 
@@ -1066,124 +1063,124 @@ window.onload = function(){
             window.speechSynthesis.speak(message);
         }
         
-        mrChecker = function(fac_name)
+        mrChecker = function(facName)
         {
-            fac_name = spellChecker(fac_name);
+            facName = spellChecker(facName);
 
             
-            // Checks to see if fac_name is in drList. If not in drList indexOf will    return -1.
-            if(mrListFullName.indexOf(fac_name) != -1)
-                facultyLocator(fac_name);
-            else if(mrListLastName.indexOf(fac_name) != -1)
-                facultyLocator(fac_name);
-            else if(msListFullName.indexOf(fac_name) != -1){
-                correctName = "Ms. " + fac_name;
-                universalName = fac_name;
+            // Checks to see if facName is in drList. If not in drList indexOf will    return -1.
+            if(mrListFullName.indexOf(facName) != -1)
+                facultyLocator(facName);
+            else if(mrListLastName.indexOf(facName) != -1)
+                facultyLocator(facName);
+            else if(msListFullName.indexOf(facName) != -1){
+                correctName = "Ms. " + facName;
+                universalName = facName;
                 clarifyPrefix_MODAL(correctName);
                 clarifyPrefix_RESPONSE(correctName);
             }
-            else if(msListLastName.indexOf(fac_name) != -1){
-                correctName = "Ms. " + fac_name;
-                universalName = fac_name;
+            else if(msListLastName.indexOf(facName) != -1){
+                correctName = "Ms. " + facName;
+                universalName = facName;
                 clarifyPrefix_MODAL(correctName);
                 clarifyPrefix_RESPONSE(correctName);
             }
             else
             {
-                outputRepeat(fac_name);
+                outputRepeat(facName);
                 
             }
             
         }
       
-        msChecker = function(fac_name)
+        msChecker = function(facName)
         {
-            fac_name = spellChecker(fac_name);
+            facName = spellChecker(facName);
             
-            // Checks to see if fac_name is in drList. If not in drList indexOf will    return -1.
-            if(msListFullName.indexOf(fac_name) != -1)
-                facultyLocator(fac_name);
-            else if(msListLastName.indexOf(fac_name) != -1)
-                facultyLocator(fac_name);
-            else if(mrListFullName.indexOf(fac_name) != -1){
-                correctName = "Mr. " + fac_name;
-                universalName = fac_name;
+            // Checks to see if facName is in drList. If not in drList indexOf will    return -1.
+            if(msListFullName.indexOf(facName) != -1)
+                facultyLocator(facName);
+            else if(msListLastName.indexOf(facName) != -1)
+                facultyLocator(facName);
+            else if(mrListFullName.indexOf(facName) != -1){
+                correctName = "Mr. " + facName;
+                universalName = facName;
                 clarifyPrefix_MODAL(correctName);
                 clarifyPrefix_RESPONSE(correctName);
             }
-            else if(mrListLastName.indexOf(fac_name) != -1){
-                correctName = "Mr. " + fac_name;
-                universalName = fac_name;
+            else if(mrListLastName.indexOf(facName) != -1){
+                correctName = "Mr. " + facName;
+                universalName = facName;
                 clarifyPrefix_MODAL(correctName);
                 clarifyPrefix_RESPONSE(correctName);
             }
             else
             {
-                outputRepeat(fac_name);
+                outputRepeat(facName);
                  
             }
             
         }
         
-        professorChecker = function(fac_name)
+        professorChecker = function(facName)
         {
-            fac_name = spellChecker(fac_name);
+            facName = spellChecker(facName);
             
             professorListFullName = ["Kim Burge","Jenel Lao","Liane Brouillette","Jamal Abedi","Maria Rosales-Rueda","Penelope Collins","George Farkas","Deborah Vandell","Jade Jenkins","Di Xu","Greg Duncan","Rachel Baker","Emily Penner","Constance Iloh","Hosun Kang","Robert Duncan","Melinda Petre","Jacquelynne Eccles","Drew Bailey","Geneva Lopez-Sandoval","Valerie Henry","Susan Guilfoyle","Susan Toma-Berge","Jenel Lao","Jeanne Stone","Jeff Johnston","Sandra Simpkins","Virginia Panish"];
             
             professorListLastName = ["Burge","Lao","Brouillette","Abedi","Rosales-Rueda","Collins","Farkas","Vandell","Jenkins","Xu","Duncan","Baker","Penner","Iloh","Kang","Duncan","Petre","Eccles","Bailey","Lopez-Sandoval","Henry","Guilfoyle","Toma-Berge","Lao","Stone","Johnston","Simpkins","Panish"];
             
-            // Checks to see if fac_name is in drList. If not in drList indexOf will    return -1.
-            if(professorListFullName.indexOf(fac_name) != -1)
-                facultyLocator(fac_name);  
-            else if(professorListLastName.indexOf(fac_name) != -1)
-                facultyLocator(fac_name);
-//            else if(mrListFullName.indexOf(fac_name) != -1)
-//                facultyLocator(fac_name);
+            // Checks to see if facName is in drList. If not in drList indexOf will    return -1.
+            if(professorListFullName.indexOf(facName) != -1)
+                facultyLocator(facName);  
+            else if(professorListLastName.indexOf(facName) != -1)
+                facultyLocator(facName);
+//            else if(mrListFullName.indexOf(facName) != -1)
+//                facultyLocator(facName);
             else
-                outputRepeat(fac_name);
+                outputRepeat(facName);
             
         }
         
         
-        drChecker = function(fac_name)
+        drChecker = function(facName)
         {
-            fac_name = spellChecker(fac_name);
-            console.log(fac_name);
+            facName = spellChecker(facName);
+            console.log(facName);
             drListFullName = ["Sandra Simpkins","Virginia Panish","Geneva Lopez-Sandoval","Drew Bailey","Jacquelynne Eccles","Robert Duncan","Constance Iloh","Emily Penner","Rachel Baker","Greg Duncan","Di Xu","Jade Jenkins","Deborah Vandell","George Farkas","Penelope Collins","Susan Toma-Berge","Maria Rosales-Rueda","Jamal Abedi","Liane Brouillette","Jenel Lao","Melinda Petre","Hosun Kang", "Kim Burge"];
             
             
             drListLastName = ["Simpkins","Panish","Lopez-Sandoval","Bailey","Eccles","Duncan","Iloh","Penner","Baker","Duncan","Xu","Jenkins","Vandell","Farkas","Collins","Toma-Berge","Rosales-Rueda","Abedi","Brouillette","Lao","Petre","Kang","Burge"];
             
             
-            // Checks to see if fac_name is in drList. If not in drList indexOf will    return -1.
-            if(drListFullName.indexOf(fac_name) != -1)
-                facultyLocator(fac_name);
-            else if(drListLastName.indexOf(fac_name) != -1)
-                facultyLocator(fac_name);
+            // Checks to see if facName is in drList. If not in drList indexOf will    return -1.
+            if(drListFullName.indexOf(facName) != -1)
+                facultyLocator(facName);
+            else if(drListLastName.indexOf(facName) != -1)
+                facultyLocator(facName);
             else
             {
-                outputRepeat(fac_name);
+                outputRepeat(facName);
                 
             }
         }
         
         
         
-        facultyLocator = function(fac_name) {  
-            //alert(fac_name);
+        facultyLocator = function(facName) {  
+            //alert(facName);
             
-            fac_name = spellChecker(fac_name);
+            facName = spellChecker(facName);
             //Spell check faculty name input
             
-            //alert(fac_name);
-            var splitFacName = fac_name.split(" ");
+            //alert(facName);
+            var splitFacName = facName.split(" ");
             
             var firstName = splitFacName[0];
             var lastName = splitFacName[1];
             
-            var firstName_noCaps = firstName;
-            var firstName_noCaps = firstName_noCaps.toLowerCase();
+            var firstNameNoCaps = firstName;
+            var firstNameNoCaps = firstNameNoCaps.toLowerCase();
             if(badWords.includes(firstName)){
                 outputRepeat(firstName);
                 return;
@@ -1194,7 +1191,7 @@ window.onload = function(){
             
             possibleFaculty = [];
             
-            facultyLocator_active = true;
+            facultyLocatorActive = true;
             clarifyPrefix_ACTIVE = false;
             
             //If they only provided one name (i.e. Professor Denenberg)
@@ -1203,9 +1200,9 @@ window.onload = function(){
                     for(key in data.faculty)
                     {
                         var keyCheck = key.split(" ");
-                       // console.log("Key: " + key + " | faculty Input: " + fac_name + " | Key Comparrison: " + keyCheck[1]);
+                       // console.log("Key: " + key + " | faculty Input: " + facName + " | Key Comparrison: " + keyCheck[1]);
 
-                        if(fac_name == keyCheck[1])
+                        if(facName == keyCheck[1])
                         {
                             matchFound = true;
                             possibleFaculty.push(key);
@@ -1215,7 +1212,7 @@ window.onload = function(){
 //                    alert(possibleFaculty.length);
                     if(!matchFound)
                     {
-                        outputRepeat(fac_name);
+                        outputRepeat(facName);
                         
                     }
                     else
@@ -1238,9 +1235,9 @@ window.onload = function(){
                                     
                                     var num = data.faculty[possibleFaculty[0]].roomName;
                                     
-                                    caption = data.rooms[num].voiceResponse_faculty;
+                                    caption = data.rooms[num].voiceResponseFaculty;
                                     resultsCaption = caption;
-//                                    systemPause((data.rooms[num].voiceResponse_faculty), (data.rooms[num].voiceResponse_faculty).split(' ').length);
+//                                    systemPause((data.rooms[num].voiceResponseFaculty), (data.rooms[num].voiceResponseFaculty).split(' ').length);
                                 }
                         }
                 }
@@ -1249,19 +1246,19 @@ window.onload = function(){
                 {
                     
                         
-                    if(!(fac_name in data.faculty))
+                    if(!(facName in data.faculty))
                         {
-                            outputRepeat(fac_name);                            
+                            outputRepeat(facName);                            
                         }
                     else
                         {
                             
-                            displayResultsView(data, fac_name);
+                            displayResultsView(data, facName);
                             resultShown = true;
                             
-                            var num = data.faculty[fac_name].roomName;
+                            var num = data.faculty[facName].roomName;
                             
-                            caption = data.rooms[num].voiceResponse_faculty;
+                            caption = data.rooms[num].voiceResponseFaculty;
                             resultsCaption = caption;
                         }
                 }
@@ -1372,7 +1369,7 @@ window.onload = function(){
         var optionFunc = function(numString){
            // alert("numString: " + numString);
 //          
-            //alert(roomLocator_active + " " + facultyLocator_active);
+            //alert(roomLocatorActive + " " + facultyLocatorActive);
             var index = convertToNumber(numString) - 1;
             //alert("index: " + index);
 //            alert(!isNaN(index));
@@ -1380,8 +1377,8 @@ window.onload = function(){
             if(!isNaN(index)){
 //                alert("index: " + index + ", faculty length: " + possibleFaculty.length + ", room length: " + possibleRoom.length-1);
                 //alert(possibleRoom.length);
-                if(index >= possibleRoom.length && index >= possibleRoom.length - 1 && roomLocator_active){
-                    caption = output_validRequest;
+                if(index >= possibleRoom.length && index >= possibleRoom.length - 1 && roomLocatorActive){
+                    caption = outputValidRequest;
                     message.text = caption;
                     window.speechSynthesis.speak(message);
                     //alert("about to return");
@@ -1392,20 +1389,20 @@ window.onload = function(){
                 annyang.addCommands(commands);
 
                 var indexItem = "";
-    //           alert(roomLocator_active + " " + facultyLocator_active);
-                if(roomLocator_active){
+    //           alert(roomLocatorActive + " " + facultyLocatorActive);
+                if(roomLocatorActive){
                     if(possibleRoom[0] == "2005")
                         indexItem = possibleRoom[index]; 
                     else
                         indexItem = possibleRoom[index+1];  
-    //                alert(data.rooms[indexItem].voiceResponse_room);
-                    caption = data.rooms[indexItem].voiceResponse_room;
+    //                alert(data.rooms[indexItem].voiceResponseRoom);
+                    caption = data.rooms[indexItem].voiceResponseRoom;
                 }
-                else if(facultyLocator_active){
+                else if(facultyLocatorActive){
                     //alert("fac locator active");
                     indexItem = possibleFaculty[index];
                     num = data.faculty[possibleFaculty[index]].roomName;
-                    caption = data.rooms[num].voiceResponse_faculty;
+                    caption = data.rooms[num].voiceResponseFaculty;
                 }
                 resultsCaption = caption;
 
@@ -1420,7 +1417,7 @@ window.onload = function(){
                 if(spellChecker(numString) == "new search")
                     displayMenuView();
                 else{
-                    caption = output_validRequest;
+                    caption = outputValidRequest;
                     message.text = caption;
                     window.speechSynthesis.speak(message);
                     return;
@@ -1460,12 +1457,12 @@ window.onload = function(){
 //            'instructions' : displayInstructionModal,
             
             // Room Locator Commands: These commands handle all of the different variaitons in which users can search for room locations.
-            'I am looking for room *room_num' : roomLocator,
-            "I'm looking for room *room_num" : roomLocator,
-            "I'm looking for a room *room_num" : roomLocator,
-            'Where is room *room_num' : roomLocator,
-            'Where\'s room *room_num' : roomLocator,
-            'room *room_num' : roomLocator,
+            'I am looking for room *roomNum' : roomLocator,
+            "I'm looking for room *roomNum" : roomLocator,
+            "I'm looking for a room *roomNum" : roomLocator,
+            'Where is room *roomNum' : roomLocator,
+            'Where\'s room *roomNum' : roomLocator,
+            'room *roomNum' : roomLocator,
             
             // Faculty Locator Commands: These commands handle all of the different variations in which users can search for Professor Office Locations.
             
@@ -1601,13 +1598,13 @@ window.onload = function(){
             ajaxhttp.send(null);
         }
         
-        bubbleCommand_room();
-        bubbleCommand_faculty();
+        bubbleCommandRoom();
+        bubbleCommandFaculty();
         
-        bubblePrefix_room();
-        bubblePrefix_faculty();
+        bubblePrefixRoom();
+        bubblePrefixFaculty();
         
-        bubbleCommand_event();
+        bubbleCommandEvent();
     });
     
     $('#endButton').click(function(){
@@ -1627,8 +1624,8 @@ window.onload = function(){
         }, 1000);
         
         
-        caption = output_speak;
-        message.text = output_speak;
+        caption = outputSpeak;
+        message.text = outputSpeak;
         window.speechSynthesis.speak(message);
 
     });
