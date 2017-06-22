@@ -934,20 +934,23 @@ window.onload = function(){
         },systemTimer_interval);
     }
 
-    
+    // This function handles what commands are available to a user at various parts of the system. The function contains a switch statement and depending the value of the commandKey parameter, certain commands will be made available to the user.
     function commandManager(commandKey)
     {
         switch(commandKey)
         {
+            // Room Location, Professor Location, and Upcoming Events commands will be made available
             case "MainMenu": 
                 annyang.addCommands(mainMenuCommands);
                 annyang.removeCommands('(number) :number');
                 break;
+            // New Search, and the ability to respond yes or no to a more time needed prompt will be made available.
             case "ResultsView":
                 annyang.init(commands,true);
                 annyang.addCommands(commands);
                 annyang.removeCommands(optionCommands);
                 break;
+            //The command to choose the option based on the modal, and the ability to respond yes or no to a more time needed prompt will be made available. 
             case "OptionsView":
                 annyang.init(commands,true);
                 annyang.addCommands(commands);
@@ -955,10 +958,11 @@ window.onload = function(){
                 if(clarifyFaculty_ACTIVE)
                     annyang.addCommands(optionCommands);
                 break;
+            // New Search, and the ability to respond yes or no to a more time needed prompt will be made available.
             case "CalendarView":
                 annyang.init(commands,true);
                 annyang.addCommands(commands);
-                annyang.addCommands(eventsOptionsCommands);
+//                annyang.addCommands(eventsOptionsCommands);
                 break;
             case "Instruction":
                 annyang.addCommands(exitCommands);
@@ -1445,13 +1449,17 @@ window.onload = function(){
             message.text = "Here are your instructions!";
             window.speechSynthesis.speak(message);
         }
-         
+        
+        // These are the commands that are available once the user presses the "Start" button to activate the system. They are divideed into 3 types of commands, Room Location commands, Professor Location commands, and Upcoming Events commnds.
         mainMenuCommands = {
+            // * = capture everything after 
+            // : = capture only one word    
+            
             //instructions
 //            'Instructions' : displayInstructionModal,
 //            'instructions' : displayInstructionModal,
             
-            // Room Locator Commands
+            // Room Locator Commands: These commands handle all of the different variaitons in which users can search for room locations.
             'I am looking for room *room_num' : roomLocator,
             "I'm looking for room *room_num" : roomLocator,
             "I'm looking for a room *room_num" : roomLocator,
@@ -1459,7 +1467,8 @@ window.onload = function(){
             'Where\'s room *room_num' : roomLocator,
             'room *room_num' : roomLocator,
             
-            // Faculty Locator Commands
+            // Faculty Locator Commands: These commands handle all of the different variations in which users can search for Professor Office Locations.
+            
 //            "I'm looking for mr. *name":mrChecker,
 //            "I'm looking for Mr *name":mrChecker,
 //            
@@ -1467,7 +1476,7 @@ window.onload = function(){
 //            "I'm looking for Miss *name":msChecker,
 //            "I'm looking for a Miss *name":msChecker,
 //            "I'm looking for mrs. *name":msChecker,
-            
+        
             "I'm looking for dr. *name":facultyLocator,
             "I'm looking for dr *name":facultyLocator,
             "I'm looking for a dr *name":facultyLocator,
@@ -1504,58 +1513,55 @@ window.onload = function(){
             'Where\'s A *name':facultyLocator,
             
             
-            
-//            "I'm looking for *name": facultyLocator,
-//            'professor *name': facultyLocator,
-            // 'I am looking for professor *fac_name' : facultyLocator,
-           // 'I am looking for professor *fac_first_name :fac_last_name' : facultyLocator,
-            //'professor *fac_first_name (*fac_last_name)' : facultyLocator,
-            
-            //Event View
+            //Upcoming Events: These commands handle all the ways that users could ask to see upcoming events.
             'What events are coming up' : displayEventModal,
             'Show me upcoming events' : displayEventModal,
             'I want to know upcoming events' : displayEventModal,
-            // randomWord can only be yes or no now to avoid it being called very    time. 
+            
+            // randomWord can only be yes or no now to avoid it being called every time. 
             
             ':randomWord' : {'regexp' : /^(yes|no)$/, 'callback' : yesOrno}
         };
         
+        
+        // Is this still used?
         exitCommands = {
             'exit': displayMenuView  
         };
     
-        
+        // These are the commands that are available to users when they reach a Results Page after requesting a valid Room Location, Professor Location, or Upcoming Events.
         commands = {
             // * = capture everything after 
             // : = capture only one word
             
-            //RESET COMMAND
             'new search' : displayMenuView,
             ':randomWord' : {'regexp' : /^(yes|no)$/, 'callback' : yesOrno},
             'thank you' : yourWelcome
         };
         
+        // This command is available to users when they asl for a Room Location, or Professor Location and they are given the option to chosse between options. An example of this would be if they ask for Professor Duncan, a modal will appear that will ask the user which professor Duncan they are referring to (Greg Duncam or Robert Duncan).
         optionCommands = {
+            // * = capture everything after 
+            // : = capture only one word
             '(number) :number' : optionFunc
         };
         
-        eventsOptionsCommands = {
-            //'(This) :viewType': 
-            '*timeFrame' : {'regexp' : /^(what's happening this month|what's happening today|what's happening this week)$/, 'callback' : calendarView}
-        };
+//        eventsOptionsCommands = {
+//            // * = capture everything after 
+//            // : = capture only one word
+//            '*timeFrame' : {'regexp' : /^(what's happening this month|what's happening today|what's happening this week)$/, 'callback' : calendarView}
+//        };
    
-//        annyang.addCommands(commands);
+        // Activates the Main Menu commands that are available to users when they press the "Start" button.
         commandManager("MainMenu");
         
-        annyang.setLanguage("en-US");
-        annyang.start({continuous: false}); 
         
-        annyang.debug([newState=true]);
+        annyang.setLanguage("en-US");           // Sets annyang.js's language to English
+        annyang.start({continuous: false});     // Starts annyang.js without continuous mode.
         
-        // adds NoMatch everytime no match is found.
-       // annyang.addCallback('resultNoMatch',noMatch);
-        //$('#subtitle').html("I'm Listening...");
-
+        // **Uncomment to turn debug mode on for annyang. js. In debug mode, the words that annyang hears, and the commands that are being added and removed throughout the systems eecution, is printed to the console.
+//        annyang.debug([newState=true]); 
+ 
     }
     
     //*********************************************************************************************************   SYSTEM START
@@ -1624,9 +1630,6 @@ window.onload = function(){
         caption = output_speak;
         message.text = output_speak;
         window.speechSynthesis.speak(message);
-        
-//        systemPause(output_speak, output_speak.split(' ').length);
-//        delay(output_speak, output_speak.split(' ').length);
 
     });
  
