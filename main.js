@@ -1125,8 +1125,6 @@ window.onload = function(){
         
         annyang.setLanguage("en-US");           // Sets annyang.js's language to English
         annyang.start({continuous: false});     // Starts annyang.js without continuous mode.
-        
-        // **Uncomment to turn debug mode on for annyang. js. In debug mode, the words that annyang hears, and the commands that are being added and removed throughout the systems eecution, is printed to the console.
     }
     
     //*********************************************************************************************************   SYSTEM START
