@@ -190,7 +190,7 @@ window.onload = function(){
             $('#subtitle').html(caption);                                   // Updates the caption to the proper corresponding Speech Synthesis Utterance message
         };
         
-        // Function that is called at the end of every Speech Synthesis Utterance message 
+        // This function is called at the end of every Speech Synthesis Utterance message. It changes the mic image on the system’s interface back to active (green mic image), updates the caption to the proper corresponding Speech Synthesis Utterance message, and calls the promptNewSearch function to animate a prompt to users about making a new search. The caption and the type that is passed on to the promptNewSearch function depends on the current page the users are in, which explains why there is an if statement. Lastly, this function resumes annyang so that users can interact with the system. 
         message.onend = function(event)
         { 
             $('#systemMic').attr("src", "css/images/microphone.png");
