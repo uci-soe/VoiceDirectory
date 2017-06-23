@@ -118,6 +118,7 @@ window.onload = function(){
         
     }
     
+    
     // This function loops a selection of commands in the FACULTY speech bubble of the UI. It give users a flexible visual queue of what commands they can use when requesting for faculty members.
     function facultyCommandLoop (){
         
@@ -141,6 +142,7 @@ window.onload = function(){
         
     }
     
+    
     // This function loops a selection of room types in the ROOM speech bubble of the UI. It give users a flexible visual queue to say either a specific room number or a restroom.
     function roomTypeLoop (){
         
@@ -162,6 +164,7 @@ window.onload = function(){
         
         showNextText();
     }
+    
     
     // This function loops a selection of commands in the ROOM speech bubble of the UI. It give users a flexible visual queue of what commands they can use when requesting for rooms.
     function roomCommandLoop (){
@@ -186,6 +189,7 @@ window.onload = function(){
         
     }
     
+    
     // This function animates the text inside the event bubble in the menu page. The animation is for the text to slide in from the right. 
     function eventCommandAnimation(){
         
@@ -206,6 +210,7 @@ window.onload = function(){
         }
         return true;
     }
+    
     
     //Creating voice synthesis utterance object is the current browser has SpeechSynthesis
     if('speechSynthesis' in window)
@@ -274,9 +279,7 @@ window.onload = function(){
     
     startTime();
     //*********************************************************************************************************   FUNCTION DECLARATIONS
-
-//    $(".intro-block").hide();
-    
+ 
     $(".blue-block").hide();
     $(".menu-block").hide();
     $("#systemMic").hide();
@@ -298,6 +301,7 @@ window.onload = function(){
     // Instruction Bubble
     $(".instruction-bubble").hide(); 
     $(".instruction-prompt").hide();
+    
     
     // This function displays a prompt for users to make a new search. The location of this animated prompt will depend on the type of screen that the users are in. 
     function promptNewSearch(type){
@@ -321,6 +325,7 @@ window.onload = function(){
         }    
     }
     
+    
     function promptInstruction(){
         
         $('.instruction-container').css('display','block');
@@ -333,6 +338,7 @@ window.onload = function(){
 
     }
     
+    
     // This function displays a prompt for users to exit the current page and go back to the main menu page. The prompt will appear at the bottom-center of a modal screen. 
     function promptExit(){
         $(".instruction-modalPrompt").show();
@@ -342,6 +348,7 @@ window.onload = function(){
             $('.instruction-modalBubble').addClass('animated fadeInDown');
         }, 1000);
     }
+    
     
     //This function is a utility function that is called when a user utilizes a Faculty Location command. When a user makes a Faculty Location command the facultyLocator function will pass the word that was heard by annyang to this function, and this function will check to see if the word is equal to any of the name variations for professor names. If the word is equal to any of the name variations, the word will be returned to the facultyLocator function as the correct faculty name to be used to retrieve the correct faculty information.
     function spellChecker(facName){
@@ -404,7 +411,6 @@ window.onload = function(){
         
         
         // "Jacquelynne Eccles" name variations
-        //Check these
         else if(facName == "Jacqueline Echols" || facName == "Jacqueline eckley's" || facName == "Jaclyn eckley's" || facName == "Jacqueline eclise" || facName == "Jaclyn a class" || facName == "Jacqueline Ellis" || facName == "Jacqueline eClass" || facName == "Jacqueline Equus" )         
             return "Jacquelynne Eccles";
         // "Eccles" name variations
@@ -429,7 +435,6 @@ window.onload = function(){
         
         
         // "Geneva Lopez-Sandoval" name variations
-        //Check These
         else if(facName == "Geneva Lopez Sandoval" || facName == "jenefir lopez sandoval" || facName == "Geneva Lopez" || facName == "Geneva Sandoval" || facName == "Geneva sandals")
             return "Geneva Lopez-Sandoval";
         // "Lopez-Sandoval" name variations
@@ -567,6 +572,7 @@ window.onload = function(){
         return facName;
     }
     
+    
     // When users request for upcoming events, this function is executed and a modal for upcoming events will be displayed.
      function displayEventModal (){
          events_ACTIVE = true;   
@@ -587,6 +593,7 @@ window.onload = function(){
          message.text = caption;
          window.speechSynthesis.speak(message);            
     }
+    
     
     // When users request for a faculty member with a non-unique last name, this function is executed and a modal for faculty options will be displayed. This modal dynamically lists down more than one faculty member with the same last name, each of which has an associated number that the users must choose to receive the desired result. 
     function displayOptionsModal(data,duplicatesArray) {
@@ -617,7 +624,6 @@ window.onload = function(){
                 
                 for(var i = 0; i < duplicatesArray.length ; i++){
                      myStr = myStr + "<p>" + (i+1) + " - Room " + data.rooms[duplicatesArray[i]].roomNumber + " - " + data.rooms[duplicatesArray[i]].facultyName +"</p>";
-//                    alert(duplicatesArray[i]);
                 }
             }
             else{
@@ -632,6 +638,7 @@ window.onload = function(){
         $('#dynamic-options').append(myStr);        
     }
     
+    
     // When users request for a faculty member with a non-unique last name, this function is executed and a modal for faculty options will be displayed. This function prompts users to say the number associated with the specific item (room or faculty member) in the modal list. 
     function multipleItemResponse(item){
         
@@ -640,9 +647,8 @@ window.onload = function(){
         message.text = caption;
         window.speechSynthesis.speak(message);
         
-//        systemPause(output_options, output_options.split(' ').length);
-//        delay(output_options, output_options.split(' ').length);
     }
+    
     
     // When no interaction has been made with the system for a specific amount of   time, this function is executed. It reloads the window and notifies users that the system will reset, through a voice response.
     function endSystem() {
@@ -653,23 +659,6 @@ window.onload = function(){
         window.location.reload();   
     }
     
-//    // Is called everytime a user talks and annyang does not find a valid command.
-//    function noMatch()
-//    {
-//        message.text = validCommand;
-//        window.speechSynthesis.speak(message);
-//        caption = message.text;
-////        systemPause(message.text,message.text.split(" ").length);
-//    }
-    
-//    function universalTime() {
-//        var time = new Date();
-//
-//        time = time.toLocaleString('en-US', { hour: 'numeric',minute:'numeric', hour12: true });
-//
-//        document.getElementById("time").innerHTML = time;
-//
-//    }
     
     // This function displays the system clock on the top right of the interface to show users what the current time is. 
     function startTime() {
@@ -684,41 +673,29 @@ window.onload = function(){
         var t = setTimeout(startTime, 500);
     }
     
+    
     // This function ensures that there is a zero in front of numbers that are less than 10. 
     function checkTime(i) {
         if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
         return i;
     }
     
-   /* function isTalking()
-    {
-        if(window.speechSynthesis.speaking == true)
-        {
-            annyang.pause();
-        }
-        else if(window.speechSynthesis.speaking == false)
-        {
-            annyang.resume()       
-        }
-    }
-    */
     
     function systemPause(word, wordCount) {
         caption = word;
     }
     
+    
     function delay(word, wordCount) {
         
         $('#subtitle').html(word);
-//        $('#systemMic').attr("src", "css/images/mic-disabled2.png");
 
         setTimeout(function(){ 
             $('#subtitle').html(outputListening);
-//            $('#systemMic').attr("src", "css/images/microphone.png");
             
             }, wordCount * 500);
-        
     }
+    
     
     // This function is executed within the displayMenuView function. It resets the html elements of the results that were displayed in the results page to empty elements, to avoid stacking information when users make one request after another. 
     function removeResults(){
@@ -733,6 +710,7 @@ window.onload = function(){
         $('.faculty-hours').html("");
         
     }
+    
     
     // This function is executed when users request for a new search. It returns them to the menu page, where they can make new requests. 
     function displayMenuView()
@@ -764,22 +742,18 @@ window.onload = function(){
         commandManager("MainMenu");
         
         if(resultShown){
-//            alert(outputMoreRequest);
             caption = outputMoreRequest;
             message.text = caption;
         }
         else if(clarifyFaculty_ACTIVE){
-//            alert(outputMoreRequest);
             caption = outputMoreRequest;
             message.text = caption;
         }
         else if(clarifyPrefix_ACTIVE){
-//            alert(outputValidRequest);
             caption = outputValidRequest;
             message.text = caption;
         }
         else if(instruction_ACTIVE){
-//            alert(outputMoreRequest);
             caption = outputMoreRequest;
             message.text = caption;
         }
@@ -879,7 +853,6 @@ window.onload = function(){
         }
         else {
             $('.room-img').css('display', 'block');
-//            $('.room-type').css('display','none');
             $('.fac-info').css('display', 'none');
         }
         
@@ -938,6 +911,7 @@ window.onload = function(){
     
     }
     
+    
     // This function is executed within the yesOrno function, given that the systemAsked variable is true.  
     function moretime() {
         // If the variable passed on to the yesOrno function is “yes” (meaning that the user requests for more system time), this function grants more time to the system and responds with the appropriate voice response.
@@ -966,6 +940,7 @@ window.onload = function(){
             
 //            endSystem();
     }
+    
 
     // This function represents the system timer that includes a setTimeout function that is repeatedly called every second. The variable used to represent the amount of time users have is called timeLeft, which is initially set to 55 seconds and is decremented by 1 second every time the setTimeout function gets called. Once timeLeft has been decremented down to 30 seconds, the system would ask the users - for the first time - if they need more time. The function then sets timeLeft back to its initial state (55 seconds) if users respond with a “yes”, and either ends the system or goes back to the results page (depending on what their current page is) if users respond with a “no”. If users do not respond, timeLeft will continue to be decremented until it reaches the next time checkpoint, which is 10 seconds, in which case the system would prompt the users again if they need more time. The same procedure applies, but if users still do not respond, timeLeft will eventually be decremented to 0 and the system will end. 
     function systemTimer() {                        
@@ -1005,6 +980,7 @@ window.onload = function(){
         },systemTimerInterval);
     }
 
+    
     // This function handles what commands are available to a user at various parts of the system. The function contains a switch statement and depending the value of the commandKey parameter, certain commands will be made available to the user.
     function commandManager(commandKey)
     {
@@ -1033,13 +1009,10 @@ window.onload = function(){
             case "CalendarView":
                 annyang.init(commands,true);
                 annyang.addCommands(commands);
-//                annyang.addCommands(eventsOptionsCommands);
-                break;
-            case "Instruction":
-                annyang.addCommands(exitCommands);
                 break;
         }   
     }
+    
     
     // This function is executed when users press the START button in the home page of the system. It is the central function that jump starts the system’s operations and functionalities. Contents of data,json, the file that has been parsed with all of the room and faculty information is passed to this function as an object named “data”. This function initiates the system time through calling the systemTimer function. Within this function, multiple command functions are declared, including the facultyLocator, roomLocator, yesOrno, optionFunc, and yourWelcome functions. This function also encapsulates the different command objects, such as mainMenuCommands, exitCommands, regular commands, and optionCommands. The data that is passed on to this function is used to access the contents stored in the JSON file, containing organized information about rooms and faculty members. 
     function startSystem(data) {     
@@ -1090,156 +1063,15 @@ window.onload = function(){
             }
             timeLeft = grantTime; 
         };
-
-        // LIST OF MISTER'S
-        
-        // Full name
-        mrListFullName = ["Jamal Abedi","Rhett Lowe","Hyuk Kang","Spenser Clark","Georg Farkas","Greg Duncan","Robert Duncan","Drew Bailey","Jeff Johnston","David Lim","Neil Young"];
-            
-        // Last name
-        mrListLastName = ["Abedi","Lowe","Kang","Clark","Farkas","Duncan","Duncan","Bailey","Johnston","Lim","Young"];
-        
-        
-        // LIST OF MISS'S
-        
-        // Full name
-        msListFullName = ["Kim Burge","Jenel Lao","Liane Brouillette","Maria Rosales-Rueda","Penelope Collins","Deborah Vandell","Jade Jenkins","Di Xu","Rachel Baker","Emily Penner","Constance Iloh","Hosun Kang","Melinda Petre","Jacquelynne Eccles","Geneva Lopez-Sandoval","Valerie Henry","Sarah Singh","Sue Vaughn","Susan Guilfoyle","Susan Toma-Berge","Jenel Lao","Jeanne Stone","Maria Takacs","Sandra Simpkins","Virginia Panish","Sarah McDougall","Denise Earley"];
-            
-        // Last name
-        msListLastName = ["Burge","Lao","Brouillette","Rosales-Rueda","Collins","Vandell","Jenkins","Xu","Baker","Penner","Iloh","Kang","Petre","Eccles","Lopez-Sandoval","Henry","Singh","Vaughn","Guilfoyle","Toma-Berge","Lao","Stone","Takacs","Simpkins","Panish","McDougall","Earley"];
-        
-        
-        
-        clarifyPrefix_MODAL = function(name){
-            $('#name').empty();
-            commandManager("OptionsView");
-            timeLeft = grantTime;
-            $('.modal-clarifyPrefix').show();
-            $('.modal-options').addClass('animated fadeInDown');
-            
-            clarifyPrefix_ACTIVE = true;
-            
-            $('#name').append(name);
-        }
-        
-        
-        clarifyPrefix_RESPONSE = function(name){
-            var response = "Did you mean: " + name + "?";
-            caption = response;
-            message.text = caption;
-            window.speechSynthesis.speak(message);
-        }
-        
-        mrChecker = function(facName)
-        {
-            facName = spellChecker(facName);
-
-            
-            // Checks to see if facName is in drList. If not in drList indexOf will    return -1.
-            if(mrListFullName.indexOf(facName) != -1)
-                facultyLocator(facName);
-            else if(mrListLastName.indexOf(facName) != -1)
-                facultyLocator(facName);
-            else if(msListFullName.indexOf(facName) != -1){
-                correctName = "Ms. " + facName;
-                universalName = facName;
-                clarifyPrefix_MODAL(correctName);
-                clarifyPrefix_RESPONSE(correctName);
-            }
-            else if(msListLastName.indexOf(facName) != -1){
-                correctName = "Ms. " + facName;
-                universalName = facName;
-                clarifyPrefix_MODAL(correctName);
-                clarifyPrefix_RESPONSE(correctName);
-            }
-            else
-            {
-                outputRepeat(facName);
-                
-            }
-            
-        }
-      
-        msChecker = function(facName)
-        {
-            facName = spellChecker(facName);
-            
-            // Checks to see if facName is in drList. If not in drList indexOf will    return -1.
-            if(msListFullName.indexOf(facName) != -1)
-                facultyLocator(facName);
-            else if(msListLastName.indexOf(facName) != -1)
-                facultyLocator(facName);
-            else if(mrListFullName.indexOf(facName) != -1){
-                correctName = "Mr. " + facName;
-                universalName = facName;
-                clarifyPrefix_MODAL(correctName);
-                clarifyPrefix_RESPONSE(correctName);
-            }
-            else if(mrListLastName.indexOf(facName) != -1){
-                correctName = "Mr. " + facName;
-                universalName = facName;
-                clarifyPrefix_MODAL(correctName);
-                clarifyPrefix_RESPONSE(correctName);
-            }
-            else
-            {
-                outputRepeat(facName);
-                 
-            }
-        }
-        
-        professorChecker = function(facName)
-        {
-            facName = spellChecker(facName);
-            
-            professorListFullName = ["Kim Burge","Jenel Lao","Liane Brouillette","Jamal Abedi","Maria Rosales-Rueda","Penelope Collins","George Farkas","Deborah Vandell","Jade Jenkins","Di Xu","Greg Duncan","Rachel Baker","Emily Penner","Constance Iloh","Hosun Kang","Robert Duncan","Melinda Petre","Jacquelynne Eccles","Drew Bailey","Geneva Lopez-Sandoval","Valerie Henry","Susan Guilfoyle","Susan Toma-Berge","Jenel Lao","Jeanne Stone","Jeff Johnston","Sandra Simpkins","Virginia Panish"];
-            
-            professorListLastName = ["Burge","Lao","Brouillette","Abedi","Rosales-Rueda","Collins","Farkas","Vandell","Jenkins","Xu","Duncan","Baker","Penner","Iloh","Kang","Duncan","Petre","Eccles","Bailey","Lopez-Sandoval","Henry","Guilfoyle","Toma-Berge","Lao","Stone","Johnston","Simpkins","Panish"];
-            
-            // Checks to see if facName is in drList. If not in drList indexOf will    return -1.
-            if(professorListFullName.indexOf(facName) != -1)
-                facultyLocator(facName);  
-            else if(professorListLastName.indexOf(facName) != -1)
-                facultyLocator(facName);
-//            else if(mrListFullName.indexOf(facName) != -1)
-//                facultyLocator(facName);
-            else
-                outputRepeat(facName);
-            
-        }
-        
-        
-        drChecker = function(facName)
-        {
-            facName = spellChecker(facName);
-            console.log(facName);
-            drListFullName = ["Sandra Simpkins","Virginia Panish","Geneva Lopez-Sandoval","Drew Bailey","Jacquelynne Eccles","Robert Duncan","Constance Iloh","Emily Penner","Rachel Baker","Greg Duncan","Di Xu","Jade Jenkins","Deborah Vandell","George Farkas","Penelope Collins","Susan Toma-Berge","Maria Rosales-Rueda","Jamal Abedi","Liane Brouillette","Jenel Lao","Melinda Petre","Hosun Kang", "Kim Burge"];
-            
-            
-            drListLastName = ["Simpkins","Panish","Lopez-Sandoval","Bailey","Eccles","Duncan","Iloh","Penner","Baker","Duncan","Xu","Jenkins","Vandell","Farkas","Collins","Toma-Berge","Rosales-Rueda","Abedi","Brouillette","Lao","Petre","Kang","Burge"];
-            
-            
-            // Checks to see if facName is in drList. If not in drList indexOf will    return -1.
-            if(drListFullName.indexOf(facName) != -1)
-                facultyLocator(facName);
-            else if(drListLastName.indexOf(facName) != -1)
-                facultyLocator(facName);
-            else
-            {
-                outputRepeat(facName);
-                
-            }
-        }
         
         
         // This function is called when a user request the location of a faculty member's office. First the name being searched for is sent to the spellChecker function to make sure that if facName is a name variation, we use the proper faculty name for the search. Once facName returns it is compared to a list of badwords, and if the facName includes a bad word the facultyLocator function returns and stops the search and tells the user that is inappropriate. There are two valid ways a user can search for faculty the first is providing only last name (i.e. Professor Duncan) and the second is providing a full name (i.e. Professor Greg Duncan). If the user only provides last name in their search, a loop will search data.JSON to compare the facName variable with a key in the JSON file. If a key is not found the function will return, and the user will be told that the faculty member they are searching for does not exist. If a match is found in data.JSON file two things can occur. First, if there are two matches with the same last name(i.e. Greg Duncan and Robert Duncan), a user will then be shown a modal with the faculty options with that last name listed so that they can tell the system which faculty member they were referring to, and once they select an option, they will see the results of their search. Second, if there is only one match then they will see the results of their search. If the user provides both first and last name, a loop will search data.JSON to compare the facName variable with a key in the JSON file. If a key is not found the function will return, and the user will be told that the faculty member they are searching for does not exist.
         facultyLocator = function(facName) {  
-            //alert(facName);
             
-            facName = spellChecker(facName);
             //Spell check faculty name input
+            facName = spellChecker(facName);
             
-            //alert(facName);
+            
             var splitFacName = facName.split(" ");
             
             var firstName = splitFacName[0];
@@ -1266,16 +1098,14 @@ window.onload = function(){
                     for(key in data.faculty)
                     {
                         var keyCheck = key.split(" ");
-                       // console.log("Key: " + key + " | faculty Input: " + facName + " | Key Comparrison: " + keyCheck[1]);
 
                         if(facName == keyCheck[1])
                         {
                             matchFound = true;
                             possibleFaculty.push(key);
-//                                alert("Possible Faculty: " + possibleFaculty.length);
                         }
                     }
-//                    alert(possibleFaculty.length);
+
                     if(!matchFound)
                     {
                         outputRepeat(facName);
@@ -1283,7 +1113,7 @@ window.onload = function(){
                     }
                     else
                         {   
-                           if(possibleFaculty.length > 1) // ooo
+                           if(possibleFaculty.length > 1)
                                 {
                                     //display to DOM
                                     displayOptionsModal(data, possibleFaculty);
@@ -1295,15 +1125,12 @@ window.onload = function(){
                                 {
                                     displayResultsView(data, possibleFaculty[0]);
                                     resultShown = true;
-                                    
-                                    
-//                                    alert(data.faculty[possibleFaculty[0]].roomName);
-                                    
+                                       
                                     var num = data.faculty[possibleFaculty[0]].roomName;
                                     
                                     caption = data.rooms[num].voiceResponseFaculty;
                                     resultsCaption = caption;
-//                                    systemPause((data.rooms[num].voiceResponseFaculty), (data.rooms[num].voiceResponseFaculty).split(' ').length);
+
                                 }
                         }
                 }
@@ -1331,71 +1158,11 @@ window.onload = function(){
             
             timeLeft = grantTime;
         };
-        
-        // Calendar View Function //
-        // This function is called when a user makes an Upcoming Events request. It displays a calendar that is populated with upcoming events in a modal over the Main Menu of the system. From this view, a user can request a new search command.
-        calendarView = function() {
-           /* var source = "https://calendar.google.com/calendar/embed?mode=MONTH&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=ucieducationevents%40gmail.com&amp;color=%238D6F47&amp;ctz=America%2FLos_Angeles"
-            
-            
-            if(viewMode == "what's happening this week")
-                {
-                    source = "https://calendar.google.com/calendar/embed?mode=MONTH&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=ucieducationevents%40gmail.com&amp;color=%238D6F47&amp;ctz=America%2FLos_Angeles";
-                   
-                    $("#calendarFrame").attr('src',source);
-                    
-                    message.text = eventWeekWelcome;
-                }
-            else if(viewMode == "what's happening today")
-                {
-                    
-                    source = "https://calendar.google.com/calendar/embed?mode=AGENDA&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=tp813fc8tfi3uoeb2k1kr8ivn8%40group.calendar.google.com&amp;color=%238D6F47&amp;ctz=America%2FLos_Angeles";
-                    
-                    $("#calendarFrame").attr('src',source);
-                    
-                    message.text = eventTodayWelcome;
-                }
-            else if(viewMode == "what's happening this month")
-                {
-                    source = "https://calendar.google.com/calendar/embed?mode=MONTH&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=tp813fc8tfi3uoeb2k1kr8ivn8%40group.calendar.google.com&amp;color=%238D6F47&amp;ctz=America%2FLos_Angeles";
-                    
-                    $("#calendarFrame").attr('src',source);
-                    
-                    message.text = eventModalMessage; 
-                }
-            */
-            
-            
-            events_ACTIVE = true;
-            // Makes the commands for the ResultsView available. ("New Search", "Thank You", "Yes", "No")
-            commandManager("ResultsView");
 
-            timeLeft = grantTime;
-
-            $(".modal-events").show();
-            
-            $('.instruction-container').hide();
-            
-            commandManager("CalendarView");
-            message.text = eventModalMessage; 
-            caption = eventModalMessage;
-            window.speechSynthesis.speak(message);
-            resultsCaption = caption;
-//            systemPause(eventModalMessage, eventModalMessage.split(' ').length);
-//            delay(eventWelcome, eventWelcome.split(' ').length);
-            resultShown = true; 
-            
-            timeLeft = grantTime;
-            
-            $(".menu-block").hide();
-            $(".events-block").show();
-                        
-        }
         
         // This function is called when a user to responds when they system asks them if they need more time to use the system.
         var yesOrno = function(randomWord){
 
-//            alert(systemAsked);
             if(systemAsked) {
                 if(randomWord == "yes")
                     yes = true;
@@ -1403,8 +1170,7 @@ window.onload = function(){
                     no = true;
                 moretime();
             }
-//            
-            
+         
             //PREFIX MODAL - ACTIVE
             if(clarifyPrefix_ACTIVE){
 
@@ -1415,9 +1181,9 @@ window.onload = function(){
                 else
                     displayMenuView();
             }
-            
-            
+               
         };
+        
         
         // This function converts a number in alphabetical form into a number in numeric form and returns that number.
         var convertToNumber = function(word){
@@ -1435,48 +1201,41 @@ window.onload = function(){
                 return word;
         }
         
+        
         // This function is executed when a user chooses from the options that are displayed by the “Faculty Options” modal. It takes in a number that can either be in alphabetical form or in numeric form, but this function can only work with the numeric form. In order to accommodate to this, this function converts all possible inputs (numString) into numeric forms using the convertToNumber function. In doing so, this function is able to use that number to locate the index of the chosen item that users picked from the modal. 
         var optionFunc = function(numString){
-           // alert("numString: " + numString);
-//          
-            //alert(roomLocatorActive + " " + facultyLocatorActive);
+
             var index = convertToNumber(numString) - 1;
-            //alert("index: " + index);
-//            alert(!isNaN(index));
-            
+
             if(!isNaN(index)){
-//                alert("index: " + index + ", faculty length: " + possibleFaculty.length + ", room length: " + possibleRoom.length-1);
-                //alert(possibleRoom.length);
+
                 if(index >= possibleRoom.length && index >= possibleRoom.length - 1 && roomLocatorActive){
                     caption = outputValidRequest;
                     message.text = caption;
                     window.speechSynthesis.speak(message);
-                    //alert("about to return");
+
                     return;
                 }
                    
-                
                 annyang.addCommands(commands);
 
                 var indexItem = "";
-    //           alert(roomLocatorActive + " " + facultyLocatorActive);
+
                 if(roomLocatorActive){
                     if(possibleRoom[0] == "2005")
                         indexItem = possibleRoom[index]; 
                     else
                         indexItem = possibleRoom[index+1];  
-    //                alert(data.rooms[indexItem].voiceResponseRoom);
+                    
                     caption = data.rooms[indexItem].voiceResponseRoom;
                 }
                 else if(facultyLocatorActive){
-                    //alert("fac locator active");
+
                     indexItem = possibleFaculty[index];
                     num = data.faculty[possibleFaculty[index]].roomName;
                     caption = data.rooms[num].voiceResponseFaculty;
                 }
                 resultsCaption = caption;
-
-    //            alert(indexItem);
 
                 annyang.removeCommands(optionCommands);
                 displayResultsView(data, indexItem);
@@ -1496,6 +1255,7 @@ window.onload = function(){
             }            
         };
         
+        
         // This function is called when the user says "thank you" after receiving results. It tells the user "You're Welcome", and updates the system subtime accordingly.
         var youreWelcome = function(){
             caption = "You're Welcome!";
@@ -1504,29 +1264,10 @@ window.onload = function(){
         }
         
         
-        var displayInstructionModal = function(){
-            instruction_ACTIVE = true;
-            timeLeft = grantTime;
-            
-            $('.instruction-modalPrompt').hide();
-            $('.instruction-modalBubble').hide();
-            
-            commandManager("Instruction");
-            
-            $(".modal-instruction").show();
-            
-            message.text = "Here are your instructions!";
-            window.speechSynthesis.speak(message);
-        }
-        
         // These are the commands that are available once the user presses the "Start" button to activate the system. They are divided into 3 types of commands, Room Location commands, Professor Location commands, and Upcoming Events commands.
         mainMenuCommands = {
             // * = capture everything after 
             // : = capture only one word    
-            
-            //instructions
-//            'Instructions' : displayInstructionModal,
-//            'instructions' : displayInstructionModal,
             
             // Room Locator Commands: These commands handle all of the different variaitons in which users can search for room locations.
             'I am looking for room *roomNum' : roomLocator,
@@ -1537,15 +1278,6 @@ window.onload = function(){
             'room *roomNum' : roomLocator,
             
             // Faculty Locator Commands: These commands handle all of the different variations in which users can search for Professor Office Locations.
-            
-//            "I'm looking for mr. *name":mrChecker,
-//            "I'm looking for Mr *name":mrChecker,
-//            
-//            "I'm looking for ms. *name":msChecker,
-//            "I'm looking for Miss *name":msChecker,
-//            "I'm looking for a Miss *name":msChecker,
-//            "I'm looking for mrs. *name":msChecker,
-            
             "I'm looking for dr. *name":facultyLocator,
             "I'm looking for dr *name":facultyLocator,
             "I'm looking for a dr *name":facultyLocator,
@@ -1581,23 +1313,16 @@ window.onload = function(){
             'Where\'s a *name':facultyLocator,
             'Where\'s A *name':facultyLocator,
             
-            
             //Upcoming Events: These commands handle all the ways that users could ask to see upcoming events.
             'What events are coming up' : displayEventModal,
             'Show me upcoming events' : displayEventModal,
             'I want to know upcoming events' : displayEventModal,
             
             // randomWord can only be yes or no now to avoid it being called every time. 
-            
             ':randomWord' : {'regexp' : /^(yes|no)$/, 'callback' : yesOrno}
         };
         
         
-        // Is this still used?
-        exitCommands = {
-            'exit': displayMenuView  
-        };
-    
         // These are the commands that are available to users when they reach a Results Page after requesting a valid Room Location, Professor Location, or Upcoming Events.
         commands = {
             // * = capture everything after 
@@ -1608,25 +1333,22 @@ window.onload = function(){
             'thank you' : youreWelcome
         };
         
+        
         // This command is available to users when they ask for a Room Location, or Professor Location and they are given the option to choose between options. An example of this would be if they ask for Professor Duncan, a modal will appear that will ask the user which professor Duncan they are referring to (Greg Duncan or Robert Duncan).
         optionCommands = {
             // * = capture everything after 
             // : = capture only one word
             '(number) :number' : optionFunc
         };
-        
-//        eventsOptionsCommands = {
-//            // * = capture everything after 
-//            // : = capture only one word
-//            '*timeFrame' : {'regexp' : /^(what's happening this month|what's happening today|what's happening this week)$/, 'callback' : calendarView}
-//        };
    
+        
         // Activates the Main Menu commands that are available to users when they press the "Start" button.
         commandManager("MainMenu");
         
         
         annyang.setLanguage("en-US");           // Sets annyang.js's language to English
         annyang.start({continuous: false});     // Starts annyang.js without continuous mode.
+        
         
         // **Uncomment to turn debug mode on for annyang. js. In debug mode, the words that annyang hears, and the commands that are being added and removed throughout the systems eecution, is printed to the console.
 //        annyang.debug([newState=true]); 
@@ -1671,7 +1393,6 @@ window.onload = function(){
             ajaxhttp.send(null);
         }
         
-        
         roomCommandLoop();        // Starts the visual looping of the different room commands in the room speech bubble of the user Main Menu's interface. 
         facultyCommandLoop();     // Starts the visual looping of the different faculty commands in the faculty speech bubble of the user Main Menu's interface.
         
@@ -1681,9 +1402,11 @@ window.onload = function(){
         eventCommandAnimation(); // Starts the visual animation of the text inside the event bubble on the Main Menu.
     });
     
+    
     $('#endButton').click(function(){
         endSystem();
     });
+    
     
     // If the user presses the mic icon, they are prompted to say their request so that they know that the main form of navigation is speech and not touch.
     $("#systemMic").click(function(){
