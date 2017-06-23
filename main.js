@@ -262,7 +262,6 @@ window.onload = function(){
             else {
                 caption = outputListening;
                 $('#subtitle').html(caption);
-                promptInstruction();
             }
             
             annyang.resume();
@@ -325,20 +324,7 @@ window.onload = function(){
         }    
     }
     
-    
-    function promptInstruction(){
-        
-        $('.instruction-container').css('display','block');
-        $(".instruction-prompt").show();
-        $('.instruction-prompt').addClass('animated fadeInLeft');
-        setTimeout(function(){
-            $(".instruction-bubble").show();
-            $('.instruction-bubble').addClass('animated fadeInDown');
-        }, 1000);
 
-    }
-    
-    
     // This function displays a prompt for users to exit the current page and go back to the main menu page. The prompt will appear at the bottom-center of a modal screen. 
     function promptExit(){
         $(".instruction-modalPrompt").show();
