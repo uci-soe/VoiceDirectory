@@ -22,10 +22,6 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
     
-    
-    <!-- <script src="http://code.responsivevoice.org/responsivevoice.js"></script> -->
-     
-    
     <!--  Animation.css  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     
@@ -37,19 +33,14 @@
 </head>
   
     <body>
-        
         <div class="blue-block"></div>
-        
         <!--   MODAL - Event     -->
          <div class="systemModal modal-event">
-            
              <div class="calendar-container">
                  <h3 class="calendar-title">Upcoming Events</h3>
-                 
                  <iframe id ="calendar-block" src="https://calendar.google.com/calendar/embed?mode=MONTH&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=ucieducationevents%40gmail.com&ctz=America/Los_Angeles" style="border: 0" width="800" height="550" frameborder="0" scrolling="no"></iframe>
                 
              </div>
-             
              <div class="clear"></div>
              <div class="modal-bottom">
                 <div class="bottomModal-container newSearch-container">
@@ -58,8 +49,6 @@
 
                 </div>
              </div>
-             
-
         </div>
         
         <!--   MODAL - Duplicate Faculty     -->
@@ -68,106 +57,30 @@
                 <div class="modal-header">
                     <H3>Choose a number</H3>
                 </div>
-                
                 <div class="modal-body">                 
                     <div id="dynamic-options">
                     </div>                    
                     <div id="resultOptions"></div>
                 </div>
             </div>
-             
              <div class="clear"></div>
              <div class="modal-bottom">
                 <div class="bottomModal-container newSearch-container">
                     <p class="newSearch-modalPrompt txt-white">To make a new request:</p>
                     <img class="newSearch-modalBubble" src="css/images/newSearch-bubble.png"/>
-
                 </div>
              </div>
-             
-
         </div>
-        
-        <!--   MODAL - Clarify Prefix    -->
-        
-        <div class="systemModal modal-clarifyPrefix">
-            <div class="modal-options">
-                <div class="modal-header">
-                    <H3>Did you mean:</H3>
-                </div>
-                
-                <div class="modal-body">                  
-                    <p id="name"></p>
-                
-                </div>
-            </div>
-
-        </div>
-        
-        <!--   MODAL - Instructions     -->
-        
-        <div class="systemModal modal-instruction">
-            <div class="modal-options">
-                <div class="modal-header">
-                    <H3>Instructions</H3>
-                </div>
-                
-                <div class="modal-body">                  
-                   Instructions
-                
-                </div>
-            </div>
-            <div class="clear"></div>
-             <div class="modal-bottom">
-                <div class="bottomModal-container instruction-container">
-                    <p class="instruction-modalPrompt txt-white">To exit:</p>
-                    <img class="instruction-modalBubble" src="css/images/exit-bubble.png"/>
-
-                </div>
-             </div>
-
-        </div>
-        
-        <!--   MODAL - Events     -->
-         <div class="systemModal modal-events">
-            <div class="modal-options">
-                <div class="modal-header">
-                    <H3>Choose a number</H3>
-                </div>
-                
-                <div class="modal-body">                 
-                    alksdmal
-                    
-                    
-                </div>
-            </div>
-             
-             <div class="clear"></div>
-             <div class="modal-bottom">
-                <div class="bottomModal-container newSearch-container">
-                    <p class="newSearch-modalPrompt txt-white">To make a new request:</p>
-                    <img class="newSearch-modalBubble" src="css/images/newSearch-bubble.png"/>
-
-                </div>
-             </div>
-             
-
-        </div>
-        
-
-        
+     
         <div id="screen-home">
             <div class="top-block">
                 <img class="soe-banner"  src="css/images/soe_banner2.png"/>
-                
                 <p id="time"></p>
-            
             </div>
             
             <div class="intro-block">
                 <div class="mid-block">
                     <div class="bg-speechbubble">
-                
                         <img class="icon-help" src="css/images/helpbutton.png"/>
 
                         <h2 class="title2">VOICE-ACTIVATED</h2>
@@ -176,21 +89,14 @@
                         <button id="startButton" class="button-start">
                             <h4>START</h4>
                         </button>
-                        
                     </div>
                 </div>
             </div>
             
-            
-            
             <div class="menu-block">
-<!--                <div id="timeLeft"></div>-->
-                
                 <div class="mid-block no-padding-top">
-                    
                     <div class="prompt-block">
                         <h2 class="animated">Hello, what can I help you with today?</h2>
-
                     </div>
                     <div class="clear"></div>
                     <div class="col-sm-4 left-bubble">
@@ -198,25 +104,12 @@
                         <div class="faculty-commandText">                            
                             <span class="prefix-dynamicText animated">professor ______ .</span>
                             <span class="prefix-dynamicText animated">doctor ______ .</span>
-
-                            
                             <span class="command-dynamicText animated">I'm looking for </span>
                             <span class="command-dynamicText animated">Where is </span>
                         </div>
-                      
-                        
-<!--
-                        <p>
-                            <span class="command-dynamicText animated">I'm looking for</span>
-                            <span class="command-dynamicText animated">Where is </span>
-                            <span class="prefix-dynamicText animated">Professor</span></p>
-                        <p class="prefix-dynamicText">Doctor</p>
-                        <p class="prefix-dynamicText">Mr/Ms</p>
--->
                     </div>
                     <div class="col-sm-4 center-bubble">
                         <img class="bubble animated" src="css/images/shades/center.png">
-                        
                         <div class="room-commandText">
                             <span class="room-dynamicText   animated">room ______ .</span>
                             <span class="room-dynamicText   animated">the restroom .</span>
@@ -224,48 +117,40 @@
                             <span class="command-dynamicText animated">I'm looking for </span>
                             <span class="command-dynamicText animated">Where is </span>
                         </div>
-                        
                     </div>
                     <div class="col-sm-4 right-bubble">
                         <img class="bubble animated" src="css/images/shades/right.png">
                         <span class="event-dynamicText animated">What    <span class="event-label">events</span> are coming up?</span>
                     </div>
-                        
                     <div class="clear"></div>
                 </div>
-                
                 <div class="clear"></div>
-                
             </div>
             
             <div class="clear"></div>
 
             <div class="result-block">
-<!--                                <div id="timeLeft"></div>-->
                 <div class="mid-block no-padding-top">
                     <div id="map-section" class="col-sm-8">
                         <img class="room-map animated" />
                     </div>
                     
                     <div id="info-section" class="col-sm-4">
-                        
                         <div class="room-name result-title animated"></div>
                         <div class="room-type animated"></div>
                         <div class="room-img animated"></div>
                         <hr/>
-
                         <div class="result-text-name faculty-name animated"></div>
                         <div class="col-sm-6 no-padding-left fac-info">
                             <div class="spacer-xs"></div>
                             <img class="faculty-img animated"/>
                         </div>
-                        
+                       
                         <div class="col-sm-6 no-padding-right fac-info">
                             <div class="spacer-xs"></div>
                             <div class="animated label ">Email</div>
                             <div class="result-text faculty-email animated"></div>
                             <div class="spacer-xs"></div>
-                            
                             <div class="animated label ">Phone Number</div>
                             <div class="result-text faculty-number animated"></div>
                             <br/>
@@ -273,55 +158,24 @@
                                 <div class="animated label ">Office Hours</div>
                                 <div class="result-text faculty-hours animated"></div>
                             </div>
-                        
                         </div>
                         <div class="clear"></div>
                     </div>
-                
-                </div>
-                
-            </div>
-            
-            <!-- Events Block -->
-<!--
-            <div class="mid-block events-block">
-                                <div id="timeLeft"></div>
-                
-                <div id="calendar" class="col-sm-12 no-padding">
-                    <div id="topBorder" class="no-padding"></div>
-                     <iframe id ="calendarFrame" class="col-sm-10 col-sm-offset-1 no-padding" src="https://calendar.google.com/calendar/embed?mode=MONTH&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=ucieducationevents%40gmail.com&ctz=America/Los_Angeles" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-                    <div id="bottomBorder" class="no-padding"></div>
                 </div>
             </div>
             
--->
             <div class="bottom-block">
-
                 <div class="bottom-container newSearch-container">
                     <p class="newSearch-prompt txt-white">To make a new request:</p>
                     <img class="newSearch-bubble" src="css/images/newSearch-bubble.png"/>
                     
                 </div>
-                
-<!--
-                <div class="bottom-container instruction-container">
-                    <p class="instruction-prompt txt-white">To view all commands:</p>
-                    <img class="instruction-bubble" src="css/images/instruction-bubble.png"/>
-                    
-                </div>
--->
-                
                 <div class="mic-container">
                     <img id="systemMic" class="mic animated infinite pulse" />
                     <h4 id="subtitle"></h4>
                 </div>
-                
             </div>
-            
         </div>
-        
-        
-                
     </body>
     
     <script>

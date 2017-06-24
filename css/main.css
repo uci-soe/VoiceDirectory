@@ -1,85 +1,61 @@
-body
-{
+body{
     font-family: 'Lato', sans-serif;
     background-color: #2C3746;
-    
     overflow: hidden;
-    
 }
-.button-round
-{
+.button-round{
     width: 350px;
     height: 350px;
-
     border-radius: 300px;
     background-color: red;
-
     display: block;
     margin:auto;
     text-align: center;
-
     margin-top: 250px;
-
     position: absolute;
     left: 0;
     right: 0;   
 }
 
-#screen-home
-{
+#screen-home{
     width: 1920px;
     background-color: #d9d9d9;
     height: 1000px;
 }
 
-
-.clear
-{
+.clear{
     clear: both;
 }
 
-#time
-{
+#time{
     float: right;
     color: WHITE;
-    
     font-size: 1.5em;
-    
     padding: .7% 0;
 }
 
-.top-block
-{
+.top-block{
     width: 100%;
     height: auto;
-    
     background-color: #2C3746;
-    
     padding: 2.25% 4% 2.25% 3%;
 }
 
-.top-block .soe-banner
-{
+.top-block .soe-banner{
     width: 450px;
-
 }
 
-.prompt-block
-{
+.prompt-block{
     width: 100%;
     background-color: white;
-    
     padding: 3%;
     margin-bottom: 3.5%;
     
 }
-.prompt-block h2
-{
+.prompt-block h2{
     text-align: center;
     font-size: 2.5em;
-    
     font-weight: 300;
-    
     letter-spacing: 1px;
 }
 
@@ -90,61 +66,45 @@ body
     padding: 3.5% 0 5% 0;
 }
 
-.left-bubble .bubble, .right-bubble .bubble
-{
+.left-bubble .bubble, .right-bubble .bubble{
     width: 600PX;
     margin-top: 24%;
 }
-.left-bubble .bubble
-{
+.left-bubble .bubble{
     position: absolute;
     LEFT: 55%;
 }
-.right-bubble .bubble
-{
+.right-bubble .bubble{
     position: absolute;
     right: 55%;
 }
-.center-bubble .bubble
-{
+.center-bubble .bubble{
     width: 70%;
     margin: 5% 15% 0 9.45%;
 }
-.bottom-block .mic
-{
+.bottom-block .mic{
     width: 13%;
-    
     display: block;
     margin: auto;
-
     position: relative;
     bottom: 80px;
     z-index: 10;
-
 }
 
-.bottom-block
-{
+.bottom-block{
     width: 100%;
     background-color: #2C3746;
-    
     height: 200px;
-/*    padding: 5% 0 2% 0;*/
-    
     padding: 0 3% 3% 3%;
-
-    
 }
 
-.bottom-block h4
-{
+.bottom-block h4{
     color: white;
     text-align: center;
     position: relative;
     bottom: 70px;
     z-index: 2;
     font-size: 1.65em;
-    
     letter-spacing: .75px;
     font-weight: 200;
 }
@@ -162,30 +122,24 @@ body
     float: left;
     position: relative;
     text-align: center;
-    
     font-size: .85em;
-
 }
 .bottom-block .bottom-container p{
     color: white;
     font-size: 1.75em;
     font-weight: 200;
     letter-spacing: .75px;
-    
     position: relative;
     z-index: 1;
     background-color: #2C3746;
     padding: 20px 0 0 0;
-
 }
 
 .bottom-block .bottom-container img{
     width: 85%;
     position: relative;
-    
     z-index: 0;
 }
-
 
 .bottomModal-container{
     width:100%;
@@ -197,7 +151,6 @@ body
     font-size: 1.75em;
     font-weight: 200;
     letter-spacing: .75px;
-    
     position: relative;
     z-index: 1;
     background-color: transparent;
@@ -207,120 +160,89 @@ body
 .bottomModal-container img{
     width: 60%;
     position: relative;
-    
     z-index: 0;
 }
 
-img
-{
+img{
     width: 100%;
 }
 
-
 /* FRONT PAGE */
 
-.bg-speechbubble
-{
+.bg-speechbubble{
     background-image: url(images/speechbubble.png);
     background-size: cover;
     background-position: center;
-   
     width: 1100PX;
     height: 580px;
-
     display: block;
-/*    padding: 14%;*/
-
     margin: 0% AUTO 3% AUTO;
     padding-top: 6.5%
-
 }
 
-.icon-help
-{
+.icon-help{
     width: 40px;
     margin: auto;
     display: block;
-    
     margin-bottom: 40px;
 }
 
-#screen-home .title
-{
+#screen-home .title{
     font-size: 4.75em;
     letter-spacing: 5px;
-    
     text-align: center;
     margin: 0;
-    
     font-weight: 600;
 }
-#screen-home .title2
-{
+
+#screen-home .title2{
     letter-spacing: 4px;
     margin: 0;
     opacity: .7;
-    
     text-align: center;
 }
 
-#screen-home .button-start
-{
+#screen-home .button-start{
     width: 25%;
     padding: .65%;
-    
     background-color: #2C3746;
-    
     border-radius: 60px;
-    
     margin: 40px 37.5% 0 37.5%;
 }
 
-#screen-home .button-start h4
-{
+#screen-home .button-start h4{
     color: white;
     text-align: center;
-    
     font-size: 1.75em;
     letter-spacing: 4px;
 }
 
-
-
-.no-padding-top
-{
+.no-padding-top{
     padding-top: 0;
 }
-.no-padding
-{
+.no-padding{
     padding: 0;
 }
-.no-padding-left
-{
+.no-padding-left{
     padding-left: 0;
 }
-.no-padding-right
-{
+.no-padding-right{
     padding-right: 0;
 }
 
-.spacer-xs
-{
+.spacer-xs{
     height: 15px;
 }
 
 /*  RESULT BLOCK  */
 
-.result-block #info-section
-{
+.result-block #info-section{
     padding: 2.5%;
     height: 701px;
-    
     font-size: 1.35em;
 }
 
-.result-block .label
-{
+.result-block .label{
     color: black;
     margin: 0;
     padding: 0;
@@ -328,103 +250,72 @@ img
     font-size: 1.1em;
 }
 
-.result-block .result-title
-{
+.result-block .result-title{
     font-size: 2.5em;
     font-weight: 600;
 }
-.result-block .room-type
-{
+
+.result-block .room-type{
     font-size: 1.5em;
 }
 
-.result-block .result-text 
-{
+.result-block .result-text {
     font-size: 1em;
 }
-.result-block .result-text-name
-{
+.result-block .result-text-name{
     font-size: 1.5em;
     font-weight: 600;
 }
 
-.result-block #info-section
-{
+.result-block #info-section{
     background-color: white;
 }
 
-.result-block .room-img
-{
-    
+.result-block .room-img{
     background-position: center;
     background-size: cover;
-    
     width: 100%;
     height: 390px;
-    
     margin:5% 0 7.5% 0;
 }
 
-#map-section
-{
+#map-section{
     padding: 2%;
     margin: 1% 0;
 }
 
-.room-map
-{
+.room-map{
     width: 90%;  
     margin: 0 5% 0 5%;
 }
 
-
-
-
-.blue-block
-{
+.blue-block{
     background-color: #2C3746;
-    
     width: 100%;
     height: 1000px;
-    
 }
-
-
 
 /* MODAL */
 
-
-.modal-bg,.modal-clarifyPrefix,.modal-instruction
-{
+.modal-bg,.modal-clarifyPrefix,.modal-instruction{
     background-image: url(images/modal-bg.png);
-    
     width: 100%;
-    
-    
     padding: 330px 0 0 0;
     height: 1027px;
-    
     position: absolute;
-    
-z-index: 5;
+    z-index: 5;
 }
 
 .modal-options, .modal-bottom{
     background-color: white;
-    
     width: 501px;
-    
-    
     margin: auto;
     display: block;
-    
-/*    box-shadow: 0px 0px 35px BLACK;*/
-
 }
 
 .modal-options{
     -vendor-animation-duration: 1s;
-  -vendor-animation-delay: 1s;
+    -vendor-animation-delay: 1s;
 }
 
 .modal-bottom{
@@ -434,13 +325,11 @@ z-index: 5;
 .modal-header
 {
     padding: 10px 20px 20px 25px;
-    
     background-color: #1E2631;
     color: white;
 } 
 
 .modal-body{
-   
     background-position: center;
     background-size: cover;
 }
@@ -448,30 +337,23 @@ z-index: 5;
 .modal-bg h3,.modal-clarifyPrefix h3{
     font-size: 2em;
     padding-left: 3px;
-/*    text-align: center;*/
 }
 .modal-bg p, .modal-clarifyPrefix p {
     font-size: 1.75em;
-/*    text-align: center;*/
     padding-left: 10px;
 }
 
-
-.faculty-shot
-{
+.faculty-shot{
     width: 115px;
     height: 115px;
     background-size: cover;
     background-position: center;
-    
     border-radius: 300px;
-
     margin: auto;
     display: block;
-    
     float: right;
-    
 }
+
 .faculty-name{
     font-size: 2em;
     margin: 0px 0 0px 0;  
@@ -482,27 +364,20 @@ z-index: 5;
 }
 
 .modal-event{
-    
     background-image: url(images/modal-bg.png);
-    
     width: 100%;    
     padding: 100px 0 0 0;
     height: 1027px;
     margin-bottom: 30px;
-    
     position: absolute;
-    
     z-index: 11;
-    
 }
 
 .modal-event .calendar-container{
     margin-bottom: 30px;
     width: 75%;
     margin: auto;
-    
 }
-
 
 .modal-event h3{
     font-size: 4em;
@@ -511,15 +386,11 @@ z-index: 5;
     margin-bottom: 30px;
 }
 
-
-#calendar-block
-{
+#calendar-block{
     position: relative;
     bottom:0;
     pointer-events: none;
-    
     width:100%;
-    
     margin: auto;
     display: block;
 }
@@ -533,13 +404,11 @@ z-index: 5;
     right:-152px;
     top: 205px;
     width: 500px;
-    
 }
 
 .faculty-commandText .command-dynamicText, .faculty-commandText .prefix-dynamicText{
     font-size: 21px;
     font-weight: 300;
-    
     float: right;
     display:none;
     position: relative;
@@ -548,14 +417,11 @@ z-index: 5;
 .faculty-commandText .prefix-dynamicText{
     font-size: 24px;    
     font-weight: 900;
-    
     float: right;
     display:none;
     position: relative;
     top: -2px;
     left: 10px;
-
-    
     width: 42%;
 }
 
@@ -569,7 +435,6 @@ z-index: 5;
 .room-commandText .command-dynamicText{
     font-size: 21px;
     font-weight: 300;
-    
     float: right;
     display:none;
     position: relative;
@@ -578,14 +443,11 @@ z-index: 5;
 .room-commandText .room-dynamicText{
     font-size: 24px;    
     font-weight: 900;
-    
     float: right;
     display: none;
     position: relative;
     top: -2px;
     left: 10px;
-
-    
     width: 42%;
 }
 
@@ -594,7 +456,6 @@ z-index: 5;
     position: relative;
     top:204px;
     margin-left: -55px;
-
     width: 42%;
 }
 
@@ -602,7 +463,4 @@ z-index: 5;
     font-size: 24px;    
     font-weight: 900;
     margin: 0 6px 0 6px;
-    
 }
-
-
