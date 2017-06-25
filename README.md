@@ -26,3 +26,4 @@ There is a watcher. To start watcher run `gulp` from the project working directo
 ## Contributors
 
 - Christopher Sandoval [ChristopherSandoval](https://github.com/ChristopherSandoval)
+- [patricmm](https://github.com/patricmm)
